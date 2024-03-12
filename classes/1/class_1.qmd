@@ -1,0 +1,381 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 1 - Introduction to conservation biology"
+date: "2024-03-12"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readxl")
+library("tidyverse")
+library("plotly")
+library("reshape2")
+library("DiagrammeR")
+```
+
+## Course overview
+
+-   This is a course for master level students enrolled in the "Biologia Evoluzionistica, Ecologia e Antropologia Applicata" degree at the University of Rome Tor Vergata. It is worth 6 CFU for a total of 48 hours (24 lessons) to be administered in person.
+
+-   Classes are on Tuesday (09:00-11:00) and Thursday (09:00-11:00) in "Aula Centro Studi Pesca" (Laboratori di Ecologia Sperimentale ed Acquacoltura).
+
+-   The course will be thought in Italian unless international students are present. In this latter case the course will be thought in English. All the material and the literature used will be in English.
+
+-   Check the website and your e-mail periodically for information. The website for this class is hosted at <https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/>
+
+-   No mandatory textbook. You need to be in class, follow, participate and take notes. I will try to make the class as interactive as possible. I need you to talk to me!!!
+
+------------------------------------------------------------------------
+
+## Resources
+
+-   Introduction to conservation genetics [@Frankham2010]
+-   Conservation Biology [@VanDyke2020]
+-   Conservation and the Genomics of Populations [@Allendorf2022]
+-   Literature I will provide every class
+-   You are encouraged to contact me by e-mail with questions and doubts or come to my office. My office hours are between 10:00 and 12:00 every Wednesday. My office is number 14, located on the first floor of the main building at "Laboratori di Ecologia Sperimentale ed Acquacoltura". If you want to come and see me it is always a good idea to first send me an e-mail at [giuliano.colosimo\@uniroma2.it](giuliano.colosimo@uniroma2.it).
+
+------------------------------------------------------------------------
+
+## Learning objectives
+
+-   The course aims at providing students with the most fundamental tools to understand, acknowledge, describe, and address problems related to the conservation of Biodiversity. More broadly, students will develop an appreciation of the concept of Conservation.
+
+-   By the end of the course you should be able to identify, understand, analyse and solve issues related to the conservation of biological diversity, especially at the level of population and species.
+
+-   Students are expected to develop professional language and communication skills through a continuous interaction with the teacher and discussion during classes.
+
+------------------------------------------------------------------------
+
+## Course evaluation
+
+-   Two mid term exams. The first mid term will cover the material studied up until the exam date. The second mid term will cover the new material thought after the first mid term. At the end, if you are satisfied with the average of the votes you can keep the grade. If you are not satisfied you can improve (or decrease) your vote with an oral exam. If you are completely dissatisfied with the outcome of your mid terms exams you will have a chance to do a final comprehensive written exam covering everything we did in class.
+
+-   Students presentations. Each student will be assigned a manuscript that he/she will present to the rest of the class in a 15 minutes power point presentation. At the end of the presentation the student presenting the manuscript will answer questions from the fellow students and the teacher.
+
+-   Participation to class will count towards your final evaluation! That being said, I understand that you may be sick or work. Please, let me know ASAP if you have issues attending classes.
+
+-   I will be communicating the dates of the final exam later during the semester.
+
+------------------------------------------------------------------------
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: blue;"}
+2.  [Biodiversity]{style="color: blue;"}
+3.  [Biodiversity and extinctions]{style="color: blue;"}
+4.  [Populations]{style="color: blue;"}
+5.  [Basics of conservation genetics]{style="color: blue;"}
+6.  [Genetic drift]{style="color: blue;"}
+7.  [Effective population size]{style="color: blue;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+# Introduction to conservation biology
+
+## What is conservation biology?
+
+<br/>
+
+. . .
+
+> Conservation biology is not defined by a discipline, but by its goal [@VanDyke2020].
+
+<br/>
+
+. . .
+
+Ecologists, geneticists, zoologists, botanists, microbiologists, evolutionary biologists, bio-engineers, politicians, (etc. etc. etc.) do not stop their job and career but unite their expertises towards a common goal.
+
+<br/>
+
+. . .
+
+> A crisis discipline, providing knowledge and tools to preserve biodiversity. It does not draw all its theory and models from biology [@Soule1985].
+
+## Historical perspective
+
+-   1978, First International Conference on Conservation Biology - San Diego Zoo Animal Park (CA, USA)
+-   May 8 1985, Society for Conservation Biology (SCB), Ann Arbor (MI, USA)
+-   June 1987, First SCB international meeting, Montana State University (MT, USA)
+
+![After @Nicholls2011](./1_theartofconservation.png)
+
+------------------------------------------------------------------------
+
+<br/> <br/>
+
+> The society is a response by professionals, mostly biological and social scientists, managers and administrators to the biological diversity crisis that will reach a crescendo in the first half of the $21^{th}$ century. We assume that we are in time, and that by joining together with each other and with other well-intentioned persons and groups, the worst biological disasters of the last 65 million years can be averted...Although we have varying philosophies, we share a faith in ourselves, as a species and as individuals, that we are equal to the challenge...For these reasons we join together in a professional alliance in the service of each other, but also in the service of the less articulate members of our evolutionary tree. [@Soule1987]
+
+------------------------------------------------------------------------
+
+![The environmental impact triangle. From @VanDyke2020](./2_conservationbiology.png)
+
+------------------------------------------------------------------------
+
+![Data downloaded from WOS. **Type**: Article, Proceeding Paper, Review Article; **Field**: Entomology, Env. Science, Env. Studies, Evol. Biology, Fisheries, Forestry, Oceanography, Ornithology, Biodiversity Conservation, Biology, Plant Sciences, Ecology, Marine Freshwater Biology, Water Resources, Zoology](./3_numofpubsconservation.png)
+
+## The origins of conservation
+
+For thousands of years humans have *managed* natural resources, but did not spend much time conserving them. Yet, humans have always appreciated the importance of preserving the natural environment.
+
+::: incremental
+-   Plato, through the words of Critia, laments the bad conditions of the land that is no longer productive and rich how it used to be [@Platone].
+-   Judaism extended the principle of the Sabbath to agricultural land [@Levitico25].
+-   During the Song dynasty (China, 960---1279 AD) it was common practice to set aside *fengshui* (sacred) portions of the land, mostly forest, to help regulating spiritual and physical power. Modern china forgo this view.
+:::
+
+. . .
+
+These are all historical examples showing that the notion to conserve our natural resources is well known and established in our species. And yet, we continuously seem to fail at conserving them.
+
+## Deforestation
+
+```{r deforestation1, echo = F, fig.cap = "Data downloaded from [https://www.globalforestwatch.org](https://www.globalforestwatch.org) on 2023-02-07", fig.align="center", out.width=1500, out.height=700}
+deforestation <- read.csv("./data_treecover_loss_by_region__ha.csv", header = T)
+
+plot_ly(
+  data = deforestation,
+  x = ~umd_tree_cover_loss__year,
+  y = ~umd_tree_cover_loss__ha,
+  color = ~iso,
+  type = "bar"
+  ) %>% 
+  layout(barmode = "stack", showlegend = FALSE,
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Tree cover loss (ha)"))
+```
+
+## Fossil fuel consumption
+
+```{r ffcons, echo = F, fig.cap = "Data downloaded from [https://ourworldindata.org/fossil-fuels](https://ourworldindata.org/fossil-fuels) on 2023-02-07", fig.align="center", out.width=1500, out.height=700}
+ffcons <- read.csv("./data_global-fossil-fuel-consumption.csv", header = T)
+names(ffcons) <- c("Entity", "Code", "Year", "Gas", "Oil", "Coal")
+ffcons_long <- melt(ffcons,                               
+                    id.vars = c("Entity", "Code", "Year"))
+
+ffcons_long %>%
+  plot_ly(
+    x = ~Year, 
+    y = ~value, 
+    color = ~variable,
+    type = 'scatter',
+    mode = 'lines') %>% 
+  layout(xaxis = list(title = "Year"),
+         yaxis = list(title = "TWh"))
+```
+
+## Biodiversity loss
+
+```{r glplan, echo = F, fig.cap = "Data downloaded from [https://ourworldindata.org/biodiversity](https://ourworldindata.org/biodiversity) on 2024-03-05", fig.align="center", out.width=1500, out.height=700}
+## The Living Planet Index (LPI) measures the average decline in monitored wildlife populations. The index value measures the change in abundance in 31,821 populations across 5,230 species relative to the year 1970 (i.e. 1970 = 100%).
+
+glplan <- read.csv("./data_global-living-planet-index.csv", header = T)
+glplan_wrld <- glplan[glplan$Entity == "World", ]
+glplan_wrld <- melt(glplan_wrld,                               
+                    id.vars = c("Entity", "Code", "Year"))
+glplan_wrld %>%
+  plot_ly(
+    x = ~Year, 
+    y = ~value, 
+    color = ~variable,
+    type = 'scatter',
+    mode = 'lines') %>% 
+  layout(xaxis = list(title = "Year"),
+         yaxis = list(title = "TWh"))
+```
+
+## The "Ecologically Noble Savage" conundrum
+
+<br/>
+
+Many have argued that our incapability to conserve is driven by greed. It may be deeper and more complicated than that!
+
+. . .
+
+<br/>
+
+![](./4_Alvard1993.png)
+
+------------------------------------------------------------------------
+
+Are indigenous people really better than the industrialized civilization at conserving nature? Can we learn from them how to conserve it?
+
+. . .
+
+> Many of the misconceptions concerning the apparent conservation proclivities of traditional peoples are a result of an imprecise understanding of what constitutes conservation [@Alvard1993].
+
+> It is hard to imagine the evolution of behavioral traits beneficial to a group of individuals if these traits are contrary to the individual's best interest [@Williams1966].
+
+> There is little theoretical justification for expecting individuals to conserve open access resources [@Alvard1993].
+
+A small group of individuals living in an abundant and productive environment can easily manage their resources in a sustainable way! For example, in a place with great abundance of prey, hunters can even be wasteful in their hunting, and yet cause little to no damage to the environment.
+
+------------------------------------------------------------------------
+
+## Defining conservation from the standpoint of foraging theory.
+
+-   Obtaining the highest quantity of food is expected to augment fertility and survivorship and to allow engaging in other fitness enhancing activities. Individuals that follow this strategy are defined: *rate-maximizers*.
+
+-   Non *rate-maximizers* will be selected against by natural selection.
+
+. . .
+
+::: callout-important
+# Question!
+
+Based on the premises described above, can you think of a scenario in which a *conservation* strategy/behavior could evolve?
+:::
+
+. . .
+
+::: callout-tip
+## One possible answer..
+
+Conservation as a selfish strategy could evolve if the short term disadvantages or costs guarantee a long-term pay off.
+:::
+
+------------------------------------------------------------------------
+
+-   Conservation should not be defined based on the effect of a certain behavior. Rather, we can here define conservation based on foraging theory as a [specific restrain behavior that endures a cost in the present to have a benefit in the long run]{style="color: red;"} [@Alvard1993].
+
+. . .
+
+-   No restraints in foraging behavior means no conservation, even if the behavior produces a sustainable outcome!
+
+. . .
+
+::: callout-note
+# Working hypotheses
+
+-   Native people are conservationists!
+
+-   Native people will over-exploit resources whenever it is to their advantage to do so!
+:::
+
+. . .
+
+> Evidence for conservation would consist of hunters forgoing opportunities to kill vulnerable species that are nonetheless predicted by foraging theory to be pursued.
+
+------------------------------------------------------------------------
+
+The native people considered in this study are the **Piro** community of Diamante, situated in the lowland rain forest environment of southeastern Peru.
+
+-   $h_i$ = handling time with an individual of type i after encounter
+-   $e_i$ = average expected net energy gain after encounter with prey ype i
+-   $\lambda_i$ = rate of encounter with prey type i
+
+The profitability of prey type $i$ is $e_i/h_i$. The prey are ranked according to their profitability, such that is $e_1/h_1 > e_2/h_2... > e_n/h_n$. Beginning with the most profitable type (which is always included in the diet), prey are added to the diet, one by one, until a prey item is found that has a lower return rate upon encounter than could be obtained from searching for more profitable prey. That is, prey types are added to the diet until:
+
+$$
+\frac{\sum_{i=1}^n \lambda_i e_i}{1+\sum_{i=1}^n \lambda_i h_i} > \frac{e_{n+1}}{h_{n+1}}
+$$
+
+After @Alvard1993, but see also @Stephens1986
+
+------------------------------------------------------------------------
+
+![From @Alvard1993](./5_Alvard1993.png)
+
+------------------------------------------------------------------------
+
+![From @Alvard1993](./6_Alvard1993.png)
+
+------------------------------------------------------------------------
+
+## Take home messages from Alvard (1993)
+
+-   Development and use of an operational definition of conservation that allows empirical tests.
+
+-   The prey items that are always pursued by Piro shotgun hunters closely match those predicted by foraging theory. These are large, high ranked animals in the optimal diet.
+
+-   The observation that no restraint was shown killing the large primate species is the strongest evidence contrary to the conservation hypothesis.
+
+-   Native populations are expected to desire the same material benefits that other, more developed peoples enjoy, such as adequate nutrition, shelter, health care, and education.
+
+-   Is conservation behavior something that still needs to evolve?
+
+------------------------------------------------------------------------
+
+## Core merits of conservation biology
+
+| Merit                              | Conservation biology...                                                                                |
+|-----------------------|-------------------------------------------------|
+| Basis in preserving biodiversity.  | ...focuses on preserving and conserving biodiversity rather than managing individual species.          |
+| Value laden and value driven.      | ...is committed to valuing biodiversity, regardless of its utilitarian value.                          |
+| Mission- and advocacy- oriented.   | ...emphasizes intentions and actions to save species and habitats.                                     |
+| Crisis-oriented.                   | ...requires rapid investigation and response even before risk or replication studies can be performed. |
+| Integrative and multidisciplinary. | ...synthesizes information across disciplines (biology, ecology, ethics, politics, and others).        |
+
+------------------------------------------------------------------------
+
+|                                    | (continued)                                                                                                                                              |
+|----------------------|--------------------------------------------------|
+| Concerned with evolutionary times. | ...seeks preservation of genetic information and processes that promote speciation for future biodiversity, not just conservation for present organisms. |
+| Adaptive.                          | ...treats management options as experimental and imprecise, where outcomes may be risky or unpredictable.                                                |
+
+After @VanDyke2020
+
+------------------------------------------------------------------------
+
+## A modern take on Conservation Biology
+
+![Original (**a**) and more modern (**b**) overview of the fields contributing to Conservation Biology. After @Kareiva2012](./7_consbio_and_conssciece.jpeg)
+
+------------------------------------------------------------------------
+
+## Synthesis
+
+-   Conservation finds its origin in moral arguments about the intrinsic value of nature.
+-   Conservation biology can succeed only if its purpose is sought through the application of the best scientific knowledge to preserve nature and its intrinsic value.
+-   Conservation cannot be accomplished without moral and economic restraint.
+-   "The success of conservation efforts depends also on how we are perceived by decision makers and the public at large. Although we must alert these groups to impeding ecological challenges, we must also give them reason for hope" [@Beever2000].
+
+. . .
+
+### To read for next time...
+
+-   [Testing the "Ecologically Noble Savage" hypothesis: Interspecific Prey Choice by Piro Hunters of Amazonian Peru](https://drive.proton.me/urls/6PSC140FAW#xEP9GIMjin6u)
+
+## References
