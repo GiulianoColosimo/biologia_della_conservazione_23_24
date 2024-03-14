@@ -35,6 +35,8 @@ website:
         contents: 
           - href: ./classes/1/class_1.html
             text: "Class 1 - Introduction to conservation biology"
+          - href: ./classes/2/class_2.html
+            text: "Class 2 - Biodiversity"
 
 
     tools:

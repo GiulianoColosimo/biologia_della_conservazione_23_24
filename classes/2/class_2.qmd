@@ -1,0 +1,619 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 2 - Biodiversity"
+date: "2024-03-14"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readxl")
+library("diagram")
+library("grid")
+library("gridExtra")
+library("plotrix")
+library("tidyverse")
+library("dendextend")
+library("vegan")
+library("gt")
+library("gtExtras")
+library("gtsummary")
+```
+
+# Questions?
+
+## Topics
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: orange;"}
+3.  [Biodiversity and extinctions]{style="color: blue;"}
+4.  [Populations]{style="color: blue;"}
+5.  [Basics of conservation genetics]{style="color: blue;"}
+6.  [Genetic drift]{style="color: blue;"}
+7.  [Effective population size]{style="color: blue;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+# Biodiversity
+
+## Changing paradigm
+
+-   One of the most pervasive environmental changes of recent history is the loss of Earth's diversity of life.
+
+-   Biodiversity loss is a systemic problem embedded in the normal ways the human species lives on planet earth.
+
+-   Conservation biology origins were driven by studies and discoveries in basic sciences such as genetics and population dynamics, but soon became manifest in applied sciences like forestry, fisheries, wildlife management, and more.
+
+-   The traditional view of recent extinctions as a collection of tragic individual case histories was replaced by a conviction that the global extinction crisis was produced by the fundamental disruption of ecosystem processes.
+
+-   The extinction crisis created an urgency to develop an alternative concept to that of endangered species. That concept was biodiversity [@VanDyke2020]!
+
+## What is biodiversity?
+
+. . .
+
+-   The structural and functional variety of life forms at genetic, population community and ecosystem levels [@Sandlund1992].
+
+-   Genes and their variety of forms (alleles) are the most fundamental units at which biodiversity can be measured, and their are the basis for all other measures of diversity.
+
+. . .
+
+```{r biodivblockingfounds, echo=FALSE, fig.align='center', fig.cap='Main biodiversity levels.'}
+pos <- coordinates(c(1, 1, 1, 1, 1, 1))
+pos[1,1] <- 0.1
+pos[2,1] <- 0.31
+pos[3,1] <- 0.51
+pos[4,1] <- 0.71
+pos[5,1] <- 0.91
+pos[6,1] <- 0.5
+
+my_label <- c("Genes",
+              "Species",
+              "Habitats",
+              "Landscapes",
+              "Ecosystems",
+              "Biodiversity")
+
+my_text_size <- 1.5
+my_edge_length <- .08
+par(mar = rep(1, 4))
+
+openplotmat()
+straightarrow(from = pos[1, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[2, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[3, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[4, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[5, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[1, ], to = pos[2, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[2, ], to = pos[3, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[3, ], to = pos[4, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[4, ], to = pos[5, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+
+for(i in 1:length(my_label)){
+  if (i == 1) {
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length, 
+             lab = my_label[i], 
+             cex = my_text_size, 
+             box.col = "red", col = "white")
+  } else if (i == 2){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 3){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 4){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 5){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 6){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "green")
+  } 
+}
+
+```
+
+
+## Why should we care about Biodiversity?
+
+-   A more diverse combination of species (biological community) or, in other words, a more biodiverse system...
+    -   ... produces a more productive environment [@Hooper2005; @Duffy2009].
+    -   ... produces a more resistant environment [@Tilman1997; @Naeem2000].
+    -   ... produces a more resilient environment [@Wilsey2000].
+    -   ... produces more stable ecosystem processes [@Cardinale2012].
+
+-   Biodiversity is essential for food security and nutrition and offers key options for sustainable livelihoods (Convention on Biological Diversity, <https://www.cbd.int>).
+
+. . .
+
+-   A key concept when talking about biodiversity is that of  **emergence**. This occurs when a complex entity has properties or behaviors that its parts do not have on their own, and emerge only when they interact in a wider whole [@WikiEmergence].
+
+------------------------------------------------------------------------
+
+![A paradigmatic example of emergence. The grasshopper species *Schistocerca gregaria*. Photo downloaded from [Wikipedia](https://en.wikipedia.org/wiki/Desert_locust).](./1_schistocerca.jpg)
+
+------------------------------------------------------------------------
+
+![Multifunctional ecosystem require many species. After @Duffy2009](./2_duffy2009.png)
+
+------------------------------------------------------------------------
+
+![Roles of host species in the transmission of Lyme disease in the northeastern USA. After @Keesing2010](./3_keesing2010.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+![After @Wilsey2000](./4_manuscriptImage.jpg)
+:::
+
+::: {.column width="50%"}
+![](./5_manuscriptImage.jpg)
+:::
+:::
+
+------------------------------------------------------------------------
+
+-   The ESA (Ecological Society of America) concluded that maintaining biodiversity is a safeguard against risk resulting from changes in environmental conditions because it extends the productive use of a site's resources over time and provides an effective way to provide multiple goods and services [@Hooper2005].
+
+. . .
+
+::: callout-important
+# Question!
+
+What are ecosystem services?
+:::
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+-   **Provisioning services**
+    -   Food, Energy, Structural materials
+-   **Regulating services**
+    -   Reduce the severity of environmental events
+:::
+
+::: {.column width="50%"}
+-   **Supporting services**
+    -   Provision of physical bodies to be used for essential services (oxygen and soil)
+-   **Cultural services**
+    -   Recreational, intellectual and spiritual activities
+:::
+:::
+
+------------------------------------------------------------------------
+
+## How to support biodiversity in human modified landscapes?
+
+1.  Prefer diversity in crops (polyculture) and land use (land-use mosaic).
+2.  Encourage traditional agricultural practices over large-scale mechanized solutions.
+3.  Monitor and maintain keystone structure or species from the environment.
+4.  Maintain as much natural vegetation as possible.
+5.  Expand protected areas to encompass species of significant value (keystone-species).
+6.  Favor use of native species in gardens and cultivation.
+7.  Maintain urban green areas.
+8.  Discourage urban sprawl.
+9.  Encourage appreciation and understanding of conservation goals among land users.
+
+After @Trimble2014
+
+## IUCN-International Union for the Conservation of Nature (est. 1948) <https://www.iucn.org>
+
+Its vision...
+
+> [...create a just world that values and conserves nature.]{style="color: green;"}
+
+Its mission...
+
+> [...influence, encourage and assist societies throughout the world to conserve the integrity and diversity of nature...]{style="color: green;"}
+
+Permanent staff of ca. 1000 paid employees and thousands of volunteer experts and professional dislocated and working in about 50 locations globally. Combines together government and NGOs. It has no explicit authority to make any "law", but its authority has gained enough momentum to have the force of law as international standards for conservation practice [@Stuart2017].
+
+## Current status of biodiversity
+
+![Current biodiversity on vertebrates according to @Hoffman2010](./6_biodivstatus.png)
+
+## Red List of Threatened Species
+
+```{r redlstcats, echo=FALSE, fig.align='center', fig.cap='Red List Categories. Each one of these level is defined by very specific and stringent criteria.'}
+redlstcats <- data.frame(var1 = c(8, 0, 0, 0, 0, 0, 0, 0, 0),
+                         var2 = c(0, 7, 0, 0, 0, 0, 0, 0, 0),
+                         var3 = c(0, 0, 6, 0, 0, 0, 0, 0, 0),
+                         var4 = c(0, 0, 0, 5, 0, 0, 0, 0, 0),
+                         var5 = c(0, 0, 0, 0, 4, 0, 0, 0, 0),
+                         var6 = c(0, 0, 0, 0, 0, 3, 0, 0, 0),
+                         var7 = c(0, 0, 0, 0, 0, 0, 2, 0, 0),
+                         var8 = c(0, 0, 0, 0, 0, 0, 0, 1, 0),
+                         var9 = c(0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+rownames(redlstcats) <-  c("Not Evaluated (NE)",
+                           "Data Deficient (DD)",
+                           "Least Concern (LC)",
+                           "Near Threatened (NT)",
+                           "Vulnerable (VU)",
+                           "Endangered (EN)",
+                           "Critically Endangered (CR)",
+                           "Extinct in the Wild (EW)",
+                           "Extinct (EX)")
+
+redlstcats %>% 
+  dist() %>% 
+  hclust() %>% 
+  as.dendrogram() -> dend
+
+par(mar=c(4.3,1,1,15))  # Increase bottom margin to have the complete label
+redlistcls <- c("beige", "gray", "green4", "greenyellow", "yellow", "orange", "red", "maroon4", "black")
+dend %>% 
+  #set("labels_colors", redlistcls) %>% 
+  plot(horiz=TRUE, axes=FALSE) 
+colored_bars(redlistcls, dend, horiz = T, rowLabels = "Red List \nCategories")
+```
+
+## Main causes of biodiversity loss
+
+1.  Habitat modification [@deBaan2013]
+    -   Transformational effects
+    -   Occupational effects
+    -   Permanent effects
+2.  Climate change (we will talk about this in a separate class)
+
+. . .
+
+### Transformational effects
+
+Change in the way the land is used. For example, a prairie changed to become a soybean field. The land is still there, and the productivity in term of biomass may even be higher, but the system structure's is simplified and the chance to have a diverse group of species is lost.
+
+------------------------------------------------------------------------
+
+### Occupational effects
+
+Colonization of areas that were previously human free. The human presence directly and indirectly affect the newly colonized system by removing resources, producing wastes, altering the landscape.
+
+<br/>
+
+### Permanent effects
+
+Areas can be disturbed in a more or less permanent way. Lumbering of a forest section in a specific area can be, with time and proper management, reversed and the forest could be reestablished. A prairie covered in asphalt to build a mall and a parking lot is probably lost for good.
+
+------------------------------------------------------------------------
+
+![Relative species richness per land use type. After @deBaan2013](./7_deBaan.png)
+
+------------------------------------------------------------------------
+
+## Species concept in conservation
+
+::: callout-note
+Although as an applied concept we can measure it at multiple levels, the most widely used currency to measure and compare biodiversity across sites is SPECIES!
+:::
+
+. . .
+
+| Species concept                    | Description                                                                                                                                                          | Reference                                                          |
+|:------------------|:---------------------------------|:------------------|
+| Typological Species Concept (TySP) | Defines species as distinct and fixed morphological types.                                                                                                           | Based on Plato's, Aristotele's, and, later, Christian philosophies |
+| Evolutionary Species Concept (ESC) | A species is a lineage of ancestral descent which maintains its identity from other such lineages and which has its own evolutionary tendencies and historical fate. | [@Wiley1978]                                                       |
+
+------------------------------------------------------------------------
+
+|                                             |                                                                                                                                                             | (continued)     |
+|:------------------|:---------------------------------|:------------------|
+| Biological Species Concept (BSC)            | Groups of actually or potentially interbreeding natural populations, which are reproductively isolated from other such groups.                              | [@Mayr1942]     |
+| Phylogenetic Species Concept (PSC)          | A species is the smallest diagnosable cluster of individual organisms within which there is a parental pattern of ancestry and descent.                     | [@Cracraft1983] |
+| Differential Fitness Species Concept (DFSC) | Groups of individuals with features that would have negative fitness effects in other groups and cannot regularly be exchanged between groups upon contact. | [@Hausdorf2011] |
+
+------------------------------------------------------------------------
+
+-   Important to conservation is the identification of operational units to be preserved (individuals, populations, species, etc. etc. etc.).
+
+-   Conservation, thus not only work to preserve organisms, but also their ability to adapt and respond to environmental changes (i.e., the capability of individuals to give rise to new species in the future).
+
+-   From this perspective, the PSC has become widely used by conservationists as it incorporates well defined tools (both scientific and normative) to define species.
+
+-   PSC showing more species (48%) and an associated decrease in population size and range [@Agapow2004].
+
+-   The concept of Evolutionary Significant Units (ESU) aims at preserving both evolutionary potential and organisms. ESUs are based on criteria that are associated to genetic variation between and within populations [@Moritz1994].
+
+------------------------------------------------------------------------
+
+![*Cyclura* diversity in the West Indies](./8_cycluradiv.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+![Distribution of genetic variation in *Cyclura cychlura* and parasite species [@Colosimo2021b]](./9_DistributionOfGeneticVariability.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+| Index           | Definition                                                                                                                                                                | Formula                                                                                    | Source           |
+|:----------------|:--------------------|:----------------|:----------------|
+| Alpha diversity | The diversity of species within an ecological community. Described as a measure of species richness (number of species) and evenness (the relative abundance of species). | $H = - \sum_i^s \ p_i \ ln(p_i),$ \n$\ (i=1, 2, 3,...,s),$ \n$\ \ (0 \le H^{'}\le \infty)$ | [@VanDyke2020]   |
+| Beta diversity  | Measure of diversity among communities. A measure of the gradient of species composition across a landscape.                                                              | $S/\alpha-1$                                                                               | [@Whittaker1975] |
+| Gamma diversity | Biodiversity of species across larger landscape levels.                                                                                                                   | $dS/dD[(g+l)/2]$                                                                           | [@Cody1986]      |
+
+------------------------------------------------------------------------
+
+## Excercise 1
+
+::: columns
+::: {.column width="50%"}
+```{r divExcercise, echo=FALSE}
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise |> 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## Question 1
+
+What is the most diverse site based on Shannon index? \n($H = - \sum_i^s \ p_i \ ln(p_i)$)
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Excercise 1
+
+::: columns
+::: {.column width="50%"}
+```{r divExcercise2, echo=FALSE}
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise |> 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## Question 1
+
+What is the most diverse site based on Shannon index? \n($H = - \sum_i^s \ p_i \ ln(p_i)$)
+:::
+
+::: callout-tip
+## Answer
+
+```{r divExcercise3, echo=T}
+library(vegan)
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+diversity(plantDivExcercise)[diversity(plantDivExcercise)[] == max(diversity(plantDivExcercise))]
+```
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+::: columns
+::: {.column width="50%"}
+```{r divExcercise4, echo=FALSE}
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise[1:4, ] |> 
+  gt()
+
+plantDivExcercise[6:9, ] |> 
+  gt()
+
+```
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## Question 2
+
+What is the most diverse site based on Beta diversity index as postulated by @Whittaker1975? \n($S/\alpha-1$)
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+::: columns
+::: {.column width="50%"}
+```{r divExcercise5, echo=FALSE}
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise[1:4, ] |> 
+  gt()
+
+plantDivExcercise[6:9, ] |> 
+  gt()
+
+```
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## Question 2
+
+What is the most diverse site based on Beta diversity index as postulated by @Whittaker1975? \n($S/\alpha-1$)
+:::
+
+::: callout-tip
+## Answer 2
+
+```{r divExcercise6, echo=T}
+ncol(plantDivExcercise[1:4, ])/mean(specnumber(plantDivExcercise[1:4, ])) - 1
+ncol(plantDivExcercise[6:9, ])/mean(specnumber(plantDivExcercise[6:9, ])) - 1
+```
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+### $\beta$ diversity excercise
+
+The @Whittaker1975 formula: $\beta=(S/\alpha)-1$, where $S$ is the total number of species in the area, and $\alpha$ is the average species diversity in the area. $\beta$ diversity gives us an index of species turnover along a geographic gradient.
+
+<br>
+
+```{r betareview, echo=F}
+library("vegan")
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise[1:4, ] |> 
+  gt()
+```
+
+<br>
+
+$$
+\beta=\frac{5}{(5+4+5+5)/4}-1=0.052
+$$
+
+------------------------------------------------------------------------
+
+
+## Biodiversity distribution
+
+::: columns
+::: {.column width="50%"}
+![](./10_mammal_richness_AFRI0434.jpg){width="70%"}
+
+![](./11_mammal_richness_americentral0434.jpg){width="70%"}
+:::
+
+::: {.column width="50%"}
+![](./12_mammal_richness_ASI0434.jpg){width="70%"}
+
+![](./13_mammal_richness_SAM0434.jpg){width="70%"}
+:::
+:::
+
+Mammal richness. Data downloaded from <https://biodiversitymapping.org>.
+
+------------------------------------------------------------------------
+
+## Global prioritization strategies
+
+![Spatial concordance of global biodiversity priorities and ecosystem service value (ESV). Increasing intensities of green and red represent, respectively, increasing rank ESV and increasing rank consensus biodiversity priority. White corresponds to low values for both variables, black to high values for both, and shades of gray to covarying values for both. After @Turner2007](./14_consPriorities.png){width="50%;" fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Integrated conservation strategies
+
+![Conservation priority-setting indices combining EcoWise, SocioWise and ClimateWise priorities with equal weighting of all indicators (a), SocioWise and ClimateWise priorities (b), EcoWise and ClimateWise priorities (c), EcoWise and SocioWise priorities (d), Coefficient of variation corresponding to index values prior normalization (e) and frequency of achieving more than 80 % of the maximum index value over 20 index variations (f) (compare with Table 1). Blue to yellow areas indicate low to high values. Data of a, b, c and d were normalized to a range of 0--100. Class breaks have been calculated with the Jenks Breaks algorithm. After @Freudenberger2013](./15_consPriorities.png){width="50%;" fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Synthesis
+
+-   Biodiversity is a core concept of conservation biology. Its usefulness is only valid if we are able to thoroughly measure it and define it mathematically.
+
+-   Only with a clear understanding and measurement of biodiversity and its value we could use it in conservation studies, conservation laws and conservation policy.
+
+-   Effective future research on biodiversity will not only keep on refining and finding new ways on how to measure it, but also understand the evolutionary and ecological processes that can contribute to its creation and maintainment.
+
+-   The hope is to increasingly see biodiversity as a core concept of future local and international strategies for the conservation of nature.
+
+# References
