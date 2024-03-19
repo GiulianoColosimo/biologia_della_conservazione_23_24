@@ -1,0 +1,490 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 3 - Biodiversity & Extinctions"
+date: "2024-03-19"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readxl")
+library("diagram")
+library("grid")
+library("gridExtra")
+library("plotrix")
+library("tidyverse")
+library("dendextend")
+library("vegan")
+library("gt")
+library("gtExtras")
+library("gtsummary")
+library("plotly")
+```
+
+## Does an "Ecologically Noble Savage" exist?
+
+![](./1a_Alvard1993.png)
+
+. . .
+
+-   The premise of this manuscript is that the ecologically noble savage hypothesis may exist merely as a by-product of a misconception of what real conservation is
+
+. . .
+
+-   The effects of a certain behavior do not necessarily define the behavior itself
+
+------------------------------------------------------------------------
+
+## Working hypotheses
+
+-   $H_0$ = Native people are conservationists
+
+    -   We expect native populations to adopt specific conservation behavior
+    -   Hunting decisions are made to ensure sustainable harvests of prey
+    -   Restrain has a short term cost outweighed by long term return
+
+-   $H_1$ = Native people will over-exploit resources whenever it is to their advantage to do so
+
+    -   Derived from foraging theory
+    -   Hunters will over exploit resources whenever it is to their advantage to do so
+    -   Short term rate-maximization of resources
+
+. . .
+
+The author sets up a quantitatively framework to directly and mathematically find support for either of the two alternative hypotheses. Specifically, the aim is to quantify how much the data he gathers in the field reflect the prediction regarding inter-specific prey choice.
+
+------------------------------------------------------------------------
+
+> ... the prey available to hunters vary in regard to vulnerability to overexploitation and local extinction, do their interspecific prey choices represent a conservation oriented decision? Or, do hunters choose prey that are optimal in terms of return rate maximization? Evidence for conservation would consist of hunters forgoing opportunities to kill vulnerable species that are nonetheless predicted by foraging theory to be pursued [@Alvard1993].
+
+<br/>
+
+> If indigenous people possess an intimate knowledge of their environment, it is not unreasonable to assume that native hunters are aware of the reproductive parameters and limitations of their prey species. Native hunters following a conservation strategy might be expected to use their knowledge to minimize their impact on their prey [@Alvard1993].
+
+------------------------------------------------------------------------
+
+![After @Alvard1993](./1b_Alvard1993.png)
+
+------------------------------------------------------------------------
+
+![After @Alvard1993](./1c_Alvard1993.png)
+
+## Excercise 1
+
+::: columns
+::: {.column width="50%"}
+```{r divExcercise, echo=FALSE}
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise |> 
+  gt()
+```
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## Question 1
+
+What is the most diverse site based on Shannon index? \n($H = - \sum_i^s \ p_i \ ln(p_i)$)
+:::
+
+::: callout-tip
+## Answer
+
+```{r divExcercise3, echo=T}
+library(vegan)
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+diversity(plantDivExcercise)[diversity(plantDivExcercise)[] == max(diversity(plantDivExcercise))]
+```
+:::
+:::
+:::
+
+## Excercise 2
+
+::: callout-important
+What is Beta diversity index as postulated by @Whittaker1975?
+:::
+
+```{r betareview, echo=F}
+library("vegan")
+data(BCI)
+plantDivExcercise <- BCI[1:10, c(144, 186, 208, 216, 223)]
+species_names <- rep(NA, ncol(plantDivExcercise))
+for (i in 1:ncol(plantDivExcercise)){
+  species_names[i] <- paste("Sp_", i, sep = "")
+}  
+names(plantDivExcercise) <- species_names
+plantDivExcercise[1:4, ] |> 
+  gt()
+```
+
+<br/>
+
+. . .
+
+The @Whittaker1975 formula: $\beta=(S/\alpha)-1$, where $S$ is the total number of species in the area, and $\alpha$ is the average species diversity in the area. $\beta$ diversity gives us an index of species turnover along a geographic gradient.
+
+$$
+\beta=\frac{5}{(5+4+5+5)/4}-1=0.052
+$$
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: orange;"}
+3.  [Biodiversity and extinctions]{style="color: orange;"}
+4.  [Populations]{style="color: blue;"}
+5.  [Basics of conservation genetics]{style="color: blue;"}
+6.  [Genetic drift]{style="color: blue;"}
+7.  [Effective population size]{style="color: blue;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+# Biodiversity and extinctions
+
+------------------------------------------------------------------------
+
+<br/> <br/> <br/> <br/> <br/>
+
+> The extinction of species, each one a pilgrim of four billion years of evolution, is an irreversible loss. The ending of the lines of so many creatures with whom we have traveled this far is an occasion of profound sorrow and grief. Death can be accepted and to some degree transformed. But the loss of lineages and all their future young is not something to accept. It must be rigorously and intelligently resisted [@Snyder1990].
+
+------------------------------------------------------------------------
+
+-   Current biodiversity can be thought as the outcome of two "competing" and ongoing evolutionary processes: [speciation]{style="color: red;"} and [extinction]{style="color: red;"}.
+-   Extinction is a fundamental part of natural processes and can be defined as the [global loss of species]{style="color: blue;"}.
+-   Extinction is for good! Or maybe not...[@Lesley2014].
+-   The institution most actively contributing to track global decline in species and biodiversity is the IUCN.
+-   The [IUCN - Red List of Threatened Species](https://www.iucnredlist.org/en) is "the most comprehensive inventory of the global conservation status of biological diversity".
+-   How exactly species extinction is a natural process and if so, why should we really care if things are currently going extinct?
+
+------------------------------------------------------------------------
+
+## Geological Time Scale
+
+![Downloaded from [www.geosociety.org](www.geosociety.org).](./1_geots.png)
+
+::: notes
+Speaker notes go here.
+:::
+
+## Three major steps during the evolution of life on earth.
+
+. . .
+
+::: panel-tabset
+### 1 - First life forms
+
+::: columns
+::: {.column width="50%"}
+-   The oldest evidence of life on earth may be as old as 4 billion years ago [@Dodd2017].
+-   After its appearance life remained pretty much the same and without much differentiation throughout the proterozoic era.
+:::
+
+::: {.column width="50%"}
+![](./2_earlyLife.png)
+:::
+:::
+
+### 2 - Cambrian explosion
+
+::: columns
+::: {.column width="50%"}
+-   Ediacaran diversity, between 635 and 542 MYA.
+    -   Mostly unskeletonized.
+    -   [*Charniodiscus*](https://www.frontiersin.org/files/Articles/785929/feart-09-785929-HTML-r2/image_m/feart-09-785929-g002.jpg), [*Kimberella*](https://en.wikipedia.org/wiki/Kimberella#/media/File:Kimberella_quadrata.jpg).
+-   Explosion of animal diversity in early Cambrian (542-480 MYA).
+    -   First dominated by small shelly fossils.
+    -   Brachiopoda and Mollusca.
+    -   Unique in its degree of diversity and disparity.
+:::
+
+::: {.column width="50%"}
+![Anatomy of the Cambrian explosion. After [@Marshall2006]](./3_cambrianExplosion.png){width="100%"}
+:::
+:::
+
+### 3 - Ordovician diversification
+
+::: columns
+::: {.column width="50%"}
+-   GOBE (Great Ordovician Biodiversification Event).
+-   Great diversification in the seas (Brachiopods, Gastropods, Bivalves).
+-   Landmasses invasion by plants and animals.
+-   It happened in a relatively small amount of time (ca. 485-460 MYA).
+:::
+
+::: {.column width="50%"}
+![Paleogeographic reconstruction of the Ordovician period [@Servais2010].](./4_gobe.jpg){width="70%"}
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+![A glimpse of the Smithsonian fossil collection! Image downloaded from [this](https://insider.si.edu/2015/12/smithsonian-scientists-trace-anthropocene-root-to-early-human-activity/) website.](./4_bis.jpg)
+
+## Fossil records and extinction rates
+
+| Taxon                   | Source           | Species' average (MY) |
+|-------------------------|------------------|-----------------------|
+| All invertebrates       | [@Raup1978]      | 11                    |
+| Marine invertebrates    | [@Valentine1970] | 5-10                  |
+| Marine animals          | [@Sepkoski1992]  | 5                     |
+| All fossil groups       | [@Simpson1952]   | 0.5-5                 |
+| Mammals                 | [@Martin1993]    | 5                     |
+| Cenozoic mammals        | [@Raup1978b]     | 1-2                   |
+| Diatoms                 | [@VanValen1973]  | 8                     |
+| Dinoflagellates         | [@VanValen1973]  | 13                    |
+| Planktonic foraminifera | [@VanValen1973]  | 7                     |
+| Echinoderms             | [@Durham1970]    | 6                     |
+
+Estimates of species lifespan from origin to extinction [@Lawton1995].
+
+------------------------------------------------------------------------
+
+![After @Raup1982](./5_exteven.png)
+
+------------------------------------------------------------------------
+
+1.  [Ordovician-Silurian]{style="color: blue;"}. 86% of life lost. Scientists theorize that there were two main phases to this extinction; a glaciation event and a heating event.
+2.  [Late Devonian]{style="color: blue;"}. 75% life lost. Global cooling. Algae blooming consumed vast amounts of oxygen in the oceans, suffocating many species.
+3.  [Permian-Triassic]{style="color: blue;"}. 96% of life lost. Volcanic activity in Siberia put out massive amounts of carbon dioxide into the atmosphere. Bacteria began producing methane, another greenhouse gas. Large quantities of both gases warmed the planet and combined with earth's water, making the ocean and rain acidic, creating a highly toxic environment for life.
+4.  [Triassic-Jurassic]{style="color: blue;"}. 80% of life lost. Volcanic eruption and/or asteroid.
+5.  [Cretaceous]{style="color: blue;"}. ca. 65% of life lost. The cretaceous-Paleogene extinction wiped out the dinosaurs. along with a significant portion of all life on Earth. A widely accepted theory is that an asteroid landed in the Yucatán Peninsula in Mexico and killed the dinosaurs.
+
+------------------------------------------------------------------------
+
+```{r descSpec, echo=FALSE, fig.align="center", out.width=1600, out.height=800, fig.cap='Number of described species. Data downloaded from [IUCN](https://www.iucnredlist.org/resources/summary-statistics) website.'}
+descSpec <- read.csv("./number-of-described-species.csv", header = T)
+descSpec <- descSpec %>% 
+  filter(Year == 2022)
+
+plot_ly(descSpec,
+  x = ~Number.of.described.species,
+  y = ~reorder(Entity, Number.of.described.species),
+  name = "SF Zoo",
+  type = "bar",
+  orientation = "h") %>% 
+  layout(xaxis = list(title = ''),
+         yaxis = list(title = ''))
+```
+
+## A little excercise...
+
+-   We saw that the majority of life on earth exploded and differentiated approximately in the last 600 MY.
+-   We also estimated that a single species persists on average 5 MY [@Lawton1995].
+-   Finally we will assume that the number of total species today is, roughly, 2.16 M.
+
+::: callout-important
+# Question
+
+Can you estimate what is the percentage of extant biodiversity compared to what is extinct?
+:::
+
+. . .
+
+```{r extinctSpecies}
+(specTurnover <- 600/5)
+(totalSpec <- 2.16 * specTurnover)
+(2.16*100)/totalSpec
+```
+
+. . .
+
+This means that more than 99% of all species that have ever lived are extinct today! [See also @Jablonski2004]
+
+## Another little excercise...
+
+::: callout-important
+# Question
+
+Based on the data we have, can you roughly estimate what is the proportion of species that went extinct outside of the mass extinction events? (Ordovician-Silurian 86%; Late Devonian 75%; Permian-Triassic 96%; Triassic-Jurassic 80%; Cretaceous. 65%; current number of species approx. 2.16 M; average life span for a species is 5 MY).
+:::
+
+. . .
+
+```{r outsideOfMassExtinc}
+100-((1*0.86)+(1*0.75)+(1*0.96)+(1*0.80)+(1*0.65))
+```
+
+. . .
+
+-   This means that 100% - 4% = 96% of all extinctions occurred [outside]{style="color: red;"} the mass extinction events.
+
+. . .
+
+-   The results from this little exercise are not so distant from what has been known in the scientific literature [@Raup1991].
+
+. . .
+
+-   These results tell us that extinction is a natural process.
+
+## Background extinction rate.
+
+-   If extinction is part of the natural process of evolution it should be possible to identify a [background-extinction]{style="color: red;"} rate, i.e. the natural extinction rate during periods in between major extinction events.
+-   If we can estimate a background-extinction rate it should also be possible to compare it across time to measure our current impact on biodiversity.
+-   The value we just used (\~5-10 MY) per species is a good approximation of the background extinction rate [@Lawton1995] and falls under the categories of extinction rate intended as species survival rate.
+-   Another way used to estimate extinction rate is based on the species-area estimate [@Chisholm2018].
+-   One of the estimate of extinction rate largely used is in million species years [MSY, @Pimm2006].
+
+------------------------------------------------------------------------
+
+-   The million species year extinction rate is based on the empirical estimate from known data on current extinction.
+-   It tells us how many extinctions we should expect in any sample where the sum of all of the years over all of the species under consideration is one million.
+-   For example, follow the fates of 10,000 bird species for one century and one should observe just one extinction [i.e., 1 E/MSY according to @Pimm2006].
+
+. . .
+
+::: callout-important
+# Question!
+98,334 species of birds have been described and 13 have gone extinct since 1900. Can you estimate the extinction rate?
+:::
+
+. . .
+
+```{r millionSpeciesYear}
+(13*10^6)/98334
+```
+
+. . .
+
+This means that the rates of extinctions in recent times (at least since we can document extinctions as they happen) seems to be dramatically increased [@Pimm2014]!
+
+------------------------------------------------------------------------
+
+-   The core idea is to find a background extinction rate that doesn't consider the influence of mass-extinction events and/or anthropic influence.
+-   We know from fossil records that species seem to persist \~1 MY. @Pimm1995 take the fossil evidence and turn it into a background extinction rate (i.e, a ratio between two quantities, the number of species extinct over time-species). In particular, 1 extinction (E) per $10^6$ species-years (MSY).
+
+. . .
+
+::: columns
+::: {.column width="33%"}
+$$
+\frac{x}{10000}=\frac{1}{10^6};
+$$
+
+$$
+x = \frac{1}{10^6}*10000; 
+$$
+
+$$
+x = 0.01
+$$
+:::
+
+::: {.column width="33%"}
+$$
+\frac{13}{98334}=\frac{x}{10^6}; 
+$$
+
+$$
+ x = \frac{13}{98334}*10^6;
+$$
+
+$$
+x = 132.202
+$$
+:::
+
+::: {.column width="33%"}
+$$
+\frac{191}{100000}=\frac{x}{10^6};
+$$
+
+$$
+x = \frac{191}{10^5}*10^6;
+$$
+
+$$
+x=1910
+$$
+:::
+:::
+
+------------------------------------------------------------------------
+
+## The sixth extinction!
+
+The overarching driver of species extinction is human population growth and per-capita consumption!
+
+-   1690 Dodo bird (*Raphus cucullatus*), extinct from predation by introduced pigs and cats.
+-   1768 Stellar's sea cow (*Hydrodamalis gigas*), extinct from hunting for fur and oil.
+-   1870 Labrador duck (*Camptorhynchus labradorius*), extinct from human competition for mussels and other shellfish.
+-   1900 Rocky mountain locust (*Melanoplus spretus*), extinct from habitat conversion to farmland.
+-   1936 Tasmanian wolf (*Thylacinus cynocephalus*), extinct from hunting, habitat loss, and competition with dogs.
+-   1952 Deepwater cisco fish (*Coregonus johannae*), extinct from competition and predation by introduced fishes.
+
+------------------------------------------------------------------------
+
+-   1962 Hawaii chaff flower (*Achyranthes atollensis*), extinct from habitat conversion to military installations.
+-   1989 Golden toad (*Incilius periglenes*), extinct from climate change or other impacts.
+-   2004 St. Helena olive tree (*Nesiota elliptica*), extinct from logging and plantations.
+
+(List available from the [Smithsonian](https://naturalhistory.si.edu/education/teaching-resources/paleontology/extinction-over-time) website.)
+
+![A documented example of the impact of introduced species on island environment.](./6_iverson.png)
+
+------------------------------------------------------------------------
+
+![After @Smith1993b.](./7_extSince1600.png)
+
+## To read for Tuesday March 26
+
+-   [What is Conservation Biology?](https://drive.proton.me/urls/CBS3TM5QHC#gOpewlLRifD2)
+-   [Nature conservation: priority-setting needs a global change](https://drive.proton.me/urls/X0V1FA768R#6RTvlJLtiFRa)
+
+# References

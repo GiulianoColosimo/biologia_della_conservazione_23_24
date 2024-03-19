@@ -45,6 +45,7 @@ library("gtsummary")
 # Questions?
 
 ## Topics
+
 ::: columns
 ::: {.column width="50%"}
 1.  [Introduction to conservation biology]{style="color: green;"}
@@ -176,7 +177,6 @@ for(i in 1:length(my_label)){
 
 ```
 
-
 ## Why should we care about Biodiversity?
 
 -   A more diverse combination of species (biological community) or, in other words, a more biodiverse system...
@@ -184,12 +184,11 @@ for(i in 1:length(my_label)){
     -   ... produces a more resistant environment [@Tilman1997; @Naeem2000].
     -   ... produces a more resilient environment [@Wilsey2000].
     -   ... produces more stable ecosystem processes [@Cardinale2012].
-
 -   Biodiversity is essential for food security and nutrition and offers key options for sustainable livelihoods (Convention on Biological Diversity, <https://www.cbd.int>).
 
 . . .
 
--   A key concept when talking about biodiversity is that of  **emergence**. This occurs when a complex entity has properties or behaviors that its parts do not have on their own, and emerge only when they interact in a wider whole [@WikiEmergence].
+-   A key concept when talking about biodiversity is that of **emergence**. This occurs when a complex entity has properties or behaviors that its parts do not have on their own, and emerge only when they interact in a wider whole [@WikiEmergence].
 
 ------------------------------------------------------------------------
 
@@ -389,7 +388,7 @@ Although as an applied concept we can measure it at multiple levels, the most wi
 ------------------------------------------------------------------------
 
 | Index           | Definition                                                                                                                                                                | Formula                                                                                    | Source           |
-|:----------------|:--------------------|:----------------|:----------------|
+|:----------------|:-------------------|:----------------|:----------------|
 | Alpha diversity | The diversity of species within an ecological community. Described as a measure of species richness (number of species) and evenness (the relative abundance of species). | $H = - \sum_i^s \ p_i \ ln(p_i),$ \n$\ (i=1, 2, 3,...,s),$ \n$\ \ (0 \le H^{'}\le \infty)$ | [@VanDyke2020]   |
 | Beta diversity  | Measure of diversity among communities. A measure of the gradient of species composition across a landscape.                                                              | $S/\alpha-1$                                                                               | [@Whittaker1975] |
 | Gamma diversity | Biodiversity of species across larger landscape levels.                                                                                                                   | $dS/dD[(g+l)/2]$                                                                           | [@Cody1986]      |
@@ -550,7 +549,7 @@ ncol(plantDivExcercise[6:9, ])/mean(specnumber(plantDivExcercise[6:9, ])) - 1
 
 The @Whittaker1975 formula: $\beta=(S/\alpha)-1$, where $S$ is the total number of species in the area, and $\alpha$ is the average species diversity in the area. $\beta$ diversity gives us an index of species turnover along a geographic gradient.
 
-<br>
+<br/>
 
 ```{r betareview, echo=F}
 library("vegan")
@@ -565,14 +564,13 @@ plantDivExcercise[1:4, ] |>
   gt()
 ```
 
-<br>
+<br/>
 
 $$
 \beta=\frac{5}{(5+4+5+5)/4}-1=0.052
 $$
 
 ------------------------------------------------------------------------
-
 
 ## Biodiversity distribution
 
