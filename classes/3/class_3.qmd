@@ -391,7 +391,7 @@ Based on the data we have, can you roughly estimate what is the proportion of sp
 
 ::: callout-important
 # Question!
-98,334 species of birds have been described and 13 have gone extinct since 1900. Can you estimate the extinction rate?
+1230 species of birds have been described since 1900. This cohort has accumulated 98334 species-years, meaning that one species has been known for 80 years. Since their description, 13 have gone extinct. Can you estimate the extinction rate?
 :::
 
 . . .
@@ -402,7 +402,7 @@ Based on the data we have, can you roughly estimate what is the proportion of sp
 
 . . .
 
-This means that the rates of extinctions in recent times (at least since we can document extinctions as they happen) seems to be dramatically increased [@Pimm2014]!
+This means that the rates of extinctions in recent times (at least since we can document extinctions as they happen) seems to be dramatically increased [1]!
 
 ------------------------------------------------------------------------
 

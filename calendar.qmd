@@ -1,0 +1,85 @@
+---
+title: "Calendar"
+author: Giuliano Colosimo
+date: "2024-03-29"
+date-modified: "2024-03-29"
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("calendR",
+       "ggthemes",
+       "lubridate",
+       "scales",
+       "tidyverse",
+       "XML", "xml2")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+
+
+```{r echo=FALSE}
+#| out-width: 100%
+
+dates <- seq(as.Date("2024-04-01"), as.Date("2024-04-30"), by = "1 day")
+events <- ifelse(format(dates, "%w") %in% c(6, 0), "Weekend", NA)
+events[c(4, 9, 11, 16, 18, 23)] <- "Class"
+events[30] <- "Exam"
+calendR(month = 4,
+        start = "M",
+        special.days = events,
+        special.col = c("green", "red", "gray"),
+        legend.pos = "bottom",
+        pdf = F, 
+        day.size = 3, 
+        weeknames.size = 4, 
+        title = "April",
+        subtitle="2024",
+        text = c("Falvo", "D'Alessandro", "Piroli"),
+        text.pos = c(16, 18, 23),        
+        text.size = 2.5,              
+        text.col = "black")
+```
+
+
+
+```{r echo=FALSE}
+#| out-width: 100%
+
+dates <- seq(as.Date("2024-05-01"), as.Date("2024-05-31"), by = "1 day")
+events <- ifelse(format(dates, "%w") %in% c(6, 0), "Weekend", NA)
+events[c(2, 7, 9, 14, 16, 21, 23, 28, 30)] <- "Class"
+calendR(month = 5,
+        start = "M",
+        special.days = events,
+        special.col = c("green", "gray"),
+        legend.pos = "bottom",
+        pdf = F, 
+        day.size = 3, 
+        weeknames.size = 4, 
+        title = "May",
+        subtitle="2024",
+        text = c("Troncone", "Garcia", "Spera", "Cacciuni", "Bonventre", "Palmeri", "Toti"),
+        text.pos = c(2, 7, 9, 14, 16, 21, 23),        
+        text.size = 2.5,              
+        text.col = "black")
+```
+
+
+| Student      | Title            |
+|--------------|------------------|
+| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)      |
+| D'ALESSANDRO | [Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding](https://drive.proton.me/urls/HQMV65ETB0#vB21xDrPrAXN) |
+| PIROLI       | [First evidence of recruitment in critically endangered Galapagos pink iguanas](https://drive.proton.me/urls/TD1F4DDC70#hzwxC3gFnM51)  |
+| TRONCONE     | [Genetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe](https://drive.proton.me/urls/SW4YPN2ZGC#RWYgHuXfrvK4)   |
+| GARCIA       | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)    |
+| SPERA        | [Accelerated modern human-induced species losses entering the sixth mass extinction](https://drive.proton.me/urls/TQTJYX0CFR#vp0NSA7IbAva)     |
+| CACCIUNI     | [Island differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons](https://drive.proton.me/urls/A4H4P4BPQ4#qyJ15T7yUTeu)  |
+| BONVENTRE    | [What is conservation Science?](https://drive.proton.me/urls/9NB7Y2T0T0#txxxIMgzHPIo)  |
+| PALMERI      | [Herbarium specimens reveal the footprint of climate change on flowering trends across North America](https://drive.proton.me/urls/A8Z10R82RR#LFqcygcJtOjj)  |
+| TOTI         | [Synergies among extinction drivers under global change](https://drive.proton.me/urls/HZ2HRWEMXR#IFj88GjFUk78)    |

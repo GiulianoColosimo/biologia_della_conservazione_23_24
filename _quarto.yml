@@ -19,8 +19,10 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      - href: contact.qmd
-        text: "Contact"
+      - text: "Calendar"
+        href: calendar.qmd
+      - text: "Contact"
+        href: contact.qmd
 
   sidebar:
     logo: "./figures/avatar.jpg"
@@ -39,6 +41,10 @@ website:
             text: "Class 2 - Biodiversity"
           - href: ./classes/3/class_3.html
             text: "Class 3 - Biodiversity & Extinctions"  
+          - href: ./classes/4/class_4.html
+            text: "Class 4 - Populations (1)"  
+          #- href: ./classes/5/class_5.html
+          #  text: "Class 5 - Populations (2)"  
 
 
     tools:

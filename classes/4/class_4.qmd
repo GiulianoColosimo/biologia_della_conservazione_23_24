@@ -1,0 +1,305 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 4 - Populations (1)"
+date: "2024-03-26"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("readxl")
+library("plotly")
+```
+
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: orange;"}
+5.  [Basics of conservation genetics]{style="color: blue;"}
+6.  [Genetic drift]{style="color: blue;"}
+7.  [Effective population size]{style="color: blue;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+# Populations
+
+## Whats is a population?
+
+> All individuals of the same species coexisting at the same time and in the same geographic area [@VanDyke2020].
+
+-   This definition is strictly biological, but it could be more complex when we refer to individuals that are harvested, threatened or are perceived controversially by the public opinion.
+-   In the above cases, a population may be defined using political and social arguments rather than biological ones.
+-   For example, Michigan and Wisconsin, manage their Wolf (*Canis lupus*) population independently even though they are neighbouring states and even though wolf individuals, obviously, move across the boundaries as they please.
+
+--- 
+
+-   Even if they "feel" artificial, political and social perspectives should always be considered when defining populations, as politicians are the ones that ultimately support or deny conservation policies.
+-   Populations mutate over time due to individuals reproducing or dying, migrating or dispersing.
+-   We can study populations by understanding how probable each one of these event is, and what factors influence these probabilities.
+-   This is what population demography does!
+-   We distinguish primarily between intrinsic factors (characteristics and behavior of the population) and extrinsic factors (environmental and ecological processes).
+-   The ultimate goal of studying demographic processes is to avoid extinction! The process of extinction hardly happens over night, and is usually preceded by population decline [@VanDyke2020].
+
+---
+
+-   The simplest model of population dynamic can be understood as the sum of births (B) and migrants entering the populations (I) minus mortality (D) and individuals leaving or exiting the population (E).
+
+$$
+\label{popmod}
+\tag{4.1}
+N_{(t+1)} = N_{(t)} + (B_t + I_t) - (D_t + E_t)
+$$
+
+-   If a population is increasing exponentially (i.e., increasing with and increasing rate over time) its growth will be defined by $N$ and a rate of increase $r$ which is rate of birth minus rate of death.
+-   Without considering migration (neither in nor out of the population) $B$ becomes a function of birth rate ($b$) and the population size $N$.
+-   Similarly, the number of deaths ($D$) is a function of $d$ the per capita death rate, and population size.
+
+---
+
+```{r echo=FALSE, fig.align='center'}
+# Exponential growth
+expgrowth <- NULL
+for(i in 1:15){
+ expgrowth <- c(expgrowth, 2^i)
+}
+plot(expgrowth, xlab = "Time", ylab = "Pop. size (N)", type = "l", xaxt='n', yaxt='n', main = "Exponential growth curve")
+```
+
+-   In exponential growth change in numbers over change in time is expressed as:
+
+$$
+\label{expgrth}
+\tag{4.2}
+\frac{\delta N}{\delta t} = rN 
+$$
+
+---
+
+-   The exponential growth curve is a good starting point, altough unrealistic for most species.
+-   A more realistic model should account for species' ecology and the fact that species exist in their environment.
+-   The limits imposed by the environment are usually identified using $K$, i.e. the carrying capacity.
+
+$$
+\label{expgrthcc}
+\tag{4.3}
+\frac{\delta N}{\delta t} = rN (\frac{K-N}{K})
+$$
+
+-   Changes in $N$ directly influence the growth rate of the population: density dependence.
+
+---
+
+```{r echo=FALSE, eval=TRUE, include=FALSE}
+logPopGrowth <- function(k, n, r){
+  
+  loggrowth <- NULL
+  
+  while (n < k) {
+    print(n)
+    n <- n*r*((k-n)/k)
+    loggrowth <- c(loggrowth, n)
+
+    if(length(loggrowth) > 1){
+      if (loggrowth[length(loggrowth)-1] == n) {
+        break
+      }
+    }
+    
+  }
+  
+  return(loggrowth)
+}
+
+x <- logPopGrowth(10000, 2, 1.1)
+```
+
+```{r echo=FALSE, fig.align='center'}
+plot(x[1:150], xlab = "Time", ylab = "Pop. size (N)", type = "l", xaxt='n', yaxt='n', main = "Logistic growth curve")
+abline(h = max(x) + 1, col = "red", lty = 2)
+text(35, max(x) - 40, "Carrying capacity (K)", col = "red")
+```
+
+
+## Capture-Mark-Recapture (CMR) experiments
+
+-   It is often impractical and impossible to count every single individual in a population.
+-   Capture-Mark-Recapture is a method to estimate the population's size.
+-   Some individual are captured and marked.
+-   The marked individuals are released in their environment.
+-   A second sampling trip is conducted and another portion of the individuals are collected.
+-   The number of marked individuals collected in the second expedition is expected to be proportional to the number of marked individuals in the entire population.
+-   It is important to have sufficient time between sampling occasions, to allow for the marked individuals to redistribute themselves among the unmarked population.
+
+## Tagging systems
+
+::: columns
+::: {.column width="50%"}
+-   A tagging system is a system allowing us to tag and label things to provide those things a unique identifier.
+-   People have been tagging animals (wild and captive) for hundreds of years and have developed different ways to tag pretty much every single living things.
+-   An animal tag can be as simple as a piece of metal or plastic with a number carved on it or with a standardized meaning.
+:::
+
+::: {.column width="50%"}
+![A male *Cyclura carinata* with colored bead tags. Photo credits: Giuliano Colosimo.](./class_4_1.png)
+:::
+:::
+
+## Passive integrated transponders
+
+::: columns
+::: {.column width="50%"}
+-   More sophisticated tags based on radio-frequency identification (RFID).
+-   When the tag is within reach of a specific radio frequency, it emits a signal containing an alpha-numeric code unique to the animal it has been implanted.
+-   Widely used for wildlife fauna, especially in long-term capture-mark-recapture studies.
+-   They generally do not carry any other information but the individual's ID.
+:::
+
+::: {.column width="50%"}
+![A Passive Integrated Transponder by Trovan®. Photo credits: Giuliano Colosimo.](./class_4_2.png)
+:::
+:::
+
+## Patterns tagging
+
+::: columns
+::: {.column width="50%"}
+#### Toes and nail clipping
+
+![This image is from @Waichman1992. The author describes all possible combination of toe clipping to uniquely identify individuals](./class_4_3.png)
+:::
+
+::: {.column width="50%"}
+#### Features tag
+
+![Toads of the genus *Bombina* have unique spotted patterns. Photo credits: [marioeffe](https://www.naturamediterraneo.com/forum/topic.asp?TOPIC_ID=273624)](./class_4_4.png){fig-align="center"}
+:::
+:::
+
+## Photo tagging
+
+![Development of a photo recognition software to identify iguanas in the wild. Image courtesy of Nathalie Duporge.](./class_4_5.png)
+
+------------------------------------------------------------------------
+
+## Satellite tags
+
+-   More complex electronic devices that not only identify an individual, but also provide useful information about that animal and its environment [@Loreti2019; @Loreti2020; @Colosimo2022b].
+
+![A male *Conolophus marthae* with a Wireless Sensor Node (WSN) attached behind its hindlegs. This is a more sofisticated electronic tag that not only allows to identify the individual but also allows to collect important information such as GPS data, temperature and UV light. Photo credits: Giuliano Colosimo.](./class_4_6.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Estimates of census population size
+
+A conservationist is working on a critical endangered species and needs to estimate how many individuals are left. He/she goes to the field and captures 15 individuals. These individuals are tagged and released on site. One week later the researcher comes back and catches 20 individuals, 10 of which are tagged.
+
+Lets define some variables as:
+
+-   $N$ = Number of animals in the population.
+-   $n$ = Number of animals marked on the first visit.
+-   $K$ = Number of animals captured on the second visit.
+-   $k$ = Number of animals captured in the second visit that were marked (i.e., recaptured individuals).
+
+We want to use the data we collected in the field to have an estimate of $N$.
+
+------------------------------------------------------------------------
+
+## Lincoln-Petersen estimator of N [@Seber1982]
+
+::: columns
+::: {.column width="50%"}
+-   Useful with only two sampling events.
+-   Assumes that $N$ is constant over the time of the experiment (i.e., there are no deaths or births).
+-   Assumes a closed population (i.e., there are no migrants).
+-   Catchability is the same among individuals, even the tagged ones.
+-   Tags are not lost between sampling events.
+-   Individuals have the time to randomly redistribute over their habitat.
+:::
+
+::: {.column width="50%"}
+-   $N$ = Number of animals in the population.
+-   $n$ = Number of animals marked on the first visit.
+-   $K$ = Number of animals captured on the second visit.
+-   $k$ = Number of animals captured in the second visit that were marked (i.e., recaptured individuals).
+
+$$
+\label{lp}
+\tag{4.4}
+N=\frac{K*n}{k}
+$$
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Schnable estimator of $N$
+
+::: columns
+::: {.column width="50%"}
+-   Extension of the LP estimator.
+-   Same assumptions of LP.
+-   Allows to incorporate $s$ sampling events in the calculation.
+-   It depends simply on observing how the proportion of marked animals in catches increases as more animals have been marked [@Sutherland1996].
+:::
+
+::: {.column width="50%"}
+-   $N$ = Number of animals in the population.
+-   $n_i$ = Number of animals captured on $i^{th}$ visit.
+-   $m_i$ = Number of animals marked on $i^{th}$ visit.
+-   $k_i$ = Number of animals captured on $i^{th}$ visit that were marked (i.e., recaptured individuals).
+-   $s$ = Number of visits
+
+$$
+\label{schnable}
+\tag{4.5}
+N=\frac{\sum_{i=1}^s  n_i*m_i}{\sum_{i=1}^s k_i}
+$$
+:::
+:::
+
+
+
+## References
