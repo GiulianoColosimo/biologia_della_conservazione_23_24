@@ -1,6 +1,6 @@
 ---
 title: "Biologia della Conservazione"
-subtitle: "Class 5 - Populations (2)"
+subtitle: "Class 5 - Populations (2) - Intro to Conservation Genetics"
 date: "2024-04-04"
 footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
 logo: ../../figures/Tor-Vergata_logo_cmyk.png
