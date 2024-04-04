@@ -30,10 +30,10 @@ citecolor: "red"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 x <- c("calendR", "dplyr",
-       "ggthemes",
-       "lubridate",
-       "scales",
-       "tidyverse",
+       "ggthemes", "diagram",
+       "lubridate", "phylogram",
+       "scales", "ggtree", "tidytree",
+       "tidyverse", "stringr", "DT",
        "XML", "xml2", "kableExtra", "gt", "gtExtras")
 lapply(x, require, character.only = T)
 rm(x)
@@ -64,7 +64,7 @@ calendR(month = 4,
         text.col = "black")
 ```
 
----
+------------------------------------------------------------------------
 
 ```{r echo=FALSE}
 #| out-width: 100%
@@ -100,68 +100,65 @@ studsAssignment[, c(1,2)] |>
               column_labels.font.weight = "bold")
 ```
 
-
-| Student      | Title            |
-|--------------|------------------|
-| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)      |
+| Student      | Title                                                                                                                                                                                                        |
+|--------------------------------|----------------------------------------|
+| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)                                                                        |
 | D'ALESSANDRO | [Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding](https://drive.proton.me/urls/HQMV65ETB0#vB21xDrPrAXN) |
-| PIROLI       | [First evidence of recruitment in critically endangered Galapagos pink iguanas](https://drive.proton.me/urls/TD1F4DDC70#hzwxC3gFnM51)  |
-| TRONCONE     | [Genetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe](https://drive.proton.me/urls/SW4YPN2ZGC#RWYgHuXfrvK4)   |
+| PIROLI       | [First evidence of recruitment in critically endangered Galapagos pink iguanas](https://drive.proton.me/urls/TD1F4DDC70#hzwxC3gFnM51)                                                                        |
+| TRONCONE     | [Genetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe](https://drive.proton.me/urls/SW4YPN2ZGC#RWYgHuXfrvK4)                                    |
 
----
+------------------------------------------------------------------------
 
-| Student      | Title            |
-|--------------|------------------|
-| GARCIA       | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)    |
-| SPERA        | [Accelerated modern human-induced species losses entering the sixth mass extinction](https://drive.proton.me/urls/TQTJYX0CFR#vp0NSA7IbAva)     |
-| CACCIUNI     | [Island differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons](https://drive.proton.me/urls/A4H4P4BPQ4#qyJ15T7yUTeu)  |
-| BONVENTRE    | [What is conservation Science?](https://drive.proton.me/urls/9NB7Y2T0T0#txxxIMgzHPIo)  |
-| PALMERI      | [Herbarium specimens reveal the footprint of climate change on flowering trends across North America](https://drive.proton.me/urls/A8Z10R82RR#LFqcygcJtOjj)  |
-| TOTI         | [Synergies among extinction drivers under global change](https://drive.proton.me/urls/HZ2HRWEMXR#IFj88GjFUk78)    |
-
+| Student   | Title                                                                                                                                                                                    |
+|--------------------------------|----------------------------------------|
+| GARCIA    | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)                                           |
+| SPERA     | [Accelerated modern human-induced species losses entering the sixth mass extinction](https://drive.proton.me/urls/TQTJYX0CFR#vp0NSA7IbAva)                                               |
+| CACCIUNI  | [Island differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons](https://drive.proton.me/urls/A4H4P4BPQ4#qyJ15T7yUTeu) |
+| BONVENTRE | [What is conservation Science?](https://drive.proton.me/urls/9NB7Y2T0T0#txxxIMgzHPIo)                                                                                                    |
+| PALMERI   | [Herbarium specimens reveal the footprint of climate change on flowering trends across North America](https://drive.proton.me/urls/A8Z10R82RR#LFqcygcJtOjj)                              |
+| TOTI      | [Synergies among extinction drivers under global change](https://drive.proton.me/urls/HZ2HRWEMXR#IFj88GjFUk78)                                                                           |
 
 ## Nature conservation: priority-setting needs a global change [@Freudenberger2013]
 
 ### Synopsis
 
-- Limited resources dedicated to conservation call for an efficient prioritization scheme
-- Priority setting scheme based on ecological indicators as well as social end economic indicators
-- Aim is to prioritize areas that not only provide the most ecosystem services but show high adaptive capacity towards the changing environment
+-   Limited resources dedicated to conservation call for an efficient prioritization scheme
+-   Priority setting scheme based on ecological indicators as well as social end economic indicators
+-   Aim is to prioritize areas that not only provide the most ecosystem services but show high adaptive capacity towards the changing environment
 
 ### Keywords
 
-- Interdisciplinary conservation planning
-- Proactive conservation planning 
-- Climate change; Insensa GIS
+-   Interdisciplinary conservation planning
+-   Proactive conservation planning
+-   Climate change; Insensa GIS
 
----
+------------------------------------------------------------------------
 
 ### Premises
 
-- Political decisions about what to conserve are often based on ethical and philosophical principles
-- For example, prioritization of charismatic species is driven by societal preferences
-- Other factors, based on ecological theory and practical assumptions, play a role in such decisions
-- While it is possible to integrate many different perspectives at the local scale, it gets harder to do so at a global scale
+-   Political decisions about what to conserve are often based on ethical and philosophical principles
+-   For example, prioritization of charismatic species is driven by societal preferences
+-   Other factors, based on ecological theory and practical assumptions, play a role in such decisions
+-   While it is possible to integrate many different perspectives at the local scale, it gets harder to do so at a global scale
 
-> Anthropogenic environmental change, more specifically the combined effects of
-expanding and intensifying human land use and climate change, push many of Earth’s ecosystems close to their tipping points, and in some cases beyond thresholds of tolerance [@Freudenberger2013]
+> Anthropogenic environmental change, more specifically the combined effects of expanding and intensifying human land use and climate change, push many of Earth’s ecosystems close to their tipping points, and in some cases beyond thresholds of tolerance [@Freudenberger2013]
 
----
+------------------------------------------------------------------------
 
-- Globally speaking, there is no unifying aim to prevent that the ecosystem reaches a point of no return
-- Conservation approaches on a global scale often fail to understand the complexity inherent to the interaction of biodiversity loss and the processes of global change causing it and, in a positive feedback spiral, fueling this process
-- It is necessary to adopt a complex whole ecosystem approach
-- The concept of ecosystem thermodynamics has been proposed
+-   Globally speaking, there is no unifying aim to prevent that the ecosystem reaches a point of no return
+-   Conservation approaches on a global scale often fail to understand the complexity inherent to the interaction of biodiversity loss and the processes of global change causing it and, in a positive feedback spiral, fueling this process
+-   It is necessary to adopt a complex whole ecosystem approach
+-   The concept of ecosystem thermodynamics has been proposed
 
----
+------------------------------------------------------------------------
 
 ![Conservation priority-setting indices combining EcoWise, SocioWise and ClimateWise priorities with equal weighting of all indicators (a), SocioWise and ClimateWise priorities (b), EcoWise and ClimateWise priorities (c), EcoWise and SocioWise priorities (d), Coefficient of variation corresponding to index values prior normalization (e) and frequency of achieving more than 80 % of the maximum index value over 20 index variations (f) (compare with Table 1). Blue to yellow areas indicate low to high values. Data of a, b, c and d were normalized to a range of 0--100. Class breaks have been calculated with the Jenks Breaks algorithm. After @Freudenberger2013](./consPriorities_1.png)
 
 ## Beta diversity
 
-- Beta diversity, as proposed by @Whittaker1975, is a measure of species uniqueness between local areas
-- High values of beta diversity correspond to greater variability in species composition between local areas within a region
-- There are many formulation of this index. The simpler one is a measure of species turnover, calculated as $\beta=(S/\alpha)-1$, with $S$ as the total number of species in the region, and $\alpha$ as the average number of species per site within the region
+-   Beta diversity, as proposed by @Whittaker1975, is a measure of species uniqueness between local areas
+-   High values of beta diversity correspond to greater variability in species composition between local areas within a region
+-   There are many formulation of this index. The simpler one is a measure of species turnover, calculated as $\beta=(S/\alpha)-1$, with $S$ as the total number of species in the region, and $\alpha$ as the average number of species per site within the region
 
 . . .
 
@@ -181,7 +178,7 @@ knitr::kable(pdiv,
   kable_styling(font_size = 30, full_width = T)
 ```
 
----
+------------------------------------------------------------------------
 
 $$
 \beta=\frac{5}{(5+4+5+5)/4}-1 = 0.052
@@ -189,8 +186,7 @@ $$
 
 . . .
 
-
-- Another working example
+-   Another working example
 
 ```{r betareview2, echo=F}
 pdiv2 <- data.frame(Sp_1 = c(22, 0, 0, 0),
@@ -212,21 +208,21 @@ $$
 
 ## Background extinction rate
 
-- From fossil records we know that fossil species last from $10^6$ to $10^7$ years [@Pimm1995]
-- At this rate, we should observe one extinction in any sample where the sum of all of the years over all of the species under consideration is one million
-- Follow the fates of 10,000 bird species for one century, for example, and one should observe just one extinction
+-   From fossil records we know that fossil species last from $10^6$ to $10^7$ years [@Pimm1995]
+-   At this rate, we should observe one extinction in any sample where the sum of all of the years over all of the species under consideration is one million
+-   Follow the fates of 10,000 bird species for one century, for example, and one should observe just one extinction
 
 . . .
 
-- 1230 species of birds have been described since 1900. Since their description, 13 have gone extinct. This cohort has accumulated 98334 species-years, meaning that one species has been known for 80 years. How does this extinction rate compare with the background extinction rate?
+-   1230 species of birds have been described since 1900. Since their description, 13 have gone extinct. This cohort has accumulated 98334 species-years, meaning that one species has been known for 80 years. How does this extinction rate compare with the background extinction rate?
 
 ::: columns
 ::: {.column width="50%"}
 $$
 \frac{x}{10000}=\frac{1}{10^6}
 $$
-
 :::
+
 ::: {.column width="50%"}
 $$
 \frac{13}{98334}=\frac{x}{10^6} 
@@ -266,35 +262,34 @@ $$
 
 ## Jolly-Seber
 
-- Jolly-Seber [@Jolly1965; @Seber1982] is the method of election to estimate N starting from multiple sampling occasions
+-   Jolly-Seber [@Jolly1965; @Seber1982] is the method of election to estimate N starting from multiple sampling occasions
 
-- When working with multiple sampling occasions we first need to work out some numbers that will be useful to estimate the quantity of interest
+-   When working with multiple sampling occasions we first need to work out some numbers that will be useful to estimate the quantity of interest
 
-- The following set of four numbers are needed in order to begin the calculation
+-   The following set of four numbers are needed in order to begin the calculation
 
-    - $n_i$ = total number of animals caught in the $i^{th}$ sample
-    - $R_i$ = number of animals that are released after the $i^{th}$ sample
-    - $m_i$ = number of animals in the $i^{th}$ sample that carry marks from previous captures
-    - $m_{ij}$ = number of animals in the $i^{th}$ sample that were most recently caught in the $j^{th}$ sample
+    -   $n_i$ = total number of animals caught in the $i^{th}$ sample
+    -   $R_i$ = number of animals that are released after the $i^{th}$ sample
+    -   $m_i$ = number of animals in the $i^{th}$ sample that carry marks from previous captures
+    -   $m_{ij}$ = number of animals in the $i^{th}$ sample that were most recently caught in the $j^{th}$ sample
 
----
+------------------------------------------------------------------------
 
 ![Capture history of sampled individuals. After @Sutherland1996, p. 121](./js_1.png)
 
----
+------------------------------------------------------------------------
 
 ![Summary of capture data from previous table. After @Sutherland1996, p. 121](./js_2.png)
 
----
+------------------------------------------------------------------------
 
-- Having worked out the numbers with various capture histories and used these to produce the
-four sets of key numbers
+-   Having worked out the numbers with various capture histories and used these to produce the four sets of key numbers
 -   $z_i$ = the number of animals caught both before and after the $i^{th}$ sample but not in the $i^{th}$ sample itself.
 -   $r_i$ = the number of animals that were released from the $i^{th}$ sample and were subsequently recaptured [@Sutherland1996].
 
 ![Capture history data sourced from @Jolly1965](./js_3.png)
 
----
+------------------------------------------------------------------------
 
 -   $M_i$ = number of marked animals in the population when the $i^{th}$ sample is taken (but not including animals newly marked in the $i^{th}$ sample).
 
@@ -319,15 +314,15 @@ $$
     M_{i+1}/(M_i − m_i + R_1)
     $$
 
----
+------------------------------------------------------------------------
 
--   $B_i$ = number of animals that enter the population between the $i^{th}$ and $(i + 1)^{th}$ samples and survive until the $(i + 1)^{th}$ sampling occasion. 
+-   $B_i$ = number of animals that enter the population between the $i^{th}$ and $(i + 1)^{th}$ samples and survive until the $(i + 1)^{th}$ sampling occasion.
 
 $$
     \label{bi}
     \tag{5.4}
     N_{i+1} − \phi_i (N_i − n_i + R_i)
-$$ 
+$$
 
 -   $M_2 = 10 + (143 + 1)14/(80 + 1) = 34.89$
 
@@ -339,8 +334,346 @@ $$
 
 <br/>
 
-- Note that one cannot calculate $M$ for the last sample, $N$ for the first or last, $\phi$ for the last
-two and $B$ for the first or last two. $M_1$ is always zero.
+-   Note that one cannot calculate $M$ for the last sample, $N$ for the first or last, $\phi$ for the last two and $B$ for the first or last two. $M_1$ is always zero.
 
+## Basics of conservation genetics
+
+-   Genetics (and genomic) have an important role in conservation biology and towards the protection of biodiversity.
+
+```{r biodivblockingfounds, echo=FALSE, fig.align='center', fig.cap='Main biodiversity levels.'}
+pos <- coordinates(c(1, 1, 1, 1, 1, 1))
+pos[1,1] <- 0.1
+pos[2,1] <- 0.31
+pos[3,1] <- 0.51
+pos[4,1] <- 0.71
+pos[5,1] <- 0.91
+pos[6,1] <- 0.5
+
+my_label <- c("Genes",
+              "Species",
+              "Habitats",
+              "Landscapes",
+              "Ecosystems",
+              "Biodiversity")
+
+my_text_size <- 1.5
+my_edge_length <- .08
+par(mar = rep(1, 4))
+
+openplotmat()
+straightarrow(from = pos[1, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[2, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[3, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[4, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+straightarrow(from = pos[5, ], to = pos[6, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[1, ], to = pos[2, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[2, ], to = pos[3, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[3, ], to = pos[4, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+bentarrow(from = pos[4, ], to = pos[5, ], lcol = "blue", lwd = 4, arr.col = "red", lty = 2)
+
+for(i in 1:length(my_label)){
+  if (i == 1) {
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length, 
+             lab = my_label[i], 
+             cex = my_text_size, 
+             box.col = "yellow", col = "black")
+  } else if (i == 2){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 3){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 4){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 5){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "red", col = "white")
+  } else if (i == 6){
+    textrect(mid = pos[i,],
+             radx = my_edge_length,
+             rady = my_edge_length,
+             lab = my_label[i],
+             cex = my_text_size,
+             box.col = "green")
+  } 
+}
+```
+
+------------------------------------------------------------------------
+
+-   Darwin was the first to consider the importance of genetics and evolution in the persistence of natural populations. He postulated that because of the reduced population size of deer in British natural reserves they may experience loss of vigor [@Darwin1896]
+-   The modern concern for genetics in conservation began in the 1970s when Frankel began to raise the alarm about the loss of primitive crop varieties and their replacement by genetically uniform cultivars [@Frankel1970; @Frankel1974]
+-   Most articles dealing with conservation and genetics fit into one of the five general categories [@Allendorf2022]:
+
+::: panel-tabset
+### 1
+
+Management and reintroduction of captive populations, and the restoration of biological communities
+
+### 2
+
+Description and identification of individuals, genetic population structure, kin relationships, and taxonomic relationships
+
+### 3
+
+Detection and prediction of the effects of habitat loss, fragmentation, isolation, and genetic rescue
+
+### 4
+
+Detection and prediction of the effects of hybridization and introgression
+
+### 5
+
+Understanding the relationships between fitness of individuals or local adaptation of populations and environmental factors
+:::
+
+------------------------------------------------------------------------
+
+-   As in other sciences, conservation genetics has benefited from the use of model organisms for experiments as well as modelistic and numerical approaches
+-   How much gene flow is required to prevent the inbreeding effects of small population size?
+    -   We can use species with short generation time and easy to control (*Drosophila*, peas, *Arabidopsis thaliana*) to make empirical experiments and answer the above question
+-   Describing individuals from a molecular genetic standpoint can also help to better understand the basic biology of species and populations [@Allendorf2022]
+    -   Total population size can be estimated from the genotypes in populations that are difficult to sample with the classic methodologies [@Luikart2010]
+-   Genetic analysis can help detecting cryptic effects of climate change on the distribution of species [@Allendorf2022]
+    -   @Gurgel2020 documented the reduction in genetic diversity after a heatwave despite the sea weed population had recovered
+
+------------------------------------------------------------------------
+
+```{r genVSgenom, echo=FALSE, fig.align='center', fig.cap='Interacting factors in conservation of natural populations. Difference between factors that could be adressed with traditional conservation genetics tools (neutral  markers; in blue) and genomic approach (red). Adapted from @Allendorf2022'}
+pos <- coordinates(c(2, 1, 3, 3, 3, 1, 1))
+pos[1,1] <- 0.1
+pos[1,2] <- 0.93
+pos[2,1] <- 0.3
+pos[2,2] <- 0.93
+pos[3,1] <- 0.55
+pos[3,2] <- 0.85
+pos[4,1] <- 0.2
+pos[5,1] <- 0.4
+pos[6,1] <- 0.8
+pos[6,2] <- 0.74
+pos[7,1] <- 0.2
+pos[7,2] <- 0.45
+pos[9,1] <- 0.7
+pos[10,1] <- 0.2
+pos[10,2] <- 0.25
+pos[11,1] <- 0.4
+pos[12,1] <- 0.7
+pos[12,2] <- 0.25
+pos[13,2] <- 0.2
+pos[14,1] <- 0.35
+pos[14,2] <- 0.05
+
+
+my_label <- c("Population size",
+              "Population structure",
+              "Migration rates",
+              "Genetic drift",
+              "Inbreeding",
+              "Hybridization",
+              "Loss of genetic \ndiversity",
+              "Gen.-by-env. \ninteraction",
+              "Local adaptation",
+              "Loss of adaptive \nvariation",
+              "Inbreeding \ndepression",
+              "Outbreeding \ndepression",
+              "Demographic vital \nrates",
+              "Population growth \nor viability")
+
+my_text_size <- .8
+my_edge_height <- .05
+my_edge_width <- .08
+par(mar = rep(2, 4))
+
+openplotmat()
+straightarrow(from = pos[2, ],   to = pos[3, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[1, ],   to = pos[4, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[1, ],   to = pos[5, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[3, ],   to = pos[4, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+bentarrow(    from = pos[3, ],   to = pos[5, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              path = "V", arr.pos = 0.1)
+straightarrow(from = pos[3, ],   to = pos[9, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[4, ],   to = pos[7, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.55)
+straightarrow(from = pos[5, ],   to = pos[11, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+bentarrow(    from = pos[6, ],   to = pos[12, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              path = "V", arr.pos = 0.7, arr.side = 1)
+straightarrow(from = pos[7, ],   to = pos[10, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.55)
+straightarrow(from = pos[8, ],   to = pos[9, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+bentarrow(    from = pos[8, ],   to = pos[11, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              path = "V", arr.pos = 0.8, arr.side = 1)
+straightarrow(from = pos[8, ],   to = pos[12, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[9, ],   to = pos[12, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[10, ],  to = pos[13, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+straightarrow(from = pos[11, ],  to = pos[13, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.55)
+straightarrow(from = pos[12, ],  to = pos[13, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+bentarrow(    from = pos[13, ],  to = pos[14, ], lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              path = "V", arr.pos = 0.1)
+bentarrow(    from = pos[14, ],  to = pos[1, ],  lcol = "black", lwd = 2, arr.col = "red", lty = 1,
+              arr.pos = 0.5)
+
+for(i in 1:length(my_label)){
+  if (i == 1 | i == 2 | i == 4 | i == 5 | i == 6 | i == 7 | i == 13 | i == 14 ) {
+    textrect(mid = pos[i,],
+             radx = my_edge_width,
+             rady = my_edge_height, 
+             lab = my_label[i], 
+             cex = my_text_size,
+             shadow.size = 0.001,
+             box.col = "blue", col = "white")
+  } else {
+    textrect(mid = pos[i,],
+             radx = my_edge_width,
+             rady = my_edge_height, 
+             lab = my_label[i], 
+             cex = my_text_size,
+             shadow.size = 0.001,
+             box.col = "red", col = "white")
+  }
+}
+
+```
+
+------------------------------------------------------------------------
+
+## What should we conserve?
+
+-   In 1990 IUCN identified genetic diversity as one of the three most important element of conservation biology (Genetic diversity, Species diversity, Ecosystem diversity)
+
+. . .
+
+::: panel-tabset
+### Phylogenetic diversity
+
+-   A monotypic genus receives higher priority [@USWF1983]. The Tuatara case from New Zealand is paradigmatic [@Daugherty1990; @Gemmell2020]
+-   @VaneWright1991 developed a method to assign a conservation value to distinct phylogenetic lineages. This value is inversely proportional to the number of branching points to other extant lineages
+:::
+
+------------------------------------------------------------------------
+
+![Hypothetical phylogeny of 6 species. Adapted from @Erwin1991](./evoltree.png)
+
+------------------------------------------------------------------------
+
+## What should we conserve?
+
+-   In 1990 IUCN identified genetic diversity as one of the three most important element of conservation biology (Genetic diversity, Species diversity, Ecosystem diversity)
+
+::: panel-tabset
+### Phylogenetic diversity
+
+-   A monotypic genus receives higher priority [@USWF1983]. The Tuatara case from New Zealand is paradigmatic [@Daugherty1990; @Gemmell2020]
+-   @VaneWright1991 developed a method to assign a conservation value to distinct phylogenetic lineages. This value is inversely proportional to the number of branching points to other extant lineages
+
+### Species or ecosystems
+
+> Conservation requires a balanced approach based on habitat protection that also takes into account the natural history and viability of individual species. This is particularly challenging for wide-ranging species [@Allendorf2022].
+
+-   The case of Chinook salmon and killer whales [@Groskreutz2019]
+
+### Populations or species
+
+-   Genetically distinct populations should probably receive more attention than species from a conservation perspective
+-   The functional units of an ecosystem are populations
+-   Experiments conducted in the field of community genetics hint towards a correlation between individual alleles within species and community composition and diversity [@Crutsinger2016]
+-   Genetic variation of a Tasmanian blue gum tree affects the distribution of insects, birds, and marsupials [@Whitham2008]
+:::
+
+------------------------------------------------------------------------
+
+-   Conservation genetics ultimately looks for and tries to maintain the [allelic diversity]{style="color: red;"} within a population
+
+::: callout-important
+# Question
+
+What are alleles?
+:::
+
+. . .
+
+::: callout-tip
+# Answer
+
+Alleles are different forms of the same gene! The number of alleles for a certain gene in a population is a measure of the genetic diversity of that specific population
+:::
+
+. . .
+
+-   Another goal of conservation genetics is that to prevent the fixation of alleles! When an allele is fixed (i.e., its frequency is 1) it means that:
+    -   there is no more variation at that specific gene;
+    -   the population could experience fitness loss if the fixed allele is deleterious and it is found together with other deleterious mutations
+
+------------------------------------------------------------------------
+
+## Fundamental vocabulary
+
+| Term     | Definition                                                                                                                                                                                                                                                                                                                               |
+|-----------------|-------------------------------------------------------|
+| Locus    | The term refers both to the position on the chromosome where a specific gene is found, and, in general, to any genetic segment, even a single nucleotide base, of interest. An example of a locus could be the cytochrome oxidase sub-unit I gene (generally called COI), or the nucleotide base at position 350 on a specific sequence. |
+| Allele   | Variant of a specific locus on homologous chromosomes (containing the same type of genetic information).                                                                                                                                                                                                                                 |
+| Genotype | Combination of alleles at one or more loci (genes) in an individual. For example, the genotype of a diploid individual characterized for the bi-allelic gene A might be A1A1, A1A2, or A2A2.                                                                                                                                             |
+
+------------------------------------------------------------------------
+
+|                  | (continues)                                                                                                                           |
+|------------------|------------------------------------------------------|
+| Phenotype        | The obvious and measurable manifestation of a specific genotype.                                                                      |
+| Genome           | The set of nucleotide sequences, coding and not, generally organized into chromosomes, which characterize a species or an individual. |
+| Homozygote       | Individual with two identical copies of a specific allele registered at the locus (gene) of interest.                                 |
+| Heterozygote     | Individual with two different alleles characterized at the locus (gene) of interest.                                                  |
+| Allele frequency | The frequency of a specific allele in a population. The term gene frequency is often used to indicate the same concept.               |
+
+------------------------------------------------------------------------
+
+|                        | (continues)                                                                                                                                                                                                                                                             |
+|------------------|------------------------------------------------------|
+| Polymorphic            | The presence in a species or population of 2 or more alleles at a certain gene. For example, gene A in a population might have 4 alleles: A1, A2, A3, and A4. A locus is considered polymorphic if the frequency of its most frequent allele is less than 0.99 or 0.95. |
+| Monomorphic            | A population or species is monomorphic for a gene when all individuals have the same allele. In other words, the frequency of that allele in the population is 1.                                                                                                       |
+| Average heterozygosity | Average number of heterozygous loci in an individual or population.                                                                                                                                                                                                     |
+| Co-dominance           | Situation where all genotypes can be identified by their phenotypes. In the case of gene A with two codominant alleles, the A1A1, A1A2, and A2A2 genotypes all produce different and distinguishable phenotypes.                                                        |
+
+------------------------------------------------------------------------
+
+|                   | (continues)                                                                                                                                                               |
+|------------------|------------------------------------------------------|
+| Allelic diversity | Mean number of alleles per locus.                                                                                                                                         |
+| Genetic distance  | A measure of distance obtained by comparing 2 or more nucleotide sequences or by comparing the allele and genotype frequencies of two or more individuals or populations. |
+
+------------------------------------------------------------------------
+
+## Molecular techniques
+
+![Figure reproduced from @Allendorf2022](./molmarkers.png)
 
 ## References

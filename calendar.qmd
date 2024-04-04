@@ -1,8 +1,8 @@
 ---
 title: "Calendar"
 author: Giuliano Colosimo
-date: "2024-03-29"
-date-modified: "2024-03-29"
+date: "2024-04-04"
+date-modified: "2024-04-04"
 bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
 csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
 citation_package: biblatex
@@ -21,6 +21,7 @@ lapply(x, require, character.only = T)
 rm(x)
 ```
 
+- Below you will find a temptative schedule for the rest of the semester. When you see your name written in one of the class date that means that it is your turn to present the manuscript that has been assigned to you. Manuscript and dates have been assigned in a random way. Please, if you already know that you will not be present on the date that has been assigned to you let me know in time so that I can arrange a schedule change.
 
 
 ```{r echo=FALSE}
@@ -69,6 +70,9 @@ calendR(month = 5,
         text.size = 2.5,              
         text.col = "black")
 ```
+
+
+- The table below has the student's name associated with the assigned paper
 
 
 | Student      | Title            |
