@@ -614,5 +614,47 @@
     "title": "Biologia della Conservazione",
     "section": "Molecular techniques",
     "text": "Molecular techniques\n\nFigure reproduced from Allendorf et al. (2022)"
+  },
+  {
+    "objectID": "classes/6/class_6.html#the-simpler-model-hardy-weinberg-principle",
+    "href": "classes/6/class_6.html#the-simpler-model-hardy-weinberg-principle",
+    "title": "Biologia della Conservazione",
+    "section": "The simpler model: Hardy-Weinberg principle",
+    "text": "The simpler model: Hardy-Weinberg principle\n\nIn 1908, Godfrey Harold Hardy (a British mathematician) and Wilhelm Weinberg (a German physician), independently developed a math model describing the dynamics of a diploid, sexually reproducing population\n\n\n\n\n\n\nGregory Harol Hardy, figure from the Wiki page\n\n\n\n\n\n\nWilhelm Weinberg, figure from http://www.esp.org/people/"
+  },
+  {
+    "objectID": "classes/6/class_6.html#references",
+    "href": "classes/6/class_6.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD\n\n\n\nAllendorf, F. W., Funk, W. C., Aitken, S. N., Byrne, M., Luikart, G., & Antunes, A. (2022). Conservation and the Genomics of Populations. Oxford University Press. Retrieved from https://doi.org/10.1093/oso/9780198856566.001.0001\n\n\nWikipedia contributors. (2023). Degrees of freedom (statistics) — Wikipedia, the free encyclopedia. Retrieved from https://en.wikipedia.org/w/index.php?title=Degrees_of_freedom_(statistics)&oldid=1144691234"
+  },
+  {
+    "objectID": "classes/6/class_6.html#fundamental-measures-of-genetic-diversity",
+    "href": "classes/6/class_6.html#fundamental-measures-of-genetic-diversity",
+    "title": "Biologia della Conservazione",
+    "section": "Fundamental measures of genetic diversity",
+    "text": "Fundamental measures of genetic diversity\n\nPolymorphism\n\n\\[\nP = number\\ of\\ polymorphic\\ loci/total\\ number\\ of\\ loci\n\\]\n\nAllele frequency (for diploid individuals)\n\n\\[\np = \\frac{2n_{Hom} + n_{Het}}{2n}\n\\] where \\(p\\) is the frequency of the allele (usually the dominant one) and \\(n\\) is the number of individuals that are homozygotes (\\(n_{Hom}\\)) and heterozygotes (\\(n_{Het}\\)) for that allele, respectively\n\nAverage heterozygosity \\(H = \\sum H_i/N\\) where \\(H_i\\) is the average heterozygosity at locus \\(i\\), and \\(N\\) is the total number of loci"
+  },
+  {
+    "objectID": "classes/6/class_6.html#testing-hw-proportions",
+    "href": "classes/6/class_6.html#testing-hw-proportions",
+    "title": "Biologia della Conservazione",
+    "section": "Testing HW proportions",
+    "text": "Testing HW proportions\n\n\n\n\n\n\n\n\n\n\n\n\n\nProblem\n\n\nCalculate allele frequency, genotype frequency and expected genotype frequency."
+  },
+  {
+    "objectID": "classes/6/class_6.html#is-this-difference-significant",
+    "href": "classes/6/class_6.html#is-this-difference-significant",
+    "title": "Biologia della Conservazione",
+    "section": "Is this difference significant?",
+    "text": "Is this difference significant?\n\\[\n\\chi^2=\\sum\\frac{(Observed-Expected)^2}{Expected}\n\\]\n\nThis methodology allows us to understand if the difference between observed and expected outcomes is greater than we would expect by chance\nThe empirical rule is to run the \\(\\chi^2\\) on the actual genotype count rather than the geenotype frequencies\n\n\n\n((907-897.615)^2/897.615)+((616-637.389)^2/637.389)+((124-111.996)^2/111.996)\n\n[1] 2.102498\n\n\n\nThe computed \\(\\chi^2\\) value is compared to a set of values calculated under the assumption that the null hypothesis we are testing is correct; our null hypothesis is that the population from which the samples was drawn is in HW proportions.\n\n\n\npchisq(q = 2.102498, df = 1, lower.tail = F)\n\n\n[1] 0.1470587"
+  },
+  {
+    "objectID": "classes/6/class_6.html#topics",
+    "href": "classes/6/class_6.html#topics",
+    "title": "Biologia della Conservazione",
+    "section": "Topics",
+    "text": "Topics\n\n\n\nIntroduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
   }
 ]

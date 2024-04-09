@@ -45,6 +45,8 @@ website:
             text: "Class 4 - Populations (1)"  
           - href: ./classes/5/class_5.html
             text: "Class 5 - Populations (2) - Intro to Conservation Genetics"  
+#          - href: ./classes/6/class_6.html
+#            text: "Class 6"  
 
 
     tools:
