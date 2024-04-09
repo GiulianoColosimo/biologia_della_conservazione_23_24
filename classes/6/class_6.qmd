@@ -88,7 +88,7 @@ $$ where $p$ is the frequency of the allele (usually the dominant one) and $n$ i
 > Models are essential for understanding the genetics of natural populations in a variety of ways: *i)* models make us define the parameters that need to be considered; *ii)* models allow us to test hypotheses; *iii)* models allow us to generalize results; iv) models allow us to predict how a system will operate in the future [@Allendorf2022, p.95].
 
 -   As a general rule of thumb, models that we develop to understand natural populations should be as simple as possible
-    -   Simpler models are easier to reject, and, therefore, are more useful.
+    -   Simpler models are easier to reject, and, therefore, are more useful
     -   Simple models are likely to be more general and therefore more applicable to a wider number of situations [@Allendorf2022, p.95]
 
 ------------------------------------------------------------------------
