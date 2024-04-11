@@ -47,6 +47,8 @@ website:
             text: "Class 5 - Populations (2) - Intro to Conservation Genetics"  
           - href: ./classes/6/class_6.html
             text: "Class 6 - Conservation Genetics"  
+          - href: ./classes/7/class_7.html
+            text: "Class 7 - Genetic Drift/Effective Population Size"  
 
 
     tools:

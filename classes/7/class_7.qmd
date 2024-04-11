@@ -1,0 +1,666 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 7 - Genetic Drift/Effective Population Size"
+date: "2024-04-11"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: orange;"}
+7.  [Effective population size]{style="color: orange;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+---
+
+### Sampling error
+
+![](./samplingError.png){fig-align="center"}
+
+---
+
+### When not to use the $\chi^2$ test
+
+-   The expected count of individuals is \< 5 in any of the possible genotype considered
+-   Very low allele frequencies
+-   The sample size is too small
+-   There are too many alleles at a locus
+
+### A valid alternative: Fisher's exact test
+
+-   Based on the calculation of probabilities
+-   $P(genotype\ counts|allele \ counts)$ assuming HWE
+-   Let's work out an example with a small population: 4 individuals $AA$, 2 individuals $Aa$ and 1 individuals $aa$
+-   What genotype configurations could give us the same allele count?
+
+---
+
+| $n_{AA}$ | $n_{Aa}$ | $n_{aa}$ | $n_{A}$ | $n_{a}$ |
+|:--------:|:--------:|:--------:|:-------:|:-------:|
+|    5     |    0     |    2     |   10    |    4    |
+|    4     |    2     |    1     |   10    |    4    |
+|    3     |    4     |    0     |   10    |    4    |
+
+. . .
+
+-   Can we estimate the theoretical probability of each combination of genotypes?
+
+. . .
+
+$$
+P(n_{Aa}|n_A, n_a, HWE)=\frac{n!}{n_{AA}!*n_{Aa}!*n_{aa}!}*\frac{2^{n_{Aa}}*n_A!*n_a!}{(2n)!}
+$$
+
+. . .
+
+| $n_{AA}$ | $n_{Aa}$ | $n_{aa}$ | Theoretical probability |
+|:--------:|:--------:|:--------:|:-----------------------:|
+|    5     |    0     |    2     |          0.021          |
+|    4     |    2     |    1     |          0.419          |
+|    3     |    4     |    0     |          0.559          |
+
+------------------------------------------------------------------------
+
+### Other options for testing null hypothesis
+
+-   Likelihood, the probability of observing the data given some parameter value under a certain statistical model, particularly useful when there are many alleles at a single locus
+-   Permutation tests, randomization of the dataset by sampling, particularly useful when many genotypes are expected to have very low frequency
+
+### Multiple tests
+
+-   If we examine 10 loci in 10 population samples, 100 tests of HW proportions will be performed. If all of these loci are in HW proportions (*i.e.*, our null hypothesis is true at all loci in all populations), we expect to find five significant tests if we use the 5% significance level [@Allendorf2022, p.102-103].
+
+-   The Bonferroni correction allows to adjust the significance level (say 5%) by dividing it by the number of tests performed. In the previous example $0.05/100 = 0.0005$. The critical $\chi^2$ value for $P = 0.0005$ with one degree of freedom is 12.1.
+
+------------------------------------------------------------------------
+
+### What we learnt from the HW model
+
+-   Genetic change will not occur in populations if all the assumptions of the HW equilibrium are met (and we already know that the HW assumptions are almost never met in nature)
+-   What is the effect of allele and genotype frequencies when the assumptions are not met?
+-   We will start looking at two interrelated factors: genetic drift and population size
+
+### Genetic Drift
+
+-   Genetic drift is random change in allele frequencies from generation to generation because of sampling error. That is, the finite number of genes transmitted to progeny will be an imperfect sample of the allele frequencies in the previous generation [@Allendorf2022, p. 114]
+-   Genetic drift is the primary cause bringing about allele frequency changes throughout the genome over time [@Chen2018; @Allendorf2022]
+
+---
+
+### Genetic drift
+
+-   The best way to understand how strong the change effect can be in a population is to model the sampling process in the absence of selection, mutation and migration.
+-   We start sampling alleles to generate an offspring from a selfing diploid individual with genotype $A_1A_2$
+-   Our gamete pool is $A_1$ with frequency $p = \frac{1}{2}=0.5$ and $A_2$ with frequency $q=1-p=0.5$
+-   This example is very similar to the simple fair-coin toss! Imagine the coin has $A_1$ on one side and $A_2$ on the other side. To obtain a diploid individual we need to toss the coin twice. Every outcome combination has probability $1/4$
+-   If only one offspring ($N = 1$) is produced there is 50% chance that one or the other allele would be lost
+
+------------------------------------------------------------------------
+
+### Genetic Drift
+
+-   With many offspring ($n > 1$) there are many more coin tosses and the probability that they all are $A_1$ or $A_2$ now becomes $(\frac{1}{2})^{2n}$, and it will be less likely to loose one of the two alleles
+
+### Exp. distribution of allele frequencies in population of size $n = 2$
+
+::: columns
+::: {.column width="50%"}
+-   Population with $p = 0.6$ and $q =0.4$
+-   We sample $2$ individuals (*i.e.*, $2n = 4$gametes)
+-   The expected distribution of alleles is the binomial expansion $(p+q)^4$
+-   There are 5 possible outcomes
+:::
+
+::: {.column width="50%"}
+| Outcome      | Expected frequency | Probability           |
+|--------------|--------------------|-----------------------|
+| $4 A_1,0A_2$ | $p^4$              | $0.6^4=0.129$         |
+| $3 A_1,1A_2$ | $4p^3q$            | $4*0.6^3*0.4=0.345$   |
+| $2 A_1,2A_2$ | $6p^2q^2$          | $6*0.6^2*0.4^2=0.345$ |
+| $1 A_1,3A_2$ | $4pq^3$            | $4*0.6*0.4^3=0.153$   |
+| $0 A_1,4A_2$ | $q^4$              | $0.4^4=0.025$         |
+:::
+:::
+
+------------------------------------------------------------------------
+
+-   The probability that a population has $k$ copies of allele $A_1$ and $2n-k$ copies of $A_2$ allele is $\binom{2n}{k}p^kq^{2n-k}$ where $\binom{2n}{k}$ is the binomial function $\frac{2n!}{k!(2n-k)!}$
+
+. . .
+
+```{r expDist, echo=FALSE, fig.cap="Expected distribution of allele frequency from 100 replicates of sampling 10, 100 and 1000 individuals from a population with p = 0.6"}
+A1_10_freq <- rep(NA, 100)
+for(i in 1:100){
+  A1_10 <- sample(c("A1", "A2"), 10, replace = T, prob = c(0.6, 0.4))
+  A1_10_freq[i] <- sum(A1_10[] == "A1")/length(A1_10)
+}
+A1_100_freq <- rep(NA, 100)
+for(i in 1:100){
+  A1_100 <- sample(c("A1", "A2"), 100, replace = T, prob = c(0.6, 0.4))
+  A1_100_freq[i] <- sum(A1_100[] == "A1")/length(A1_100)
+}
+A1_1000_freq <- rep(NA, 100)
+for(i in 1:100){
+  A1_1000 <- sample(c("A1", "A2"), 1000, replace = T, prob = c(0.6, 0.4))
+  A1_1000_freq[i] <- sum(A1_1000[] == "A1")/length(A1_1000)
+}
+
+hist(A1_10_freq, col='red', xlim = c(0,1), ylim=c(0,25), freq = F,
+     xlab = "p", main = "")
+hist(A1_100_freq, col='blue', add=TRUE, freq = FALSE)
+hist(A1_1000_freq, col='green', add=TRUE, freq = FALSE)
+legend("topleft", legend = c("N = 10", "N = 100", "N = 1000"), fill = c("red", "blue", "green"), bty = "n")
+
+```
+
+------------------------------------------------------------------------
+
+-   The variance around the mean allele frequency is the binomial sampling variance: $\sigma^2_p =\frac{p_0q_0}{2n}$
+-   Variances are higher in smaller than larger populations
+-   In small population the process of sampling happens every single generation, and its effect on allele frequency is cumulative:
+-   Genetic drift will eventually cause all except one allele to go to fixation.
+-   The probability that a gamete does not contain allele $A_1$ (with frequency $p$ in the parental population) is $1-p$
+
+$$
+P(fixation \ A_2)=(1-p)^{2n}
+$$
+
+---
+
+::: callout-important
+# Problem
+
+Diploid population with $n = 4$ with allele $A_1$ with a frequency $p = 0.25$ and allele $A_2$ with a frequency $q = 0.75$. What is the probability of losing allele $A_1$ in one generation of sampling to recreate a population of the same size?
+:::
+
+. . .
+
+::: callout-tip
+# Solution
+
+$(1-0.25)^8=$ `r (1-0.25)^8`
+:::
+
+------------------------------------------------------------------------
+
+### Genetic Drift
+
+```{r drift1, echo=FALSE, fig.cap="Allele frequency distribution at t = 0, with N = 100 [@Russo2021]."}
+pop.ls <- list(geneA = c(rep("A",50), rep("a",50)), 
+               geneB = c(rep("B",50), rep("b",50)),
+               geneC = c(rep("C",50), rep("c",50)))
+
+pop.df <- data.frame(Gene = c(rep("geneA", 100),
+                              rep("geneB", 100),
+                              rep("geneC", 100)),
+                     Alleles = matrix(unlist(pop.ls),
+                                      ncol = 1, byrow=F))
+
+barplot(
+  table(pop.df$Allele,
+        pop.df$Gene)/nrow(pop.df[pop.df$Gene == "geneA",]),
+  col = c("#14B635", "#158A29",
+          "#23A9F6", "#2970A1",
+          "#F77023", "#AF4E18"),
+  xlab="",
+  ylab="Allele frequencies",
+  axes = F
+)
+axis(side = 2,
+     labels = seq(from = 0, to = 1, by = 0.1),
+     at = seq(from = 0, to = 1, by = 0.1))
+lines(x = c(0.06,1,2,3,3.6),
+      y = c(0.5, 0.5, 0.5, 0.5, 0.5),
+      lty = 2, col = "red")
+par(xpd=TRUE)
+legend(3.7, 1, c("A", "a", "B", "b", "C", "c"),
+       pch = rep(19, 4), col = c("#14B635", "#158A29",
+                                 "#23A9F6", "#2970A1",
+                                 "#F77023", "#AF4E18"),
+       horiz = F, bty = "n")
+```
+
+------------------------------------------------------------------------
+
+### Genetic Drift
+
+```{r drift2, echo=F, fig.cap="Allele frequency distribution at t = 1, with N = 100 [@Russo2021]."}
+set.seed(482)
+pop.ls.t1 <- lapply(pop.ls, sample, 100, replace = T)
+pop.df.t1 <- data.frame(Gene = c(rep("geneA", 100),
+                                 rep("geneB", 100), 
+                                 rep("geneC", 100)),
+                     Alleles = matrix(unlist(pop.ls.t1),
+                                      ncol = 1, byrow=F))
+barplot(
+  table(pop.df.t1$Allele,
+        pop.df.t1$Gene)/nrow(pop.df.t1[pop.df.t1$Gene == "geneA",]),
+  col = c("#14B635", "#158A29",
+          "#23A9F6", "#2970A1",
+          "#F77023", "#AF4E18" ),
+  xlab="",
+  ylab="Allele frequencies",
+  axes = F
+)
+axis(side = 2, labels = seq(from = 0, to = 1, by = 0.1),
+     at = seq(from = 0, to = 1, by = 0.1))
+lines(x = c(0.06,1,2,3,3.6), y = c(0.5, 0.5, 0.5, 0.5, 0.5),
+      lty = 2, col = "red")
+par(xpd=TRUE)
+legend(3.7, 1, c("A", "a", "B", "b", "C", "c"),
+       pch = rep(19, 4), col = c("#14B635", "#158A29",
+                                 "#23A9F6", "#2970A1",
+                                 "#F77023", "#AF4E18" ),
+       horiz = F, bty = "n")
+```
+
+------------------------------------------------------------------------
+
+### Genetic Drift
+
+```{r drift3, echo=F, fig.cap="Allele frequencies variation after 200 generations while maintaining N = 100 [@Russo2021]."}
+set.seed(23561)
+geneA <- vector(mode = "list", length = 200)
+geneB <- vector(mode = "list", length = 200)
+geneC <- vector(mode = "list", length = 200)
+geneA[[1]] <- pop.ls[[1]]
+geneB[[1]] <- pop.ls[[2]]
+geneC[[1]] <- pop.ls[[3]]
+
+for (i in 2:200) {
+  geneA[[i]] <- sample(geneA[[i-1]], 100, replace = T)
+  geneB[[i]] <- sample(geneB[[i-1]], 100, replace = T)
+  geneC[[i]] <- sample(geneC[[i-1]], 100, replace = T)
+}
+
+freqA <- NULL
+freqa <- NULL
+freqB <- NULL
+freqb <- NULL 
+freqC <- NULL
+freqc <- NULL 
+for (i in 1:200) {
+  freqA[i] <- sum(geneA[[i]] == "A")/ length(geneA[[i]])
+  freqa[i] <- sum(geneA[[i]] == "a")/ length(geneA[[i]])
+  freqB[i] <- sum(geneB[[i]] == "B")/ length(geneB[[i]])
+  freqb[i] <- sum(geneB[[i]] == "b")/ length(geneB[[i]])
+  freqC[i] <- sum(geneC[[i]] == "C")/ length(geneC[[i]])
+  freqc[i] <- sum(geneC[[i]] == "c")/ length(geneC[[i]])
+}
+
+plot(1,0, type="n", xlim=c(1,200), ylim=c(0,1),
+     main = "",
+     xlab="Generations", ylab="Allele frequencies")
+points(1:200, freqA, pch = 21, col = "black", bg = "#14B635")
+points(1:200, freqa, pch = 21, col = "black", bg = "#158A29")
+points(1:200, freqB, pch = 21, col = "black", bg = "#23A9F6")
+points(1:200, freqb, pch = 21, col = "black", bg = "#2970A1")
+points(1:200, freqC, pch = 21, col = "black", bg = "#F77023")
+points(1:200, freqc, pch = 21, col = "black", bg = "#AF4E18")
+par(xpd=TRUE)
+legend(180, .75, c("A", "a", "B", "b", "C", "c"),
+       pch = rep(19, 4), col = c("#14B635", "#158A29",
+                                 "#23A9F6", "#2970A1",
+                                 "#F77023", "#AF4E18" ),
+       horiz = F, bty = "n")
+```
+
+------------------------------------------------------------------------
+
+### Genetic Drift
+
+#### Simulating the average time of allele fixation in our example
+
+```{r drift4, cache=TRUE, fig.align='center'}
+#| code-fold: true
+#| code-summary: "Show the code"
+# simulare il tempo medio di fissazione degli alleli
+#pop.ls <- list(geneA = c(rep("A",50), rep("a",50)), 
+#               geneB = c(rep("B",50), rep("b",50)),
+#               geneC = c(rep("C",50), rep("c",50)))
+
+
+# pop.ls  =  lista contenente i geni della popolazione
+# num.sim = numero di volte la simulazione deve girare
+sim.gen2fix <- function (pop.ls, num.sims) {
+  
+  # numero totale di loci per ogni gene   
+  n <- length(pop.ls[[1]])
+  # numero di geni differenti nella popolazione
+  n.genes <- length(pop.ls)
+  # lista vuota per i risultati della simulazione
+  generations <- vector(mode = "list", length = length(pop.ls))
+  for (h in 1:n.genes){
+    generations[[h]] <- rep(0, num.sims)
+  }
+  names(generations) <- names(pop.ls)
+  
+  # ciclo di simulazione 
+  for (i in 1:num.sims) {
+    temp.pop.ls <- pop.ls
+    for (y in 1:n.genes) {
+      while (max(table(temp.pop.ls[[y]])) < n) {
+        temp.pop.ls[[y]] <- sample(temp.pop.ls[[y]],
+                                   100, replace = T)
+        generations[[y]][i] <- generations[[y]][i] + 1
+      }
+    }
+  }
+  
+    # statistiche descrittive dei risultati
+  df <- rbind(data.frame(lapply(generations, mean)),
+        data.frame(lapply(generations, sd))) 
+  rownames(df) <- c("mean", "sd")
+
+  # ciclo per plottare i risultati
+  # modificare se i geni da plottare sono > 4
+  par(mfrow = c(2,2))
+  for (z in 1:n.genes) {
+    graph <- generations[[z]]
+    hist(graph, 
+         main = paste("Num. of generations to fix ",
+                             names(generations[z])),
+         xlab = "Generations")
+    abline(v=mean(graph), lwd=2, lty=2, col="red")
+  }
+  
+  #return(df)
+}
+
+sim.gen2fix(pop.ls, 5000)
+```
+
+------------------------------------------------------------------------
+
+### Size matters
+
+```{r drift5, echo=FALSE}
+alleles <- c("A","a")
+
+n_sizes <- c(5,10,20,50,100,500,1000)
+
+df <- data.frame(N = rep(n_sizes, each=50),
+                 Freq_A = NA,
+                 Freq_a = NA)
+
+for(row in 1:nrow(df)) {
+  # selezione casuale di alleli 
+  a <- sample(alleles, size=df$N[row], replace = T)
+  # find the frequency
+  f <- sum(a == "A") / length(a)
+  # assign it back to the data.frame
+  df$Freq_A[row] <- f
+  df$Freq_a[row] <- 1-f
+}
+
+df_mean_freq_N <- df %>% 
+  group_by(as.factor(N)) %>% 
+  summarise(A = mean(Freq_A),
+            a = mean(Freq_a))
+
+df_sd_freq_N <- df %>% 
+  group_by(as.factor(N)) %>% 
+  summarise(A = sd(Freq_A),
+            a = sd(Freq_a))
+
+df_mean_freq_N_mtrx <- as.matrix(df_mean_freq_N[,2:3])
+rownames(df_mean_freq_N_mtrx) <- c(5,10,20,50,100,500,1000)
+
+df_sd_freq_N_mtrx <- as.matrix(df_sd_freq_N[,2:3])
+rownames(df_sd_freq_N_mtrx) <- c(5,10,20,50,100,500,1000)
+
+#A function to add arrows on the chart
+error.bar <- function(x, y, upper, lower=upper, length=0.1,...){
+  arrows(x,y+upper, x, y-lower, 
+         angle=90, code=3, length=length, ...)
+}
+
+df_mean_freq_N_mtrx.blt <-barplot(df_mean_freq_N_mtrx, 
+                                  beside = T, 
+        ylim = c(0,1), 
+        col = rev(brewer.pal(7, "Blues")),
+        xlab = "Alleles",
+        ylab = "Frequency")
+legend("top", legend = c(5,10,20,50,100,500,1000),
+       fill = rev(brewer.pal(7, "Blues")), 
+       title = "N", horiz = T)
+lines(x = seq(0, 16, 1), y = rep(0.5, 17),
+      lty = 2, col = "red", lwd = 3)
+error.bar(df_mean_freq_N_mtrx.blt, df_mean_freq_N_mtrx, 
+          df_sd_freq_N_mtrx)
+```
+
+---
+
+### Population size
+
+> There can be no doubt that genetic variation is related to population size, as @Soule1973 proposed. Small population size reduces the evolutionary potential of wildlife species [@Frankham1996].
+
+-   The importance of maintaining a large population size is pretty intuitive, but may not be enough!
+-   Many populations of insects and small mammals naturally fluctuate in their "census" population size, but it is when they are at their minimum that the genetic processes affect them the most
+-   Often the census population counts juveniles and senescent individuals that do not really contribute to the reproductive output of next generations
+-   Within adult and reproductive individuals there may be significant variance in the number of offspring sired by males and females
+
+------------------------------------------------------------------------
+
+### Population size
+
+-   Different reproductive strategies (monogamy VS. polygamy) may as well influence the genetic output generation after generation
+-   Therefore it is necessary to distinguish between census population and an hypothetical idealized population
+-   We can standardize this concept of idealized population by describing it in term of **effective population size** ($N_e$), and it can be defined as the actual number of breeding individuals needed in order to see the same variation of a critical parameter (such as genetic diversity) measured in the real population
+-   The effective size of a population determines the rate of change in composition of a population caused by genetic drift (the random sampling of genetic variants) [@Charlesworth2009a, p. 195]
+-   To better understand the origin of this concept of the idealized population see @Wright1931
+
+------------------------------------------------------------------------
+
+### Wright-Fisher population model
+
+The ideal population:
+
+-   All individual in the population are considered adults and capable of breeding
+-   Individuals are hermafroditic (self fertilization is possible)
+-   The number of breeding individual is constant in all generations and they breed randomly
+-   New individuals are formed each generation by random sampling, with replacement, of the gametes from the parents
+-   The parents die after mating so each generation is only composed by new individuals (discrete generations)
+-   There is no selection at any life stage and mutation is ignored
+-   When $N$ is sufficiently large this means that each individual contributes to the next generation a number of offspring that is approximated by a Poisson distribution
+
+------------------------------------------------------------------------
+
+### Wright-Fisher population model
+
+-   Any characteristic of a real population that deviates from the characteristic of the ideal population will make the census size $N$ to be different than the effective population size $N_e$
+-   An important measure in conservation is the ratio $\frac{N_e}{N}$
+-   There are multiple evidence that in most natural population this ratio is usually much less than 1.
+-   The primary factors influencing this ratio are:
+    -   fluctuating population size over multiple generations
+    -   high variance in family size
+    -   unequal ratios between sexes
+
+------------------------------------------------------------------------
+
+
+### Estimating $N_e$
+
+-   To estimate $N_e$ it is possible to use demographic approaches and genetic approaches
+
+#### Demographic approaches
+
+-   Demographic methodologies require extensive data and sometimes are unattainable in wild populations
+
+::: panel-tabset
+### Fluctuations in population size
+
+::: columns
+::: {.column width="50%"}
+-   Natural populations continuously undergo fluctuations in size over multiple generations [@Reed2003b]
+-   We can use the harmonic mean to estimate $N_e$ over $t$ generations
+:::
+
+::: {.column width="50%"}
+$$
+N_e \sim \frac{t}{\sum(\frac{1}{N_{ei}})} \\ \sim \frac{3}{(1/175000)+(1/20)+(1/175000)} \sim 60
+$$
+:::
+:::
+
+### Variation in family size
+
+::: columns
+::: {.column width="50%"}
+-   The effect on $N_e$ of variation in family sizes in an otherwise ideal population can be estimated using:
+
+$$
+N_e = \frac{4N-2}{V_k +2}
+$$
+:::
+
+::: {.column width="50%"}
+-   $k$ is the mean family size
+-   In Wright-Fisher population $V_k = 2$ so that $N_e \sim N$
+-   In Darwin's finches the value of $V_k$ has been estimated at 6.74, which reduces dramatically $N_e$ [@Frankham1995a]
+:::
+:::
+
+### Unequal sex-ratio
+
+::: columns
+::: {.column width="50%"}
+-   According to @Donald2007 there usually is an excess of females in mammals and a deficiency in males $$
+    N_e=\frac{4N_{ef}N_{em}}{N_{ef}+N_{em}}
+    $$
+:::
+
+::: {.column width="50%"}
+![Effects of unequal sex ratio on $N_e/N$. After @Frankham2010, p.249](./unequalsexratio.jpg){width="250"}
+:::
+:::
+:::
+
+---
+
+#### Genetic approaches
+
+-   DNA retains information on the evolutionary history of individuals
+- We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
+-   The coalescent approach uses the sampling theory for neutral alleles and allows us to trace back in time this information [@Rosenberg2002]
+-   Under the neutral theory of evolution 2 alleles may descend from the same ancestral allele in the previous generation with probability $1/N_{ef}$ for mtDNA, or $1/2N_e$ for a general diploid locus
+-   Alternatively 2 alleles may derive from 2 different alleles in the previous generation with probability $1-\frac{1}{N_{ef}}$
+
+---
+
+-   Under this neutral model of genetic drift the coalescence process takes a characteristic time:
+
+$$
+T_k = \frac{4N_e}{k(k-1)}generations
+$$ where $T_k$ is the average time in generations back to the previous coalescent event when there were $k-1$ alleles [@Hedrick2005]
+
+-   The time for all $k$ alleles in the population to coalesce back to one allele is: $4N_e[1-(\frac{1}{k})]$
+
+---
+
+
+### The coalescent theory
+
+-   The coalescent allows to study the loss of genetic diversity and to use this information to infer effective population size
+-   To coalesce means "unite" or "fuse"
+-   To better understand this approach we can look at the example of mitochondrial DNA (mtDNA)
+-   mtDNA is haploid, maternally inherited and it does not undergo recombination
+-   Coalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations [@Allendorf2022; @Rosenberg2002]
+
+---
+
+```{r Ne, echo=F}
+n <- 20
+t <- 15
+i <- 1
+connect_matrix <- matrix(NA,
+                         nrow = t,
+                         ncol = n)
+gene_colors <- sample(colors(), n, replace = F)
+connect_matrix[1,] <- gene_colors
+while(i < t){
+  connect_matrix[i+1,] <- sample(connect_matrix[i,],
+                                 n, 
+                                 replace = T)
+  i <- i + 1
+}
+plot(expand.grid(1:n, 1:t)[,1],
+     expand.grid(1:n, 1:t)[,2],
+     asp = 1,
+     frame.plot = F,
+     ann = F,
+     axes = F, type = "n")
+points(expand.grid(1:n, 1:t)[,1],
+       expand.grid(1:n, 1:t)[,2],
+       pch = 21, 
+       cex = 2, 
+       col = "black",
+       bg = t(connect_matrix))
+text(x = min(1:n)-2.5, y = max(1:t), labels = expression('Present (t'[i]*')'))
+text(x = min(1:n)-2.5, y = min(1:t), labels = expression('Past (t'[0]*')'))
+labelingGen <- t
+while(labelingGen > 0){
+  text(x = max(1:n) + 2.5, y = labelingGen,
+       labels = paste("Gen.", labelingGen-1, sep = " "))
+  labelingGen <- labelingGen-1
+}
+```
+
+
+
+
+## References
