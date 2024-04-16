@@ -72,6 +72,29 @@ rm(x)
 
 ---
 
+### Testing hypothesis
+
+```{r chiSq2, echo=F}
+chiTestVal <- seq(0, 10, by = 0.001)
+plot(1-pchisq(chiTestVal, df = 1), chiTestVal, type = "l",
+     main = "Chi-Square distribution",
+     ylab = "Test Statistic Value",
+     xlab = "P-value", lwd = 2)
+lines(1-pchisq(chiTestVal, df = 2), chiTestVal, type = "l",
+      lwd = 2, col = "blue")
+lines(1-pchisq(chiTestVal, df = 3), chiTestVal, type = "l",
+      lwd = 2, col = "green")
+lines(1-pchisq(chiTestVal, df = 4), chiTestVal, type = "l",
+      lwd = 2, col = "brown")
+lines(1-pchisq(chiTestVal, df = 5), chiTestVal, type = "l",
+      lwd = 2, col = "deeppink")
+abline(v=0.05, col = "red", lty = 2, lwd = 2)
+legend("topright", legend = c("df = 1", "df = 2", "df = 3", "df = 4", "df = 5"), 
+       col = c("black", "blue", "green", "brown", "deeppink"), lty = 1)
+```
+
+---
+
 ### When not to use the $\chi^2$ test
 
 -   The expected count of individuals is \< 5 in any of the possible genotype considered

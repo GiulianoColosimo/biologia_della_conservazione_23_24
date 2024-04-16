@@ -1,0 +1,759 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 8 - Manuscript discussion-Genetic Drift/Effective Population Size"
+date: "2024-04-16"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+| Student      | Title            |
+|--------------|------------------|
+| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)      |
+
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: orange;"}
+7.  [Effective population size]{style="color: orange;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+---
+
+### Population size
+
+> There can be no doubt that genetic variation is related to population size, as @Soule1973 proposed. Small population size reduces the evolutionary potential of wildlife species [@Frankham1996].
+
+-   The importance of maintaining a large population size is pretty intuitive, but may not be enough!
+-   Many populations of insects and small mammals naturally fluctuate in their "census" population size, but it is when they are at their minimum that the genetic processes affect them the most
+-   Often the census population counts juveniles and senescent individuals that do not really contribute to the reproductive output of next generations
+-   Within adult and reproductive individuals there may be significant variance in the number of offspring sired by males and females
+
+------------------------------------------------------------------------
+
+### Population size
+
+-   Different reproductive strategies (monogamy VS. polygamy) may as well influence the genetic output generation after generation
+-   Therefore it is necessary to distinguish between census population and an hypothetical idealized population
+-   We can standardize this concept of idealized population by describing it in term of **effective population size** ($N_e$), and it can be defined as the actual number of breeding individuals needed in order to see the same variation of a critical parameter (such as genetic diversity) measured in the real population
+-   The effective size of a population determines the rate of change in composition of a population caused by genetic drift (the random sampling of genetic variants) [@Charlesworth2009a, p. 195]
+-   To better understand the origin of this concept of the idealized population see @Wright1931
+
+------------------------------------------------------------------------
+
+### Wright-Fisher population model
+
+The ideal population:
+
+-   All individual in the population are considered adults and capable of breeding
+-   Individuals are hermafroditic (self fertilization is possible)
+-   The number of breeding individual is constant in all generations and they breed randomly
+-   New individuals are formed each generation by random sampling, with replacement, of the gametes from the parents
+-   The parents die after mating so each generation is only composed by new individuals (discrete generations)
+-   There is no selection at any life stage and mutation is ignored
+-   When $N$ is sufficiently large this means that each individual contributes to the next generation a number of offspring that is approximated by a Poisson distribution
+
+------------------------------------------------------------------------
+
+### Wright-Fisher population model
+
+-   Any characteristic of a real population that deviates from the characteristic of the ideal population will make the census size $N$ to be different than the effective population size $N_e$
+-   An important measure in conservation is the ratio $\frac{N_e}{N}$
+-   There are multiple evidence that in most natural population this ratio is usually much less than 1.
+-   The primary factors influencing this ratio are:
+    -   fluctuating population size over multiple generations
+    -   high variance in family size
+    -   unequal ratios between sexes
+
+------------------------------------------------------------------------
+
+
+### Estimating $N_e$
+
+-   To estimate $N_e$ it is possible to use demographic approaches and genetic approaches
+
+#### Demographic approaches
+
+-   Demographic methodologies require extensive data and sometimes are unattainable in wild populations
+
+::: panel-tabset
+### Fluctuations in population size
+
+::: columns
+::: {.column width="50%"}
+-   Natural populations continuously undergo fluctuations in size over multiple generations [@Reed2003b]
+-   We can use the harmonic mean to estimate $N_e$ over $t$ generations
+:::
+
+::: {.column width="50%"}
+$$
+N_e \sim \frac{t}{\sum(\frac{1}{N_{ei}})} \\ \sim \frac{3}{(1/175000)+(1/20)+(1/175000)} \sim 60
+$$
+:::
+:::
+
+### Variation in family size
+
+::: columns
+::: {.column width="50%"}
+-   The effect on $N_e$ of variation in family sizes in an otherwise ideal population can be estimated using:
+
+$$
+N_e = \frac{4N-2}{V_k +2}
+$$
+:::
+
+::: {.column width="50%"}
+-   $k$ is the mean family size
+-   In Wright-Fisher population $V_k = 2$ so that $N_e \sim N$
+-   In Darwin's finches the value of $V_k$ has been estimated at 6.74, which reduces dramatically $N_e$ [@Frankham1995a]
+:::
+:::
+
+### Unequal sex-ratio
+
+::: columns
+::: {.column width="50%"}
+-   According to @Donald2007 there usually is an excess of females in mammals and a deficiency in males $$
+    N_e=\frac{4N_{ef}N_{em}}{N_{ef}+N_{em}}
+    $$
+:::
+
+::: {.column width="50%"}
+![Effects of unequal sex ratio on $N_e/N$. After @Frankham2010, p.249](./unequalsexratio.jpg){width="250"}
+:::
+:::
+:::
+
+---
+
+#### Genetic approaches
+
+-   DNA retains information on the evolutionary history of individuals
+- We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
+-   The coalescent approach uses the sampling theory for neutral alleles and allows us to trace back in time this information [@Rosenberg2002]
+-   Under the neutral theory of evolution 2 alleles may descend from the same ancestral allele in the previous generation with probability $1/N_{ef}$ for mtDNA, or $1/2N_e$ for a general diploid locus
+-   Alternatively 2 alleles may derive from 2 different alleles in the previous generation with probability $1-\frac{1}{N_{ef}}$
+
+---
+
+-   Under this neutral model of genetic drift the coalescence process takes a characteristic time:
+
+$$
+T_k = \frac{4N_e}{k(k-1)}generations
+$$ where $T_k$ is the average time in generations back to the previous coalescent event when there were $k-1$ alleles [@Hedrick2005]
+
+-   The time for all $k$ alleles in the population to coalesce back to one allele is: $4N_e[1-(\frac{1}{k})]$
+
+---
+
+
+### The coalescent theory
+
+-   The coalescent allows to study the loss of genetic diversity and to use this information to infer effective population size
+-   To coalesce means "unite" or "fuse"
+-   To better understand this approach we can look at the example of mitochondrial DNA (mtDNA)
+-   mtDNA is haploid, maternally inherited and it does not undergo recombination
+-   Coalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations [@Allendorf2022; @Rosenberg2002]
+
+---
+
+```{r Ne, echo=F}
+n <- 20
+t <- 15
+i <- 1
+connect_matrix <- matrix(NA,
+                         nrow = t,
+                         ncol = n)
+gene_colors <- sample(colors(), n, replace = F)
+connect_matrix[1,] <- gene_colors
+while(i < t){
+  connect_matrix[i+1,] <- sample(connect_matrix[i,],
+                                 n, 
+                                 replace = T)
+  i <- i + 1
+}
+plot(expand.grid(1:n, 1:t)[,1],
+     expand.grid(1:n, 1:t)[,2],
+     asp = 1,
+     frame.plot = F,
+     ann = F,
+     axes = F, type = "n")
+points(expand.grid(1:n, 1:t)[,1],
+       expand.grid(1:n, 1:t)[,2],
+       pch = 21, 
+       cex = 2, 
+       col = "black",
+       bg = t(connect_matrix))
+text(x = min(1:n)-2.5, y = max(1:t), labels = expression('Present (t'[i]*')'))
+text(x = min(1:n)-2.5, y = min(1:t), labels = expression('Past (t'[0]*')'))
+labelingGen <- t
+while(labelingGen > 0){
+  text(x = max(1:n) + 2.5, y = labelingGen,
+       labels = paste("Gen.", labelingGen-1, sep = " "))
+  labelingGen <- labelingGen-1
+}
+```
+
+---
+
+### Genetic drift, $N_e$, and the coalescent
+
+-   So far we have seen the effect of genetic drift on allele frequencies generation after generation.
+-   We have seen that to a smaller number of sampled individuals (i.e., a population declining in numbers) corresponds a greater variance in the allele frequency of the next generation.
+-   The expected rate of heterozygosity decline in one generation due to genetic drift is
+
+$$
+\label{het1}
+\tag{8.1}
+\Delta h=-\frac{1}{2N}  
+$$
+
+------------------------------------------------------------------------
+
+-   Based on equation \ref{het1} after $t$ generations we can estimate the remainder heterozygosity using
+
+$$
+\label{het2}
+\tag{8.2}
+h_t=(1-\frac{1}{2N})^th_0
+$$
+
+-   This expected loss of heterozygosity holds true only in ideal populations. As there is no such thing as an ideal population in the wild, measuring the rate of genetic drift using census size ($N_C$) as reference point may lead to inaccurate results.
+
+-   The concept of effective population size $N_e$ comes handy as it is defined as the size of an ideal population that would result in the same rate of genetic drift as seen in the natural population ($N_C$ or $N$ for simplicity).
+
+-   If all the assumptions of the ideal population are met, heterozygosity will decrease of exactly $\frac{1}{2N}$ every generation.
+
+------------------------------------------------------------------------
+
+![Reduction in heterozygosity ($h$) in an ideal population of 10 individuals all heterozygous for different alleles. After @Allendorf2022](./class_8_1.png)
+
+------------------------------------------------------------------------
+
+-   This model becomes more complicated when the population is dioecious or if self-fertilization is prevented, and in these cases the mean rate of heterozygosity loss is
+
+$$
+\label{het3}
+\tag{8.3}
+\Delta h=-\frac{1}{(2N+1)}  
+$$
+
+-   For all intent and purposes, unless $2N$ is very small, the outcome of equations \ref{het1} and \ref{het3} is the same.
+-   Two expected effects of genetic drift: change in allele frequency (the binomial sampling variance) and decrease in heterozygosity (inbreeding effect; we will be talking more extensively about inbreeding later).
+-   Therefore, there are at least two different ways of defining the effective population size:
+    1.  variance effective size ($N_{eV}$);
+    2.  inbreeding effective size ($N_{eI}$).
+
+------------------------------------------------------------------------
+
+-   Unequal sex ratio
+
+$$
+\label{uneqsex}
+\tag{8.4}
+N_e=\frac{4N_{f}N_{m}}{N_{f}+N_{m}}  
+$$
+
+-   Unequal probability of producing offspring
+
+$$
+\label{skewedprogeny}
+\tag{8.5}
+N_e = \frac{4N-2}{V_k +2}  
+$$
+
+-   Fluctuating population size
+
+$$
+\label{flucpopsize}
+\tag{8.6}
+N_e \sim \frac{t}{\sum(\frac{1}{N_{i}})}  
+$$
+
+------------------------------------------------------------------------
+
+### Unequal sex ratio
+
+-   What is the size of the ideal population that will lose heterozygosity at the same rate of the real population that has unequal sex ratio?
+-   When selfing is not permitted, gametes in the progeny cannot come from the same individual, therefore the effective population size in a population with separate sexes is equal to the probability that the gametes in the progeny comes from the same grandparent.
+-   The probability that the two uniting gametes in an individual will come from the same male (or female) grandparent is $\frac{1}{4}$.
+-   One-half of the time uniting gametes will come from a grandmother and a grandfather, and 1/4 of the time both gametes will come from the same grandparent [@Allendorf2022].
+-   Therefore, the combined probability that both gametes come from the same grandparent is $\frac{1}{4}*\frac{1}{N_m}= \frac{1}{4N_m}$ for grandfathers and $\frac{1}{4}*\frac{1}{N_f}= \frac{1}{4N_f}$ for grandmothers.
+
+------------------------------------------------------------------------
+
+-   Putting everything together, we can conclude that the combined probability of inheriting both gametes from the same grandparent is
+
+$$
+\label{uneqsex_bis}
+\tag{8.7}
+\frac{1}{N_e}=\frac{1}{4N_f}+\frac{1}{4N_m}  
+$$
+
+-   We can solve this equation and get to $N_e$ as showed in equation \ref{uneqsex}.
+-   In many natural populations of species that are harvested for food one of the two sexes is generally more abundantly hunted, and this can produce a highly skewed sex ratio [@Lamb2010].
+
+------------------------------------------------------------------------
+
+### Unequal probability of producing offspring
+
+-   In real populations parents very rarely have the same probability of producing offspring.
+-   This variation results in a greater proportion of the progeny being produced by a smaller group of individuals compared to the number of adults potentially able to reproduce [@Allendorf2022].
+-   We can model the non-random progeny contribution using @Wright1939.
+-   Lets imagine a population of $N$ individuals each contributing a varying number $k$ of gametes to the next generation of the same size ($N$). The mean number of gametes contributed by individual is $\bar{k}=2$. We can calculate the variance associated to this number using
+
+$$
+\label{varOffsp}
+\tag{8.8}
+V_k = \frac{\sum_{i=1}^N (k_i-2)^2}{N}
+$$
+
+------------------------------------------------------------------------
+
+-   The proportion of cases in which two random gametes will come from the same parent is then
+
+$$
+\label{varOffsp2}
+\tag{8.9}
+\frac{\sum_{i=1}^N k_i(k_i-1)}{2N(2N-1)}=\frac{2+V_k}{4N-2}
+$$
+
+-   By now we know that the effective population size can be intended as the reciprocal of the probability that two gametes come from the same parent, and we can rewrite this equation accordingly
+
+$$
+\label{varOffsp3}
+\tag{8.10}
+N_e=\frac{4N-2}{2+V_k}
+$$
+
+------------------------------------------------------------------------
+
+-   Random variation of $k$ will produce a distribution that approximates the Poisson's (i.e., with mean equal to the variance).\
+-   Thus, $V_k = \bar{k} = 2$ and $N_e = N$ for the idealized population.
+-   As $V_k$ increases, the effective population size decreases.
+-   An interesting result is that the effective population size will be larger than the actual population size if $V_k < 2$.
+-   In captive breeding where we can control reproduction, we may nearly double the effective population size by making sure that all individuals contribute equal number of progeny [@Allendorf2022].
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+-   Three hypothetical populations of constant size N = 10. In **A**, only one pair of mates reproduces successfully. In **B**, each of the five pairs produces two offspring (no variance in reproductive success). **C** presents intermediate variance.
+
+![](./class_8_2.png)
+:::
+
+::: {.column width="50%"}
+-   Estimation of effective population size for populations in previous table with high, low, and intermediate variability in family size. $N_e$ is estimated using equation \ref{varOffsp3}.
+
+![](./class_8_3.png)
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Fluctuating population size
+
+-   The rate of loss of heterozygosity ($\frac{1}{2N}$) is the reciprocal of the population size ($\frac{1}{N}$).
+-   Many generations with reduced population size will influence greatly the loss of heterozygosity and influcence $N_e$.
+-   Consider a population that fluctuates in the following way: $N_1 = 100$, $N_2 = 2$, and $N_3 = 100$.
+-   We can use the armonic mean to calculate the loss of heterozygosity and the effective population size in this situation.
+
+$$
+\label{fluctPop}
+\tag{8.11}
+N_e=\frac{t}{\sum_{i=1}^t{(\frac{1}{N_i})}}
+$$
+
+$$
+N_e=\frac{3}{(\frac{1}{100}+\frac{1}{2}+\frac{1}{100})}=5.77
+$$
+
+------------------------------------------------------------------------
+
+## The coalescent
+
+-   The methods mentioned thus far use demographic information to estimate $N_e$ and we then look at how allelic frequencies vary forward in time, generation after generation.
+-   The coalescent offers an alternative approach to study the loss of genetic diversity and to use this information to infer effective population size.
+-   To coalesce means "unite" or "fuse".
+-   To better understand this approach we can look at the example of mitochondrial DNA (mtDNA).
+-   mtDNA is haploid, maternally inherited and it does not undergo recombination.
+-   Coalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations [@Allendorf2022; @Rosenberg2002].
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center', fig.cap="Population of constant size ($N$) and discrete generations ($G\\{1,2, ..., i-1, i\\}$). We further simplify the situation by assuming all individuals are potentially reproducing ($N = N_e$)."}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray", "gray"))
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center'}
+mtDNAhap <- c("palegreen2", "yellow", "pink",      "darkgreen", "red",
+              "steelblue2", "gray9",  "seagreen1", "plum3", "orange")
+
+set.seed(1211)
+mtDNAhap1 <- sample(mtDNAhap, size = 10, replace = T)
+mtDNAhap2 <- sample(mtDNAhap1, size = 10, replace = T)
+mtDNAhap3 <- sample(mtDNAhap2, size = 10, replace = T)
+mtDNAhap4 <- sample(mtDNAhap3, size = 10, replace = T)
+mtDNAhap5 <- sample(mtDNAhap4, size = 10, replace = T)
+mtDNAhap6 <- sample(mtDNAhap5, size = 10, replace = T)
+mtDNAhap7 <- sample(mtDNAhap6, size = 10, replace = T)
+mtDNAhap8 <- sample(mtDNAhap7, size = 10, replace = T)
+mtDNAhap9 <- sample(mtDNAhap8, size = 10, replace = T)
+mtDNAhap10 <- sample(mtDNAhap9, size = 10, replace = T)
+
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap)
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center'}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap1)
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap)
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center'}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap2)
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap1)
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap)
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center', fig.cap=""}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("white", "white", "white", "white", "white", "white", "white", "white", "white", "white"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap3)
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap2)
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap1)
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap)
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center', fig.cap=""}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = mtDNAhap10,
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap9)
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap8)
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap7)
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap6)
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap5)
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap4)
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap3)
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap2)
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap1)
+points(x=1:10, y=rep(11, 10), pch=21, cex=2.7, col = "black",
+       bg= mtDNAhap)
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 11, labels = expression('Past (t'[0]*')'))
+text(x = 11.5, y = 11, labels = expression('G'[0]))
+text(x = 11.5, y = 10, labels = expression('G'[1]))
+text(x = 11.5, y = 9, labels = expression('G'[2]))
+text(x = 11.5, y = 7, labels = ":")
+text(x = 11.5, y = 6, labels = ":")
+text(x = 11.5, y = 5, labels = ":")
+text(x = 11.5, y = 2, labels = expression('G'[i-1]))
+text(x = 11.5, y = 1, labels = expression('G'[i]))
+```
+
+------------------------------------------------------------------------
+
+```{r echo = F, fig.align='center'}
+plot(x=1:10, y=rep(1,10), pch=21, cex=2.7, col = "black",
+     bg = c("green", "green", "gray", "green", "green", "gray", "green", "gray", "green", "gray"),
+     ylim = c(0, 11), asp = 1, frame.plot = F, ann = F, axes = F)
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, col = "black",
+       bg= c("green", "gray", "green", "gray", "green", "gray", "green", "gray", "green", "gray"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("green", "gray", "green", "gray", "green", "gray", "gray", "green", "green", "gray"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, col = "black",
+       bg= c("green", "gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray", "gray"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray", "gray"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "gray", "gray", "green", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "gray", "green", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "green", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "gray", "green", "gray", "gray", "gray", "gray", "gray", "gray"))
+text(x = -1.5, y = 1, labels = expression('Present (t'[i]*')'))
+text(x = -1, y = 10, labels = expression('Past (t'[0]*')'))
+text(x = 4, y = 11, labels = "MRCA")
+
+lines(x = c(1,1,1,1,2,2,3,3,3,4), y = c(1,2,3,4,5,6,7,8,9,10))
+lines(x = c(2,3,3,3,2,2,3,3,3,4), y = c(1,2,3,4,5,6,7,8,9,10))
+lines(x = c(4,5,5,6,5,5,6,5,4,4), y = c(1,2,3,4,5,6,7,8,9,10))
+lines(x = c(5,5,5,6,5,5,6,5,4,4), y = c(1,2,3,4,5,6,7,8,9,10))
+lines(x = c(7,7,8,8,7,7,6,5,4,4), y = c(1,2,3,4,5,6,7,8,9,10))
+lines(x = c(9,9,9,8,7,7,6,5,4,4), y = c(1,2,3,4,5,6,7,8,9,10))
+
+points(x=1:10, y=rep(1,10), pch=21, cex=2.7, 
+       col = "black",
+       bg= c("green", "green", "gray", "green", "green", "gray", "green", "gray", "green", "gray"))
+points(x=1:10, y=rep(2, 10), pch=21, cex=2.7, 
+       col = c("black", "black", "black", "black", "red", "black", "black", "black", "black", "black"),
+       bg= c("green", "gray", "green", "gray", "green", "gray", "green", "gray", "green", "gray"))
+points(x=1:10, y=rep(3, 10), pch=21, cex=2.7, col = "black",
+       bg= c("green", "gray", "green", "gray", "green", "gray", "gray", "green", "green", "gray"))
+points(x=1:10, y=rep(4, 10), pch=21, cex=2.7, 
+       col = c("black", "black", "black", "black", "black", "black", "black", "red", "black", "black"),
+       bg= c("green", "gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray"))
+points(x=1:10, y=rep(5, 10), pch=21, cex=2.7, 
+       col = c("black", "red", "black", "black", "black", "black", "black", "black", "black", "black"),
+       bg= c("gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray", "gray"))
+points(x=1:10, y=rep(6, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "green", "gray", "gray", "green", "gray", "green", "gray", "gray", "gray"))
+points(x=1:10, y=rep(7, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "gray", "gray", "green", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(8, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "gray", "green", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(9, 10), pch=21, cex=2.7, col = "black",
+       bg= c("gray", "gray", "green", "green", "gray", "gray", "gray", "gray", "gray", "gray"))
+points(x=1:10, y=rep(10, 10), pch=21, cex=2.7, 
+       col = c("black", "black", "black", "red", "black", "black", "black", "black", "black", "black"),
+       bg= c("gray", "gray", "gray", "green", "gray", "gray", "gray", "gray", "gray", "gray"))
+```
+
+------------------------------------------------------------------------
+
+-   In a diploid population with $k$ alleles at a neutral locus the average time (expressed in generations) back to the previous coalescent event when there were $k-1$ alleles is expressed with:
+
+$$
+\label{coaleNe}
+\tag{8.12}
+T_k = \frac{4N_e}{k(k-1)}generations
+$$
+
+-   The time for all $k$ alleles in the population to coalesce back to one allele is: $4N_e[1-(\frac{1}{k})]$.
+-   In a population of $N_e = 50$ with three alleles the expected time to its previous coalescence is:
+
+$$
+T_3 = \frac{4*50}{3*2} = 33 \ generations
+$$
+
+
+
+## References
