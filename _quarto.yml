@@ -51,8 +51,8 @@ website:
             text: "Class 7 - Genetic Drift/Effective Population Size"  
           - href: ./classes/8/class_8.html
             text: "Class 8 - Manuscript discussion-Genetic Drift/Effective Population Size"  
-#          - href: ./classes/9/class_9.html
-#            text: "Class 9 - Manuscript discussion-Genetic Drift/Effective Population Size"  
+          - href: ./classes/9/class_9.html
+            text: "Class 9 - Manuscript discussion-Genetic Drift/Effective Population Size"  
 
 
     tools:
