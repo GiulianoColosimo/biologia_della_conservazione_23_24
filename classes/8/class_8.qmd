@@ -34,10 +34,9 @@ lapply(x, require, character.only = T)
 rm(x)
 ```
 
-| Student      | Title            |
-|--------------|------------------|
-| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)      |
-
+| Student | Title                                                                                                                                 |
+|--------------------------------|----------------------------------------|
+| FALVO   | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq) |
 
 ## Topics
 
@@ -69,7 +68,7 @@ rm(x)
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ### Population size
 
@@ -117,7 +116,6 @@ The ideal population:
     -   unequal ratios between sexes
 
 ------------------------------------------------------------------------
-
 
 ### Estimating $N_e$
 
@@ -176,17 +174,17 @@ $$
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 #### Genetic approaches
 
 -   DNA retains information on the evolutionary history of individuals
-- We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
+-   We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
 -   The coalescent approach uses the sampling theory for neutral alleles and allows us to trace back in time this information [@Rosenberg2002]
 -   Under the neutral theory of evolution 2 alleles may descend from the same ancestral allele in the previous generation with probability $1/N_{ef}$ for mtDNA, or $1/2N_e$ for a general diploid locus
 -   Alternatively 2 alleles may derive from 2 different alleles in the previous generation with probability $1-\frac{1}{N_{ef}}$
 
----
+------------------------------------------------------------------------
 
 -   Under this neutral model of genetic drift the coalescence process takes a characteristic time:
 
@@ -196,8 +194,7 @@ $$ where $T_k$ is the average time in generations back to the previous coalescen
 
 -   The time for all $k$ alleles in the population to coalesce back to one allele is: $4N_e[1-(\frac{1}{k})]$
 
----
-
+------------------------------------------------------------------------
 
 ### The coalescent theory
 
@@ -207,7 +204,7 @@ $$ where $T_k$ is the average time in generations back to the previous coalescen
 -   mtDNA is haploid, maternally inherited and it does not undergo recombination
 -   Coalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations [@Allendorf2022; @Rosenberg2002]
 
----
+------------------------------------------------------------------------
 
 ```{r Ne, echo=F}
 n <- 20
@@ -246,7 +243,7 @@ while(labelingGen > 0){
 }
 ```
 
----
+------------------------------------------------------------------------
 
 ### Genetic drift, $N_e$, and the coalescent
 
@@ -753,7 +750,5 @@ $$
 $$
 T_3 = \frac{4*50}{3*2} = 33 \ generations
 $$
-
-
 
 ## References

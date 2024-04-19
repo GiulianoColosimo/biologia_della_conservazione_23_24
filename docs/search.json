@@ -712,5 +712,19 @@
     "title": "Biologia della Conservazione",
     "section": "The coalescent",
     "text": "The coalescent\n\nThe methods mentioned thus far use demographic information to estimate \\(N_e\\) and we then look at how allelic frequencies vary forward in time, generation after generation.\nThe coalescent offers an alternative approach to study the loss of genetic diversity and to use this information to infer effective population size.\nTo coalesce means “unite” or “fuse”.\nTo better understand this approach we can look at the example of mitochondrial DNA (mtDNA).\nmtDNA is haploid, maternally inherited and it does not undergo recombination.\nCoalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations (Allendorf et al., 2022; Rosenberg & Nordborg, 2002)."
+  },
+  {
+    "objectID": "classes/9/class_9.html#topics",
+    "href": "classes/9/class_9.html#topics",
+    "title": "Biologia della Conservazione",
+    "section": "Topics",
+    "text": "Topics\n\n\n\nIntroduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
+  },
+  {
+    "objectID": "classes/9/class_9.html#references",
+    "href": "classes/9/class_9.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD"
   }
 ]

@@ -95,35 +95,36 @@ $$ where $p$ is the frequency of the allele (usually the dominant one) and $n$ i
 
 ## The simpler model: Hardy-Weinberg principle
 
-- In 1908, Godfrey Harold Hardy (a British mathematician) and Wilhelm Weinberg (a German physician), independently developed a math model describing the dynamics of a diploid, sexually reproducing population
+-   In 1908, Godfrey Harold Hardy (a British mathematician) and Wilhelm Weinberg (a German physician), independently developed a math model describing the dynamics of a diploid, sexually reproducing population
 
 ::: columns
 ::: {.column width="50%"}
 ![Gregory Harol Hardy, figure from the Wiki page](./hardy.jpg)
 :::
+
 ::: {.column width="50%"}
-![Wilhelm Weinberg, figure from [http://www.esp.org/people/](http://www.esp.org/people/)](./weinberg.jpg)
+![Wilhelm Weinberg, figure from <http://www.esp.org/people/>](./weinberg.jpg)
 :::
 :::
 
----
+------------------------------------------------------------------------
 
-- Hardy-Weinberg model suggests that a population reaches an equilibrium where allele frequencies are constant and there is a specific relation between genotypic and allelic frequencies
+-   Hardy-Weinberg model suggests that a population reaches an equilibrium where allele frequencies are constant and there is a specific relation between genotypic and allelic frequencies
 
 . . .
 
 Assumptions of the model:
 
-| Assumption               | Significance                                                                                                                                                                                 |
-|------------------|------------------------------------------------------|
-| Random mating            | Individuals show no significant preference or dislike for other individuals with respect to specific traits or loci.                                                                         |
-| No mutation              | Mutation is one of the few forces creating variability. We assume that the information is transmitted from generation to generation without the influence of mutation.                       |
-| Infinite population size | No population in nature is actually infinite (although populations of some species  may as well be)! This assumption is fundamental to construct a null model and compare the effect of small population size. |
+| Assumption               | Significance                                                                                                                                                                                                  |
+|--------------|----------------------------------------------------------|
+| Random mating            | Individuals show no significant preference or dislike for other individuals with respect to specific traits or loci.                                                                                          |
+| No mutation              | Mutation is one of the few forces creating variability. We assume that the information is transmitted from generation to generation without the influence of mutation.                                        |
+| Infinite population size | No population in nature is actually infinite (although populations of some species may as well be)! This assumption is fundamental to construct a null model and compare the effect of small population size. |
 
 ------------------------------------------------------------------------
 
 |                      | (continues)                                                                                                                                                                                                                                                                                                           |
-|------------------|------------------------------------------------------|
+|------------|------------------------------------------------------------|
 | No natural selection | We will assume that all alleles and genotypes have the same fitness and that there is no differential reproduction or survival. This assumption is very unlikely to be true in nature, especially because selection may be reduced for the loci under analysis, but still present at all other loci in an individual. |
 | No immigration       | We will first consider a situation where only one population of a certain species is present. This means that we will not consider gene flow and exchange of genetic material from and to other populations.                                                                                                          |
 
@@ -131,6 +132,7 @@ Assumptions of the model:
 
 ::: callout-important
 # Question
+
 What is the main consequence of the assumptions we have just described?
 :::
 
@@ -138,10 +140,11 @@ What is the main consequence of the assumptions we have just described?
 
 ::: callout-tip
 # Answer
+
 The main outcome of these assumptions is that the population under study is a population that doesn't evolve!
 :::
 
----
+------------------------------------------------------------------------
 
 ```{r hwProps, echo=FALSE, fig.cap='Organization of genetic variability in a Hardy-Weinberg equilibrium population typed at a biallelic locus', fig.align='center'}
 p <- seq(0, 1, by = 0.1)
@@ -163,9 +166,10 @@ legend("top",
 ------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
+
 #### A walk-through example
 
-- We begin considering a diploid population with n = 15 individuals
+-   We begin considering a diploid population with n = 15 individuals
 
 ![](./population10a.png){fig-align="center"}
 
@@ -173,21 +177,21 @@ legend("top",
 
 ### Analyzing the Hardy-Weinberg model
 
-- Being diploids each individual has two alleles per locus (A and a)
+-   Being diploids each individual has two alleles per locus (A and a)
 
 ![](./population10c.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
-- Summarizing the information as a table...
+-   Summarizing the information as a table...
 
-| $n_{AA}$       | $n_{Aa}$       | $n_{aa}$       | $n$ |
-|----------|----------|----------|-------|
-| 6 | 7 | 2 | 15 |
+| $n_{AA}$ | $n_{Aa}$ | $n_{aa}$ | $n$ |
+|----------|----------|----------|-----|
+| 6        | 7        | 2        | 15  |
 
-- ... and estimating the allele frequencies:
+-   ... and estimating the allele frequencies:
 
 $$
 p = f(A) = \frac{2n_{AA} + n_{Aa}}{2n} = \frac{12 + 7}{30} \approx 0.633
@@ -197,9 +201,9 @@ $$
 q = f(a) = \frac{2n_{aa} + n_{Aa}}{2n}= \frac{4 + 7}{30} \approx 0.367
 $$
 
-- Since there are only two alleles we can write $p + q = 1$
+-   Since there are only two alleles we can write $p + q = 1$
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
@@ -223,20 +227,19 @@ $$
 
 ### Analyzing the Hardy-Weinberg model
 
-- "All alleles and genotypes have the same fitness with no differential reproduction or survival" and individuals are "mating at random"
+-   "All alleles and genotypes have the same fitness with no differential reproduction or survival" and individuals are "mating at random"
 
-- If this is true, the frequencies of male and female gametes correspond to the allele frequencies and zygotes are formed randomly choosing gametes from the gene pool
+-   If this is true, the frequencies of male and female gametes correspond to the allele frequencies and zygotes are formed randomly choosing gametes from the gene pool
 
 ![](./genePool.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
 #### Basic probability theory
 
-- The probability of two independent events, such as the union of two gametes at random in  a zygote, is calculated as the product of the probability of the single events
-
+-   The probability of two independent events, such as the union of two gametes at random in a zygote, is calculated as the product of the probability of the single events
 
 ```{r dice1}
 #| output-location: column-fragment
@@ -267,13 +270,13 @@ sim_dice <- sample(dice, size = 100000,
 table(sim_dice)/100000
 ```
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
 #### Basic probability theory
 
-- The probability of casting a dice and obtaining one of the six numbers is $\frac{1}{6} \approx 0.16$. The probability of casting the dice twice and obtaining the same number is $\frac{1}{6} * \frac{1}{6} = \frac{1}{36} \approx 0.028$  
+-   The probability of casting a dice and obtaining one of the six numbers is $\frac{1}{6} \approx 0.16$. The probability of casting the dice twice and obtaining the same number is $\frac{1}{6} * \frac{1}{6} = \frac{1}{36} \approx 0.028$
 
 #### The Punnet square
 
@@ -288,15 +291,15 @@ text(.25, .25, expression("Aa = p*q = pq"))
 text(.75, .25, expression("aa = q*q = q"^2))
 ```
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
-- We want to recreate a sample of 15 individuals starting from the gamete pool of our original population with $n = 15$ and $p \approx 0.633$ and $q \approx 0.367$
+-   We want to recreate a sample of 15 individuals starting from the gamete pool of our original population with $n = 15$ and $p \approx 0.633$ and $q \approx 0.367$
 
 ![](./genePoolHWA0.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
@@ -306,10 +309,9 @@ q <- 0.367
 sample(c("A", "a"), size = 1, prob = c(p, q))
 ```
 
-
 ![](./genePoolHWA1.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
@@ -319,30 +321,29 @@ sample(c("A", "a"), size = 1, prob = c(p, q))
 
 ![](./genePoolHWA2.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
 ![](./genePoolHWA16.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
 ![](./genePoolHWA30.png){fig-align="center"}
 
-- We summarize the results in a table
+-   We summarize the results in a table
 
-| $n_{AA}$       | $n_{Aa}$       | $n_{aa}$       | $n$ |
-|----------|----------|----------|-------|
-| 7 | 7 | 1 | 15 |
+| $n_{AA}$ | $n_{Aa}$ | $n_{aa}$ | $n$ |
+|----------|----------|----------|-----|
+| 7        | 7        | 1        | 15  |
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
-- The genotype and allele frequencies of the new generation are different from the previous one
-
+-   The genotype and allele frequencies of the new generation are different from the previous one
 
 ```{r echo=TRUE, eval=TRUE}
 p <- 0.633 
@@ -353,9 +354,9 @@ newSample <- sample(c("A", "a"), size = 30,
 table(newSample)
 ```
 
-- Once again, the genotype and allele frequencies of the new generation are different from the previous one, and it will likely be different most of the time we do this again
+-   Once again, the genotype and allele frequencies of the new generation are different from the previous one, and it will likely be different most of the time we do this again
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
@@ -373,13 +374,13 @@ hist(newSample[,"A"]/30,
 abline(v = 0.637, lty = 2, lwd = 2)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
-- We notice that there is a oretty large variability around the original value of p = 0.633
+-   We notice that there is a oretty large variability around the original value of p = 0.633
 
-- In other words, the sampling error is quite large
+-   In other words, the sampling error is quite large
 
 ```{r echo=FALSE, eval=TRUE, fig.align='center'}
 # This code has been modified from prof. Gratton
@@ -395,7 +396,7 @@ hist(newSample[,"A"]/30,
 abline(v = 0.637, lty = 2, lwd = 2)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
@@ -412,31 +413,31 @@ hist(newSample[,"A"]/100,
 abline(v = 0.637, lty = 2, lwd = 2)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Analyzing the Hardy-Weinberg model
 
 ![](./samplingError.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Summary of the Hardy-Weinberg model
 
-- The larger the sample dimension, the lower is the variation in allele frequencies with respect to the original value 
+-   The larger the sample dimension, the lower is the variation in allele frequencies with respect to the original value
 
-- If all the assumptions of the HW model are met, we should expect no variation at all in allele frequency, generation after generation
+-   If all the assumptions of the HW model are met, we should expect no variation at all in allele frequency, generation after generation
 
-- In natural population it is very hard to meet all the assumptions of the HW, in particular the one of infinite population size
+-   In natural population it is very hard to meet all the assumptions of the HW, in particular the one of infinite population size
 
-- The HW model is a very effective and simple way to "see" the effects of various evolutionary forces operating at the population level. It provides a "null model" against which compare what we see in our data
+-   The HW model is a very effective and simple way to "see" the effects of various evolutionary forces operating at the population level. It provides a "null model" against which compare what we see in our data
 
-- Once we found that something is different between what we expect from the HW model and what we see in nature at the population genetic level, we can start investigate the relative role of the various evolutionary forces
+-   Once we found that something is different between what we expect from the HW model and what we see in nature at the population genetic level, we can start investigate the relative role of the various evolutionary forces
 
----
+------------------------------------------------------------------------
 
 ### Testing a null hypothesis
 
--   A fundamental aspect of every scientific discipline is the capability to discern between alternative hypotheses. The general approach is to present a formal or null-hypothesis ($H_0$) and a statistical test to estimate the probability that  it holds true
+-   A fundamental aspect of every scientific discipline is the capability to discern between alternative hypotheses. The general approach is to present a formal or null-hypothesis ($H_0$) and a statistical test to estimate the probability that it holds true
 -   Such test usually implies the calculation of a P-value (*i.e.*, a probability distribution)
 -   Lower P-values correspond to higher degree of certainty that the null is rejected and an alternative hypothesis ($H_1$) is preferred to explain the data
 -   When $P=0.002$ it means that, if the null holds true, you expect to see a result as extreme or even more extreme than the one you have measured only 2 times out of 1000 experiment
@@ -480,6 +481,7 @@ datatable(pop_test_df, filter = "none", rownames = F)
 
 ::: callout-important
 # Problem
+
 Calculate allele frequency, genotype frequency and expected genotype frequency.
 :::
 
@@ -544,8 +546,7 @@ $$
 pchisq(q = 2.102498, df = 1, lower.tail = F)
 ```
 
-
----
+------------------------------------------------------------------------
 
 ```{r chiSq2, echo=F}
 chiTestVal <- seq(0, 10, by = 0.001)
@@ -566,7 +567,7 @@ legend("topright", legend = c("df = 1", "df = 2", "df = 3", "df = 4", "df = 5"),
        col = c("black", "blue", "green", "brown", "deeppink"), lty = 1)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Degrees of freedom
 
@@ -574,7 +575,7 @@ legend("topright", legend = c("df = 1", "df = 2", "df = 3", "df = 4", "df = 5"),
 -   If a car dealer is giving away 15 random cars to the first 15 customers, the first 14 that show up at the car dealer will have the freedom to pick and choose the car they want. The $15^{th}$ will not be able to do so as only one car will be remaining. Similarly, if you calculated the mean of a sample of 15 numbers, the first 14 numbers can vary freely, but the value of the $15^{th}$ number is determined as the value needed to achieve the given sample mean!
 -   Degrees of freedom for tests for Hardy--Weinberg proportions are estimated according to: $df=\# genotypes − \# alleles$. This is because the number of genotypes in a population can not vary freely, but is bound to the number of alleles present in that population
 
----
+------------------------------------------------------------------------
 
 ```{r pvalxsquplot, echo=F}
 

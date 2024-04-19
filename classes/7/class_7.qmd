@@ -64,13 +64,13 @@ rm(x)
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ### Sampling error
 
 ![](./samplingError.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Testing hypothesis
 
@@ -93,7 +93,7 @@ legend("topright", legend = c("df = 1", "df = 2", "df = 3", "df = 4", "df = 5"),
        col = c("black", "blue", "green", "brown", "deeppink"), lty = 1)
 ```
 
----
+------------------------------------------------------------------------
 
 ### When not to use the $\chi^2$ test
 
@@ -109,7 +109,7 @@ legend("topright", legend = c("df = 1", "df = 2", "df = 3", "df = 4", "df = 5"),
 -   Let's work out an example with a small population: 4 individuals $AA$, 2 individuals $Aa$ and 1 individuals $aa$
 -   What genotype configurations could give us the same allele count?
 
----
+------------------------------------------------------------------------
 
 | $n_{AA}$ | $n_{Aa}$ | $n_{aa}$ | $n_{A}$ | $n_{a}$ |
 |:--------:|:--------:|:--------:|:-------:|:-------:|
@@ -161,7 +161,7 @@ $$
 -   Genetic drift is random change in allele frequencies from generation to generation because of sampling error. That is, the finite number of genes transmitted to progeny will be an imperfect sample of the allele frequencies in the previous generation [@Allendorf2022, p. 114]
 -   Genetic drift is the primary cause bringing about allele frequency changes throughout the genome over time [@Chen2018; @Allendorf2022]
 
----
+------------------------------------------------------------------------
 
 ### Genetic drift
 
@@ -241,7 +241,7 @@ $$
 P(fixation \ A_2)=(1-p)^{2n}
 $$
 
----
+------------------------------------------------------------------------
 
 ::: callout-important
 # Problem
@@ -506,7 +506,7 @@ error.bar(df_mean_freq_N_mtrx.blt, df_mean_freq_N_mtrx,
           df_sd_freq_N_mtrx)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Population size
 
@@ -554,7 +554,6 @@ The ideal population:
     -   unequal ratios between sexes
 
 ------------------------------------------------------------------------
-
 
 ### Estimating $N_e$
 
@@ -613,17 +612,17 @@ $$
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 #### Genetic approaches
 
 -   DNA retains information on the evolutionary history of individuals
-- We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
+-   We can use basic probability theory to extrapolate information, including information on $N_e$ from DNA markers
 -   The coalescent approach uses the sampling theory for neutral alleles and allows us to trace back in time this information [@Rosenberg2002]
 -   Under the neutral theory of evolution 2 alleles may descend from the same ancestral allele in the previous generation with probability $1/N_{ef}$ for mtDNA, or $1/2N_e$ for a general diploid locus
 -   Alternatively 2 alleles may derive from 2 different alleles in the previous generation with probability $1-\frac{1}{N_{ef}}$
 
----
+------------------------------------------------------------------------
 
 -   Under this neutral model of genetic drift the coalescence process takes a characteristic time:
 
@@ -633,8 +632,7 @@ $$ where $T_k$ is the average time in generations back to the previous coalescen
 
 -   The time for all $k$ alleles in the population to coalesce back to one allele is: $4N_e[1-(\frac{1}{k})]$
 
----
-
+------------------------------------------------------------------------
 
 ### The coalescent theory
 
@@ -644,7 +642,7 @@ $$ where $T_k$ is the average time in generations back to the previous coalescen
 -   mtDNA is haploid, maternally inherited and it does not undergo recombination
 -   Coalescent theory provides a powerful framework to study the effects of genetic drift, natural selection, mutation, and gene flow in natural populations [@Allendorf2022; @Rosenberg2002]
 
----
+------------------------------------------------------------------------
 
 ```{r Ne, echo=F}
 n <- 20
@@ -682,8 +680,5 @@ while(labelingGen > 0){
   labelingGen <- labelingGen-1
 }
 ```
-
-
-
 
 ## References

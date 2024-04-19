@@ -1,0 +1,266 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 9 - Manuscript discussion-Genetic Drift/Effective Population Size/Coalescence"
+date: "2024-04-18"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+| Student | Title                                                                                                                                 |
+|--------------------------------|----------------------------------------|
+| FALVO   | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq) |
+| D'ALESSANDRO | [Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding](https://drive.proton.me/urls/HQMV65ETB0#vB21xDrPrAXN) |
+
+---
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: orange;"}
+7.  [Effective population size]{style="color: orange;"}
+8.  [Inbreeding depression]{style="color: blue;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+### Coalescence simulation function
+
+
+```{r function1, echo=TRUE, eval=TRUE}
+#| output-location: column
+
+# Funzione per la simulazione del processo di coalescenza
+
+coalesc_sim <- function(t, N) { 
+  
+  # t = durata della simulazione in generazioni 
+  # N = dimensione effettiva della popolazione
+  
+  # vettore per indicizzazione delle generazioni
+  g  <-  1:t        
+  
+  # WF pop quindi n è costante in tutte le generazioni ed uguale a N   
+  # possiamo modificare questa parte per fare simulazioni con N variabile
+  n  <-  rep(N, t) 
+  
+  # lista di vettori di lunghezza t
+  # ogni vettore i-esimo rappresenta l’identità 
+  # del membro della generazione (i-1)-esima che è l’ancestore 
+  # di ciascun membro della generazione i-esima.
+  p  <-  vector(mode = "list", length = t) 
+  
+  # la prima generazione è da 1:N che rappresentano anche l'ID dell'individuo
+  p[[1]]  <-  1:N 
+  
+  # il ciclo viene ripetuto per ciascuna generazione da 2 a t
+  # la prima generazione l'abbiamo già formata quindi non c'è bisogno 
+  for(i in 2:length(g)){ 
+    p[[i]]  <-  sort(sample(1:n[i-1],    # funzione sample per il campionamento casuale dalla gen i-1
+                            size = n[i], # dimensione del campione
+                            replace = T) # 
+                     ) 
+  }
+  
+  # questo serve solo per dire a R che la funzione deve sputare fuori qualcosa, 
+  # in particolare l’elenco delle generazioni da 1 a t (g), 
+  # la dimensione effettiva per ciascuna generazione (n), 
+  # e la lista degli antenati per ciascuna generazione (p)...
+  return(list(g = g, n = n, p = p)) 
+  
+}
+
+t <- 25
+N <- 13
+sim <- coalesc_sim(t, N)
+sim
+```
+
+---
+
+### Coalescence simulation graphic function
+
+```{r function2, echo=TRUE, eval=TRUE}
+#| output-location: column
+
+# Funzione per la produzione di un grafico a partire dai dati creati
+# dalla simulazione di una processo di coalescenza
+
+coalescent_plot = function(sim, 
+                           cex.dots = 1, 
+                           cex.lab = 1, 
+                           col.dots = NULL, 
+                           cex.ylab = 1, 
+                           steps = NULL,
+                           ...) {
+  
+  p <- sim$p
+  n <- sim$n
+  g <- sim$g
+  t <- length(sim$g)
+  
+  # con queste righe di codice assegniamo il colore degli individui della 
+  # generazione i-esima in modo che sia uguale a quello della generazione (i-esima)-1, ovvero
+  # dei loro ancestori. Da notare che a meno che i colori non vengano specificati 
+  # in maniera attiva, R userà solo 8 colori di base e se la nostra popolazione
+  # ha più di 8 individui riciclerà i colori ogni 8 individui
+  cols <-  sim$p
+  for(i in 2:(length(cols)-1)){
+    cols[[i+1]] = cols[[i]][sim$p[[i+1]]]
+    }
+  
+  # al momento non si possono specificare dei colori ad-hoc per ogni singolo individuo
+  # ma se un colore vieni specificato come argomento della funzione tutti i pallini 
+  # avranno quel colore
+  if(is.character(col.dots)){
+    cols = lapply(1:length(n), function(i){rep(col.dots, n[i])})
+  }
+  
+  
+  if(is.null(steps)){
+    steps = t
+  }
+  
+  # print di un plot vuoto
+  plot(0,0, type = "n",
+       xlim = c(1, max(n)),
+       ylim = c(1, t),
+       xaxt = "n",
+       yaxt = "n",
+       bty = "n",
+       xlab = "",
+       ylab = "", cex.lab = cex.lab, ...)
+  text(x = -.5, y = t, labels = expression('Present (t'[i]*')'), adj = 1)
+  text(x = -.5, y = 1, labels = expression('Past (t'[0]*')'), adj = 1)
+  
+  # i segmenti sono disegnati da i-esima generazione a (i-esima)-1 generazione
+  # per essere piu precisi sono sono disegnati da (i-esima+1) a i-esima
+  if(steps > 1){
+    for(i in 1:(steps-1)){
+      segments(x0 = 1:n[i+1],
+               x1 = p[[i+1]],
+               y0 = i+1,
+               y1 = i,
+               ...)		
+    }
+  }
+  
+  # i pallini rappresentanti gli individui vengono disegnati per ultimi 
+  # sopra i segmenti
+  for(i in 1:steps){
+    points(1:n[i],
+           rep(i, n[i]),
+           cex = cex.dots,
+           bg = cols[[i]],
+           pch = 21)		
+  }
+}
+
+coalescent_plot(sim,  
+                cex.dots = 2, 
+                col.dots = "orange",
+                asp = 1)
+```
+
+---
+
+### Coalescence simulation graphic function
+
+```{r function3b, echo=TRUE, eval=TRUE}
+#| output-location: column
+
+coalescent_plot(sim,  
+                cex.dots = 2, 
+                col.dots = "orange",
+                asp = 1)
+
+# questa funzione ci aiuta a visualizzare il "percorso" di uno degli aplotipi
+# nel passato fino all'ancesotre iniziale
+# l'aplotipo da visualizzare lo individuiamo noi con il parametro k
+# se facciamo correre la funzione su due aplotipi possiamo individuare l'ancestore comune
+
+ancestral_marker <- function(sim, k,
+                     anc.col = "black",
+                     anc.lwd = 2,
+                     cex.dots = 1){
+  
+  # codice originale a cura del prof. Gratton
+  
+  p = sim$p
+  n = sim$n
+  g = sim$g
+  t = length(sim$g)
+  
+  middle = max(n)/2    
+  mm_0 = sapply(1:(t-1), function(i){middle - n[i]/2})
+  mm_1 = sapply(1:(t-1), function(i){middle - n[i+1]/2})
+  
+  for(i in k){
+    ks = rep(NA, t)
+    ks[t] = i
+    for(j in (t-1):1){
+      ks[j] = p[[j+1]][ks[j+1]]
+    }
+  }
+  
+  segments(x0 = ks[1:(t-1)] + mm_0, x1 = ks[2:t] + mm_1, y0 = g[1:(t-1)], y1 = g[2:t], col = anc.col, lwd = anc.lwd)
+  points(x = ks + c(mm_0, mm_1[length(mm_1)]), y = 1:t, cex = cex.dots, bg = anc.col, pch = 21)
+      
+}
+
+ancestral_marker(sim, 13, cex.dots = 2)
+
+ancestral_marker(sim, 3, cex.dots = 2)
+```
+
+
+## References
