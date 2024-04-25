@@ -1,0 +1,109 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 11 - Arguments review for mid term"
+date: "2024-04-26"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## Introduction to conservation biology.
+
+-   What is conservation biology and historical perspective.
+-   The origin of conservation.
+-   The ecologically noble savage conundrum.
+    -   Conservation from the standpoint of foraging theory
+-   Core merits of conservation biology.
+-   Conservation biology and conservation science.
+
+------------------------------------------------------------------------
+
+## Biodiversity
+
+-   Biodiversity, what is it?
+-   Different level of biodiversity.
+-   Why do we care about biodiversity.
+-   Ecosystem services.
+-   Supporting biodiversity in human modified landscapes.
+-   Red list of threatened species. Species concept.
+-   Causes of biodiversity loss.
+-   How to measure biodiversity.
+
+------------------------------------------------------------------------
+
+## Biodiversity and extinction
+
+-   Major steps in the evolution of life forms.
+-   Fossil records and extinction rates.
+-   Mass extinction events.
+-   Background extinction rate.
+-   The sixth extinction.
+
+------------------------------------------------------------------------
+
+## Basics of conservation genetics
+
+-   Five general categories of conservation genetics studies.
+-   Interacting factors in conservation of natural populations.
+-   What should we conserve.
+-   Fundamental vocabulary and measures of genetic diversity.
+-   Hardy-Weinberg and its assumptions.
+-   Estimates of HW proportions.
+-   Investigating the significance of our results.
+
+------------------------------------------------------------------------
+
+## Population size and genetic drift
+
+-   Binomial sampling and causes of genetic drift.
+-   Effective population size.
+-   The Wright-Fisher population model.
+-   Estimates of effective population size with different approaches.
+
+------------------------------------------------------------------------
+
+## Inbreeding
+
+-   What is inbreeding?
+-   The pedigree inbreeding coefficient.
+-   Inbreeding depression.
+-   Increased homozygosity and decreased heterozygosity.
+
+## Literature covered so far
+
+- @Alvard1993
+
+- @Freudenberger2013
+
+- Developing gene drive technologies to eradicate invasive rodents from islands
+
+- Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding
+
+- First evidence of recruitment in critically endangered Galapagos pink iguanas

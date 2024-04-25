@@ -55,6 +55,8 @@ website:
             text: "Class 9 - Manuscript discussion-Genetic Drift/Effective Population Size"  
           - href: ./classes/10/class_10.html
             text: "Class 10 - Inbreeding"  
+          - href: ./classes/11/class_11.html
+            text: "Class 11 - Arguments review for mid term"  
 
 
     tools:
