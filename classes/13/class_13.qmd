@@ -148,7 +148,8 @@ rm(x)
 
 -   Developing priorities for the conservation of a species often requires an understanding of adaptive genetic differentiation among populations [@Allendorf2022].
 -   To understand how genetic variation is distributed at different loci within subdivided populations it is necessary to look at different interacting forces like gene flow, genetic drift and natural selection.
--   $F$ statistics [@Wright1931; @Wright1951; @Malecot1948] are undoubtedly the most used indexes to describe genetic differentiation in and between demes. - $F$ statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels.
+-   $F$ statistics [@Wright1931; @Wright1951; @Malecot1948] are undoubtedly the most used indexes to describe genetic differentiation in and between demes. 
+- $F$ statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels.
 
 ## $F$ statistics
 

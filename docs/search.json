@@ -935,7 +935,7 @@
     "href": "classes/13/class_13.html#population-structure-8",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nDeveloping priorities for the conservation of a species often requires an understanding of adaptive genetic differentiation among populations (Allendorf et al., 2022).\nTo understand how genetic variation is distributed at different loci within subdivided populations it is necessary to look at different interacting forces like gene flow, genetic drift and natural selection.\n\\(F\\) statistics (Malécot, 1948; Wright, 1931, 1951) are undoubtedly the most used indexes to describe genetic differentiation in and between demes. - \\(F\\) statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels."
+    "text": "Population structure\n\nDeveloping priorities for the conservation of a species often requires an understanding of adaptive genetic differentiation among populations (Allendorf et al., 2022).\nTo understand how genetic variation is distributed at different loci within subdivided populations it is necessary to look at different interacting forces like gene flow, genetic drift and natural selection.\n\\(F\\) statistics (Malécot, 1948; Wright, 1931, 1951) are undoubtedly the most used indexes to describe genetic differentiation in and between demes.\n\\(F\\) statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels."
   },
   {
     "objectID": "classes/13/class_13.html#f-statistics",
