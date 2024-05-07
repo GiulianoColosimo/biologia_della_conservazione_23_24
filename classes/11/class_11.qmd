@@ -98,12 +98,12 @@ rm(x)
 
 ## Literature covered so far
 
-- @Alvard1993
+-   @Alvard1993
 
-- @Freudenberger2013
+-   @Freudenberger2013
 
-- Developing gene drive technologies to eradicate invasive rodents from islands
+-   Developing gene drive technologies to eradicate invasive rodents from islands
 
-- Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding
+-   Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding
 
-- First evidence of recruitment in critically endangered Galapagos pink iguanas
+-   First evidence of recruitment in critically endangered Galapagos pink iguanas

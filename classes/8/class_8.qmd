@@ -35,7 +35,7 @@ rm(x)
 ```
 
 | Student | Title                                                                                                                                 |
-|--------------------------------|----------------------------------------|
+|---------|---------------------------------------------------------------------------------------------------------------------------------------|
 | FALVO   | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq) |
 
 ## Topics
