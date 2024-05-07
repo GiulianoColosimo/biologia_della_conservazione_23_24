@@ -942,7 +942,7 @@
     "href": "classes/13/class_13.html#f-statistics",
     "title": "Biologia della Conservazione",
     "section": "\\(F\\) statistics",
-    "text": "\\(F\\) statistics\n\nWe recognize three primary coefficients: \\(F_{IS}\\), \\(F_{IT}\\), and \\(F_{ST}\\).\n\\(F_{IS}\\) measures Hardy–Weinberg departures within local demes.\n\\(F_{ST}\\) measures divergence in allele frequencies among demes.\n\\(F_{IT}\\) measures Hardy–Weinberg departures in the metapopulation due to \\(F_{IT}\\) (nonrandom mating within local demes) and \\(F_{ST}\\) (allele frequency divergence among demes).\nThe original \\(F\\) statistics developed by wright focused on loci with only two alleles.\nNei (1977) extended these measures to multiple alleles and used a different notation to name what he called analysis of gene diversity: \\(G_{IS}\\), \\(G_{IT}\\), and \\(G_{ST}\\). Often the two groups of indexes are used interchangeably."
+    "text": "\\(F\\) statistics\n\nWe recognize three primary coefficients: \\(F_{IS}\\), \\(F_{IT}\\), and \\(F_{ST}\\).\n\\(F_{IS}\\) measures Hardy–Weinberg departures within local demes.\n\\(F_{ST}\\) measures divergence in allele frequencies among demes.\n\\(F_{IT}\\) measures Hardy–Weinberg departures in the metapopulation due to \\(F_{IS}\\) (nonrandom mating within local demes) and \\(F_{ST}\\) (allele frequency divergence among demes).\nThe original \\(F\\) statistics developed by wright focused on loci with only two alleles.\nNei (1977) extended these measures to multiple alleles and used a different notation to name what he called analysis of gene diversity: \\(G_{IS}\\), \\(G_{IT}\\), and \\(G_{ST}\\). Often the two groups of indexes are used interchangeably."
   },
   {
     "objectID": "classes/13/class_13.html#f_is",

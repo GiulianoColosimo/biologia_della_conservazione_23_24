@@ -156,7 +156,7 @@ rm(x)
 -   We recognize three primary coefficients: $F_{IS}$, $F_{IT}$, and $F_{ST}$.
 -   $F_{IS}$ measures Hardy--Weinberg departures within local demes.
 -   $F_{ST}$ measures divergence in allele frequencies among demes.
--   $F_{IT}$ measures Hardy--Weinberg departures in the metapopulation due to $F_{IT}$ (nonrandom mating within local demes) and $F_{ST}$ (allele frequency divergence among demes).
+-   $F_{IT}$ measures Hardy--Weinberg departures in the metapopulation due to $F_{IS}$ (nonrandom mating within local demes) and $F_{ST}$ (allele frequency divergence among demes).
 -   The original $F$ statistics developed by wright focused on loci with only two alleles.
 -   @Nei1977 extended these measures to multiple alleles and used a different notation to name what he called *analysis of gene diversity*: $G_{IS}$, $G_{IT}$, and $G_{ST}$. Often the two groups of indexes are used interchangeably.
 
