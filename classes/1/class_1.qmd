@@ -341,7 +341,7 @@ After @Alvard1993, but see also @Stephens1986
 ## Core merits of conservation biology
 
 | Merit                              | Conservation biology...                                                                                |
-|-------------------|-----------------------------------------------------|
+|--------------------|----------------------------------------------------|
 | Basis in preserving biodiversity.  | ...focuses on preserving and conserving biodiversity rather than managing individual species.          |
 | Value laden and value driven.      | ...is committed to valuing biodiversity, regardless of its utilitarian value.                          |
 | Mission- and advocacy- oriented.   | ...emphasizes intentions and actions to save species and habitats.                                     |
@@ -351,7 +351,7 @@ After @Alvard1993, but see also @Stephens1986
 ------------------------------------------------------------------------
 
 |                                    | (continued)                                                                                                                                              |
-|-----------------|-------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | Concerned with evolutionary times. | ...seeks preservation of genetic information and processes that promote speciation for future biodiversity, not just conservation for present organisms. |
 | Adaptive.                          | ...treats management options as experimental and imprecise, where outcomes may be risky or unpredictable.                                                |
 

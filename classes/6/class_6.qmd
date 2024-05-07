@@ -116,7 +116,7 @@ $$ where $p$ is the frequency of the allele (usually the dominant one) and $n$ i
 Assumptions of the model:
 
 | Assumption               | Significance                                                                                                                                                                                                  |
-|--------------|----------------------------------------------------------|
+|-----------------|-------------------------------------------------------|
 | Random mating            | Individuals show no significant preference or dislike for other individuals with respect to specific traits or loci.                                                                                          |
 | No mutation              | Mutation is one of the few forces creating variability. We assume that the information is transmitted from generation to generation without the influence of mutation.                                        |
 | Infinite population size | No population in nature is actually infinite (although populations of some species may as well be)! This assumption is fundamental to construct a null model and compare the effect of small population size. |
@@ -124,7 +124,7 @@ Assumptions of the model:
 ------------------------------------------------------------------------
 
 |                      | (continues)                                                                                                                                                                                                                                                                                                           |
-|------------|------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | No natural selection | We will assume that all alleles and genotypes have the same fitness and that there is no differential reproduction or survival. This assumption is very unlikely to be true in nature, especially because selection may be reduced for the loci under analysis, but still present at all other loci in an individual. |
 | No immigration       | We will first consider a situation where only one population of a certain species is present. This means that we will not consider gene flow and exchange of genetic material from and to other populations.                                                                                                          |
 

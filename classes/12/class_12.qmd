@@ -1,0 +1,135 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 12 - Mid-term exam revision/Genetic load"
+date: "2024-05-02"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+| Student      | Title                                                                                                                                                                                                        |
+|--------------------------------|----------------------------------------|
+| FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)                                                                        |
+| D'ALESSANDRO | [Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding](https://drive.proton.me/urls/HQMV65ETB0#vB21xDrPrAXN) |
+| PIROLI       | [First evidence of recruitment in critically endangered Galapagos pink iguanas](https://drive.proton.me/urls/TD1F4DDC70#hzwxC3gFnM51)                                                                        |
+| TRONCONE     | [Genetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe](https://drive.proton.me/urls/SW4YPN2ZGC#RWYgHuXfrvK4)                                    |
+
+------------------------------------------------------------------------
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: blue;"}
+10. [Hybridization]{style="color: blue;"}
+11. [Applying genetic information to conservation]{style="color: blue;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: blue;"}
+13. [Managing genetic diversity in the wild]{style="color: blue;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+-   Inbreeding depression can result from either increased homozygosity or reduced heterozygosity.
+-   Aren't increased homozygosity or reduced heterozygosity two sides of the same coin?
+
+. . .
+
+-   Yes, but the mechanism related to a fitness reduction is distinct! Increased homozygosity leads to expression of a greater number of deleterious recessive alleles in inbred individuals, thereby lowering their fitness. Reduced heterozygosity reduces fitness of inbred individuals at loci where the heterozygotes have a selective advantage over homozygotes (heterozygous advantage or overdominance).\
+-   Most evidence show support for the primary problem of inbreeding depression is increased homozygosity [@Allendorf2022].
+
+------------------------------------------------------------------------
+
+![Callimico monkeys from the [Connecticut Zoo](https://www.beardsleyzoo.org)](./class10_callimico.jpg)
+
+------------------------------------------------------------------------
+
+![Relationship between inbreeding ($F_P$) and infant survival in captive callimico monkeys [@Lacy1997].](./class_10_12.png)
+
+------------------------------------------------------------------------
+
+-   It is crucial to know the mechanisms causing inbreeding depression because it affects the ability of a population to "adapt" to inbreeding.
+-   A population could adapt to inbreeding if inbreeding depression is caused by deleterious recessive alleles that potentially could be removed (purged by selection).
+-   However, inbreeding depression caused by heterozygous advantage cannot be purged because overdominant loci will always suffer reduced fitness as homozygosity increases due to increased inbreeding [@Allendorf2022].
+-   Deleterious recessive alleles are present in the genome of all species because they are continually introduced by mutation, and natural selection is inefficient at removing them because most copies are "hidden" phenotypically in heterozygotes that do not have reduced fitness [@Allendorf2022].
+-   We, therefore, expect all species to show some inbreeding depression due to the increase in homozygosity of recessive deleterious alleles.
+
+------------------------------------------------------------------------
+
+-   The effects of inbreeding depression on survival are often measured by the mean number of "lethal equivalents" (LEs) per diploid genome.
+-   A lethal equivalent is a set of deleterious alleles that would cause death if homozygous.
+-   One lethal equivalent may be a single allele that is lethal when homozygous, two alleles each with a probability of 0.5 of causing death when homozygous, or 10 alleles each with a probability of 0.10 of causing death when homozygous.
+-   The number of LEs present in a species or population is generally estimated by regressing survival on the inbreeding coefficient.
+-   The effects of inbreeding on the probability of survival, S, can be expressed as a function of $F_P$ following @Morton1956.
+
+$$
+\label{le}
+\tag{10.3}
+S = e^{-(A+BF_P)} \\ ln \ S= -A-BF_P
+$$
+
+where $e^{-A}$ is survival in an outbred population, and B is the inbreeding load.
+
+------------------------------------------------------------------------
+
+![Relationship between inbreeding coefficient (F) and reduction in fitness. Inbreeding depression is the reduction in fitness of inbred individuals and measured by the number of LEs per gamete (B). The bracket shows the reduction in fitness (inbreeding depression) predicted for individuals with an F of 0.5. After @Keller2002a and @Allendorf2022.](./class_10_13.png)
+
+------------------------------------------------------------------------
+
+## The concept of genetic load
+
+-   Genetic load is the relative difference in fitness between the theoretically fittest genotype within a population and the average genotype in that population.
+
+-   The term "load" was first used by @Muller1950 in his consideration of the possible effects of increased mutation rates because of nuclear weapons.
+
+    1.  Mutation load: The decrease in fitness caused by the accumulation of deleterious mutations.
+    2.  Segregation load: The decrease in fitness caused by heterozygous advantage.
+    3.  Drift load: The decrease in fitness caused by the increase in frequency of deleterious alleles resulting from genetic drift.
+    4.  Migration load: The reduction in fitness caused by the migration into a population of individuals that are less adapted to the local environment than native individuals.
+
+## References

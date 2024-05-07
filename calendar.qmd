@@ -65,7 +65,7 @@ calendR(month = 5,
         weeknames.size = 4, 
         title = "May",
         subtitle="2024",
-        text = c("Troncone", "Garcia", "Spera", "Cacciuni", "Bonventre", "Palmeri", "Toti"),
+        text = c("Troncone", "Garcia", "Spera", "Cacciuni", "Toti", "Palmeri", "Bonventre"),
         text.pos = c(2, 7, 9, 14, 16, 21, 23),        
         text.size = 2.5,              
         text.col = "black")
@@ -84,6 +84,6 @@ calendR(month = 5,
 | GARCIA       | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)    |
 | SPERA        | [Accelerated modern human-induced species losses entering the sixth mass extinction](https://drive.proton.me/urls/TQTJYX0CFR#vp0NSA7IbAva)     |
 | CACCIUNI     | [Island differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons](https://drive.proton.me/urls/A4H4P4BPQ4#qyJ15T7yUTeu)  |
-| BONVENTRE    | [What is conservation Science?](https://drive.proton.me/urls/9NB7Y2T0T0#txxxIMgzHPIo)  |
-| PALMERI      | [Herbarium specimens reveal the footprint of climate change on flowering trends across North America](https://drive.proton.me/urls/A8Z10R82RR#LFqcygcJtOjj)  |
 | TOTI         | [Synergies among extinction drivers under global change](https://drive.proton.me/urls/HZ2HRWEMXR#IFj88GjFUk78)    |
+| PALMERI      | [Herbarium specimens reveal the footprint of climate change on flowering trends across North America](https://drive.proton.me/urls/A8Z10R82RR#LFqcygcJtOjj)  |
+| BONVENTRE    | [What is conservation Science?](https://drive.proton.me/urls/9NB7Y2T0T0#txxxIMgzHPIo)  |

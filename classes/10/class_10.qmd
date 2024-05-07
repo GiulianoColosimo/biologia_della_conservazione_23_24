@@ -188,11 +188,11 @@ We can read this result in two complementary ways:
 -   Individual G is also inbred; there is one loop with three individuals through a common ancestor for individual G (D<u>B</u>E). Therefore, $F_{P(G)} = (1/2)^3 (1 + F_{P(B)})$. Individual B is not inbred ($F_{P(B)} = 0$) since she is a founder in this pedigree.
 -   Solving the equations: $F_{P(G)} = 0.125$, and $F_{P(K)} = (1/2)^3 (1.125) = 0.141$.
 
----
+------------------------------------------------------------------------
 
 ![After @Allendorf2022](./class10_pedigreeBonus.png)
 
----
+------------------------------------------------------------------------
 
 ![Calculation of the pedigree inbreeding coefficient for the previous slide. After @Allendorf2022](./class10_pedigreeBonus2.png)
 
@@ -250,7 +250,7 @@ We can read this result in two complementary ways:
 
 ![Callimico monkeys from the [Connecticut Zoo](https://www.beardsleyzoo.org)](./class10_callimico.jpg)
 
----
+------------------------------------------------------------------------
 
 ![Relationship between inbreeding ($F_P$) and infant survival in captive callimico monkeys [@Lacy1997].](./class_10_12.png)
 
@@ -268,7 +268,7 @@ We can read this result in two complementary ways:
 -   A lethal equivalent is a set of deleterious alleles that would cause death if homozygous.
 -   One lethal equivalent may be a single allele that is lethal when homozygous, two alleles each with a probability of 0.5 of causing death when homozygous, or 10 alleles each with a probability of 0.10 of causing death when homozygous.
 -   The number of LEs present in a species or population is generally estimated by regressing survival on the inbreeding coefficient.
--   The effects of inbreeding on the probability of survival, S, can be expressed as a function of FP following @Morton1956.
+-   The effects of inbreeding on the probability of survival, S, can be expressed as a function of $F_P$ following @Morton1956.
 
 $$
 \label{le}
