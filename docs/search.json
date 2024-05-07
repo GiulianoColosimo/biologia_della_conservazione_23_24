@@ -963,7 +963,7 @@
     "href": "classes/13/class_13.html#f_it",
     "title": "Biologia della Conservazione",
     "section": "\\(F_{IT}\\)",
-    "text": "\\(F_{IT}\\)\nMeasures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes (Allendorf et al., 2022).\n\\[\n\\label{fit}\n\\tag{13.3}\nF_{IT} = 1-\\frac{H_O}{H_T}\n\\]\n\n\nThe fixation indexes described in the previous slides are related by the following expression:\n\n\\[\n\\label{findexrelation}\n\\tag{13.4}\nF_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})\n\\]"
+    "text": "\\(F_{IT}\\)\nMeasures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes (Allendorf et al., 2022).\n\\[\n\\label{fit}\n\\tag{13.3}\nF_{IT} = 1-\\frac{H_O}{H_T}\n\\]\nwhere \\(H_O\\) is the observed heterozygosity averaged over all demes while \\(H_T\\) is the expected HW heterozygosity if the metapopulation were panmictic.\n\n\nThe fixation indexes described in the previous slides are related by the following expression:\n\n\\[\n\\label{findexrelation}\n\\tag{13.4}\nF_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})\n\\]"
   },
   {
     "objectID": "classes/13/class_13.html#the-wahlund-effect",

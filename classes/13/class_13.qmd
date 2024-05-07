@@ -194,6 +194,8 @@ $$
 F_{IT} = 1-\frac{H_O}{H_T}
 $$
 
+where $H_O$ is the observed heterozygosity averaged over all demes while $H_T$ is the expected HW heterozygosity if the metapopulation were panmictic.
+
 . . .
 
 -   The fixation indexes described in the previous slides are related by the following expression:
