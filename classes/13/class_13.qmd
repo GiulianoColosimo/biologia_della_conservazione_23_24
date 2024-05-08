@@ -35,12 +35,12 @@ rm(x)
 ```
 
 | Student      | Title                                                                                                                                                                                                        |
-|--------------------------------|----------------------------------------|
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | FALVO        | [Developing gene drive technologies to eradicate invasive rodents from islands](https://drive.proton.me/urls/9WVQGE6J5M#GEndO0gEvVJq)                                                                        |
 | D'ALESSANDRO | [Population genetic analysis of the recently rediscovered hula painted frog (*Latonia nigriventer*) reveals high genetic diversity and low inbreeding](https://drive.proton.me/urls/HQMV65ETB0#vB21xDrPrAXN) |
 | PIROLI       | [First evidence of recruitment in critically endangered Galapagos pink iguanas](https://drive.proton.me/urls/TD1F4DDC70#hzwxC3gFnM51)                                                                        |
 | TRONCONE     | [Genetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe](https://drive.proton.me/urls/SW4YPN2ZGC#RWYgHuXfrvK4)                                    |
-| GARCIA       | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)    |
+| GARCIA       | [The critically endangered vaquita is not doomed to extinction by inbreeding depression](https://drive.proton.me/urls/FJ5FMEQ8EC#QhbaqVfIyFkE)                                                               |
 
 ------------------------------------------------------------------------
 
@@ -123,7 +123,6 @@ rm(x)
 
 ![Study area in @Thatte2018. Genetically identified tigers as red dots](./class_13_6.png)
 
-
 ## Population structure
 
 -   @Frankham2011 describe the risks of outbreeding depression when translocating individuals from genetically distinct populations to supplement imperiled ones.
@@ -148,8 +147,8 @@ rm(x)
 
 -   Developing priorities for the conservation of a species often requires an understanding of adaptive genetic differentiation among populations [@Allendorf2022].
 -   To understand how genetic variation is distributed at different loci within subdivided populations it is necessary to look at different interacting forces like gene flow, genetic drift and natural selection.
--   $F$ statistics [@Wright1931; @Wright1951; @Malecot1948] are undoubtedly the most used indexes to describe genetic differentiation in and between demes. 
-- $F$ statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels.
+-   $F$ statistics [@Wright1931; @Wright1951; @Malecot1948] are undoubtedly the most used indexes to describe genetic differentiation in and between demes.
+-   $F$ statistics are, in short, inbreeding coefficients measuring different types of inbreeding at different levels.
 
 ## $F$ statistics
 
@@ -217,7 +216,7 @@ $$
 Var(q)=\frac{1}{S}\sum(q_i-\bar{q})^2 \\ \\ F_{ST} = \frac{Var(q)}{pq}
 $$
 
-## Population structure and habitat fragmentation 
+## Population structure and habitat fragmentation
 
 -   Habitat fragmentation is a combination of two processes: reduction in total area, and the creation of separate islands.
 -   Human induced fragmentation and habitat loss is recognized as the main cause of biodiversity loss [@deBaan2013].
@@ -227,18 +226,15 @@ $$
 -   With restricted gene flow fragmentation is highly deleterious in the long term.
 -   Single Large or Several Small [@Frankham2010].
 
-
-## Population structure and habitat fragmentation 
+## Population structure and habitat fragmentation
 
 ![Fragmentation of Atlantic forest. After @Luci2011](./class_13_10.png)
 
-
-## Population structure and habitat fragmentation 
-
+## Population structure and habitat fragmentation
 
 ![Single large (SL) VS several small (SS). After @Frankham2010](./class_13_11.jpg)
 
-## Population structure and habitat fragmentation 
+## Population structure and habitat fragmentation
 
 Fragmentation happens in two steps:
 
@@ -255,7 +251,7 @@ The degree of differentiation among fragments can be described by partitioning t
 
 We will look at some examples on estimating $F$ statistics from genotype data.
 
-## Population structure and habitat fragmentation 
+## Population structure and habitat fragmentation
 
 ### Gene flow
 
@@ -286,7 +282,7 @@ The effects of fragmentation on gene flow depend on:
 :::
 
 | Location          | Prop. of polymorphic loci | Mean \# of alleles | Average heterozygosity |
-|------------------|-------------------|------------------|------------------|
+|-------------------|---------------------------|--------------------|------------------------|
 | Barrow Island (1) | 0.1                       | 1.2                | 0.05                   |
 | Exmouth (2)       | 1.0                       | 3.4                | 0.62                   |
 | Wheatbelt (3)     | 1.0                       | 4.4                | 0.56                   |
@@ -447,7 +443,6 @@ $$
 -   Many early conservation policies generally did not allow protection of hybrids. However, increased appreciation of the important role of hybridization as an evolutionary process has caused a re-evaluation of these policies. Determining whether hybridization is natural or anthropogenic is crucial for conservation, but is often difficult [@Allendorf2022].
 
 ## Hybridization
-
 
 ![Microsatellite gel image showing genotype profiles (locus Lc106) for 10 lynx, 10 bobcat, and three putative hybrids. After @Schwartz2004](./class_13_20.png)
 
@@ -611,7 +606,7 @@ $$
 -   Where $S$ is the selection differential in captivity (the strength in selection for captive traits).
 -   $h^2$ is heritability (additive genetic variation for reproductive fitness).
 
----
+------------------------------------------------------------------------
 
 ### Heritability
 
