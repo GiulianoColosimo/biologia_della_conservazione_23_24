@@ -60,7 +60,9 @@ website:
           - href: ./classes/12/class_12.html
             text: "Class 12 - Mid-term exam revision/Genetic load"  
           - href: ./classes/13/class_13.html
-            text: "Class 13 - Population Structure/Hybridization"  
+            text: "Class 13 - Population Structure/Hybridization_1"  
+          - href: ./classes/14/class_14.html
+            text: "Class 14 - Population Structure/Hybridization_2"  
 
 
     tools:

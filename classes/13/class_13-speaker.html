@@ -658,10 +658,10 @@ Var(q)=\frac{1}{S}\sum(q_i-\bar{q})^2 \\ \\ F_{ST} = \frac{Var(q)}{pq}
 </div>
 <table>
 <colgroup>
-<col style="width: 21%">
-<col style="width: 30%">
-<col style="width: 22%">
+<col style="width: 24%">
 <col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -940,326 +940,6 @@ Var(q)=\frac{1}{S}\sum(q_i-\bar{q})^2 \\ \\ F_{ST} = \frac{Var(q)}{pq}
 </div>
 </div>
 </section>
-<section id="migration-and-gene-flow-1" class="slide level2">
-<h2>Migration and gene flow</h2>
-<ul>
-<li>In reality, more than one migrant per generation is needed as not all migrants are successful at reproduction.</li>
-<li>Different values have been proposed over time: 5, 1-10, <span class="math inline">\(\ge\)</span> 10 <span class="citation" data-cites="Mills1996 Lacy1987 Vucetich2000">(<a href="#/references" role="doc-biblioref" onclick="">Lacy, 1987</a>; <a href="#/references" role="doc-biblioref" onclick="">Mills &amp; Allendorf, 1996</a>; <a href="#/references" role="doc-biblioref" onclick="">Vucetich &amp; Waite, 2000</a>)</span>.</li>
-<li>One way to overcome the issue of non idealized populations is to look at <span class="math inline">\(N_em\)</span>.</li>
-<li>When population size and migration rates are constant inbreeding and migration reach an equilibrium, measured by <span class="math inline">\(F_{ST}\)</span></li>
-</ul>
-<p><span class="math display">\[
-\label{fst2}
-\tag{13.6}
-F_{ST} = \frac{1}{4N_em+1}
-\]</span></p>
-<ul>
-<li>Equation <span class="math inline">\(\ref{fst2}\)</span> applies when <span class="math inline">\(m\)</span> is small and all population sizes and migration rates among them are the same.</li>
-</ul>
-</section>
-<section id="migration-and-gene-flow-2" class="slide level2">
-<h2>Migration and gene flow</h2>
-<ul>
-<li>Measuring migration rates is complicated!</li>
-<li>It is possible to rearrange equation <span class="math inline">\(\ref{fst}\)</span> to estimate <span class="math inline">\(Nm\)</span>, and this is an approach widely used. Unfortunately this approach will lead to biased results especially when different models of migration than the island model are considered.</li>
-</ul>
-
-<img data-src="./class_13_17.jpg" class="r-stretch quarto-figure-center"><p class="caption">Migration models, after <span class="citation" data-cites="Frankham2010">Frankham et al. (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span></p></section>
-<section id="limitations-of-f_st" class="slide level2">
-<h2>Limitations of <span class="math inline">\(F_{ST}\)</span></h2>
-<ul>
-<li>This measure of differentiation between demes does not take in to account genealogical information (i.e., there is no information about the identity of the alleles).</li>
-<li>A measure related to <span class="math inline">\(F_{ST}\)</span>, called <span class="math inline">\(R_{ST}\)</span>, uses information on the length of alleles at microsatellite, and assumes that each mutation changes an allele’s length by only one repeat unit <span class="citation" data-cites="Slatkin1995 Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Slatkin, 1995</a>)</span>.</li>
-<li>Another measure of differentiation that uses information on allele genealogical relationships is <span class="math inline">\(\Phi_{ST}\)</span> <span class="citation" data-cites="Excoffier1992 Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Excoffier, Smouse, &amp; Quattro, 1992</a>)</span>.</li>
-<li>One more alternative is offered by <span class="citation" data-cites="Gaggiotti2010">Gaggiotti &amp; Foll (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span>. They have presented a method to estimate population-specific <span class="math inline">\(F_{ST}\)</span> values (<span class="math inline">\(F_{ST}^′\)</span>) rather than global or pairwise <span class="math inline">\(F_{ST}\)</span> values. They define <span class="math inline">\(F_{ST}^′\)</span> s as the probability that two genes chosen at random from the population share a common ancestor within that population <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</li>
-</ul>
-</section>
-<section id="limitations-of-f_st-1" class="slide level2">
-<h2>Limitations of <span class="math inline">\(F_{ST}\)</span></h2>
-<ul>
-<li><p><span class="math inline">\(F_{ST}\)</span> (and its analog <span class="math inline">\(G_{ST}\)</span>) has limitations when using loci with high mutation rates and high heterozygosities, such as microsatellites. <span class="math inline">\(F_{ST}\)</span> is biased downward when variation within subpopulations (<span class="math inline">\(H_S\)</span>) is high. The source of this bias is obvious: when variation within populations is high, the proportion of the total variation distributed between populations can never be very high <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p>
-<ul>
-<li><span class="citation" data-cites="Hedrick2005">Hedrick (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span> introduced <span class="math inline">\(G_{ST}^′\)</span>, which is <span class="math inline">\(G_{ST}\)</span> divided by its maximum possible values with the same overall allele frequencies. Thus, <span class="math inline">\(G_{ST}^′\)</span> has a range from 0 to 1, and was designed to be independent of <span class="math inline">\(H_S\)</span>. If <span class="math inline">\(H_S\)</span> is high, then <span class="math inline">\(G_{ST}^′\)</span> can be much greater than <span class="math inline">\(G_{ST}\)</span>. <span class="math inline">\(G_{ST}^′\)</span> is designed to be a standardized measure of <span class="math inline">\(G_{ST}\)</span>, which accounts for different levels of total genetic variation at different loci <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="hierarchical-population-structure" class="slide level2">
-<h2>Hierarchical population structure</h2>
-<ul>
-<li>Populations are often structured at multiple hierarchical levels; for example, locally and regionally.</li>
-</ul>
-
-<img data-src="./class_13_18.png" class="r-stretch quarto-figure-center"><p class="caption">Organization of hierarchical population structure with two levels of subdivision: subpopulations within regions (<span class="math inline">\(F_{SR}\)</span>) and regions within the total species (<span class="math inline">\(F_{RT}\)</span>). Each region has two subpopulations. <span class="math inline">\(F_{SR}\)</span> is the proportion of the total diversity due to differences between subpopulations within regions. <span class="math inline">\(F_{RT}\)</span> is the proportion of the total diversity due to differences between regions <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></section>
-<section id="alternative-approach-to-estimating-nm" class="slide level2">
-<h2>Alternative approach to estimating <span class="math inline">\(Nm\)</span></h2>
-<ul>
-<li>Another indirect estimator of <span class="math inline">\(Nm\)</span> is the private allele method <span class="citation" data-cites="Slatkin1987">(<a href="#/references" role="doc-biblioref" onclick="">Slatkin, 1987</a>)</span>.</li>
-<li>A private allele is one found in only one population. Slatkin showed that a linear relationship exists between <span class="math inline">\(Nm\)</span> and the average frequency of private alleles. This method works because if gene flow (<span class="math inline">\(Nm\)</span>) is low, populations will have numerous private alleles that arise through mutation, for example.</li>
-<li>The time during which a new allele remains private depends only on migration rates, such that the proportion of alleles that are private decreases as migration rate increases. If gene flow is high, private alleles will be uncommon <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</li>
-<li>This method could be less biased than the <span class="math inline">\(F_{ST}\)</span>-island model method, when using highly polymorphic markers, because it apparently is less sensitive to problems of homoplasy created by back mutations than is the <span class="math inline">\(F_{ST}\)</span> method <span class="citation" data-cites="Allen1995">(<a href="#/references" role="doc-biblioref" onclick="">Allen, Amos, Pomeroy, &amp; Twiss, 1995</a>)</span>.</li>
-</ul>
-</section>
-<section id="assignment-tests" class="slide level2">
-<h2>Assignment tests</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><p>Assignment tests offer an attractive alternative to the traditional capture–mark–recapture approach to estimating <span class="math inline">\(Nm\)</span> directly.</p></li>
-<li><p>For example, we can genotype many individuals in a single population sample, and then determine the proportion of “immigrant” individuals; that is, individuals with a foreign genotype that are unlikely to have originated locally.</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./class_13_19.png"></p>
-<figcaption>After <span class="citation" data-cites="Allendorf2022">Allendorf et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="hybridization" class="slide level2">
-<h2>Hybridization</h2>
-<ul>
-<li><p>Rates of hybridization and introgression have increased dramatically worldwide because of widespread intentional and incidental translocations of organisms and habitat modifications by humans <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>Rates of hybridization and introgression have increased dramatically worldwide because of widespread intentional and incidental translocations of organisms and habitat modifications by humans <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>The increasing pace of the three interacting human activities that contribute most to increased rates of hybridization (introductions of plants and animals, fragmentation, and habitat modification) suggests that this problem will become even more serious in the future <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span></p></li>
-<li><p>For example, increased turbidity in Lake Victoria, Africa, has reduced color perception of cichlid fishes and has interfered with the mate choice that produced reproductive isolation among species <span class="citation" data-cites="Seehausen1997 Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>; <a href="#/references" role="doc-biblioref" onclick="">Seehausen, Alphen, &amp; Witte, 1997</a>)</span></p></li>
-</ul>
-</section>
-<section id="hybridization-1" class="slide level2">
-<h2>Hybridization</h2>
-<ul>
-<li><p>On the other hand, hybridization is a natural part of the evolutionary process <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>Hybridization has long been recognized as playing an important role in the evolution of plants.</p></li>
-<li><p>In addition, recent studies have found that hybridization has also played an important role in the evolution of animals</p></li>
-<li><p>Many early conservation policies generally did not allow protection of hybrids. However, increased appreciation of the important role of hybridization as an evolutionary process has caused a re-evaluation of these policies. Determining whether hybridization is natural or anthropogenic is crucial for conservation, but is often difficult <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-</ul>
-</section>
-<section id="hybridization-2" class="slide level2">
-<h2>Hybridization</h2>
-
-<img data-src="./class_13_20.png" class="r-stretch quarto-figure-center"><p class="caption">Microsatellite gel image showing genotype profiles (locus Lc106) for 10 lynx, 10 bobcat, and three putative hybrids. After <span class="citation" data-cites="Schwartz2004">Schwartz et al. (<a href="#/references" role="doc-biblioref" onclick="">2004</a>)</span></p></section>
-<section id="hybridization-3" class="slide level2">
-<h2>Hybridization</h2>
-
-<img data-src="./class_13_21.png" class="r-stretch quarto-figure-center"><p class="caption">Which is which? Photo credit: G. Colosimo.</p></section>
-<section id="hybridization-4" class="slide level2">
-<h2>Hybridization</h2>
-
-<img data-src="./class_13_22.png" class="r-stretch quarto-figure-center"><p class="caption">Demographic (a) and genetic (b) swamping. After <span class="citation" data-cites="Allendorf2022">Allendorf et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span></p></section>
-<section class="slide level2">
-
-<p>How can we use all the genetic data we have learnt to gather and analyse?</p>
-<p><br></p>
-<div class="fragment">
-<ol type="1">
-<li>Clarification of relatedness, taxonomy and phylogeny among populations.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="2" type="1">
-<li>Determination of population management units based on genetic criteria.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li>Estimation of gene flow and dispersal among populations.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="4" type="1">
-<li>Determination of the time since past genetic bottlenecks in a population or the time since significant differentiation between populations.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="5" type="1">
-<li>Understanding patterns of reproductive ecology.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="6" type="1">
-<li>Locating original sources of wildlife products.</li>
-</ol>
-</div>
-</section>
-<section id="clarification-of-relatedness-taxonomy-and-phylogeny-among-populations." class="slide level2">
-<h2>1. Clarification of relatedness, taxonomy and phylogeny among populations.</h2>
-<ul>
-<li>The most basic question in conservation biology: how many species are there?</li>
-<li>Assessing the taxonomy of one population or species still remains one of the most important applications of conservation genetics.</li>
-<li>Until 1970 various taxonomic units were classified using morphological features.</li>
-<li>In 1973 the Endangered Species Act (ESA, US Gov.) extended legal protection to species and subspecies.</li>
-</ul>
-<blockquote>
-<p>When taxonomic distinction became the basis for legal protection…the innocence was lost forever <span class="citation" data-cites="Obrien1996">(<a href="#/references" role="doc-biblioref" onclick="">O’Brien, 1996</a>)</span>.</p>
-</blockquote>
-</section>
-<section id="determination-of-population-management-units-based-on-genetic-criteria." class="slide level2">
-<h2>2. Determination of population management units based on genetic criteria.</h2>
-<ul>
-<li><p>On what basis we delimit meaningful management units in the wild?</p></li>
-<li><p>The genetic differences as measured by the <span class="math inline">\(F_{ST}\)</span> statistics provide an objective criterion for defining population management units.</p></li>
-<li><p>Combining nuclear and mtDNA markers it was possible to identify 4 demographically autonomous population units, a northeastern India unit, a central India unit, and 2 genetically distinct unit in the south of India to be administrered separately because of their genetic uniqueness. These units were radically different from what had been proposed solely on the political considerations <span class="citation" data-cites="Vidya2005">(<a href="#/references" role="doc-biblioref" onclick="">Vidya, Fernando, Melnick, &amp; Sukumar, 2005</a>)</span>.</p></li>
-</ul>
-</section>
-<section id="estimation-of-gene-flow-and-dispersal-among-populations." class="slide level2">
-<h2>3. Estimation of gene flow and dispersal among populations.</h2>
-<ul>
-<li><p>Managing gene flow between populations, through a detailed analysis of <span class="math inline">\(F_{ST}\)</span> patterns, can help to better understand and define the individuals that could be used in translocation projects, when to do so, and the duration of the whole translocation process <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>Consideration about gene flow rates are extremely important in the management of wild plant and animal populations.</p></li>
-<li><p><span class="citation" data-cites="Dolan1999">Dolan, Yahr, Menges, &amp; Halfhill (<a href="#/references" role="doc-biblioref" onclick="">1999</a>)</span> indirectly estimated gene flow measuring the genetic differentiation of three rare species of perennial scrubs in Florida. In one of them, <em>Hypericum cumulicola</em>, gene flow was absent. The limited genetic variation detected in this species limits the adaptive response of it to future environmental changes and makes it more prone to extinction.</p></li>
-</ul>
-</section>
-<section id="determination-of-the-time-since-past-genetic-bottlenecks." class="slide level2">
-<h2>4. Determination of the time since past genetic bottlenecks.</h2>
-
-<img data-src="./class_13_23.png" class="r-stretch quarto-figure-center"><p class="caption">Each point shown represents a population and the vertical segment represents the age of its associated founder event where the segment length is proportional to the founder age <span class="citation" data-cites="Tournebize2022">(<a href="#/references" role="doc-biblioref" onclick="">Tournebize, Chu, &amp; Moorjani, 2022</a>)</span>.</p></section>
-<section id="understanding-patterns-of-reproductive-ecology." class="slide level2">
-<h2>5. Understanding patterns of reproductive ecology.</h2>
-
-<img data-src="./class_13_24.png" class="r-stretch quarto-figure-center"><p class="caption">Structure graphical output for two syntopic iguana species from the Galápagos islands <span class="citation" data-cites="DiGiambattista2018">(<a href="#/references" role="doc-biblioref" onclick="">Di Giambattista et al., 2018</a>)</span>.</p></section>
-<section class="slide level2">
-
-
-<img data-src="./class_13_25.png" class="r-stretch quarto-figure-center"><p class="caption">Adapted from <span class="citation" data-cites="MacLeod2015">MacLeod et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>.</p></section>
-<section id="locating-original-sources-of-wildlife-products." class="slide level2">
-<h2>6. Locating original sources of wildlife products.</h2>
-<ul>
-<li><p>The International Whaling Commission (IWC) imposed a moratorium on commercial whaling in 1982 <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>A small quota of very specific species of whales was still available to countries like Japan and South Korea.</p></li>
-</ul>
-<blockquote>
-<p>The source of these products was assumed to be undocumented `incidental takes’ from fisheries’ by-catch, although we cannot exclude the possibility of illegal hunting or smuggling. The demographic impact of this undocumented exploitation was evaluated using the model of population dynamics adopted by the Scienti¢c Committee of the International Whaling Commission. For the range of exploitation consistent with the market sample, this protected stock was predicted to decline towards extinction over the next few decades <span class="citation" data-cites="Baker2000">(<a href="#/references" role="doc-biblioref" onclick="">Baker, Lento, Cipriano, &amp; Palumbi, 2000</a>)</span>.</p>
-</blockquote>
-</section>
-<section id="managing-genetic-diversity-in-wild-populations" class="slide level2">
-<h2>Managing genetic diversity in wild populations</h2>
-<ul>
-<li><p>The IUCN lists the common adder, <em>Vipera berus</em>, as in the category <a href="https://www.iucnredlist.org/species/47756146/743903">Least Concern</a>. It has a very widespread distribution, although populations are fragmented in small and often isolated demes.</p></li>
-<li><p>One isolated population of this species, in Sweden, declined in 1960s and then began to exhibit the a high proportion of deformed and stillborn offspring coupled with low genetic variability, i.e., signs of inbreeding depression <span class="citation" data-cites="Madsen1999">(<a href="#/references" role="doc-biblioref" onclick="">Madsen, Shine, Olsson, &amp; Wittzell, 1999</a>)</span>.</p></li>
-<li><p><span class="citation" data-cites="Madsen1999">Madsen et al. (<a href="#/references" role="doc-biblioref" onclick="">1999</a>)</span> introduced 20 youg adder individuals collected from larger and more genetically diverse population in this declining population. After only 4 years, the time needed for an adder to become reproductively active, started to document a reduction in still born babies and a reduction in deformities and an increase in genetic diversity.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="./class_13_26.png" class="r-stretch quarto-figure-center"><p class="caption">Numbers of adult male Adders (Vipera berus) captured from 1981 to 2010 along the seashore at an isolated population just west of Smygehuk Village in southern Sweden. After <span class="citation" data-cites="Madsen2011">Madsen &amp; Ujvari (<a href="#/references" role="doc-biblioref" onclick="">2011</a>)</span></p></section>
-<section class="slide level2">
-
-<h3 id="hybridization-and-introgression-are-two-important-factors-to-monitor-in-wild-populations.">Hybridization and introgression are two important factors to monitor in wild populations.</h3>
-<ul>
-<li><p>When two closely related species coexist and one of them is more rare, the rare one risks to be genetically swamped due to hybridization and/or introgression (the incorporation of genetic material from a species/population/subpopulation into the genome of another) <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>A very well documented example of managing genetic problems in wildlife population comes from the red wolf (<em>Canis rufus</em>) from south-central United States.</p></li>
-<li><p>In 1975 red wolf became extinct in the wild <span class="citation" data-cites="Avise1996">(<a href="#/references" role="doc-biblioref" onclick="">Avise &amp; Hamrick, 1996</a>)</span>. The united States Fish and Wildlife Services (USFWS) initiated a campaign to re-establish a population of this species using captive-bred individuals.</p></li>
-<li><p>Released individuals became established and that area was designed as the Red Wolf Experimental Population Area (RWEP-A).</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>The biggest threat was not much the hybridization between red wolves and coyotes (<em>Canis latrans</em>), but the backcrossing between <span class="math inline">\(F_1\)</span> hybrids and adult red wolf individuals (i.e., introgression).</li>
-</ul>
-
-<img data-src="./class_13_27.png" class="r-stretch quarto-figure-center"><p class="caption">After <span class="citation" data-cites="Fredrickson2006">Fredrickson &amp; Hedrick (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span></p></section>
-<section id="managing-genetic-diversity-in-captive-populations" class="slide level2">
-<h2>Managing genetic diversity in captive populations</h2>
-<ul>
-<li><p>Attempts at turkey reintroduction using captive bred individuals were a failure in 95% of cases in the united States <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p></li>
-<li><p>As <span class="citation" data-cites="Leopold1944">Leopold (<a href="#/references" role="doc-biblioref" onclick="">1944</a>)</span> said:</p></li>
-</ul>
-<blockquote>
-<p>Wild turkey are wary and shy, which are advantageous characteristics in eluding natural and human enemies. The hens and young ones automatically react to threats in ways that are self protective…Birds of the domestic strain, on the other hand, are differently adapted. Many of their physiological reaction and psychological characteristics are favorable to existence in the barnyard but may perclude existence in the wild.</p>
-</blockquote>
-<ul>
-<li>The problem stated above is present in every single population and it is known as <em>adaptation to captivity</em> <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li><p>The more accustomed wild animals become to their artificial environment the less likely they are to survive when reintroduced in the wild.</p></li>
-<li><p>Lifetime reproductive success of and overall fitness of stealhead trout (<em>Oncorhynchus mykiss</em>) declined precipitously in just two generations of captivity <span class="citation" data-cites="Araki2007">(<a href="#/references" role="doc-biblioref" onclick="">Araki, Cooper, &amp; Blouin, 2007</a>)</span>.</p></li>
-<li><p>The data provided in <span class="citation" data-cites="Araki2007">Araki et al. (<a href="#/references" role="doc-biblioref" onclick="">2007</a>)</span> suggest that 37.5% fitness decline per captive reared generation demonstrating that genetic adaptation (GA) to captivity is something dangerous that should not be underestimated.</p></li>
-<li><p>GA can be mathematically described:</p></li>
-</ul>
-<p><span class="math display">\[
-\label{ga}
-\tag{13.7}
-GA = \frac{Sh^2}{L}\sum_{i=1}^{\frac{y}{L}}[1-\frac{1}{2N_e}]^{\frac{y}{L}}(1-m_i)
-\]</span></p>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Where <span class="math inline">\(S\)</span> is the selection differential in captivity (the strength in selection for captive traits).</li>
-<li><span class="math inline">\(h^2\)</span> is heritability (additive genetic variation for reproductive fitness).</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="heritability">Heritability</h3>
-<ul>
-<li><p>The heritability of a character is probably the most important determinant of individuals to evolve in response to selection!</p></li>
-<li><p>Heritability is the proportion of phenotypic variance in a population due to genetic differences that parents can pass through offspring in the next generation.</p></li>
-<li><p>Heritability is symbolized <span class="math inline">\(h^2\)</span>, but the superscript has no mathematical meaning!</p></li>
-<li><p>Molecular measures of genetic diversity do not often answer some of the questions we try to address in conservation genetics as correlation between molecular and quantitative measures of genetic diversity are low.</p></li>
-<li><p>The heritability associated with quantitative characters that are related to reproductive fitness are of great interests to conservation biologists.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="./class_13_28.jpg" class="r-stretch quarto-figure-center"><p class="caption">Distribution of phenotypes for 5 quantitative characters that are very important for reproductive fitness. After <span class="citation" data-cites="Frankham2010">Frankham et al. (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span></p></section>
-<section class="slide level2">
-
-<ul>
-<li><p>Quantitative traits are influenced by mani loci plus environmental influences (feeding, exposure to sunlight, water availability et. etc. etc.).</p></li>
-<li><p>It is not possible to directly infer genotype from phenotype only when we refer to quantitative characters, and individuals with the same genotype may have different genotypes, or individuals with the same genotypes may have different phenotype.</p></li>
-<li><p>Genetic diversity for quantitative characters in outbred populations is due to the segregation of multiple mendelian loci referred to as Quantitative Trait Loci (QTL).</p></li>
-<li><p>QTLs possess alleles that add to or detract from the magnitude of the quantitative character.</p></li>
-<li><p>How do we measure what portion of the phenotypic variance for quantitative traits derives from genetic variation among individuals?</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ol type="1">
-<li>Variation within and among populations.</li>
-<li>Comparison of inbred with outbred populations.</li>
-<li>Resemblance among relatives.</li>
-</ol>
-<ul>
-<li>Because of the great impact that the environment can have on the expression of quantitative traits characters it is extremely important that all comparisons are carried out in a controlled situation and synchronously (i.e., at the same time): common garden experiment.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="./class_13_29.jpg" class="r-stretch quarto-figure-center"><p class="caption">Quantitative genetic variation for corolla length in tobacco. After <span class="citation" data-cites="Strickberger1985">Strickberger (<a href="#/references" role="doc-biblioref" onclick="">1985</a>)</span>.</p></section>
-<section class="slide level2">
-
-<p><span class="math display">\[
-\label{ga2}
-\tag{13.8}
-GA = \frac{Sh^2}{L}\sum_{i=1}^{\frac{y}{L}}[1-\frac{1}{2N_e}]^{\frac{y}{L}}(1-m_i)
-\]</span></p>
-<ul>
-<li>Where <span class="math inline">\(S\)</span> is the selection differential in captivity (the strength in selection for captive traits).</li>
-<li><span class="math inline">\(h^2\)</span> is heritability (additive genetic variation for reproductive fitness).</li>
-<li><span class="math inline">\(y/L\)</span> number of generations in captivity (<span class="math inline">\(y\)</span> = years, <span class="math inline">\(L\)</span> = generation length).</li>
-<li><span class="math inline">\(N_e\)</span>, you should recognize this one….</li>
-<li><span class="math inline">\(m_i\)</span> proportion of genetic material coming from immigrants.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="what-could-we-do-to-minimize-ga">What could we do to minimize GA?</h3>
-<ul>
-<li>Reduce the amount of time in captivity (i.e., reduce the number of iterations <span class="math inline">\(\sum_{i=1}^{y/L}\)</span>).</li>
-<li>Reduce the strength of selection, <span class="math inline">\(S\)</span>, in captivity. Very complicated, as it entails making the captive environment as similar as possible to the natural environment, both at the biotic and the abiotic level.</li>
-<li>Add more immigrants (unrelated individuals) from wild or captive populations to slow the rate of genetic adaptation.</li>
-</ul>
-<p>Understanding the intentions, methods and scope of the management plans is essential if we want to grasp the way in which captive populations are integrated into worldwide conservation strategies today <span class="citation" data-cites="Allendorf2022">(<a href="#/references" role="doc-biblioref" onclick="">Allendorf et al., 2022</a>)</span>.</p>
-</section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
@@ -1273,23 +953,11 @@ GA = \frac{Sh^2}{L}\sum_{i=1}^{\frac{y}{L}}[1-\frac{1}{2N_e}]^{\frac{y}{L}}(1-m_
 <div id="ref-Akakaya2007" class="csl-entry" role="listitem">
 Akçakaya, H. R., Mills, G., &amp; Doncaster, C. P. (2007). The role of metapopulations in conservation.
 </div>
-<div id="ref-Allen1995" class="csl-entry" role="listitem">
-Allen, P. J., Amos, W., Pomeroy, P. P., &amp; Twiss, S. D. (1995). Microsatellite variation in grey seals (<em>halichoerus grypus</em>) shows evidence of genetic differentiation between two british breeding colonies. <em>Molecular Ecology</em>, <em>4</em>(6), 653–662. Wiley. Retrieved from <a href="https://doi.org/10.1111%2Fj.1365-294x.1995.tb00266.x">https://doi.org/10.1111%2Fj.1365-294x.1995.tb00266.x</a>
-</div>
 <div id="ref-Allendorf2022" class="csl-entry" role="listitem">
 Allendorf, F. W., Funk, W. C., Aitken, S. N., Byrne, M., Luikart, G., &amp; Antunes, A. (2022). <em><span class="nocase">Conservation and the Genomics of Populations</span></em>. Oxford University Press. Retrieved from <a href="https://doi.org/10.1093/oso/9780198856566.001.0001">https://doi.org/10.1093/oso/9780198856566.001.0001</a>
 </div>
-<div id="ref-Araki2007" class="csl-entry" role="listitem">
-Araki, H., Cooper, B., &amp; Blouin, M. S. (2007). Genetic effects of captive breeding cause a rapid, cumulative fitness decline in the wild. <em>Science</em>, <em>318</em>(5847), 100–103. Retrieved from <a href="https://www.science.org/doi/abs/10.1126/science.1145621">https://www.science.org/doi/abs/10.1126/science.1145621</a>
-</div>
-<div id="ref-Avise1996" class="csl-entry" role="listitem">
-Avise, J. C., &amp; Hamrick, J. L. (1996). <em>Conservation genetics : Case histories from nature</em>. (J. C. Avise &amp; J. L. Hamrick, Eds.)<em>Conservation genetics : case histories from nature /</em>. New York: Chapman &amp; Hall.
-</div>
 <div id="ref-deBaan2013" class="csl-entry" role="listitem">
 Baan, L. de, Alkemade, R., &amp; Koellner, T. (2013). Land use impacts on biodiversity in LCA: A global approach. <em>The International Journal of Life Cycle Assessment</em>, <em>18</em>(6), 1216–1230. Retrieved from <a href="https://link.springer.com/content/pdf/10.1007/s11367-012-0412-0.pdf">https://link.springer.com/content/pdf/10.1007/s11367-012-0412-0.pdf</a>
-</div>
-<div id="ref-Baker2000" class="csl-entry" role="listitem">
-Baker, C. S., Lento, G. M., Cipriano, F., &amp; Palumbi, S. R. (2000). Predicted decline of protected whales based on molecular genetic monitoring of japanese and korean markets. <em>Proceedings of the Royal Society of London. Series B: Biological Sciences</em>, <em>267</em>(1449), 1191–1199. The Royal Society. Retrieved from <a href="https://doi.org/10.1098%2Frspb.2000.1128">https://doi.org/10.1098%2Frspb.2000.1128</a>
 </div>
 <div id="ref-Colosimo2021b" class="csl-entry" role="listitem">
 Colosimo, G., Jackson, A. C., Benton, A., Varela-Stokes, A., Iverson, J., Knapp, C. R., &amp; Welch, M. (2021). <span class="nocase">Correlated Population Genetic Structure in a Three-Tiered Host-Parasite System: The Potential for Coevolution and Adaptive Divergence</span>. <em>Journal of Heredity</em>, <em>112</em>(7), 590–601. Retrieved from <a href="https://doi.org/10.1093/jhered/esab058">https://doi.org/10.1093/jhered/esab058</a>
@@ -1297,17 +965,8 @@ Colosimo, G., Jackson, A. C., Benton, A., Varela-Stokes, A., Iverson, J., Knapp,
 <div id="ref-Colosimo2014" class="csl-entry" role="listitem">
 Colosimo, G., Knapp, C. R., Wallace, L. E., &amp; Welch, M. E. (2014). <span class="nocase">Inferred vs realized patterns of gene flow: an analysis of population structure in the Andros Island Rock Iguana</span>. (V. Ketmaier, Ed.)<em>PLoS ONE</em>, <em>9</em>(9), e106963. Retrieved from <a href="http://dx.plos.org/10.1371/journal.pone.0106963">http://dx.plos.org/10.1371/journal.pone.0106963</a>
 </div>
-<div id="ref-DiGiambattista2018" class="csl-entry" role="listitem">
-Di Giambattista, L., Fulvo, A., Fabiani, A., Bonanni, J., Carrión, J. E., &amp; Gentile, G. (2018). <span class="nocase">Molecular data exclude current hybridization between iguanas <em>Conolophus marthae</em> and <em>C. subcristatus</em> on Wolf Volcano (Gal<span class="nocase">á</span>pagos Islands)</span>. <em>Conservation Genetics</em>, <em>19</em>(6), 1461–1469. Springer Netherlands. Retrieved from <a href="http://link.springer.com/10.1007/s10592-018-1114-3">http://link.springer.com/10.1007/s10592-018-1114-3</a>
-</div>
-<div id="ref-Dolan1999" class="csl-entry" role="listitem">
-Dolan, R. W., Yahr, R., Menges, E. S., &amp; Halfhill, M. D. (1999). Conservation implications of genetic variation in three rare species endemic to florida rosemary scrub. <em>American Journal of Botany</em>, <em>86</em>(11), 1556–1562. Botanical Society of America. Retrieved May 8, 2023, from <a href="http://www.jstor.org/stable/2656793">http://www.jstor.org/stable/2656793</a>
-</div>
 <div id="ref-Eldridge1999" class="csl-entry" role="listitem">
 Eldridge, M. D. B., King, J. M., Loupis, A. K., Spencer, P. B. S., Taylor, A. C., Pope, L. C., &amp; Hall, G. P. (1999). Unprecedented low levels of genetic variation and inbreeding depression in an island population of the black-footed rock-wallaby. <em>Conservation Biology</em>, <em>13</em>(3), 531–541. Retrieved from <a href="https://conbio.onlinelibrary.wiley.com/doi/abs/10.1046/j.1523-1739.1999.98115.x">https://conbio.onlinelibrary.wiley.com/doi/abs/10.1046/j.1523-1739.1999.98115.x</a>
-</div>
-<div id="ref-Excoffier1992" class="csl-entry" role="listitem">
-Excoffier, L., Smouse, P. E., &amp; Quattro, J. M. (1992). <a href="https://doi.org/10.1007/s00424-009-0730-7"><span class="nocase">Analysis of molecular variance inferred from metric distances among DNA haplotypes: Application to human mitochondrial DNA restriction data</span></a>. <em>Genetics</em>, <em>131</em>(2), 479–491.
 </div>
 <div id="ref-Forbes1999" class="csl-entry" role="listitem">
 Forbes, S. H., &amp; Hogg, J. T. (1999). Assessing population structure at high levels of differentiation: Microsatellite comparisons of bighorn sheep and large carnivores. <em>Animal Conservation</em>, <em>2</em>(3), 223–233. Retrieved from <a href="https://zslpublications.onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1795.1999.tb00068.x">https://zslpublications.onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-1795.1999.tb00068.x</a>
@@ -1318,38 +977,11 @@ Frankham, R., Ballou, J. D., &amp; Briscoe, D. A. (2010). <em>Introduction to co
 <div id="ref-Frankham2011" class="csl-entry" role="listitem">
 Frankham, R., Ballou, J. D., Eldridge, M. D. B., Lacy, R. C., Ralls, K., Dudash, M. R., &amp; Fenster, C. B. (2011). <a href="https://doi.org/10.1111/j.1523-1739.2011.01662.x"><span class="nocase">Predicting the probability of outbreeding depression</span></a>. <em>Conservation Biology</em>, <em>25</em>(3), 465–475.
 </div>
-<div id="ref-Fredrickson2006" class="csl-entry" role="listitem">
-Fredrickson, R. J., &amp; Hedrick, P. W. (2006). Dynamics of hybridization and introgression in red wolves and coyotes. <em>Conservation Biology</em>, <em>20</em>(4), 1272–1283. Retrieved from <a href="https://conbio.onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.2006.00401.x">https://conbio.onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.2006.00401.x</a>
-</div>
-<div id="ref-Gaggiotti2010" class="csl-entry" role="listitem">
-Gaggiotti, O. E., &amp; Foll, M. (2010). Quantifying population structure using the f-model. <em>Molecular Ecology Resources</em>, <em>10</em>(5), 821–830. Wiley. Retrieved from <a href="https://doi.org/10.1111%2Fj.1755-0998.2010.02873.x">https://doi.org/10.1111%2Fj.1755-0998.2010.02873.x</a>
-</div>
 <div id="ref-Hanski1997" class="csl-entry" role="listitem">
 Hanski, I., &amp; Simberloff, D. (1997). The metapopulation approach, its history, conceptual domain, and application to conservation. In I. Hanski &amp; M. E. Gilpin (Eds.), <em>Metapopulation biology</em> (pp. 5–26). San Diego: Academic Press. Retrieved from <a href="https://www.sciencedirect.com/science/article/pii/B9780123234452500031">https://www.sciencedirect.com/science/article/pii/B9780123234452500031</a>
 </div>
-<div id="ref-Hedrick2005" class="csl-entry" role="listitem">
-Hedrick, P. W. (2005). <em><span class="nocase">Genetics of Populations</span></em> (Third., pp. 1–737). Sudbury, MA: Jones; Bartlett.
-</div>
-<div id="ref-Lacy1987" class="csl-entry" role="listitem">
-Lacy, R. C. (1987). Loss of genetic diversity from managed populations: Interacting effects of drift, mutation, immigration, selection, and population subdivision. <em>Conservation Biology</em>, <em>1</em>(2), 143–158. Retrieved from <a href="https://conbio.onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.1987.tb00023.x">https://conbio.onlinelibrary.wiley.com/doi/abs/10.1111/j.1523-1739.1987.tb00023.x</a>
-</div>
-<div id="ref-Leopold1944" class="csl-entry" role="listitem">
-Leopold, A. S. (1944). <span class="nocase">The Nature of Heritable Wildness in Turkeys</span>. <em>The Condor</em>, <em>46</em>(4), 133–197. Retrieved from <a href="https://doi.org/10.2307/1364213">https://doi.org/10.2307/1364213</a>
-</div>
-<div id="ref-MacLeod2015" class="csl-entry" role="listitem">
-MacLeod, A., Rodríguez, A., Vences, M., Orozco-terWengel, P., García, C., Trillmich, F., Gentile, G., et al. (2015). <span class="nocase">Hybridization masks speciation in the evolutionary history of the Gal<span class="nocase">á</span>pagos marine iguana</span>. <em>Proceedings of the Royal Society B: Biological Sciences</em>, <em>282</em>(1809), 20150425. Retrieved from <a href="http://rspb.royalsocietypublishing.org/lookup/doi/10.1098/rspb.2015.0425">http://rspb.royalsocietypublishing.org/lookup/doi/10.1098/rspb.2015.0425</a>
-</div>
-<div id="ref-Madsen1999" class="csl-entry" role="listitem">
-Madsen, T., Shine, R., Olsson, M., &amp; Wittzell, H. (1999). <span class="nocase">Conservation biology: Restoration of an inbred adder population</span>. <em>Nature</em>, <em>402</em>(6757), 34–35. Retrieved from <a href="http://www.nature.com/nature/journal/v402/n6757/pdf/402034a0.pdf">http://www.nature.com/nature/journal/v402/n6757/pdf/402034a0.pdf</a>
-</div>
-<div id="ref-Madsen2011" class="csl-entry" role="listitem">
-Madsen, T., &amp; Ujvari, B. (2011). <span class="nocase">The potential demise of a population of adders (<em>Vipera berus</em>) in Smygehuk, Sweden</span>. <em>Herpetological Conservation and Biology</em>, <em>6</em>(1), 72–74.
-</div>
 <div id="ref-Malecot1948" class="csl-entry" role="listitem">
 Malécot, G. (1948). <em>Les math<span>é</span>matiques de l’h<span>é</span>r<span>é</span>dit<span>é</span></em>. Masson. Retrieved from <a href="https://books.google.fi/books?id=g7FjAQAACAAJ">https://books.google.fi/books?id=g7FjAQAACAAJ</a>
-</div>
-<div id="ref-Mills1996" class="csl-entry" role="listitem">
-Mills, L. S., &amp; Allendorf, F. W. (1996). <span class="nocase">The one migrant per generation rule in conservation and management</span>. <em>Conservation Biology</em>, <em>10</em>(6), 1509–1518.
 </div>
 <div id="ref-Nei1977" class="csl-entry" role="listitem">
 Nei, M. (1977). F-statistics and analysis of gene diversity in subdivided populations. <em>Annals of Human Genetics</em>, <em>41</em>(2), 225–233. Wiley. Retrieved from <a href="https://doi.org/10.1111%2Fj.1469-1809.1977.tb01918.x">https://doi.org/10.1111%2Fj.1469-1809.1977.tb01918.x</a>
@@ -1357,38 +989,11 @@ Nei, M. (1977). F-statistics and analysis of gene diversity in subdivided popula
 <div id="ref-Luci2011" class="csl-entry" role="listitem">
 Nunes, L. (2011). <a href="https://doi.org/10.22498/pages.19.2.60">Landslides in s<span>ã</span>o paulo, brazil: An integrated historical perspective</a>. <em>Pages News</em>, <em>19</em>, 60–63.
 </div>
-<div id="ref-Obrien1996" class="csl-entry" role="listitem">
-O’Brien, S. J. (1996). Conservation genetics of the felidae. In J. C. Avise &amp; J. L. Hamrick (Eds.), <em>Conservation genetics: Case histories from nature.</em> (pp. 50–74). New York: Chapman; Hall.
-</div>
 <div id="ref-Riley2006" class="csl-entry" role="listitem">
 Riley, S. P. D., Pollinger, J. P., Sauvajot, R. M., York, E. C., BROMLEY, C., FULLER, T. K., &amp; WAYNE, R. K. (2006). A southern california freeway is a physical and social barrier to gene flow in carnivores. <em>Molecular Ecology</em>, <em>15</em>(7), 1733–1741. Wiley. Retrieved from <a href="https://doi.org/10.1111%2Fj.1365-294x.2006.02907.x">https://doi.org/10.1111%2Fj.1365-294x.2006.02907.x</a>
 </div>
-<div id="ref-Schwartz2004" class="csl-entry" role="listitem">
-Schwartz, M. K., Pilgrim, K. L., McKelvey, K. S., Lindquist, E. L., Claar, J. J., Loch, S., &amp; Ruggiero, L. F. (2004). Hybridization between canada lynx and bobcats: Genetic results and management implications. <em>Conservation Genetics</em>, <em>5</em>(3), 349–355. Retrieved from <a href="https://link.springer.com/content/pdf/10.1023/B:COGE.0000031141.47148.8b.pdf">https://link.springer.com/content/pdf/10.1023/B:COGE.0000031141.47148.8b.pdf</a>
-</div>
-<div id="ref-Seehausen1997" class="csl-entry" role="listitem">
-Seehausen, O., Alphen, J. J. M. van, &amp; Witte, F. (1997). Cichlid fish diversity threatened by eutrophication that curbs sexual selection. <em>Science</em>, <em>277</em>(5333), 1808–1811. Retrieved from <a href="https://www.science.org/doi/abs/10.1126/science.277.5333.1808">https://www.science.org/doi/abs/10.1126/science.277.5333.1808</a>
-</div>
-<div id="ref-Slatkin1987" class="csl-entry" role="listitem">
-Slatkin, M. (1987). <a href="https://doi.org/10.1126/science.3576198"><span class="nocase">Gene flow and the geographic structure of natural populations</span></a>. <em>Science</em>, <em>236</em>(4803), 787–792.
-</div>
-<div id="ref-Slatkin1995" class="csl-entry" role="listitem">
-Slatkin, M. (1995). A measure of population subdivision based on microsatellite allele frequencies. <em>Genetics</em>, <em>139</em>(1), 457–462. Oxford University Press (<span>OUP</span>). Retrieved from <a href="https://doi.org/10.1093%2Fgenetics%2F139.1.457">https://doi.org/10.1093%2Fgenetics%2F139.1.457</a>
-</div>
-<div id="ref-Strickberger1985" class="csl-entry" role="listitem">
-Strickberger, M. W. (1985). <em>Genetics</em>. Macmillan international editions in science. Macmillan. Retrieved from <a href="https://books.google.co.uk/books?id=IWrwAAAAMAAJ">https://books.google.co.uk/books?id=IWrwAAAAMAAJ</a>
-</div>
 <div id="ref-Thatte2018" class="csl-entry" role="listitem">
 Thatte, P., Joshi, A., Vaidyanathan, S., Landguth, E., &amp; Ramakrishnan, U. (2018). Maintaining tiger connectivity and minimizing extinction into the next century: Insights from landscape genetics and spatially-explicit simulations. <em>Biological Conservation</em>, <em>218</em>, 181–191. Retrieved from <a href="https://www.sciencedirect.com/science/article/pii/S0006320717307346">https://www.sciencedirect.com/science/article/pii/S0006320717307346</a>
-</div>
-<div id="ref-Tournebize2022" class="csl-entry" role="listitem">
-Tournebize, R., Chu, G., &amp; Moorjani, P. (2022). Reconstructing the history of founder events using genome-wide patterns of allele sharing across individuals. (K. E. Lohmueller, Ed.)<em><span>PLOS</span> Genetics</em>, <em>18</em>(6), e1010243. Public Library of Science (<span>PLoS</span>). Retrieved from <a href="https://doi.org/10.1371%2Fjournal.pgen.1010243">https://doi.org/10.1371%2Fjournal.pgen.1010243</a>
-</div>
-<div id="ref-Vidya2005" class="csl-entry" role="listitem">
-Vidya, T. N. C., Fernando, P., Melnick, D. J., &amp; Sukumar, R. (2005). <span class="nocase">Population genetic structure and conservation of Asian elephants (<em>Elephas maximus</em>) across India</span>. <em>Animal Conservation</em>, <em>8</em>(4), 377–388. Retrieved from <a href="https://zslpublications.onlinelibrary.wiley.com/doi/abs/10.1017/S1367943005002428">https://zslpublications.onlinelibrary.wiley.com/doi/abs/10.1017/S1367943005002428</a>
-</div>
-<div id="ref-Vucetich2000" class="csl-entry" role="listitem">
-Vucetich, J. A., &amp; Waite, T. A. (2000). <span class="nocase">Is one migrant per generation sufficient for the genetic management of fluctuating populations?</span> <em>Animal Conservation</em>, <em>3</em>, 261–266.
 </div>
 <div id="ref-Wahlund1928" class="csl-entry" role="listitem">
 Wahlund, S. (1928). ZUSAMMENSETZUNG VON POPULATIONEN UND KORRELATIONSERSCHEINUNGEN VOM STANDPUNKT DER VERERBUNGSLEHRE AUS BETRACHTET. <em>Hereditas</em>, <em>11</em>(1), 65–106. Retrieved from <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1601-5223.1928.tb02483.x">https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1601-5223.1928.tb02483.x</a>
