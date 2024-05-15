@@ -1,0 +1,223 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 16 - Population Viability Analysis"
+date: "2024-05-16"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: green;"}
+10. [Hybridization]{style="color: green;"}
+11. [Applying genetic information to conservation]{style="color: green;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: green;"}
+13. [Managing genetic diversity in the wild]{style="color: green;"}
+14. [Population viability analysis]{style="color: orange;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+## Population Viability Analysis
+
+![It is a hard world out there! Stylized scenario of the many risks of species in their natural environment. After @Frankham2010, Chapter 22.](./class_16_2.jpg)
+
+------------------------------------------------------------------------
+
+-   Ultimately, the question that needs answer when dealing with critically endangered species is: what is the minimum number of individuals needed in a population to ensure its persistence?
+
+. . .
+
+-   Much of the genetic aspects we discussed during the course are involved in answering this question.
+
+-   The genetics of a population/species is not the only concern! Many authors, discuss the fact that in small populations greater threats to their persistence comes from random variation in various demographic parameters (birth and death rates, survival, recruitment) and the effects of random environmental variation on the population's rate of increase (i.e., environmental stochasticity) [@VanDyke2020].
+
+. . .
+
+-   The above considerations constitute the background to the formulation of a new concept: MVP - Minimum Viable Population [@Shaffer1981].
+
+------------------------------------------------------------------------
+
+-   MVP is an estimate of the minimum number of individuals needed to make sure that the population survives for a given period of time with an associated probability of persistence.
+
+-   Conventionally, MVP was the number to ensure a 95% probability of persistence of a population for 100 or 1000 years.
+
+-   Unfortunately, given the inherently stochastic nature of natural phenomena, the idea of coming up with a MVP value has been abandoned in conservation biology [@VanDyke2020].
+
+-   The focus has initially switched from MVP to Persistence Likelihood (PL), and eventually it has been refined in what is today known as PVA or Population Viability Analysis.
+
+-   The idea is to come up with a series analytical or simulation models that can make an as precise as possible estimate of the probability of species persistence within a given time frame and a given uncertainty.
+
+------------------------------------------------------------------------
+
+-   PVA makes a quantitative assessment of the probability of extinction of a given population or species and estimates the probability of stochastic events in a population.
+
+. . .
+
+> Like the more usual forms of risk analysis applied to issues of public health and safety, PVA attempts to estimate the likelihood of future events based on currently available data and theory, both of which contain some degree of unvertainty [@Shaffer1981].
+
+. . .
+
+-   A more precise definition of PVA is provided by @Lacy1993, according to which a PVA is the estimation of extinction probabilities using analyses that incorporate identifiable threats to population survival in to models of the extinction process.
+
+-   To accomplish, measure, and communicate the goals of evaluating extinction risks and estimating population persistence, PVAs generate viability measures that quantify different characteristics of a studied population essential for its persistence [@VanDyke2020].
+
+------------------------------------------------------------------------
+
+| Viability measure               | Number of cases |
+|---------------------------------|-----------------|
+| Probability of extinction       | 39              |
+| Population size at a given time | 19              |
+| Time to extinction              | 18              |
+| Probability of quasi-extinction | 7               |
+| Occupancy                       | 7               |
+| Probability of decline          | 6               |
+| Growth rate                     | 6               |
+| Time to quasi extinction        | 5               |
+| Minimum viable population       | 5               |
+| Minimum area required           | 2               |
+
+Viability measures summarized from 78 PVAs studies covering 82 species [@Matsinos2013].
+
+------------------------------------------------------------------------
+
+-   PVA models assume that enough is known about the ecology, dispersal, genetics, demography, and distribution of the population under study to make an accurate estimate of the probability of persistence.
+
+-   One of the added values of PVAs is that they can also model the influence of specific causes in determining how the probability of persistence varies over time.
+
+-   PVA are also extremely useful when working with particularly small populations, where direct experimental manipulation will have low statistical power (due to the low number of samples and potential replicates).
+
+-   We can broadly distinguish two types of PVA models: deterministic ones, where elements are not determined by random processes; stochastic ones, where elements are determined by random processes.
+
+-   The latter class of models is more complicated, but also more accurate as many of the elements that a PVA tries to model are inherently stochastic.
+
+------------------------------------------------------------------------
+
+## A stage based PVA model
+
+-   Many species of animals and plants have life cycles with distinct ages, life history stages or sizes that influence population growth [@VanDyke2020].
+
+-   Therefore, to perform a PVA, we need a model in which age, size, sex and stage specific demographic parameters are known and properly related to one another.
+
+![Life-cycle graph for a stage-structured population showing transitions between successive stages ($g_x$), transitions of retention within a stage ($s_x$), and adjusted reproduction rates ($f_x$). After @Ebert1998.](./class_16_1.png)
+
+------------------------------------------------------------------------
+
+## Incorporating stochasticity
+
+-   In deterministic models transition probabilities are held constant over time, and populations are free to increase withouth bounds. This is a useful mathematical model, but very unrealistic from the biological point of view.
+
+-   To incorporate the array of possible variation that can influence population growth in nature stochastic models are better suited and incorporate elements that deterministic models do not [@VanDyke2020]!
+
+-   For example, stochastic models can incorporate climatic changes and environmental stochasticity (drought and wet years), or demographic stochasticity (unexpected changes in birth or death rates).
+
+-   Further, stochastic models usually incoroporate the concept that natural population often have growth bounds related to the environmental carrying capacity ($K$), posing a limit beyond which the population cannot grow.
+
+-   Finally, stochastic models can also incorporate probability values for uncommon and usually catastrophic events [@VanDyke2020].
+
+------------------------------------------------------------------------
+
+## Evaluating elasticity
+
+-   Understanding how to translate PVA results into meaningful management actions requires that we know what are the most important variables in our model, and how they affect the persistence of our population.
+
+-   Large changes in some variables may have little to no changes on our PVA results, while small changes in some very specific variables may have a great impact on our results [@VanDyke2020].
+
+-   We can conduct an elasticity analysis to figure out what variables are the most important to our PVA and determine the the effect of proportional changes of these analysis on our results.
+
+-   The variable (or variables) with the greatest proportional effect on values of $\lambda$ (i.e., the most elastic variables) are also the ones that should be considered more carefully for management.
+
+------------------------------------------------------------------------
+
+-   @Hernandez2013 provide a good example of stage-based analysis on an animal model.
+
+![A case study on Bonelli's eagle. After @Hernandez2013.](./class_16_3.png)
+
+------------------------------------------------------------------------
+
+-   12 different populations monitored for 20 years, with the collection of important demographic parameters.
+
+-   Their analysis revealed that a single large population on the Iberian peninsula was the primary source for the other populations which had lower rates of reproduction and survival (a classic source-sink dynamic as described in a previous lesson).
+
+![Representation of the metapopulation dynamic of the Bonelli'e eagle. Shades of the points represent $\lambda$ values. After @Hernandez2013.](./class_16_4.png)
+
+------------------------------------------------------------------------
+
+-   Based on the results of the elasticity analysis it was clear that population growth was most sensitive to adult survival.
+
+![Results of the sensitivity and elaticity analysis. The values of SA (survivability in adults) are the ones showing the highest sensitivity and, therefore, should be prioritized when developing conservation strategies.](./class_16_5.png)
+
+------------------------------------------------------------------------
+
+## PVA are complicated. How to make a good one?
+
+1.  Inform the PVA with real and solid data, collected over an extended period of time and under a variety of conditions.
+2.  Make clear and explicit assumptions based on what is known about the species.
+3.  Initial performance of a PVA are subject to a sensitivity analysis of all variables included.
+4.  The PVA is able to identify and address uncertainties in the analytical process.
+5.  Modelers are able to identify parameters that can be manipulated directly by management actions.
+6.  The PVA analyzes and ranks the outcome of different management scenarios based on the effects on one or more variables included in the model.
+7.  The PVA is able to prescribe real population levels necessary for the species to persistence, which then serves as guidelines for recovery criteria
+
+------------------------------------------------------------------------
+
+## Software to produce a PVA
+
+![[Vortex's webpage](https://scti.tools/vortex/). The original software was developed by @Lacy1993 and recently restyled as described in @Lacy2023](./class_16_6.png)
+
+------------------------------------------------------------------------
+
+## Useful R tools to perform a PVA
+
+-   There is an R package providing useful tool to run commands and visualize results from the Vortex program (Vortex needs to be installed on your computer for this to work). A description of how the package works is provided in @Pacioni2017b.
+-   A very good introduction to the simulation process of a PVA in R is available [here](https://kevintshoemaker.github.io/NRES-470/LECTURE12.html). This is part of a series of on-line lessons in Applied Population Ecology.
+-   [Here](https://cran.r-project.org/web/packages/PVAClone/PVAClone.pdf) there is a whole package that should allow to perform a Population Viability Analysis in R using pre-compiled functions and visualization tools.
+
+## References

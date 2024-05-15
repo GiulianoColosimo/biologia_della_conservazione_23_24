@@ -879,7 +879,7 @@
     "href": "classes/13/class_13.html#population-structure",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nIn most species individuals are scattered in local conglomerates that are called demes (i.e., local populations or subpopulations)\n\n\n\n\n\n\n\nAfter Akçakaya, Mills, & Doncaster (2007)\n\n\n\n\n\n\nAfter Frankham, Ballou, & Briscoe (2010)"
+    "text": "Population structure\n\nIn most species individuals are scattered in local conglomerates that are called demes (i.e., local populations or subpopulations)\n\n. . .\n\n\n\n\n\nAfter Akçakaya, Mills, & Doncaster (2007)\n\n\n\n\n\n\nAfter Frankham, Ballou, & Briscoe (2010)"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-1",
@@ -893,42 +893,42 @@
     "href": "classes/13/class_13.html#population-structure-2",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nAfter Allendorf et al. (2022), p. 184"
+    "text": "Population structure\n\n\n\nAfter Allendorf et al. (2022), p. 184"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-3",
     "href": "classes/13/class_13.html#population-structure-3",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nBoreal forest distibution in North America. Available here"
+    "text": "Population structure\n\n\n\nBoreal forest distibution in North America. Available here"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-4",
     "href": "classes/13/class_13.html#population-structure-4",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nEven in the absence of barriers to gene flow, genetic differences can accrue so that individuals that are very distant from each other may present significant differences at the genetic level: isolation by distance\n\n\nVariability in the correlation between species genetic diversity and geographic distance. ranges. Modified from Forbes & Hogg (1999) with additional unpublished data from M.K. Schwartz (Allendorf et al., 2022)."
+    "text": "Population structure\n\nEven in the absence of barriers to gene flow, genetic differences can accrue so that individuals that are very distant from each other may present significant differences at the genetic level: isolation by distance\n\n\n\n\nVariability in the correlation between species genetic diversity and geographic distance. ranges. Modified from Forbes & Hogg (1999) with additional unpublished data from M.K. Schwartz (Allendorf et al., 2022)."
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-5",
     "href": "classes/13/class_13.html#population-structure-5",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nDescribing the patterns and amount of differentiation among demes is of the uttermost importance to develop effective conservation strategies (see for example Thatte, Joshi, Vaidyanathan, Landguth, & Ramakrishnan, 2018).\n\n\nStudy area in Thatte et al. (2018). Genetically identified tigers as red dots"
+    "text": "Population structure\n\nDescribing the patterns and amount of differentiation among demes is of the uttermost importance to develop effective conservation strategies (see for example Thatte, Joshi, Vaidyanathan, Landguth, & Ramakrishnan, 2018).\n\n\n\n\nStudy area in Thatte et al. (2018). Genetically identified tigers as red dots"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-6",
     "href": "classes/13/class_13.html#population-structure-6",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nFrankham et al. (2011) describe the risks of outbreeding depression when translocating individuals from genetically distinct populations to supplement imperiled ones.\n\n\n\n\n\n\n\nAfter Welch et al. (2017).\n\n\n\n\n\n\nAfter Welch et al. (2017)."
+    "text": "Population structure\n\nFrankham et al. (2011) describe the risks of outbreeding depression when translocating individuals from genetically distinct populations to supplement imperiled ones.\n\n. . .\n\n\n\n\n\nAfter Welch et al. (2017).\n\n\n\n\n\n\nAfter Welch et al. (2017)."
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-7",
     "href": "classes/13/class_13.html#population-structure-7",
     "title": "Biologia della Conservazione",
     "section": "Population structure",
-    "text": "Population structure\n\nAfter Colosimo et al. (2021)"
+    "text": "Population structure\n\n\n\nAfter Colosimo et al. (2021)"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-8",
@@ -963,7 +963,7 @@
     "href": "classes/13/class_13.html#f_it",
     "title": "Biologia della Conservazione",
     "section": "\\(F_{IT}\\)",
-    "text": "\\(F_{IT}\\)\nMeasures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes (Allendorf et al., 2022).\n\\[\n\\label{fit}\n\\tag{13.3}\nF_{IT} = 1-\\frac{H_O}{H_T}\n\\]\nwhere \\(H_O\\) is the observed heterozygosity averaged over all demes while \\(H_T\\) is the expected HW heterozygosity if the metapopulation were panmictic.\n\n\nThe fixation indexes described in the previous slides are related by the following expression:\n\n\\[\n\\label{findexrelation}\n\\tag{13.4}\nF_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})\n\\]"
+    "text": "\\(F_{IT}\\)\nMeasures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes (Allendorf et al., 2022).\n\\[\n\\label{fit}\n\\tag{13.3}\nF_{IT} = 1-\\frac{H_O}{H_T}\n\\]\nwhere \\(H_O\\) is the observed heterozygosity averaged over all demes while \\(H_T\\) is the expected HW heterozygosity if the metapopulation were panmictic.\n. . .\n\nThe fixation indexes described in the previous slides are related by the following expression:\n\n\\[\n\\label{findexrelation}\n\\tag{13.4}\nF_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})\n\\]"
   },
   {
     "objectID": "classes/13/class_13.html#the-wahlund-effect",
@@ -998,14 +998,14 @@
     "href": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-1",
     "title": "Biologia della Conservazione",
     "section": "Population structure and habitat fragmentation",
-    "text": "Population structure and habitat fragmentation\n\nFragmentation of Atlantic forest. After Nunes (2011)"
+    "text": "Population structure and habitat fragmentation\n\n\n\nFragmentation of Atlantic forest. After Nunes (2011)"
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-2",
     "href": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-2",
     "title": "Biologia della Conservazione",
     "section": "Population structure and habitat fragmentation",
-    "text": "Population structure and habitat fragmentation\n\nSingle large (SL) VS several small (SS). After Frankham et al. (2010)"
+    "text": "Population structure and habitat fragmentation\n\n\n\nSingle large (SL) VS several small (SS). After Frankham et al. (2010)"
   },
   {
     "objectID": "classes/13/class_13.html#gene-flow",
@@ -1026,14 +1026,14 @@
     "href": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-3",
     "title": "Biologia della Conservazione",
     "section": "Population structure and habitat fragmentation",
-    "text": "Population structure and habitat fragmentation\nFragmentation happens in two steps:\n\nInitial genetic subdivision of the population.\nCumulative diversification through genetic drift, selection, inbreeding etc. etc. etc.\n\nAfter an initial fragmentation, different fragments will have different initial allele frequencies. This diversification can be described by the binomial sampling variance (\\(\\sigma_p^2 = \\frac{pq}{2N}\\)) and the smaller the fragment, the higher the variance.\n\nThe degree of differentiation among fragments can be described by partitioning the overall inbreeding into components within and among populations (\\(F\\) statistics).\n\n\nWe will look at some examples on estimating \\(F\\) statistics from genotype data."
+    "text": "Population structure and habitat fragmentation\nFragmentation happens in two steps:\n\nInitial genetic subdivision of the population.\nCumulative diversification through genetic drift, selection, inbreeding etc. etc. etc.\n\nAfter an initial fragmentation, different fragments will have different initial allele frequencies. This diversification can be described by the binomial sampling variance (\\(\\sigma_p^2 = \\frac{pq}{2N}\\)) and the smaller the fragment, the higher the variance.\n. . .\nThe degree of differentiation among fragments can be described by partitioning the overall inbreeding into components within and among populations (\\(F\\) statistics).\n. . .\nWe will look at some examples on estimating \\(F\\) statistics from genotype data."
   },
   {
     "objectID": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-4",
     "href": "classes/13/class_13.html#population-structure-and-habitat-fragmentation-4",
     "title": "Biologia della Conservazione",
     "section": "Population structure and habitat fragmentation",
-    "text": "Population structure and habitat fragmentation\nGene flow\nWhat is gene flow?\n\nMovement of alleles between population due to migration.\n\nThe effects of fragmentation on gene flow depend on:\n\nNumber of population fragments.\nDistribution of population sizes in the fragments.\nDistance between fragments.\nDispersal ability of the species.\nMigration rates among fragments.\nEnvironment of the matrix among fragments.\nTimes since fragmentation and extinction and recolonization rates across fragments."
+    "text": "Population structure and habitat fragmentation\n\nGene flow\nWhat is gene flow?\n\nMovement of alleles between population due to migration.\n\nThe effects of fragmentation on gene flow depend on:\n\nNumber of population fragments.\nDistribution of population sizes in the fragments.\nDistance between fragments.\nDispersal ability of the species.\nMigration rates among fragments.\nEnvironment of the matrix among fragments.\nTimes since fragmentation and extinction and recolonization rates across fragments."
   },
   {
     "objectID": "classes/13/class_13.html#example---1",
@@ -1061,14 +1061,14 @@
     "href": "classes/13/class_13.html#example---4",
     "title": "Biologia della Conservazione",
     "section": "Example - 4",
-    "text": "Example - 4\n\n\\(F_{ST}\\) increases over generations in fragmented populations at a rate inversely dependent on population size. Values that are \\(\\ge 0.15\\) indicate significant differentiation between fragments (Frankham et al., 2010)."
+    "text": "Example - 4\n\n\n\n\\(F_{ST}\\) increases over generations in fragmented populations at a rate inversely dependent on population size. Values that are \\(\\ge 0.15\\) indicate significant differentiation between fragments (Frankham et al., 2010)."
   },
   {
     "objectID": "classes/13/class_13.html#migration-and-gene-flow",
     "href": "classes/13/class_13.html#migration-and-gene-flow",
     "title": "Biologia della Conservazione",
     "section": "Migration and gene flow",
-    "text": "Migration and gene flow\n\nMigration reduces the impact of fragmentation in a way that is dependent on the rate of gene flow.\nWhen is gene flow sufficiently high to prevent the genetic impact of fragmentation?\n\n\n\n\n\nA single migrant per generation is considered sufficient to prevent differentiation between demes.\nThe migration rate \\(m\\) is the proportion of genes in a population derived from migrants per generation.\n\\(Nm\\) is the number of migrants per generation (Frankham et al., 2010)."
+    "text": "Migration and gene flow\n\nMigration reduces the impact of fragmentation in a way that is dependent on the rate of gene flow.\nWhen is gene flow sufficiently high to prevent the genetic impact of fragmentation?\n\n. . .\n\n\n\nA single migrant per generation is considered sufficient to prevent differentiation between demes.\nThe migration rate \\(m\\) is the proportion of genes in a population derived from migrants per generation.\n\\(Nm\\) is the number of migrants per generation (Frankham et al., 2010)."
   },
   {
     "objectID": "classes/13/class_13.html#migration-and-gene-flow-1",
@@ -1384,5 +1384,110 @@
     "title": "Biologia della Conservazione",
     "section": "Assignment tests",
     "text": "Assignment tests\n\nAfter Paradiso et al., in preparation"
+  },
+  {
+    "objectID": "classes/15/class_15.html#topics",
+    "href": "classes/15/class_15.html#topics",
+    "title": "Biologia della Conservazione",
+    "section": "Topics",
+    "text": "Topics\n\n\n\nIntroduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
+  },
+  {
+    "objectID": "classes/15/class_15.html#references",
+    "href": "classes/15/class_15.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD\n\n\n\n\nFrankham, R., Ballou, J. D., & Briscoe, D. A. (2010). Introduction to conservation genetics. Cambridge University Press. Retrieved from https://doi.org/10.1017%2Fcbo9780511809002\n\n\nFutuyma, D. J. (1979). Evolutionary biology. Sinauer Associates, Inc.\n\n\nMurray, J., & Clarke, B. (1968). Inheritance of shell size in partula. Heredity, 23(2), 189–198. Springer Science; Business Media LLC. Retrieved from https://doi.org/10.1038%2Fhdy.1968.27\n\n\nStrickberger, M. W. (1985). Genetics. Macmillan international editions in science. Macmillan. Retrieved from https://books.google.co.uk/books?id=IWrwAAAAMAAJ"
+  },
+  {
+    "objectID": "classes/16/class_16.html#topics",
+    "href": "classes/16/class_16.html#topics",
+    "title": "Biologia della Conservazione",
+    "section": "Topics",
+    "text": "Topics\n\n\n\nIntroduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
+  },
+  {
+    "objectID": "classes/16/class_16.html#references",
+    "href": "classes/16/class_16.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD\n\n\n\n\nDyke, F. V., & Lamb, R. L. (2020). Conservation biology. Springer International Publishing. Retrieved from https://doi.org/10.1007%2F978-3-030-39534-6\n\n\nEbert, T. A. (1998). Plant and animal populations: Methods in demography. San Diego: Academic Press.\n\n\nFrankham, R., Ballou, J. D., & Briscoe, D. A. (2010). Introduction to conservation genetics. Cambridge University Press. Retrieved from https://doi.org/10.1017%2Fcbo9780511809002\n\n\nHernández-Matı́as, A., Real, J., Moleón, M., Palma, L., Sánchez-Zapata, J. A., Pradel, R., Carrete, M., et al. (2013). From local monitoring to a broad-scale viability assessment: A case study for the bonelli’s eagle in western europe. Ecological Monographs, 83(2), 239–261. Retrieved from https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/12-1248.1\n\n\nLacy, R. C. (1993). VORTEX: A computer simulation model for population viability analysis. Wildlife Research, 20(1), 45. CSIRO Publishing. Retrieved from https://doi.org/10.1071%2Fwr9930045\n\n\nLacy, Robert C., & Pollack, J. P. (2023). Vortex: A stochastic simulation of the extinction process. Version 10.6.0. (10.6.0 ed.). Brookfield, Illinois, USA: Chicago Zoological Society.\n\n\nPacioni, C., & Mayer, F. (2017). vortexR: An r package for post vortex simulation analysis. Methods in Ecology and Evolution, 8(11), 1477–1481. Retrieved from https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12786\n\n\nPeers, G., Matsinos, Y. G., JOHST, K., FRANZ, K. W., TURLURE, C., RADCHUK, V., MALINOWSKA, A. H., et al. (2013). A protocol for better design, application, and communication of population viability analyses. Conservation Biology, 27(4), 644–656. Wiley. Retrieved from https://doi.org/10.1111%2Fcobi.12076\n\n\nShaffer, M. L. (1981). Minimum Population Sizes for Species Conservation. BioScience, 31(2), 131–134."
+  },
+  {
+    "objectID": "classes/15/class_15.html#heritability",
+    "href": "classes/15/class_15.html#heritability",
+    "title": "Biologia della Conservazione",
+    "section": "Heritability",
+    "text": "Heritability\nWhen talking about phenotypes we have mentioned that a measurable phenotype is the consequence of the underlying genotypes inherited by the parents plus the influence of the environment. We can represent this relation in mathematical terms in the following way:\n\\[\n\\label{p}\n\\tag{15.1}\nP = G + E\n\\]\nwhere \\(P\\) = phenotye, \\(G\\) = genotype, and \\(E\\) = environment. Being able to distinguish between the genetic and the environmental component in this interaction is important to understand the evolutionary trajectory of a population or species (Frankham, Ballou, & Briscoe, 2010).\nDifferent phenotypes within a population, also known as phenotypic variance \\(V_P\\), represents the sum total of all the interactions between the genotypic variance, \\(V_G\\), the environmental variance, \\(V_E\\), and the interaction term between these two quantities, \\(G*E\\).\n\\[\n\\label{Vp}\n\\tag{15.2}\nV_P = V_G + V_E + 2Cov_{GE}\n\\]"
+  },
+  {
+    "objectID": "classes/15/class_15.html#heritability-and-evolutionary-potential",
+    "href": "classes/15/class_15.html#heritability-and-evolutionary-potential",
+    "title": "Biologia della Conservazione",
+    "section": "Heritability and Evolutionary potential",
+    "text": "Heritability and Evolutionary potential\n\nHeritability determines the extent to which a character is passed on from parents to offspring. Only traits that are heritable will be passed on from generation to generation. A trait that is favorable, but it is not heritable will not be passed on!\nHeritability (\\(h^2\\)) is defined as the proportion of total phenotypic variation due to additive genetic variance:\n\n\\[\n\\label{h2}\n\\tag{15.5}\nh^2 = \\frac{V_A}{V_P}\n\\]\n\n\\(h^2\\) value ranges from \\(0\\) to \\(1\\), with \\(0\\) characteristic of highly inbred populations with no genetic variation, and \\(1\\) expected in traits with basically no environmental variance components and all additive genetic variance.\nHeritability can not be extrapolated for environments that are not native to population or species under study."
+  },
+  {
+    "objectID": "classes/15/class_15.html#predicting-response-to-selection",
+    "href": "classes/15/class_15.html#predicting-response-to-selection",
+    "title": "Biologia della Conservazione",
+    "section": "Predicting response to selection",
+    "text": "Predicting response to selection\n\nThe genetic change (response) produced by directional selection can be predicted from the intensity of selection and the heritability.\n\n\n\n\n\nForms of selection operating on quantitative characters After Frankham et al. (2010) and Futuyma (1979)."
+  },
+  {
+    "objectID": "classes/16/class_16.html#population-viability-analysis",
+    "href": "classes/16/class_16.html#population-viability-analysis",
+    "title": "Biologia della Conservazione",
+    "section": "Population Viability Analysis",
+    "text": "Population Viability Analysis\n\nIt is a hard world out there! Stylized scenario of the many risks of species in their natural environment. After Frankham, Ballou, & Briscoe (2010), Chapter 22."
+  },
+  {
+    "objectID": "classes/16/class_16.html#a-stage-based-pva-model",
+    "href": "classes/16/class_16.html#a-stage-based-pva-model",
+    "title": "Biologia della Conservazione",
+    "section": "A stage based PVA model",
+    "text": "A stage based PVA model\n\nMany species of animals and plants have life cycles with distinct ages, life history stages or sizes that influence population growth (Dyke & Lamb, 2020).\nTherefore, to perform a PVA, we need a model in which age, size, sex and stage specific demographic parameters are known and properly related to one another.\n\n\nLife-cycle graph for a stage-structured population showing transitions between successive stages (\\(g_x\\)), transitions of retention within a stage (\\(s_x\\)), and adjusted reproduction rates (\\(f_x\\)). After Ebert (1998)."
+  },
+  {
+    "objectID": "classes/16/class_16.html#incorporating-stochasticity",
+    "href": "classes/16/class_16.html#incorporating-stochasticity",
+    "title": "Biologia della Conservazione",
+    "section": "Incorporating stochasticity",
+    "text": "Incorporating stochasticity\n\nIn deterministic models transition probabilities are held constant over time, and populations are free to increase withouth bounds. This is a useful mathematical model, but very unrealistic from the biological point of view.\nTo incorporate the array of possible variation that can influence population growth in nature stochastic models are better suited and incorporate elements that deterministic models do not (Dyke & Lamb, 2020)!\nFor example, stochastic models can incorporate climatic changes and environmental stochasticity (drought and wet years), or demographic stochasticity (unexpected changes in birth or death rates).\nFurther, stochastic models usually incoroporate the concept that natural population often have growth bounds related to the environmental carrying capacity (\\(K\\)), posing a limit beyond which the population cannot grow.\nFinally, stochastic models can also incorporate probability values for uncommon and usually catastrophic events (Dyke & Lamb, 2020)."
+  },
+  {
+    "objectID": "classes/16/class_16.html#evaluating-elasticity",
+    "href": "classes/16/class_16.html#evaluating-elasticity",
+    "title": "Biologia della Conservazione",
+    "section": "Evaluating elasticity",
+    "text": "Evaluating elasticity\n\nUnderstanding how to translate PVA results into meaningful management actions requires that we know what are the most important variables in our model, and how they affect the persistence of our population.\nLarge changes in some variables may have little to no changes on our PVA results, while small changes in some very specific variables may have a great impact on our results (Dyke & Lamb, 2020).\nWe can conduct an elasticity analysis to figure out what variables are the most important to our PVA and determine the the effect of proportional changes of these analysis on our results.\nThe variable (or variables) with the greatest proportional effect on values of \\(\\lambda\\) (i.e., the most elastic variables) are also the ones that should be considered more carefully for management."
+  },
+  {
+    "objectID": "classes/16/class_16.html#pva-are-complicated.-how-to-make-a-good-one",
+    "href": "classes/16/class_16.html#pva-are-complicated.-how-to-make-a-good-one",
+    "title": "Biologia della Conservazione",
+    "section": "PVA are complicated. How to make a good one?",
+    "text": "PVA are complicated. How to make a good one?\n\nInform the PVA with real and solid data, collected over an extended period of time and under a variety of conditions.\nMake clear and explicit assumptions based on what is known about the species.\nInitial performance of a PVA are subject to a sensitivity analysis of all variables included.\nThe PVA is able to identify and address uncertainties in the analytical process.\nModelers are able to identify parameters that can be manipulated directly by management actions.\nThe PVA analyzes and ranks the outcome of different management scenarios based on the effects on one or more variables included in the model.\nThe PVA is able to prescribe real population levels necessary for the species to persistence, which then serves as guidelines for recovery criteria"
+  },
+  {
+    "objectID": "classes/16/class_16.html#software-to-produce-a-pva",
+    "href": "classes/16/class_16.html#software-to-produce-a-pva",
+    "title": "Biologia della Conservazione",
+    "section": "Software to produce a PVA",
+    "text": "Software to produce a PVA\n\nVortex’s webpage. The original software was developed by R. C. Lacy (1993) and recently restyled as described in Lacy Robert C. & Pollack (2023)"
+  },
+  {
+    "objectID": "classes/16/class_16.html#useful-r-tools-to-perform-a-pva",
+    "href": "classes/16/class_16.html#useful-r-tools-to-perform-a-pva",
+    "title": "Biologia della Conservazione",
+    "section": "Useful R tools to perform a PVA",
+    "text": "Useful R tools to perform a PVA\n\nThere is an R package providing useful tool to run commands and visualize results from the Vortex program (Vortex needs to be installed on your computer for this to work). A description of how the package works is provided in Pacioni & Mayer (2017).\nA very good introduction to the simulation process of a PVA in R is available here. This is part of a series of on-line lessons in Applied Population Ecology.\nHere there is a whole package that should allow to perform a Population Viability Analysis in R using pre-compiled functions and visualization tools."
+  },
+  {
+    "objectID": "classes/13/class_13.html",
+    "href": "classes/13/class_13.html",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Student\nTitle\n\n\n\n\nFALVO\nDeveloping gene drive technologies to eradicate invasive rodents from islands\n\n\nD’ALESSANDRO\nPopulation genetic analysis of the recently rediscovered hula painted frog (Latonia nigriventer) reveals high genetic diversity and low inbreeding\n\n\nPIROLI\nFirst evidence of recruitment in critically endangered Galapagos pink iguanas\n\n\nTRONCONE\nGenetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe\n\n\nGARCIA\nThe critically endangered vaquita is not doomed to extinction by inbreeding depression"
   }
 ]

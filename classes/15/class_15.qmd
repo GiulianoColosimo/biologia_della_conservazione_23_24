@@ -1,0 +1,394 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 15 - Heritability"
+date: "2024-05-14"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: green;"}
+10. [Hybridization]{style="color: green;"}
+11. [Applying genetic information to conservation]{style="color: green;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: orange;"}
+13. [Managing genetic diversity in the wild]{style="color: orange;"}
+14. [Population viability analysis]{style="color: blue;"}
+15. [Invasive species]{style="color: blue;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+## Heritability
+
+When talking about phenotypes we have mentioned that a measurable phenotype is the consequence of the underlying genotypes inherited by the parents plus the influence of the environment. We can represent this relation in mathematical terms in the following way:
+
+$$
+\label{p}
+\tag{15.1}
+P = G + E
+$$
+
+where $P$ = phenotye, $G$ = genotype, and $E$ = environment. Being able to distinguish between the genetic and the environmental component in this interaction is important to understand the evolutionary trajectory of a population or species [@Frankham2010].
+
+Different phenotypes within a population, also known as phenotypic variance $V_P$, represents the sum total of all the interactions between the genotypic variance, $V_G$, the environmental variance, $V_E$, and the interaction term between these two quantities, $G*E$.
+
+$$
+\label{Vp}
+\tag{15.2}
+V_P = V_G + V_E + 2Cov_{GE}
+$$
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+![Quantitative genetic variation for corolla length in tobacco. After @Strickberger1985.](./class_14_7.jpg){width="70%"}
+:::
+
+::: {.column width="50%"}
+-   Variances for corolla length in the two homozygous parent population are 48 and 32 respectively.
+-   Variance in the $F_1$ population is 46, while variance in the $F_2$ population is 130.5.
+-   The variances in the parental and $F_1$ populations are due solely on environmental variance, $V_E$.
+-   We can average the three separate estimates of $V_E = \frac{48+32+46}{3}=42$.
+-   In $F_2$ we need to account for both genetic variation and environmental variation: $V_{F_2} = V_G+V_E = 130.5$, and we can rearrange the equation as $V_G = V_{F_2} - V_E = 130.5- 42 = 88.5$.
+:::
+:::
+
+------------------------------------------------------------------------
+
+-   Based on the previous example, we can conclude that in $F_2$ generation $88/130.5 = 68\%$ of variance is due to segregation of polymorphic loci while only $100-68=32\%$ of the total phenotypic variance is due to environmental factors ($V_E$).
+-   In common garden experiment the covariance term in equation \ref{p} can be kept under control by standardizing the experimental condition for the animal or plant under study.
+-   This is way more complicated to obtain in wild populations as the there is no easy way to keep under control the many environmental variables that play into the reproductive fitness of individuals.
+
+. . .
+
+### Further partitioning $V_G$
+
+We can further divide the genetic variance in three subcomponents: additive genetic variance ($V_A$), dominance variance ($V_D$) and interacting variance ($V_I$).
+
+$$
+\label{Vg}
+\tag{15.3}
+V_G= V_A+V_D+V_I
+$$
+
+------------------------------------------------------------------------
+
+-   $V_A$ reflects variation in the avergae effect of the many loci involved in the overall genotypic variance. This measure, and in particular the ratio $V_A/V_P$ (also known as heritability) reflects the evolutionary potential of the population or species under study [@Frankham2010].
+-   $V_D$ measures variation in dominance deviation.
+-   $V_I$ is a measure of epistasis, i.e. the variation in interaction deviations among genes. This can also be interpreted as a measure of the effects of outbreeding, whether beneficial or deleterious [@Frankham2010].
+
+. . .
+
+-   To better understand the meaning of $V_A$ and $V_D$ we can work a simple model to help illustrate how we can partition the genetic variance in its component, in particular the additive and the dominant ones ($V_A$ and $V_D$)!
+
+------------------------------------------------------------------------
+
+![Genotypic values assigned to three genotypes at a locus along with their frequencies with random mating [@Frankham2010]](./class_15_1.jpg)
+
+. . .
+
+![Genotypic values for additive, dominant and overdominant loci [@Frankham2010]](./class_15_2.jpg)
+
+------------------------------------------------------------------------
+
+-   In Merino sheep the $B$ allele increases the litter size. Based on some experimental studies we can compute the following average litter size for the three distinct genotypes:
+
+| BB   | Bb   | bb   |
+|------|------|------|
+| 2.66 | 2.17 | 1.48 |
+
+-   We can now compute the value of $a$ as:
+
+$$
+a = \frac{BB \ value- bb \ value}{2} = \frac{2.66-1.48}{2}=0.59
+$$
+
+-   Based on our model, the mid-point between the two homozygotes is the zero point on the scale of genotypic values, and we can use it to determine $d$. It is calculated as $(2.66-0.59 = 2.07)$. We can now calculate the dominance deviation $d$ as:
+
+$$
+d= Bb \ value - mid \ point = 2.17-2.07=0.10
+$$
+
+------------------------------------------------------------------------
+
+-   Each copy of the $B$ allele increases the litter size by an average of 0.59 offspring and this allele presents partial dominance with the heterozygote having 0.10 offspring above the $bb$ homozygote.
+
+. . .
+
+### Focusing on additive genetic variance ($V_A$)
+
+![Genotypic values assigned to three genotypes at a locus along with their frequencies with random mating [@Frankham2010]](./class_15_1.jpg)
+
+-   For a polymorphic locus with addivie effects ($d = 0$) and genotypic frequncies and values as in the above example, the additive genetic variation is defined as $V_A = 2pqa^2$.
+
+------------------------------------------------------------------------
+
+-   We can desume that $V_A$ is directly dependent on the heterozygosity (2pq) and ha;f the differenc in genotypic values between the two homozygotes ($a$).
+-   The larger the difference between the two homozygotes the larger $V_A$.
+-   On the other end, when $d \ne 0$ (there is dominance) the additive genetic variation can be computed as:
+
+$$
+\label{vadom}
+\tag{15.4}
+V_A = 2pq[a+d(q-p)]^2
+$$
+
+-   Thus, $V_A$ also depends on the dominance deviation!
+
+-   As you can guess, $V_A$ of a specific character depends on the combined effect of all segregating loci in a population with effect on the specific quantitative character under study [@Frankham2010].
+
+------------------------------------------------------------------------
+
+## Heritability and Evolutionary potential
+
+-   Heritability determines the extent to which a character is passed on from parents to offspring. Only traits that are heritable will be passed on from generation to generation. A trait that is favorable, but it is not heritable will not be passed on!
+
+-   Heritability ($h^2$) is defined as the proportion of total phenotypic variation due to additive genetic variance:
+
+$$
+\label{h2}
+\tag{15.5}
+h^2 = \frac{V_A}{V_P}
+$$
+
+-   $h^2$ value ranges from $0$ to $1$, with $0$ characteristic of highly inbred populations with no genetic variation, and $1$ expected in traits with basically no environmental variance components and all additive genetic variance.
+-   Heritability can not be extrapolated for environments that are not native to population or species under study.
+
+------------------------------------------------------------------------
+
+-   Quantitative variation is characterized using statistical parameters including means, variances, covariances, regressions and correlations [@Frankham2010].
+
+. . .
+
+| Parent means (P) | Offspring means (O) |
+|------------------|---------------------|
+| 6.8              | 7.3                 |
+| 6.9              | 7.4                 |
+| 7.1              | 7.6                 |
+| 7.3              | 7.5                 |
+| 7.3              | 7.3                 |
+| 7.3              | 7.2                 |
+| 7.4              | 7.4                 |
+| 7.5              | 7.7                 |
+| 7.5              | 7.6                 |
+
+Data from [@Murray1968].
+
+------------------------------------------------------------------------
+
+-   Mean: $\bar{P}=\frac{\sum_{i=1}^n P_i}{n}$ and $\bar{O}=\frac{\sum_{i=1}^n O_i}{n}$
+
+. . .
+
+-   Variance: $V_{P}=\frac{\sum_{i=1}^n (P_i-\bar{P})^2}{n-1}$ and $V_{O}=\frac{\sum_{i=1}^n (O_i-\bar{O})^2}{n-1}$
+
+. . .
+
+-   Standard deviations: $sd_{P} = \sqrt{V_{P}}$ and $sd_{O} = \sqrt{V_{O}}$
+
+. . .
+
+-   Covariance ($Cov_{PO}$) measures the extent to which they vary in concert ($+$), they vary independently ($0$), or in opposition ($-$): $Cov_{PO} = \frac{\sum_{i=1}^n (P_i-\bar{P})(O_i-\bar{O})}{n-1}$
+
+. . .
+
+-   Correlation ($r_{PO}$) is a standardized measure of how two measurements vary in concert. Ranges from $-1$ to $+1$: $r_{PO} = \frac{Cov_{PO}}{\sqrt{(V_{P}*V_{O})}}$
+
+. . .
+
+-   Regression of offspring on parents ($b_{OP}$) is the slope of the line of best fit relating offspring and parents: $b_{OP}= \frac{Cov_{PO}}{V_{P}}$
+
+------------------------------------------------------------------------
+
+-   Access the [data for excercise](https://drive.proton.me/urls/5RKA9GC418#RwMAMxHGaHl2) and lets try to estimate the heritability in R.
+
+-   Save the file in a specific folder and navigate to that folder within R.
+
+```{r echo=FALSE}
+load("../../data/po.RData")
+```
+
+-   Load the data file in your working environment.
+
+```{r echo=TRUE, eval=FALSE}
+load("path_to_file.RData")
+```
+
+-   Lets take a look at the data.
+
+```{r echo=TRUE}
+# Parent means complete dataset
+P
+# Offspring means complete dataset
+O
+```
+
+------------------------------------------------------------------------
+
+-   Mean
+
+. . .
+
+```{r echo=TRUE}
+mean(P)
+mean(O)
+```
+
+-   Variance
+
+. . .
+
+```{r echo=TRUE}
+var(P)
+var(O)
+```
+
+-   Standard deviation
+
+. . .
+
+```{r echo=TRUE}
+sd(P)
+sd(O)
+```
+
+------------------------------------------------------------------------
+
+-   Covariance
+
+```{r echo=TRUE}
+cov(P,O)
+```
+
+. . .
+
+-   Correlation
+
+. . .
+
+```{r echo=TRUE}
+cor(P,O)
+```
+
+-   Regression
+
+. . .
+
+```{r echo=TRUE, fig.align='center', fig.width=7, fig.height=4}
+plot(O ~ P, xlab = "Parent means", ylab = "Offspring means")
+```
+
+------------------------------------------------------------------------
+
+```{r echo=TRUE}
+summary(lm(O ~ P))
+```
+
+1.  The estimate for the model parameters -- the value of the y-intercept (in this case 4.596) and the estimated effect of parents on offspring (0.396).
+2.  The standard error of the estimated values (Std. Error).
+3.  The test statistic (t value, in this case the t statistic).
+4.  The p value ( Pr(\>\| t \| ) ), aka the probability of finding the given t statistic if the null hypothesis of no relationship were true.
+
+------------------------------------------------------------------------
+
+```{r echo=TRUE}
+plot(O ~ P, xlab = "Parent means", ylab = "Offspring means")
+abline(lm(O ~ P))
+```
+
+------------------------------------------------------------------------
+
+![Hypothetical relationships between mean values of parents and mean values of offspring for three cases, representing (a) complete, (b) incomplete, and (c) zero relationships between parents and offspring [@Frankham2010].](./class_15_3.jpg)
+
+a.  Parents with larger values produce offspring with larger values, $h^2 = 1$.
+b.  Parents with high phenotypic values produce offspring with slightly higher phenotypic values, but still close to the population mean, $h^2$ has an intermediate value.
+c.  Parents with high and low values have similar offspring.
+
+------------------------------------------------------------------------
+
+## Predicting response to selection
+
+-   The genetic change (response) produced by directional selection can be predicted from the intensity of selection and the heritability.
+
+. . .
+
+![Forms of selection operating on quantitative characters After @Frankham2010 and @Futuyma1979.](./class_15_4.jpg){width="40%"}
+
+------------------------------------------------------------------------
+
+![Predicting response to directional selection. Individuals with the highest values are selected to be parents (filled circles), and their mean phenotype value, $S$, is higher than the mean of the general parental population After [@Frankham2010].](./class_15_5.jpg)
+
+------------------------------------------------------------------------
+
+-   $S$ is termed selection differential.
+-   $R$ is termed response to selection (the difference in the offspring of selected parents against the offspring of all parents) can be measured as:
+
+$$
+\label{R}
+\tag{15.6}
+R = Sh^2
+$$
+
+::: columns
+::: {.column width="50%"}
+![Darwin's medium ground finches from Galápagos. After @Frankham2010](./class_15_6.jpg){width="30%"}
+:::
+
+::: {.column width="50%"}
+-   Over 18 months of drought and no breeding the finches suffered 85% mortality.
+-   Survivors had beaks that were 0.25mm wider than the original population ($S$).
+-   The heritability for bill width in this population is 74.5%.
+-   Can we predict the genetic change of the offspring of these survivors ($R$)?
+:::
+:::
+
+
+## References
