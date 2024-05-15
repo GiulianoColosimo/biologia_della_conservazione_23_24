@@ -35,7 +35,6 @@ rm(x)
 ```
 
 
-
 ## Topics
 
 ::: columns
@@ -172,7 +171,7 @@ $$
 
 ------------------------------------------------------------------------
 
--   We can desume that $V_A$ is directly dependent on the heterozygosity (2pq) and ha;f the differenc in genotypic values between the two homozygotes ($a$).
+-   We can desume that $V_A$ is directly dependent on the heterozygosity (2pq) and half the difference in genotypic values between the two homozygotes ($a$).
 -   The larger the difference between the two homozygotes the larger $V_A$.
 -   On the other end, when $d \ne 0$ (there is dominance) the additive genetic variation can be computed as:
 
