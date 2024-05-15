@@ -27,13 +27,14 @@ citation_package: biblatex
 citecolor: "red"
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
 lapply(x, require, character.only = T)
 rm(x)
 ```
+
+
 
 ## Topics
 
