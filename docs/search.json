@@ -1460,7 +1460,7 @@
     "href": "classes/16/class_16.html#evaluating-elasticity",
     "title": "Biologia della Conservazione",
     "section": "Evaluating elasticity",
-    "text": "Evaluating elasticity\n\nUnderstanding how to translate PVA results into meaningful management actions requires that we know what are the most important variables in our model, and how they affect the persistence of our population.\nLarge changes in some variables may have little to no changes on our PVA results, while small changes in some very specific variables may have a great impact on our results (Dyke & Lamb, 2020).\nWe can conduct an elasticity analysis to figure out what variables are the most important to our PVA and determine the the effect of proportional changes of these analysis on our results.\nThe variable (or variables) with the greatest proportional effect on values of \\(\\lambda\\) (i.e., the most elastic variables) are also the ones that should be considered more carefully for management."
+    "text": "Evaluating elasticity\n\nUnderstanding how to translate PVA results into meaningful management actions requires that we know what are the most important variables in our model, and how they affect the persistence of our population.\nLarge changes in some variables may have little to no changes on our PVA results, while small changes in some very specific variables may have a great impact on our results (Dyke & Lamb, 2020).\nWe can conduct an elasticity analysis to figure out what variables are the most important to our PVA and determine the the effect of proportional changes of these analysis on our results.\nThe variable (or variables) with the greatest proportional effect on values of \\(\\lambda\\) (i.e., the discrete time rate of increase) are also the ones that should be considered more carefully for management."
   },
   {
     "objectID": "classes/16/class_16.html#pva-are-complicated.-how-to-make-a-good-one",
@@ -1489,5 +1489,40 @@
     "title": "Biologia della Conservazione",
     "section": "",
     "text": "Student\nTitle\n\n\n\n\nFALVO\nDeveloping gene drive technologies to eradicate invasive rodents from islands\n\n\nD’ALESSANDRO\nPopulation genetic analysis of the recently rediscovered hula painted frog (Latonia nigriventer) reveals high genetic diversity and low inbreeding\n\n\nPIROLI\nFirst evidence of recruitment in critically endangered Galapagos pink iguanas\n\n\nTRONCONE\nGenetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe\n\n\nGARCIA\nThe critically endangered vaquita is not doomed to extinction by inbreeding depression"
+  },
+  {
+    "objectID": "classes/16/class_16.html#predict-extinction-risk-using-pva",
+    "href": "classes/16/class_16.html#predict-extinction-risk-using-pva",
+    "title": "Biologia della Conservazione",
+    "section": "Predict extinction risk using PVA",
+    "text": "Predict extinction risk using PVA\n\nThe next few slides are borrowed from an on-line class available here\nThe WILD3810 package includes an R function that simulates the dynamics of a user-defined number of populations that are subject to both environmental and demographic stochasticity. This function has a number of parameters that you can change to alter the deterministic and stochastic processes that govern population growth. In this lab, you will selectively change several of these parameters to see how each influences extinction risk.\n\n\ninstall.packages(\"devtools\")\ndevtools::install_github(\"RushingLab/WILD3810\")"
+  },
+  {
+    "objectID": "classes/16/class_16.html#section",
+    "href": "classes/16/class_16.html#section",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "library(WILD3810)\nsim_test &lt;- pva(N0 = 20, number.of.years = 100, \n                r0 = 0.05, variance.r = 0.05)"
+  },
+  {
+    "objectID": "classes/16/class_16.html#section-1",
+    "href": "classes/16/class_16.html#section-1",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "sim_test\n\n  nYears N0   r0 variance.r density.dependent  K theta prob.extinct\n1    100 20 0.05       0.05                No NA     1         0.26\n  median.time.to.ext\n1               37.5"
+  },
+  {
+    "objectID": "classes/17/class_17.html#references",
+    "href": "classes/17/class_17.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD"
+  },
+  {
+    "objectID": "classes/16/class_16.html",
+    "href": "classes/16/class_16.html",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Introduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
   }
 ]

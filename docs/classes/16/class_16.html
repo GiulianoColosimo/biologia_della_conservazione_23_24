@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.553">
 
-  <meta name="dcterms.date" content="2024-05-16">
+  <meta name="dcterms.date" content="2024-05-21">
   <title>Biologia della Conservazione 23/24 - Biologia della Conservazione</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -358,7 +423,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-05-16</p>
+  <p class="date">2024-05-21</p>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -430,7 +495,7 @@
 </ul>
 <div class="fragment">
 <blockquote>
-<p>Like the more usual forms of risk analysis applied to issues of public health and safety, PVA attempts to estimate the likelihood of future events based on currently available data and theory, both of which contain some degree of unvertainty <span class="citation" data-cites="Shaffer1981">(<a href="#/references" role="doc-biblioref" onclick="">Shaffer, 1981</a>)</span>.</p>
+<p>Like the more usual forms of risk analysis applied to issues of public health and safety, PVA attempts to estimate the likelihood of future events based on currently available data and theory, both of which contain some degree of uncertainty <span class="citation" data-cites="Shaffer1981">(<a href="#/references" role="doc-biblioref" onclick="">Shaffer, 1981</a>)</span>.</p>
 </blockquote>
 </div>
 <div class="fragment">
@@ -528,7 +593,7 @@
 <li><p>Understanding how to translate PVA results into meaningful management actions requires that we know what are the most important variables in our model, and how they affect the persistence of our population.</p></li>
 <li><p>Large changes in some variables may have little to no changes on our PVA results, while small changes in some very specific variables may have a great impact on our results <span class="citation" data-cites="VanDyke2020">(<a href="#/references" role="doc-biblioref" onclick="">Dyke &amp; Lamb, 2020</a>)</span>.</p></li>
 <li><p>We can conduct an elasticity analysis to figure out what variables are the most important to our PVA and determine the the effect of proportional changes of these analysis on our results.</p></li>
-<li><p>The variable (or variables) with the greatest proportional effect on values of <span class="math inline">\(\lambda\)</span> (i.e., the most elastic variables) are also the ones that should be considered more carefully for management.</p></li>
+<li><p>The variable (or variables) with the greatest proportional effect on values of <span class="math inline">\(\lambda\)</span> (i.e., the discrete time rate of increase) are also the ones that should be considered more carefully for management.</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -576,6 +641,38 @@
 <li>A very good introduction to the simulation process of a PVA in R is available <a href="https://kevintshoemaker.github.io/NRES-470/LECTURE12.html">here</a>. This is part of a series of on-line lessons in Applied Population Ecology.</li>
 <li><a href="https://cran.r-project.org/web/packages/PVAClone/PVAClone.pdf">Here</a> there is a whole package that should allow to perform a Population Viability Analysis in R using pre-compiled functions and visualization tools.</li>
 </ul>
+</section>
+<section id="predict-extinction-risk-using-pva" class="slide level2">
+<h2>Predict extinction risk using PVA</h2>
+<ul>
+<li><p>The next few slides are borrowed from an on-line class available <a href="https://rushinglab.github.io/WILD3810/index.html">here</a></p></li>
+<li><p>The WILD3810 package includes an R function that simulates the dynamics of a user-defined number of populations that are subject to both environmental and demographic stochasticity. This function has a number of parameters that you can change to alter the deterministic and stochastic processes that govern population growth. In this lab, you will selectively change several of these parameters to see how each influences extinction risk.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb1-2"><a></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"RushingLab/WILD3810"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(WILD3810)</span>
+<span id="cb2-2"><a></a>sim_test <span class="ot">&lt;-</span> <span class="fu">pva</span>(<span class="at">N0 =</span> <span class="dv">20</span>, <span class="at">number.of.years =</span> <span class="dv">100</span>, </span>
+<span id="cb2-3"><a></a>                <span class="at">r0 =</span> <span class="fl">0.05</span>, <span class="at">variance.r =</span> <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="class_16_files/figure-revealjs/pva2-1.png" width="960" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>sim_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  nYears N0   r0 variance.r density.dependent  K theta prob.extinct
+1    100 20 0.05       0.05                No NA     1         0.26
+  median.time.to.ext
+1               37.5</code></pre>
+</div>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>

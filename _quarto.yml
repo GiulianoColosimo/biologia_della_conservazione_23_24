@@ -65,8 +65,8 @@ website:
             text: "Class 14 - Population Structure/Hybridization_2"  
           - href: ./classes/15/class_15.html
             text: "Class 15 - Heritability"  
-#          - href: ./classes/16/class_16.html
-#            text: "Class 16 - "  
+          - href: ./classes/16/class_16.html
+            text: "Class 16 - Population Viability Analysis"  
 
 
     tools:
