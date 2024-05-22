@@ -67,6 +67,8 @@ website:
             text: "Class 15 - Heritability"  
           - href: ./classes/16/class_16.html
             text: "Class 16 - Population Viability Analysis"  
+          - href: ./classes/17/class_17.html
+            text: "Class 17 - Invasive Species"  
 
 
     tools:

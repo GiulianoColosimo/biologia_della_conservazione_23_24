@@ -1,6 +1,6 @@
 ---
 title: "Biologia della Conservazione"
-subtitle: "Class 17 - "
+subtitle: "Class 17 - Invasive Species"
 date: "2024-05-23"
 footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
 logo: ../../figures/Tor-Vergata_logo_cmyk.png
@@ -33,5 +33,274 @@ x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
 lapply(x, require, character.only = T)
 rm(x)
 ```
+
+## Invasive species
+
+-   Invasive species represent the second most commonly listed factor for species endangerment! (Do you remember which is the first one?)
+
+-   An estimated cost of non-native species in the US alone is over \$120 billion annually [@Crowl2008].
+
+-   The role of humans as one of the most nefarious agent of disruption of biological communities is well recognized in the anthropocene epoch. One of the means of such disruption is undoubtedly tied to our transport of new species thousands of kilometers away from their native habitat [@VanDyke2020].
+
+> Make no mistake, we are seeing one of the great historical convulsions in the world's fauna and flora [@Elton2020, Elton's original publication is from 1958].
+
+------------------------------------------------------------------------
+
+-   International commerce has aided and increased the movement of species worldwide and across taxonomic groups.
+
+-   Only a fraction of transported species becomes established, and only $1\%$ become a pest, but addition and effects of all non native species, including pest species are cumulative over time.
+
+. . .
+
+-   Currently New Zealand harbors more or less the same number of native plants and invasive plant species.
+
+-   Arizona and Montana historically did not share any fish species. They now have about 33 species of fishes in common [@Mooney2001].
+
+. . .
+
+-   These changes have occurred because humans transport species for their benefit, and invasive species use human means of transport to their benefit!
+
+-   Once an invasive species has established and naturalized at regional or continental scale there is basically no hope to eradicate it.
+
+------------------------------------------------------------------------
+
+![A typical sequence of invasion for most non-native species. After @Crowl2008.](./class_17_1.png)
+
+------------------------------------------------------------------------
+
+![*Dreissena polymorpha* the zebra mussel. Picture downloaded from [this](https://www.flickr.com/photos/117184384@N07/39449820624) website.](./class_17_2.jpg)
+
+------------------------------------------------------------------------
+
+-   Native to the Black, Caspian and Azov sea in Eurasia. In 1769, [Pallas](https://www.marinespecies.org/aphia.php?p=taxdetails&id=181566) first described populations of this species from the Caspian Sea and Ural River.
+
+![Map showing the native range of the species.](./class_17_3.png)
+
+------------------------------------------------------------------------
+
+-   Zebra mussel can attach to any hard surface and to other living creature. In the later case they can cause the death of the individual they attach to.
+
+-   They are exceptionally good filter-feeders and they can alter the ecosystem by filtering huge amounts of phytoplankton, often the most important component of primary production in many aquatic systems.
+
+-   The introduction in North America, in the late 80ies, caused a great deal of disruption in many biotic and abiotic components of the environment where they were introduced and spread.
+
+-   Among others, this invaders altered water transparency, nutrient cycling, and benthic habitat structure as well as food web structure, bioaccumulation of contaminants, and the diversity of native freshwater mussels [@Strayer2009; @Crowl2008].
+
+-   Along with the zebra mussel came also its own roundworm parasite (*Bucephalus polymorphus*) which caused the reduction in many cyprind fish species [@Crowl2008; @VanDyke2020].
+
+------------------------------------------------------------------------
+
+![@Strayer2009](./class_17_4.png)
+
+------------------------------------------------------------------------
+
+## What we mean by damage?
+
+-   Damage from an invasive species has occurred when there is a *significant adverse effect on a biotic or abiotic conservation resource that has an impact on (a) the value of the conservation resource, (b) the conservation resource as an ecosystem component, (c) the sustainable use of the conservation resource* [@Kowarik2011].
+
+-   Effect of novel and introduced species should not be called detrimental or damaging if *they are not associated with significant negative impacts on other species or resources with special conservation interest* [@Kowarik2011].
+
+. . .
+
+-   @Anderson2014 analyzed the effects of beavers in one of their non-native habitats, the islands comprising both the argentinian and chilean Tierra del Fuego, at the southern tip of South America.
+
+-   They focused on the indirect and broader scale impact of invasive on ecosystems and landscapes [@Anderson2014].
+
+------------------------------------------------------------------------
+
+![*Castor canadensis*, image downloaded from [this](https://commons.wikimedia.org/wiki/File:Castor_canadensis1.jpg) website.](./class_17_5.jpg)
+
+------------------------------------------------------------------------
+
+## Some of @Anderson2014's conclusions.
+
+-   The introduction of North American beavers has arguably caused the largest transformation of Tierra Del Fuego's forests in the Holocene.
+
+-   While beavers did affect approximately 30% of stream networks, about 56% still remained free flowing. Therefore, beavers have not completely dominated entire watersheds or the landscape by converting all streams to ponds.
+
+-   While they reduced the diversity of benthos as compared to that found in natural lotic patches, they only generated biotic assemblages in their engineered lentic patches that were very similar to those found in natural lentic habitats. For instance, we find such common taxa as midges and worms in beaver ponds, as well as other habitats. This subset of species is not unique to beaver ponds, but rather are mostly common species elsewhere
+
+-   Therefore, invasive beavers ultimately had no measurable influence on stream landscape-level biodiversity, but they did change the ecosystem function related to carbon cycling.
+
+------------------------------------------------------------------------
+
+## The role of humans in moving things around!
+
+-   Effects of invasive species will increase in response with increased levels of global trade and will be exacerbated by the climatic crisis [@Levine2003].
+
+-   Humans have often been deliberate in the intent of introducing species to non-native areas while ignorant of the consequences of such introductions.
+
+. . .
+
+-   In the nineteenth century the Naturalization Society attempted, and for the most part succeeded, in its intent to introduce common British songbirds to recreate the England country side environement. Such behaviour caused a dramatic dirsuption of the natural environment, with great damage to the local avifauna [@VanDyke2020].
+
+-   More introductions are accomplished without any goal at all, as species can easily find themselves traveling unnoticed as stowaway around the globe.
+
+------------------------------------------------------------------------
+
+![After @Lodge2006](./class_17_6.png)
+
+------------------------------------------------------------------------
+
+![After @Lodge2006](./class_17_7.png)
+
+------------------------------------------------------------------------
+
+## The seven steps of a succesfull invasion.
+
+1.  Introduction (intentional or accidental).
+2.  Colonization (sustained residence on at least one invaded area).
+3.  Establishment (positive population growth on at least one of the new sites).
+4.  Dispersal.
+5.  Spatially distributed populations.
+6.  Invasive spread.
+7.  Adaptation to new environments.
+
+-   Indeed, this is just a general framework describing what are the main steps, but the specifics of invasions vary on a case by case basis. Despite this, whether benign or disruptive, invasive species end up altering the local environment where they are introduced.
+
+------------------------------------------------------------------------
+
+## Understanding the invasive process!
+
+-   Successful invaders are rare!
+-   They must be species that possess traits predisposing them to be transported by humans and to be able to survive the selection regimes they encotunter in the new environment.
+
+. . .
+
+1.  They can deliver seeds, breeding individuals, or other type of propagules at a high rate at an opportune moment for invasion and at a high density
+
+2.  They are able to persist for extended periods of time at low density under unfavorable conditions until favorable conditions permit them to grow to very high densities and initiate the spreading phase.
+
+3.  They are a good ecological match for the environment and are able to exploit local conditions and abiotic factors that favor the completion of their life cycle as well or even better than the native species [@VanDyke2020].
+
+------------------------------------------------------------------------
+
+Many species seem to fit in category 1. A classic example is provided by @Rejmanek1996 who analyzed 24 species of pines (*Pinus* spp.) and actually moved them to different continents trying to study their invasive characteristics.
+
+-   12 species were classified as non invasive, planted on three continents but never reported as spreading.
+-   12 as invasive, as they spread on a t least two continents.
+
+The authors of this study used discriminant analysys on 10 life history traits to document if there were certain characteristics that were commonly shared between the invasive species. They found three characteristics that were significant in predicting invasive potential of a species:
+
+1.  Square root of mean seeds mass.
+2.  Square root of minimum juvenile period.
+3.  Mean interval between large seeds crop.
+
+------------------------------------------------------------------------
+
+-   Successful pine invaders had low mass of individual seeds, short juvenile periods and short intervals between large seed crops [@VanDyke2020].\
+-   The first trait allowed the species to disperse more easily than species with heavier seeds. The other two characteristics ensured to have fast and constant reproduction once established in a new area.
+
+. . .
+
+Over time researchers have introduced other principles that may help in explaining the success of invaders in multiple contexts.
+
+1.  More individuals are released rather than less.
+2.  More release sites are used rather than fewer.
+3.  Releases are repeated multiple times.
+
+In other words, non-native species that can invade in large numbers and many sites in repeated efforts will have better chances at successfully invading new areas.
+
+------------------------------------------------------------------------
+
+## Forming a theory of invasive biology
+
+-   Scientists concerned with the dynamics of invasive species have traditionally resorted to one of three categories of models to explain successful invasions.
+
+-   Non-spatial models are the simplest. In these models there is nothing related to the actual physical location of the propagules and everything is done using projections that are derived from demographic analyses, including the application of exponential or logistic growth equations.
+
+-   Spatially implicit models include data on how the spatial structure of the environment influences the growth process. This models are based mostly on regression equations to forecast the rate of change in population growth as the species encounters physical and ecological variation in the new environment.
+
+-   Spatially explicit models include the actual spatial location of invasive organisms and knowledge of the contagious process (site- or habitat-specific rate of growth or death of a propagule) to predict the rate and manner of invasive spread [@VanDyke2020].
+
+------------------------------------------------------------------------
+
+@Skellam1991 described the invasion process of an organism as a reaction-diffusion equation:
+
+$$
+\label{diffeq}
+\tag{17.1}
+V = s\sqrt{rD}
+$$
+
+where $V$ represents the wave velocity of the advancing front, $r$ is the population intrinsic rate of increase and $D$ is the diffusion coefficient equal to one half the mean distance moved in a time unit by an organism [@Godfray1998].
+
+We can expand the model to include also spatial heterogeneity using the form:
+
+$$
+\label{diffeq2}
+\tag{17.2}
+V = s\sqrt{r_aD_h}
+$$
+
+where $r_a$ is the arithmetic mean of the population's intrinsic growth rate across patches, and $D_h$ is the harmonic mean of the diffusion coefficient across patches.
+
+Both models seem to work well in a variety of situations, but fail to produce biological meaningful results in certain taxa [@VanDyke2020].
+
+------------------------------------------------------------------------
+
+-   A potential problem with the reaction-diffusion models is that redistribution of invading individuals is assumed to occur as a random dispersal process and dispersal and reproduction of individuals is assumed to be happen simultaneously and continuously [@VanDyke2020].
+
+-   Many insects, for example, behave differently depending on the life stage they are in. For example, the dispersal phase is usually in a different life stage than reproduction. Long distance dispersal events are, therefore, although rare, may be very important.
+
+-   Integro-difference-equations (IDE) allow to incorporate long distance dispersal function and state specific reproduction and dispersal. All IDEs have the general form:
+
+$$
+\label{ide}
+\tag{17.3}
+Nt+1(x) =k(x, y)f[Nt(y)]dy 
+$$
+
+with $Nt+1(x)$, the population density at some destination point $x$, a function of the population growth at each point $y$ $(f[Nt(y)])$, and the movements of individuals from a dispersal point $y$ to destination point $x$ is a function of the shape of the dispersal kernel $k$.
+
+------------------------------------------------------------------------
+
+-   Invasive species can be classified as an Anthropocene problem [@VanDyke2020]. To manage them, thus, it makes sense to look at them from and anthropogenic perspective. For example, we can ask the question: how do invasive species interact and often take advantage of human modifications of the natural environment?
+
+. . .
+
+-   @Kueffer2009 propose four different habitat types with categories varying in the degree of human habitat modification and valuation of these habitats.
+    1.  Anthropogenic habitat. Highly disturbed areas such as plantation forestry or hurban settlement.
+    2.  Reference habitat. Relatively undisturbed, dominated by native species.
+    3.  Abandoned habitat. Habitats with currently very low human activities and disturbances but that once experienced heavy disturbance.
+    4.  Designed habitat. Human modified habitats that are artificially designed to restore biodiversity and favor native flora and fauna.
+
+------------------------------------------------------------------------
+
+| Habitat type          | Habitat characteristics    | Traits of invader                                              | Impacts of invader                                                                        | Management actions                                                                                       | Research focus                                                                             |
+|------------|------------|------------|------------|-------------|------------|
+| Anthropogenic habitat | Disturbed or anthropogenic | "Weedy" invaders such as ruderal or early successional species | Reservoir for invasions into biodiversity areas. Competition with native ruderal species. | Reduction of propagule pressure. Mainstreaming invasive species control in different production sectors. | Upscaling to control methods to large areas. Socio-ecological research on plant invasions. |
+
+------------------------------------------------------------------------
+
+| Habitat type      | Habitat characteristics          | Traits of invader                                                     | Impacts of invader                                                      | Management actions                                                                  | Research focus                  |
+|------------|------------|------------|------------|-------------|------------|
+| Reference habitat | Undisturbed high quality nature. | Traits similar to native species but possibly with some novel traits. | May be low if no novel traits are involved. May be indirect or cryptic. | Early detection and eradication. Monitoring of native biota and ecosystem function. | Long-term and indirect impacts. |
+
+------------------------------------------------------------------------
+
+| Habitat type      | Habitat characteristics                                            | Traits of invader                                                                        | Impacts of invader          | Management actions                                                                                                                          | Research focus                                                                                                           |
+|------------|------------|------------|------------|---------------|------------|
+| Abandoned habitat | Abandoned land prior exposure to strong anthropogenic disturbance. | Depends on initial state and successional stage of the habitat (time since disturbance). | Positive, negative or both. | Directing secondary succession according to management goals. Sustaining ecosystem services rather than restoring native dominated habitat. | Stability and functioning of novel assemblies of native and alien species. Provision of ecosystem services and products. |
+
+------------------------------------------------------------------------
+
+| Habitat type     | Habitat characteristics                                                          | Traits of invader                                                                                                                                           | Impacts of invader                                                | Management actions                                                                                               | Research focus                                                                                                                                                         |
+|------------|------------|------------|------------|------------|--------------|
+| Designed habitat | Strongly managed for nature conservation and constantly dependent on management. | Management and habitat conditions may select for specific types of invaders. Deliberately introduced alien species with traits that facilitate restoration. | Depends on management goals and stage in the restoration process. | Ecosystem design: manipulation of native and alien species to attain specific conservation- oriented objectives. | Restoration techniques. Ecology of community assembly. Risks versus benefit of aliens species introduction. Socio-ecological research of natural/artificial dichotomy. |
+
+------------------------------------------------------------------------
+
+## We, the people!
+
+![Proposed conceptual model describing mechanism for how citizen science may lead to increased management of invasive species. After @Phillips2021](./class_17_8.jpg)
+
+------------------------------------------------------------------------
+
+![The Citizen Science program NestWatch. Homepage available [here](https://nestwatch.org).](./class_17_9.png)
+
+------------------------------------------------------------------------
+
+![The problem of IAS removal. Engaging locals and stakeholders is fundamental. After @Bertolino2021](./class_17_10.png)
 
 ## References 

@@ -543,7 +543,7 @@
     "href": "calendar.html",
     "title": "Calendar",
     "section": "",
-    "text": "Below you will find a temptative schedule for the rest of the semester. When you see your name written in one of the class date that means that it is your turn to present the manuscript that has been assigned to you. Manuscript and dates have been assigned in a random way. Please, if you already know that you will not be present on the date that has been assigned to you let me know in time so that I can arrange a schedule change.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table below has the student’s name associated with the assigned paper\n\n\n\n\nStudent\nTitle\n\n\n\n\nFALVO\nDeveloping gene drive technologies to eradicate invasive rodents from islands\n\n\nD’ALESSANDRO\nPopulation genetic analysis of the recently rediscovered hula painted frog (Latonia nigriventer) reveals high genetic diversity and low inbreeding\n\n\nPIROLI\nFirst evidence of recruitment in critically endangered Galapagos pink iguanas\n\n\nTRONCONE\nGenetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe\n\n\nGARCIA\nThe critically endangered vaquita is not doomed to extinction by inbreeding depression\n\n\nSPERA\nAccelerated modern human-induced species losses entering the sixth mass extinction\n\n\nCACCIUNI\nIsland differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons\n\n\nTOTI\nSynergies among extinction drivers under global change\n\n\nPALMERI\nHerbarium specimens reveal the footprint of climate change on flowering trends across North America\n\n\nBONVENTRE\nWhat is conservation Science?"
+    "text": "Below you will find a temptative schedule for the rest of the semester. When you see your name written in one of the class date that means that it is your turn to present the manuscript that has been assigned to you. Manuscript and dates have been assigned in a random way. Please, if you already know that you will not be present on the date that has been assigned to you let me know in time so that I can arrange a schedule change.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe table below has the student’s name associated with the assigned paper\n\n\n\n\nStudent\nTitle\n\n\n\n\nFALVO\nDeveloping gene drive technologies to eradicate invasive rodents from islands\n\n\nD’ALESSANDRO\nPopulation genetic analysis of the recently rediscovered hula painted frog (Latonia nigriventer) reveals high genetic diversity and low inbreeding\n\n\nPIROLI\nFirst evidence of recruitment in critically endangered Galapagos pink iguanas\n\n\nTRONCONE\nGenetic characterization and implications for conservation of the last autochthonous Mouflon population in Europe\n\n\nGARCIA\nThe critically endangered vaquita is not doomed to extinction by inbreeding depression\n\n\nSPERA\nAccelerated modern human-induced species losses entering the sixth mass extinction\n\n\nCACCIUNI\nIsland differences in population size structure and catch per unit effort and their conservation implications for Komodo dragons\n\n\nTOTI\nSynergies among extinction drivers under global change\n\n\nPALMERI\nHerbarium specimens reveal the footprint of climate change on flowering trends across North America\n\n\nBONVENTRE\nWhat is conservation Science?"
   },
   {
     "objectID": "classes/5/class_5.html#beta-diversity",
@@ -1509,14 +1509,14 @@
     "href": "classes/16/class_16.html#section-1",
     "title": "Biologia della Conservazione",
     "section": "",
-    "text": "sim_test\n\n  nYears N0   r0 variance.r density.dependent  K theta prob.extinct\n1    100 20 0.05       0.05                No NA     1         0.26\n  median.time.to.ext\n1               37.5"
+    "text": "sim_test\n\n  nYears N0   r0 variance.r density.dependent  K theta prob.extinct\n1    100 20 0.05       0.05                No NA     1         0.27\n  median.time.to.ext\n1                 24"
   },
   {
     "objectID": "classes/17/class_17.html#references",
     "href": "classes/17/class_17.html#references",
     "title": "Biologia della Conservazione",
     "section": "References",
-    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD"
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD\n\n\n\n\nAnderson, C. B., Vanessa Lencinas, M., Wallem, P. K., Valenzuela, A. E. J., Simanonok, M. P., & Martı́nez Pastur, G. (2014). Engineering by an invasive species alters landscape-level ecosystem function, but does not affect biodiversity in freshwater systems. Diversity and Distributions, 20(2), 214–222. Retrieved from https://onlinelibrary.wiley.com/doi/abs/10.1111/ddi.12147\n\n\nBertolino, S., Vimercati, G., Paoloni, D., Martinoli, A., Wauters, L. A., Genovesi, P., & La Morgia, V. (2021). Restricted access to private properties limits management of invasive alien species: A literature review and case studies. Journal of Environmental Management, 297, 113318. Retrieved from https://www.sciencedirect.com/science/article/pii/S0301479721013803\n\n\nCrowl, T. A., Crist, T. O., Parmenter, R. R., Belovsky, G., & Lugo, A. E. (2008). The spread of invasive species and infectious disease as drivers of ecosystem change. Frontiers in Ecology and the Environment, 6(5), 238–246. Retrieved from https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/070151\n\n\nDyke, F. V., & Lamb, R. L. (2020). Conservation biology. Springer International Publishing. Retrieved from https://doi.org/10.1007%2F978-3-030-39534-6\n\n\nElton, C. S., Simberloff, D., & Ricciardi, A. (2020). The ecology of invasions by animals and plants. Springer International Publishing. Retrieved from https://books.google.co.uk/books?id=nwzWDwAAQBAJ\n\n\nGodfray, H. C. J., & Crawley, M. J. (1998). Introductions. Conservation science and action (pp. 39–65). John Wiley & Sons, Ltd. Retrieved from https://onlinelibrary.wiley.com/doi/abs/10.1002/9781444313499.ch3\n\n\nKowarik, I. (2011). Novel urban ecosystems, biodiversity, and conservation. Environmental Pollution, 159(8), 1974–1983. Retrieved from https://www.sciencedirect.com/science/article/pii/S0269749111000960\n\n\nKueffer, C., & Daehler, C. C. (2009). A habitat-classification framework and typology for understanding, valuing, and managing invasive species impacts. In Inderjit (Ed.), Management of invasive weeds (pp. 77–101). Springer Netherlands. Retrieved from https://doi.org/10.1007%2F978-1-4020-9202-2_5\n\n\nLevine, J. M., & D’Antonio, C. M. (2003). Forecasting biological invasions with increasing international trade. Conservation Biology, 17(1), 322–326. Retrieved from https://conbio.onlinelibrary.wiley.com/doi/abs/10.1046/j.1523-1739.2003.02038.x\n\n\nLodge, D. M., Williams, S., MacIsaac, H. J., Hayes, K. R., Leung, B., Reichard, S., Mack, R. N., et al. (2006). BIOLOGICAL INVASIONS: RECOMMENDATIONS FOR u.s. POLICY AND MANAGEMENT. Ecological Applications, 16(6), 2035–2054. Wiley. Retrieved from https://doi.org/10.1890%2F1051-0761%282006%29016%5B2035%3Abirfup%5D2.0.co%3B2\n\n\nMooney, H. A., & Cleland, E. E. (2001). The evolutionary impact of invasive species. Proceedings of the National Academy of Sciences, 98(10), 5446–5451. Proceedings of the National Academy of Sciences. Retrieved from https://doi.org/10.1073%2Fpnas.091093398\n\n\nPhillips, T. B., Bailey, R. L., Martin, V., Faulkner-Grant, H., & Bonter, D. N. (2021). The role of citizen science in management of invasive avian species: What people think, know, and do. Journal of Environmental Management, 280, 111709. Retrieved from https://www.sciencedirect.com/science/article/pii/S0301479720316340\n\n\nRejmanek, M., & Richardson, D. M. (1996). What attributes make some plant species more invasive? Ecology, 77(6), 1655–1661. Retrieved from https://esajournals.onlinelibrary.wiley.com/doi/abs/10.2307/2265768\n\n\nSkellam, J. g. (1991). Random dispersal in theoretical populations. Bulletin of Mathematical Biology, 53(1), 135–165. Retrieved from https://link.springer.com/content/pdf/10.1007/BF02464427.pdf\n\n\nStrayer, D. L. (2009). Twenty years of zebra mussels: Lessons from the mollusk that made headlines. Frontiers in Ecology and the Environment, 7(3), 135–141. Retrieved from https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/080020"
   },
   {
     "objectID": "classes/16/class_16.html",
@@ -1524,5 +1524,61 @@
     "title": "Biologia della Conservazione",
     "section": "",
     "text": "Introduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
+  },
+  {
+    "objectID": "classes/17/class_17.html#invasive-species",
+    "href": "classes/17/class_17.html#invasive-species",
+    "title": "Biologia della Conservazione",
+    "section": "Invasive species",
+    "text": "Invasive species\n\nInvasive species represent the second most commonly listed factor for species endangerment! (Do you remember which is the first one?)\nAn estimated cost of non-native species in the US alone is over $120 billion annually (Crowl, Crist, Parmenter, Belovsky, & Lugo, 2008).\nThe role of humans as one of the most nefarious agent of disruption of biological communities is well recognized in the anthropocene epoch. One of the means of such disruption is undoubtedly tied to our transport of new species thousands of kilometers away from their native habitat (Dyke & Lamb, 2020).\n\n\nMake no mistake, we are seeing one of the great historical convulsions in the world’s fauna and flora (Elton, Simberloff, & Ricciardi, 2020, Elton’s original publication is from 1958)."
+  },
+  {
+    "objectID": "classes/17/class_17.html#what-we-mean-by-damage",
+    "href": "classes/17/class_17.html#what-we-mean-by-damage",
+    "title": "Biologia della Conservazione",
+    "section": "What we mean by damage?",
+    "text": "What we mean by damage?\n\nDamage from an invasive species has occurred when there is a significant adverse effect on a biotic or abiotic conservation resource that has an impact on (a) the value of the conservation resource, (b) the conservation resource as an ecosystem component, (c) the sustainable use of the conservation resource (Kowarik, 2011).\nEffect of novel and introduced species should not be called detrimental or damaging if they are not associated with significant negative impacts on other species or resources with special conservation interest (Kowarik, 2011).\n\n\n\nAnderson et al. (2014) analyzed the effects of beavers in one of their non-native habitats, the islands comprising both the argentinian and chilean Tierra del Fuego, at the southern tip of South America.\nThey focused on the indirect and broader scale impact of invasive on ecosystems and landscapes (Anderson et al., 2014)."
+  },
+  {
+    "objectID": "classes/17/class_17.html#some-of-anderson2014s-conclusions.",
+    "href": "classes/17/class_17.html#some-of-anderson2014s-conclusions.",
+    "title": "Biologia della Conservazione",
+    "section": "Some of Anderson et al. (2014)’s conclusions.",
+    "text": "Some of Anderson et al. (2014)’s conclusions.\n\nThe introduction of North American beavers has arguably caused the largest transformation of Tierra Del Fuego’s forests in the Holocene.\nWhile beavers did affect approximately 30% of stream networks, about 56% still remained free flowing. Therefore, beavers have not completely dominated entire watersheds or the landscape by converting all streams to ponds.\nWhile they reduced the diversity of benthos as compared to that found in natural lotic patches, they only generated biotic assemblages in their engineered lentic patches that were very similar to those found in natural lentic habitats. For instance, we find such common taxa as midges and worms in beaver ponds, as well as other habitats. This subset of species is not unique to beaver ponds, but rather are mostly common species elsewhere\nTherefore, invasive beavers ultimately had no measurable influence on stream landscape-level biodiversity, but they did change the ecosystem function related to carbon cycling."
+  },
+  {
+    "objectID": "classes/17/class_17.html#the-role-of-humans-in-moving-things-around",
+    "href": "classes/17/class_17.html#the-role-of-humans-in-moving-things-around",
+    "title": "Biologia della Conservazione",
+    "section": "The role of humans in moving things around!",
+    "text": "The role of humans in moving things around!\n\nEffects of invasive species will increase in response with increased levels of global trade and will be exacerbated by the climatic crisis (Levine & D’Antonio, 2003).\nHumans have often been deliberate in the intent of introducing species to non-native areas while ignorant of the consequences of such introductions.\n\n\n\nIn the nineteenth century the Naturalization Society attempted, and for the most part succeeded, in its intent to introduce common British songbirds to recreate the England country side environement. Such behaviour caused a dramatic dirsuption of the natural environment, with great damage to the local avifauna (Dyke & Lamb, 2020).\nMore introductions are accomplished without any goal at all, as species can easily find themselves traveling unnoticed as stowaway around the globe."
+  },
+  {
+    "objectID": "classes/17/class_17.html#the-seven-steps-of-a-succesfull-invasion.",
+    "href": "classes/17/class_17.html#the-seven-steps-of-a-succesfull-invasion.",
+    "title": "Biologia della Conservazione",
+    "section": "The seven steps of a succesfull invasion.",
+    "text": "The seven steps of a succesfull invasion.\n\nIntroduction (intentional or accidental).\nColonization (sustained residence on at least one invaded area).\nEstablishment (positive population growth on at least one of the new sites).\nDispersal.\nSpatially distributed populations.\nInvasive spread.\nAdaptation to new environments.\n\n\nIndeed, this is just a general framework describing what are the main steps, but the specifics of invasions vary on a case by case basis. Despite this, whether benign or disruptive, invasive species end up altering the local environment where they are introduced."
+  },
+  {
+    "objectID": "classes/17/class_17.html#understanding-the-invasive-process",
+    "href": "classes/17/class_17.html#understanding-the-invasive-process",
+    "title": "Biologia della Conservazione",
+    "section": "Understanding the invasive process!",
+    "text": "Understanding the invasive process!\n\nSuccessful invaders are rare!\nThey must be species that possess traits predisposing them to be transported by humans and to be able to survive the selection regimes they encotunter in the new environment.\n\n\n\nThey can deliver seeds, breeding individuals, or other type of propagules at a high rate at an opportune moment for invasion and at a high density\nThey are able to persist for extended periods of time at low density under unfavorable conditions until favorable conditions permit them to grow to very high densities and initiate the spreading phase.\nThey are a good ecological match for the environment and are able to exploit local conditions and abiotic factors that favor the completion of their life cycle as well or even better than the native species (Dyke & Lamb, 2020)."
+  },
+  {
+    "objectID": "classes/17/class_17.html#forming-a-theory-of-invasive-biology",
+    "href": "classes/17/class_17.html#forming-a-theory-of-invasive-biology",
+    "title": "Biologia della Conservazione",
+    "section": "Forming a theory of invasive biology",
+    "text": "Forming a theory of invasive biology\n\nScientists concerned with the dynamics of invasive species have traditionally resorted to one of three categories of models to explain successful invasions.\nNon-spatial models are the simplest. In these models there is nothing related to the actual physical location of the propagules and everything is done using projections that are derived from demographic analyses, including the application of exponential or logistic growth equations.\nSpatially implicit models include data on how the spatial structure of the environment influences the growth process. This models are based mostly on regression equations to forecast the rate of change in population growth as the species encounters physical and ecological variation in the new environment.\nSpatially explicit models include the actual spatial location of invasive organisms and knowledge of the contagious process (site- or habitat-specific rate of growth or death of a propagule) to predict the rate and manner of invasive spread (Dyke & Lamb, 2020)."
+  },
+  {
+    "objectID": "classes/17/class_17.html#we-the-people",
+    "href": "classes/17/class_17.html#we-the-people",
+    "title": "Biologia della Conservazione",
+    "section": "We, the people!",
+    "text": "We, the people!\n\nProposed conceptual model describing mechanism for how citizen science may lead to increased management of invasive species. After Phillips, Bailey, Martin, Faulkner-Grant, & Bonter (2021)"
   }
 ]

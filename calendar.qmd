@@ -54,7 +54,7 @@ calendR(month = 4,
 
 dates <- seq(as.Date("2024-05-01"), as.Date("2024-05-31"), by = "1 day")
 events <- ifelse(format(dates, "%w") %in% c(6, 0), "Weekend", NA)
-events[c(2, 7, 9, 14, 16, 21, 23, 28, 30)] <- "Class"
+events[c(2, 7, 9, 16, 21, 23, 28, 30)] <- "Class"
 calendR(month = 5,
         start = "M",
         special.days = events,
@@ -65,11 +65,37 @@ calendR(month = 5,
         weeknames.size = 4, 
         title = "May",
         subtitle="2024",
-        text = c("Troncone", "Garcia", "Spera", "Cacciuni", "Toti", "Palmeri", "Bonventre"),
-        text.pos = c(2, 7, 9, 14, 16, 21, 23),        
+        text = c("Troncone", "Garcia", "Spera", "Toti", "Palmeri", "GdF", "Bonventre\nCacciuni\nSeminar"),
+        text.pos = c(2, 7, 9, 16, 21, 28, 30),        
         text.size = 2.5,              
         text.col = "black")
 ```
+
+
+```{r echo=FALSE}
+#| out-width: 100%
+
+dates <- seq(as.Date("2024-06-01"), as.Date("2024-06-30"), by = "1 day")
+events <- ifelse(format(dates, "%w") %in% c(6, 0), "Weekend", NA)
+events[c(4,6,11)] <- "Class"
+events[13] <- "Exam"
+calendR(month = 6,
+        start = "M",
+        special.days = events,
+        special.col = c("green", "red", "gray"),
+        legend.pos = "bottom",
+        pdf = F, 
+        day.size = 3, 
+        weeknames.size = 4, 
+        title = "June",
+        subtitle="2024",
+#        text = c(),
+#        text.pos = c(2, 7, 9, 16, 21, 30),        
+        text.size = 2.5,              
+        text.col = "black")
+
+```
+
 
 
 - The table below has the student's name associated with the assigned paper
