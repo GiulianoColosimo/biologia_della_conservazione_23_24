@@ -1,0 +1,123 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 18 - CITES"
+date: "2024-05-23"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: green;"}
+10. [Hybridization]{style="color: green;"}
+11. [Applying genetic information to conservation]{style="color: green;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: green;"}
+13. [Managing genetic diversity in the wild]{style="color: green;"}
+14. [Population viability analysis]{style="color: green;"}
+15. [Invasive species]{style="color: green;"}
+16. [CITES and trade regulations of endangered species]{style="color: orange;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+## Protection of endangered species
+
+- The most important international agreement for the protection of endangered species is CITES: The **C**onvention on **I**nternational **T**rade in **E**ndangered **S**pecies of Wild Flora and Fauna
+
+- Promulgated in 1973
+
+- This convention arose from the join efforts of IUCN and UNEP (United Nation Environmental Programme)
+
+- It specifically regulates or prohibits commercial trade in globally endangered species or their products
+
+- Most wildlife trade occurs at local and national levels, but large volumes of international trade also take place each year, worth an estimated USD20 billion a year globally [@Challender2015; @VanDyke2020]
+
+## CITES origin
+
+- The origins of CITES begin in 1950 with a $2500 grant from the United Nations Educational Scientific and Cultural Organization (UNESCO) to the IUCN
+
+- The funds were used to initiate a program called the Survival Service
+
+- With this service the IUCN equippe begun to make short lists and reports of of endangered and threatened species worldwide
+
+- These reports, originally called the Red Data Books, eventually became the Red List of Endangered Species
+
+- With these lists the IUCN begun to draw international attention to the issue of international trade of endangered species
+
+- In 1963 the UNEP called for an International Convention on regulations of export, transit and import of endangered species
+
+- In 1973, after long negotiations, the final version of an international agreement was signed upon in Washington DC [@VanDyke2020]
+
+## [The convention](https://drive.proton.me/urls/G400DAM4W8#PRp1rc7OkutD)
+
+- The Contracting States,
+
+    - Recognizing that wild fauna and flora in their many beautiful and varied forms are an irreplaceable part of the natural systems of the earth which must be protected for this and the generations to come;
+
+    - Conscious of the ever-growing value of wild fauna and flora from aesthetic, scientific, cultural, recreational and economic points of view;
+
+    - Recognizing that peoples and States are and should be the best protectors of their own wild fauna and flora;
+
+    - Recognizing, in addition, that international co-operation is essential for the protection of certain species of wild fauna and flora against over-exploitation through international trade;
+
+    - Convinced of the urgency of taking appropriate measures to this end; 
+
+- Have agreed as follows:
+
+## The core of CITES
+
+- There are three main appendices in the convention
+
+    - Appendix I lists species that are endangered and vulenrable to existing or potential trade. Commercial trade in Appendix I species is prohibited;
+    
+    - Appendix II species are those that either could be threatened by large volumes of trade or that cannot be distinguished from a threatened species. Trade involving species in this category has to be regulated and requires a permit from exporting country and one for importing countries
+    
+    - Appendix III. Species in this category are not globally threatened or endagered, but may be listed at the initiative of the individual states 
+    
+- As of January 2017 there were 35801 species and 68 subspecies in the appendices with 97% of them in appendix II, 3% in appendix I and less than 1% in appendix III 
+
+## References

@@ -34,6 +34,37 @@ lapply(x, require, character.only = T)
 rm(x)
 ```
 
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: green;"}
+10. [Hybridization]{style="color: green;"}
+11. [Applying genetic information to conservation]{style="color: green;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: green;"}
+13. [Managing genetic diversity in the wild]{style="color: green;"}
+14. [Population viability analysis]{style="color: green;"}
+15. [Invasive species]{style="color: orange;"}
+16. [CITES and trade regulations of endangered species]{style="color: blue;"}
+17. [Conservation and climate change]{style="color: blue;"}
+18. [Future climate impacts]{style="color: blue;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+
 ## Invasive species
 
 -   Invasive species represent the second most commonly listed factor for species endangerment! (Do you remember which is the first one?)
