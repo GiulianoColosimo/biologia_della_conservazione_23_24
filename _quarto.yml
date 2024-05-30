@@ -71,6 +71,10 @@ website:
             text: "Class 17 - Invasive Species"  
           - href: ./classes/18/class_18.html
             text: "Class 18 - CITES"  
+          - href: ./classes/19/class_19.html
+            text: "Class 19 - CITES presentation by GdF"  
+          - href: ./classes/20/class_20.html
+            text: "Class 20 - Climate change"  
 
 
     tools:

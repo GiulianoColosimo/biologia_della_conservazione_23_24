@@ -1,0 +1,30 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 19 - CITES presentation by GdF"
+date: "2024-05-28"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+Using [this link](https://drive.proton.me/urls/P5SHN921XM#kFEWacgmYZ67) it will be possible to download the power point presentation from Lgt. C.S. Calabrò on the CITES convention and the work the GdF does to oversee the legal and illegal trade of species listed under the Washington convention.

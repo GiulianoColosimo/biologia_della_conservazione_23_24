@@ -1,0 +1,436 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 20 - Climate change-data retrieval"
+date: "2024-05-30"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+
+## Topics
+
+::: columns
+::: {.column width="50%"}
+1.  [Introduction to conservation biology]{style="color: green;"}
+2.  [Biodiversity]{style="color: green;"}
+3.  [Biodiversity and extinctions]{style="color: green;"}
+4.  [Populations]{style="color: green;"}
+5.  [Basics of conservation genetics]{style="color: green;"}
+6.  [Genetic drift]{style="color: green;"}
+7.  [Effective population size]{style="color: green;"}
+8.  [Inbreeding depression]{style="color: green;"}
+9.  [Population structure]{style="color: green;"}
+10. [Hybridization]{style="color: green;"}
+11. [Applying genetic information to conservation]{style="color: green;"}
+:::
+
+::: {.column width="50%"}
+12. [Managing genetic diversity in captive populations]{style="color: green;"}
+13. [Managing genetic diversity in the wild]{style="color: green;"}
+14. [Population viability analysis]{style="color: green;"}
+15. [Invasive species]{style="color: green;"}
+16. [CITES and trade regulations of endangered species]{style="color: green;"}
+17. [Conservation and climate change]{style="color: orange;"}
+18. [Future climate impacts]{style="color: orange;"}
+19. [Conservation economics]{style="color: blue;"}
+20. [Conservation technology]{style="color: blue;"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Climate change quiz!
+
+. . .
+
+-   Most of the Earth's water is found in:
+
+    a.  The earth's interior
+    b.  The atmosphere
+    c.  Lakes and rivers
+    d.  The ocean
+    e.  The polar ice caps
+
+. . .
+
+::: callout-tip
+## d)
+
+Most of Earth's water ($96.5\%$) is saline, or salty, ocean seawater. Most of the fresh water is tied up in glaciers and ice sheets, which means that only a relatively small portion is available to sustain human, plant and animal life.
+:::
+
+-   [This](https://climate.nasa.gov/explore/interactives/quizzes) is the link to the climate change quizzes!
+
+------------------------------------------------------------------------
+
+-   Which of these has a greater effect on global sea level?
+
+    a.  Melting sea ice
+    b.  Melting land ice
+    c.  a and b combined
+    d.  Extreme precipitation events
+    e.  None of the above
+
+. . .
+
+::: callout-tip
+## b)
+
+Sea level rise is caused primarily by two factors related to global warming: the added water from melting land ice and the expansion of seawater as it warms. Melting sea ice does not contribute nearly as much to ocean water volume because floating ice displaces water in an amount equal to its volume. Some coastal regions and island nations have begun to experience the consequences of sea level rise. Rising seas not only affect dwellings and infrastructure, but fresh water is also affected as rising saltwater begins to contaminate it through "saltwater intrusion."
+:::
+
+------------------------------------------------------------------------
+
+-   Measurements of Earth's gravitational field permit topographic, or surface, mapping of the ocean floor.
+
+    a.  True
+    b.  False
+
+. . .
+
+::: callout-tip
+## True
+
+Undersea mountain ranges like the the Mid-Atlantic Ridge, chains of islands and sea mounts like the strand from Hawai'i Island past Midway to the Aleutian Islands chain, and deep sea trenches like the Japan Trench can be identified in data collected by the GRACE (Gravity Recovery and Climate Experiment) spacecraft. The additional mass of rock that composes the undersea mountains and the lack of rock in trenches provide gravitational telltales that GRACE can detect.
+:::
+
+------------------------------------------------------------------------
+
+-   The only current that makes an uninterrupted circle around the entire Earth without hitting land is the:
+
+    a.  Gulf stream
+    b.  Japan current
+    c.  California current
+    d.  Antarctic Circumpolar Current
+    e.  Monsoons
+
+. . .
+
+::: callout-tip
+## d)
+
+Ocean currents are driven by ocean winds and influenced by the "Coriolis effect." Water flows along the current until it encounters land, where the Coriolis effect causes the current to rotate clockwise in the northern hemisphere and counterclockwise in the south. Most currents form "gyres," or large systems of rotating ocean currents. The gyre's rotational patterns draw in debris from across the ocean, while wind patterns push the trash toward the center, trapping it there. In the Southern Ocean around Antarctica, there is no land, which allows the Antarctic Circumpolar Current to travel around the globe uninterrupted.
+:::
+
+------------------------------------------------------------------------
+
+-   Tides are caused by:
+
+    a.  The wind
+    b.  Earthquakes
+    c.  The moon's gravitational pool
+    d.  The gravitational pool of both the moon and the sun
+    e.  People swimming
+
+. . .
+
+::: callout-tip
+## d)
+
+Both the sun and the moon influence tide rise and fall, which are caused by the gravitational attraction between the ocean and the moon as well as the ocean and the sun. "Centrifugal force" --- the same force that pulls you backward on the teacup ride at Disneyland -- is generated from Earth's spin and is another factor that influences Earth's tides.
+:::
+
+------------------------------------------------------------------------
+
+-   About how much of Earth's surface is covered by clouds at any given time?
+
+    a.  $15\%$
+    b.  $30\%$
+    c.  $60\%$
+    d.  $90\%$
+    e.  $95\%$
+
+. . .
+
+::: callout-tip
+## c)
+
+Covering most of the Earth at any given moment, clouds have a huge---but insufficiently understood---impact on climate.
+:::
+
+------------------------------------------------------------------------
+
+-   What effects do various aerosols have on the climate?
+
+    a.  Reflect sunlight back in to space, cooling the planet
+    b.  Provide a platform for water droplets and ice crystals to form and develop in to cloud
+    c.  Increase the brightness of clouds making them reflect more sunlight in to space
+    d.  Absorb sunlight, heat the surrounding air and prevent cloud formation
+    e.  All of the above
+    f.  a, b, and c
+
+. . .
+
+::: callout-tip
+## e)
+
+That's part of what makes aerosols so hard to pin down in climate models. Various kinds of aerosols have various kinds of effects, both direct and indirect. As a direct effect, aerosols scatter sunlight back into space. As an indirect effect, they can either help or hinder the development of clouds, which in turn can either cool or warm the planet.
+:::
+
+------------------------------------------------------------------------
+
+-   The brighter a cloud looks, the less pollution it contains.
+
+    a.  True
+    b.  False
+
+. . .
+
+::: callout-tip
+## False
+
+A given volume of pollution-rich cloud tends to have more numerous and smaller droplets than in more pristine clouds. The high number of small droplets provides more surfaces to reflect light, making the cloud appear brighter than a cloud consisting of fewer and larger droplets.
+:::
+
+------------------------------------------------------------------------
+
+-   Do clouds heat or cool Earth?
+
+    a.  Heat
+    b.  Cool
+    c.  Both heat and cool
+    d.  Neither heat nor cool
+
+. . .
+
+::: callout-tip
+## c)
+
+Different kinds of clouds at different altitudes play different roles in regulating Earth's temperature. Wispy clouds at high altitudes tend to trap infrared radiation emitted by the sun-warmed Earth, which prevents it from escaping into space and warms the atmosphere. On the other hand, thick, low-lying clouds tend to cool the planet by shading Earth's surface, reflecting sunlight back into space. Scientists are trying to determine how global warming will affect the balance we've been enjoying up to now.
+:::
+
+------------------------------------------------------------------------
+
+## Let's work with some data
+
+. . .
+
+-   On-line data resources:
+
+    -   [Eurostat](https://ec.europa.eu/eurostat/web/main/data)
+    -   [NOAA](https://www.noaa.gov)
+    -   [NASA](https://data.nasa.gov/browse)
+    -   [Our World in Data (via GitHub)](https://github.com/owid/co2-data)
+    -   [Copernicus](https://cds.climate.copernicus.eu/cdsapp#!/search?type=dataset)
+    -   [Automated Surface Observing System (ASOS)](https://mesonet.agron.iastate.edu/ASOS/)
+
+. . .
+
+-   Take your computer and open R.
+
+------------------------------------------------------------------------
+
+-   We will be downloading historical data from the ASOS data repository available at Iowa State.
+-   We will working on data from the Italian network of automated weather stations.
+-   First lets take a look at the website to see how we can use R to automate the process of downloading the data and eventually analyse them.
+
+[Automated Surface Observing System (ASOS)](https://mesonet.agron.iastate.edu/ASOS/)
+
+. . .
+
+### The packages we will be using
+
+```{r echo=TRUE, eval=FALSE}
+# Installing the appropriate packages
+install.packages(c("jsonlite", "RCurl", "lubridate", "dplyr", "ggplot2"))
+
+```
+
+<br/>
+
+```{r echo=TRUE, eval=TRUE}
+# Loading them up in the working environment
+library(jsonlite)
+library(RCurl)
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+```
+
+------------------------------------------------------------------------
+
+### Input from the user
+
+Now that we know the web site, we can set up a script to automate the downloading of the data. This process is often trial and error, but eventually it could work.
+
+. . .
+
+```{r echo=TRUE, eval=TRUE}
+
+# first, we need to specify the date boundaries of our dataset
+date1 <- ISOdate(1990,1,1) #start date in year, month, day format
+date2 <- ISOdate(2020,12,31) #end date in year, month, day format
+
+# second, we need to specify the data network parameter we want to download the data from
+# and the state we want to download the data from
+user.network <- c("ASOS")
+user.state <- c("IT") #state
+```
+
+. . .
+
+We can now start and retrieve the identifier of all the weather stations we are interested in.
+
+```{r echo=TRUE, eval=TRUE}
+network <- paste(user.state, user.network, sep = "__")
+uri <- paste("https://mesonet.agron.iastate.edu/geojson/network/", network, ".geojson", sep="")
+
+uri
+```
+
+------------------------------------------------------------------------
+
+We use the URL address we have prepared and try to retrieve the information we want.
+
+```{r echo=TRUE, eval=TRUE}
+# first we tell R that that string has to be treated as a URL
+# in this way R will be opening a connection to that specific URL 
+# and we will be able to access the website and do our things
+data <- url(uri)
+data
+```
+
+------------------------------------------------------------------------
+
+Now we can use that connection to read the information.
+
+```{r echo=TRUE, eval=TRUE}
+jdict <- fromJSON(data)
+
+jdict
+```
+
+------------------------------------------------------------------------
+
+Quick look at where all stations are located.
+
+```{r echo=TRUE, eval=TRUE}
+stationsPlot <- matrix(unlist(jdict$features$geometry$coordinates), nrow = 2 )
+plot(stationsPlot[1,], stationsPlot[2,], asp = 1)
+```
+
+------------------------------------------------------------------------
+
+Now that we have all the codes of the weather stations we can work on the URL address were all the specific information of each weather station is stored.
+
+```{r echo=TRUE, eval=TRUE}
+service <- "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?"
+service <- paste(service, "data=all&tz=Etc/UTC&format=comma&latlon=yes&", sep="")
+service <- paste(service, "year1=", year(date1), "&month1=", month(date1), "&day1=", mday(date1), "&", sep="")
+service <- paste(service, "year2=", year(date2), "&month2=", month(date2), "&day2=", mday(date2), "&", sep="")
+
+service
+
+it_stations_id <- jdict$features$id
+it_stations_id
+```
+
+. . .
+
+Set the working directory where to store data.
+
+```{r echo=TRUE, eval=FALSE}
+setwd("path/to/your/folder/of/choice")
+
+
+it_stations_id <- jdict$features$id
+```
+
+------------------------------------------------------------------------
+
+This is the main for loop to download the all the data.
+
+::: callout-important
+## Beware!!
+
+The original loop downloads about 4.4GB of data! You should only run it when you have a stable and fast internet connection. Right now we will run a simplified version of the script that should download data from only the first two stations.
+:::
+
+```{r echo=TRUE, eval=FALSE}
+it_stations_nm <- jdict$features$properties$sname
+
+for (i in 1:length(it_stations_id[1:2])){
+  uri <- paste(service, "station=", it_stations_id[i], sep = "")
+  print(paste("Network:", network, 
+              "Downloading:", it_stations_nm[i], it_stations_id[i], sep=" "))
+  data <- url(uri)
+  datestring1 <- format(date1, "%Y%m%d")
+  datestring2 <- format(date2, "%Y%m%d")
+  outfn <- paste(network, "_", it_stations_id[i], "_", datestring1, "_to_", datestring2, sep="")
+  download.file(uri, paste(outfn, ".csv"), "auto")
+}
+
+```
+
+When the download start you should see a message on the prompt telling you what station the script is downloading.
+
+------------------------------------------------------------------------
+
+## ![This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to "LIMG" and "LIEA".](./class_21_1.png)
+
+Time to load the data and look at them.
+
+```{r echo=FALSE, eval=F}
+path_to_csv <- "/Users/giulianocolosimo/Documents/r/italian weather stations/IT_ASOS"
+```
+
+```{r echo=TRUE, eval=F}
+# path_to_csv <- "path/to/your/data"
+suffix <- c("LIEA", "LIMG")
+files <- list.files(path = path_to_csv, pattern = "*.csv", full.names = T) 
+files_names <- list.files(path = path_to_csv, pattern = "*.csv", full.names = F)
+myfiles  <-  lapply(files, read.csv, skip = 5, header = T, na.strings = "M")
+names(myfiles) <- suffix
+
+myfiles[[1]][1:5,]
+```
+
+------------------------------------------------------------------------
+
+```{r echo=TRUE, eval=F}
+myfiles_df <- bind_rows(myfiles, .id = "station_label")
+format <- "%Y-%m-%d %H:%M"
+myfiles_df$valid <- as.POSIXct(myfiles_df$valid, format = format, tz = "UTC")
+head(myfiles_df)
+```
+
+------------------------------------------------------------------------
+
+```{r echo=TRUE, eval=F}
+par(mfrow = c(2,1))
+
+plot(date(myfiles_df[myfiles_df$station == "LIEA", ]$valid),
+     myfiles_df[myfiles_df$station == "LIEA", ]$tmpf, type = "o", 
+     xlab = "Year", ylab = "Temp.")
+plot(date(myfiles_df[myfiles_df$station == "LIMG", ]$valid),
+     myfiles_df[myfiles_df$station == "LIMG", ]$tmpf, type = "o", 
+     xlab = "Year", ylab = "Temp.")
+```
