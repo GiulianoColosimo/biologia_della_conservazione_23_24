@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.553">
 
-  <meta name="dcterms.date" content="2024-05-30">
+  <meta name="dcterms.date" content="2024-06-03">
   <title>Biologia della Conservazione 23/24 - Biologia della Conservazione</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -388,7 +388,7 @@
     }
   </style>
 <meta property="og:title" content="Biologia della Conservazione 23/24 - Biologia della Conservazione">
-<meta property="og:description" content="Class 20 - Climate change-data retrieval">
+<meta property="og:description" content="Class 21 - Climate change-data retrieval">
 <meta property="og:site_name" content="Biologia della Conservazione 23/24">
 <meta property="og:locale" content="en_US">
 </head>
@@ -398,12 +398,12 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Biologia della Conservazione</h1>
-  <p class="subtitle">Class 20 - Climate change-data retrieval</p>
+  <p class="subtitle">Class 21 - Climate change-data retrieval</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-05-30</p>
+  <p class="date">2024-06-03</p>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -690,7 +690,6 @@
 </section>
 <section id="lets-work-with-some-data" class="slide level2">
 <h2>Let’s work with some data</h2>
-<div class="fragment">
 <ul>
 <li><p>On-line data resources:</p>
 <ul>
@@ -701,13 +700,8 @@
 <li><a href="https://cds.climate.copernicus.eu/cdsapp#!/search?type=dataset">Copernicus</a></li>
 <li><a href="https://mesonet.agron.iastate.edu/ASOS/">Automated Surface Observing System (ASOS)</a></li>
 </ul></li>
+<li><p>Take your computer and open R.</p></li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Take your computer and open R.</li>
-</ul>
-</div>
 </section>
 <section class="slide level2">
 
@@ -754,8 +748,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>network <span class="ot">&lt;-</span> <span class="fu">paste</span>(user.state, user.network, <span class="at">sep =</span> <span class="st">"__"</span>)</span>
 <span id="cb4-2"><a></a>uri <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"https://mesonet.agron.iastate.edu/geojson/network/"</span>, network, <span class="st">".geojson"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>uri</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a></a>uri</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "https://mesonet.agron.iastate.edu/geojson/network/IT__ASOS.geojson"</code></pre>
 </div>
@@ -787,8 +780,7 @@ can write   "no"                                                                
 <p>Now we can use that connection to read the information.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>jdict <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(data)</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>jdict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a></a>jdict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$type
 [1] "FeatureCollection"
@@ -1450,7 +1442,7 @@ $features
 108              TRUE         Point     12.0550, 42.4383
 
 $generation_time
-[1] "2024-05-30T04:16:25Z"
+[1] "2024-05-31T07:42:23Z"
 
 $count
 [1] 108</code></pre>
@@ -1474,8 +1466,7 @@ $count
 <span id="cb11-2"><a></a>service <span class="ot">&lt;-</span> <span class="fu">paste</span>(service, <span class="st">"data=all&amp;tz=Etc/UTC&amp;format=comma&amp;latlon=yes&amp;"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
 <span id="cb11-3"><a></a>service <span class="ot">&lt;-</span> <span class="fu">paste</span>(service, <span class="st">"year1="</span>, <span class="fu">year</span>(date1), <span class="st">"&amp;month1="</span>, <span class="fu">month</span>(date1), <span class="st">"&amp;day1="</span>, <span class="fu">mday</span>(date1), <span class="st">"&amp;"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
 <span id="cb11-4"><a></a>service <span class="ot">&lt;-</span> <span class="fu">paste</span>(service, <span class="st">"year2="</span>, <span class="fu">year</span>(date2), <span class="st">"&amp;month2="</span>, <span class="fu">month</span>(date2), <span class="st">"&amp;day2="</span>, <span class="fu">mday</span>(date2), <span class="st">"&amp;"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a>service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a></a>service</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?data=all&amp;tz=Etc/UTC&amp;format=comma&amp;latlon=yes&amp;year1=1990&amp;month1=1&amp;day1=1&amp;year2=2020&amp;month2=12&amp;day2=31&amp;"</code></pre>
 </div>
@@ -1499,9 +1490,7 @@ $count
 <p>Set the working directory where to store data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">setwd</span>(<span class="st">"path/to/your/folder/of/choice"</span>)</span>
-<span id="cb15-2"><a></a></span>
-<span id="cb15-3"><a></a></span>
-<span id="cb15-4"><a></a>it_stations_id <span class="ot">&lt;-</span> jdict<span class="sc">$</span>features<span class="sc">$</span>id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a></a>it_stations_id <span class="ot">&lt;-</span> jdict<span class="sc">$</span>features<span class="sc">$</span>id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1537,9 +1526,10 @@ $count
 </div>
 <p>When the download start you should see a message on the prompt telling you what station the script is downloading.</p>
 </section>
-<section id="this-is-what-my-result-folder-looks-like.-note-i-have-downloaded-all-4.4gb-of-data-but-you-should-only-have-two-files-corresponding-to-limg-and-liea." class="slide level2">
-<h2><img data-src="./class_21_1.png" alt="This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to “LIMG” and “LIEA”."></h2>
-<p>Time to load the data and look at them.</p>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="./class_21_1.png" class="r-stretch quarto-figure-center"><p class="caption">This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to “LIMG” and “LIEA”.</p><p>Time to load the data and look at them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># path_to_csv &lt;- "path/to/your/data"</span></span>
 <span id="cb17-2"><a></a>suffix <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"LIEA"</span>, <span class="st">"LIMG"</span>)</span>

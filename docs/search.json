@@ -1740,7 +1740,7 @@
     "href": "classes/21/class_21.html#lets-work-with-some-data",
     "title": "Biologia della Conservazione",
     "section": "Let’s work with some data",
-    "text": "Let’s work with some data\n\n\nOn-line data resources:\n\nEurostat\nNOAA\nNASA\nOur World in Data (via GitHub)\nCopernicus\nAutomated Surface Observing System (ASOS)\n\n\n\n\n\nTake your computer and open R."
+    "text": "Let’s work with some data\n\nOn-line data resources:\n\nEurostat\nNOAA\nNASA\nOur World in Data (via GitHub)\nCopernicus\nAutomated Surface Observing System (ASOS)\n\nTake your computer and open R."
   },
   {
     "objectID": "classes/21/class_21.html#this-is-what-my-result-folder-looks-like.-note-i-have-downloaded-all-4.4gb-of-data-but-you-should-only-have-two-files-corresponding-to-limg-and-liea.",
@@ -1748,5 +1748,19 @@
     "title": "Biologia della Conservazione",
     "section": "",
     "text": "Time to load the data and look at them.\n\n# path_to_csv &lt;- \"path/to/your/data\"\nsuffix &lt;- c(\"LIEA\", \"LIMG\")\nfiles &lt;- list.files(path = path_to_csv, pattern = \"*.csv\", full.names = T) \nfiles_names &lt;- list.files(path = path_to_csv, pattern = \"*.csv\", full.names = F)\nmyfiles  &lt;-  lapply(files, read.csv, skip = 5, header = T, na.strings = \"M\")\nnames(myfiles) &lt;- suffix\n\nmyfiles[[1]][1:5,]"
+  },
+  {
+    "objectID": "classes/22/class_22.html#references",
+    "href": "classes/22/class_22.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD"
+  },
+  {
+    "objectID": "classes/21/class_21.html#section",
+    "href": "classes/21/class_21.html#section",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to “LIMG” and “LIEA”.Time to load the data and look at them.\n\n# path_to_csv &lt;- \"path/to/your/data\"\nsuffix &lt;- c(\"LIEA\", \"LIMG\")\nfiles &lt;- list.files(path = path_to_csv, pattern = \"*.csv\", full.names = T) \nfiles_names &lt;- list.files(path = path_to_csv, pattern = \"*.csv\", full.names = F)\nmyfiles  &lt;-  lapply(files, read.csv, skip = 5, header = T, na.strings = \"M\")\nnames(myfiles) &lt;- suffix\n\nmyfiles[[1]][1:5,]"
   }
 ]

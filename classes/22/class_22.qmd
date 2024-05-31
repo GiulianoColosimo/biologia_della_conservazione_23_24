@@ -1,0 +1,37 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 22 - Conservation economics"
+date: "2024-06-03"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+## References

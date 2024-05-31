@@ -1,7 +1,7 @@
 ---
 title: "Biologia della Conservazione"
-subtitle: "Class 20 - Climate change-data retrieval"
-date: "2024-05-30"
+subtitle: "Class 21 - Climate change-data retrieval"
+date: "2024-06-03"
 footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
 logo: ../../figures/Tor-Vergata_logo_cmyk.png
 format: 
@@ -231,8 +231,6 @@ Different kinds of clouds at different altitudes play different roles in regulat
 
 ## Let's work with some data
 
-. . .
-
 -   On-line data resources:
 
     -   [Eurostat](https://ec.europa.eu/eurostat/web/main/data)
@@ -241,8 +239,6 @@ Different kinds of clouds at different altitudes play different roles in regulat
     -   [Our World in Data (via GitHub)](https://github.com/owid/co2-data)
     -   [Copernicus](https://cds.climate.copernicus.eu/cdsapp#!/search?type=dataset)
     -   [Automated Surface Observing System (ASOS)](https://mesonet.agron.iastate.edu/ASOS/)
-
-. . .
 
 -   Take your computer and open R.
 
@@ -261,7 +257,6 @@ Different kinds of clouds at different altitudes play different roles in regulat
 ```{r echo=TRUE, eval=FALSE}
 # Installing the appropriate packages
 install.packages(c("jsonlite", "RCurl", "lubridate", "dplyr", "ggplot2"))
-
 ```
 
 <br/>
@@ -284,7 +279,6 @@ Now that we know the web site, we can set up a script to automate the downloadin
 . . .
 
 ```{r echo=TRUE, eval=TRUE}
-
 # first, we need to specify the date boundaries of our dataset
 date1 <- ISOdate(1990,1,1) #start date in year, month, day format
 date2 <- ISOdate(2020,12,31) #end date in year, month, day format
@@ -302,7 +296,6 @@ We can now start and retrieve the identifier of all the weather stations we are 
 ```{r echo=TRUE, eval=TRUE}
 network <- paste(user.state, user.network, sep = "__")
 uri <- paste("https://mesonet.agron.iastate.edu/geojson/network/", network, ".geojson", sep="")
-
 uri
 ```
 
@@ -324,7 +317,6 @@ Now we can use that connection to read the information.
 
 ```{r echo=TRUE, eval=TRUE}
 jdict <- fromJSON(data)
-
 jdict
 ```
 
@@ -346,9 +338,7 @@ service <- "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?"
 service <- paste(service, "data=all&tz=Etc/UTC&format=comma&latlon=yes&", sep="")
 service <- paste(service, "year1=", year(date1), "&month1=", month(date1), "&day1=", mday(date1), "&", sep="")
 service <- paste(service, "year2=", year(date2), "&month2=", month(date2), "&day2=", mday(date2), "&", sep="")
-
 service
-
 it_stations_id <- jdict$features$id
 it_stations_id
 ```
@@ -359,8 +349,6 @@ Set the working directory where to store data.
 
 ```{r echo=TRUE, eval=FALSE}
 setwd("path/to/your/folder/of/choice")
-
-
 it_stations_id <- jdict$features$id
 ```
 
@@ -392,9 +380,9 @@ for (i in 1:length(it_stations_id[1:2])){
 
 When the download start you should see a message on the prompt telling you what station the script is downloading.
 
-------------------------------------------------------------------------
+## 
 
-## ![This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to "LIMG" and "LIEA".](./class_21_1.png)
+![This is what my result folder looks like. Note, I have downloaded all 4.4GB of data, but you should only have two files corresponding to "LIMG" and "LIEA".](./class_21_1.png)
 
 Time to load the data and look at them.
 
