@@ -29,7 +29,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -340,13 +360,278 @@
 
   <p class="date">2024-06-03</p>
 </section>
-<section id="references" class="slide level2">
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><span style="color: green;">Introduction to conservation biology</span></li>
+<li><span style="color: green;">Biodiversity</span></li>
+<li><span style="color: green;">Biodiversity and extinctions</span></li>
+<li><span style="color: green;">Populations</span></li>
+<li><span style="color: green;">Basics of conservation genetics</span></li>
+<li><span style="color: green;">Genetic drift</span></li>
+<li><span style="color: green;">Effective population size</span></li>
+<li><span style="color: green;">Inbreeding depression</span></li>
+<li><span style="color: green;">Population structure</span></li>
+<li><span style="color: green;">Hybridization</span></li>
+<li><span style="color: green;">Applying genetic information to conservation</span></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<ol start="12" type="1">
+<li><span style="color: green;">Managing genetic diversity in captive populations</span></li>
+<li><span style="color: green;">Managing genetic diversity in the wild</span></li>
+<li><span style="color: green;">Population viability analysis</span></li>
+<li><span style="color: green;">Invasive species</span></li>
+<li><span style="color: green;">CITES and trade regulations of endangered species</span></li>
+<li><span style="color: green;">Conservation and climate change</span></li>
+<li><span style="color: green;">Future climate impacts</span></li>
+<li><span style="color: orange;">Conservation economics</span></li>
+<li><span style="color: blue;">Conservation technology</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="conservation-economics" class="slide level2">
+<h2>Conservation economics</h2>
+<ul>
+<li>Economics is the study of how people make choices under condition of scarcity. Economics also studies the results of these choices and how they affect the society <span class="citation" data-cites="Frank2012">(<a href="#/references" role="doc-biblioref" onclick="">Frank &amp; Bernanke, 2012</a>)</span>.</li>
+<li>Speaking of economics within conservation science may seem a paradox, because economics is often an obstacle or a limit to the development of conservation strategies and the achievement of conservation goals.</li>
+<li>After all, we live in a largely capitalistic world, and increasing the capital, which often translates to increasing the bank account, is the goal of most corporations worldwide.</li>
+<li>Despite this, thinking like an economist or at least including a few economics notions in the way we think and develop conservation strategies can help to device appropriate conservation actions when resources are lacking or very few.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>No conservation effort or practice can ultimately endure without an intimate connection to value <span class="citation" data-cites="VanDyke2020">(<a href="#/references" role="doc-biblioref" onclick="">Dyke &amp; Lamb, 2020</a>)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="conservation-economics-1" class="slide level2">
+<h2>Conservation economics</h2>
+<ul>
+<li><p>Adopting an economic behavior to conservation does not mean that the intrinsic value and motivation of conservation are less important or undermined by money.</p></li>
+<li><p>Moral intents do not require an economic justification!!!</p></li>
+<li><p>Learning some economics principles should be viewed as an additional set of tools to help us better navigate human biases, emotions, irrationality and the social context of economic-based decision process in conservation science.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Microeconomics</strong>, centers on incentives that influence individual behavior.
+<ul>
+<li>It is a branch of economics focused on markets!</li>
+<li>What factors influence the goods and services users consume.</li>
+<li>It tries to consider the externalities (true costs and benefits of a product/service not considered in the market analysis).</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li><strong>Macroeconomics</strong>, is an extension of microeconomics.
+<ul>
+<li>It applies to a multitude of individuals and to a larger and wider scale.</li>
+<li>Involves the decision making process that determines the appropriate level of economic activity in a society.</li>
+<li>It also involves all processes determining how governments ought to think about its spending and revenue streams <span class="citation" data-cites="VanDyke2020">(<a href="#/references" role="doc-biblioref" onclick="">Dyke &amp; Lamb, 2020</a>)</span></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Both processes are of great interest for conservation, but it often is Microeconomics that is reflected in the day-to-day mechanics of conservation programs.</p></li>
+<li><p><em>Neoclassical economic theory</em> forms the basis of much of the world’s economic practices and activities.</p></li>
+</ul>
+</div>
+</section>
+<section id="how-to-value-nature-and-its-services" class="slide level2">
+<h2>How to value nature and its services?</h2>
+<ul>
+<li>When social interactions become financial ones, economic incentives obscure altruistic motivations causing individuals to become even less likely to conserve nature.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Consider the services that, for example, a forest can provide.</p>
+<ul>
+<li>Gas regulation</li>
+<li>Climate regulation</li>
+<li>Disturbance regulation</li>
+<li>Water supply</li>
+<li>Soil formation</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>For how many of these services do you think about paying on a daily basis?</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="./class_22_1.png" class="r-stretch quarto-figure-center"><p class="caption">Data source: Millennium Ecosystem Assessment. After <span class="citation" data-cites="Watson2005">Watson &amp; Zakri (<a href="#/references" role="doc-biblioref" onclick="">2005</a>)</span></p></section>
+<section class="slide level2">
+
+<p>In an effort to clarify ecosystem terms for an economic assessment some authors describe the following terms using an economic mindset :</p>
+<ul>
+<li>Ecosystems: are combinations of interacting species and their environment. They do many things, not all of which are ecosystem services.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Ecosystem services: the subset of natural processes that actually generate benefits to people.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Benefits: the actual things that increase human welfare.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Value: the importance of a given benefit to a person or group (e.g., $30/gal/year).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>The strength of connections between services varies across ecosystems and regions, but it is clear that thier depletion and degradation will have serious consequences on a global scale.</p></li>
+<li><p>Of the 24 services examined by the Millennium Ecosystem Assessment (<a href="https://www.wri.org">World Resource Institute</a>), 15 were being used in an unsustainable way.</p></li>
+</ul>
+</div>
+</section>
+<section id="stock-flow-and-fund-service-resources" class="slide level2">
+<h2>Stock-flow and Fund-service resources</h2>
+<ul>
+<li><p>The material goods we use and derive from ecosystems and their associated biodiversity are various and diverse. A comprehensive list is hard to make. So, we can classify them based on how we use them.</p></li>
+<li><p>Stock-flow resources are those goods produced via a transformation process, usually self-renewing, occurring within the ecosystem itself. Goods extracted can then be used at a certain rate (flow) from the resource’s stock.</p></li>
+<li><p>Timber from a forest is the classical example of a stock-flow resource. A standing stock of mature trees transforms water, sunlight and nutrients from the soil into new biomass and new individuals. It is important in the process of creating the resource, and becomes itself the resource.</p></li>
+<li><p>If a stock-flow resources is extracted at a rate <span class="math inline">\(\le\)</span> than its renewal rate, we can consider that resource self-perpetuating.</p></li>
+<li><p>All stock-flow resources share similar attributes.</p></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>Stock-flow resources:</p>
+<ol type="1">
+<li>have all been materially transformed by ecosystem processes in to usable goods;</li>
+<li>can be used at any desired rate, but in many case usage rates are too high to make the resource self-perpetuating;</li>
+<li>can be stock-pilled or stored for future use!</li>
+</ol>
+<div class="fragment">
+<ul>
+<li><p>A fund-service is something that can gradually be reduced or worn out, and it does not become a part of the resource it produces.</p></li>
+<li><p>The fund provides a service at a fixed rate so that the service is best measured in some metric that describes the output over time.</p></li>
+<li><p>For example, from 2007 to 2016 terrestrial ecosystems globally removed an estimated 3.61 Pg (petagrams) C per year from the atmosphere which amounts to 33.7% of total anthropogenic emissions from industrial activity and land-use change <span class="citation" data-cites="Keenan2018">(<a href="#/references" role="doc-biblioref" onclick="">Keenan &amp; Williams, 2018</a>)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="./class_22_2.png" class="r-stretch quarto-figure-center"><p class="caption">The carbon cycle. After <span class="citation" data-cites="Keenan2018">Keenan &amp; Williams (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p></section>
+<section class="slide level2">
+
+<ul>
+<li>By removing the carbon from the atmosphere, the ecosystem provides a collective service.</li>
+<li>This service cannot be stock-piled.</li>
+<li>We can increase it, by planting more trees or by augmenting the forested surface of certain areas, but we cannot store up capacities for carbon removal this year to be used next year.</li>
+<li>The service must be delivered constantly, at a fixed rate.</li>
+<li>The service cannot be used up, but it can definitely be worn-out if such ecosystems are degraded to the point that their ability to provide the service is compromised.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>By clearly distinguishing between these two resource types we are better able to define the parameter of the so called sustainable use.</li>
+</ul>
+</div>
+</section>
+<section id="non-excludable-and-non-rival-goods" class="slide level2">
+<h2>Non-excludable and non-rival goods</h2>
+<ul>
+<li>Natural goods and resources have been proven hard for traditional economic theory.</li>
+<li>An excludable good or resource is one in which ownership of the resource permits the owner exclusive use of the resource and provides the owner with the ability to exclude others from its use.</li>
+<li>A rival good or service is one for which its uses infringes with someone else’s ability to enjoy the same good or service.</li>
+<li>Many ecosystem goods and services are non-excludable. Can you exclude someone from breathing oxygen?</li>
+<li>Some ecosystem and good services are also non-rival, in that the use of the good does not infringe on the use from other.</li>
+<li>Because of these characteristics (nonexcludable and nonrival) these goods (like climate and water surfaces) are outside of the marketplace and are considered public goods.</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li><p>The need for some form of governance for public goods arises when there is some degree of rivalry and when changes in land usage and management threatens non-excludability.</p></li>
+<li><p>Over exploitation of freshwater by one person or group in a discrete location may limit the availability of fresh water to other users at that same location, effectively changing it from a public good to a common pool resource.</p></li>
+<li><p>If a good is not excludable someone can use it whether or not any producer of the good allows it. If people can use the good regardless of whether or not they have to pay for it, they are considerably less likely to pay for it. If people are unwilling to pay for a good there will be no profit in its production and in a market no one will invest in it in a substantial way <span class="citation" data-cites="Daly2011">(<a href="#/references" role="doc-biblioref" onclick="">Daly &amp; Farley, 2011</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="fundamental-assumptions-of-supply-and-demand" class="slide level2">
+<h2>Fundamental assumptions of supply and demand</h2>
+<ul>
+<li>In neoclassical economic theory, market price for any good or service stems from supply and demand.</li>
+<li>Higher demand for a particular resource is generated because the price gets lower while the resource or good is supplied with higher quantities.</li>
+</ul>
+
+<img data-src="./class_22_3.svg" class="r-stretch quarto-figure-center"><p class="caption">Supply and demand curves. By Paweł Zdziarski. Image downloaded <a href="https://en.wikipedia.org/wiki/Supply_and_demand">here</a></p></section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+
+<img data-src="./class_22_4.jpg" class="r-stretch quarto-figure-center"><p class="caption">A general framework to couple human-nature systems by soil conservation service assessment. Supply is characterized by ecosystem processes and functions, and demand is quantified as the total human benefit. After <span class="citation" data-cites="Zhao2018">Zhao et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></p></section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>While most analysis focus on maintaining steady the supply portion of an ecosystem service, through conservation actions aiming at directly preserving the resource, the authors <span class="citation" data-cites="Zhao2018">(<a href="#/references" role="doc-biblioref" onclick="">Zhao et al., 2018</a>)</span> suggest that quantification of both supply and demand would improve decisions made about both of them.</li>
+<li>By quantifying the benefits of soil conservation, based on the health of ecosystem services, they could help clarify the economic value of the service to people.</li>
+<li>The authors focused on both the maximum allowable erosion rate (how much we can use the resource without depleting it out) and the current erosion rate.</li>
+<li>If the current erosion rate exceeded the maximum there were negative consequences for ecosystem supply. However, if the current erosion were lower than the maximum, the implication for the ecosystem supply were positive.</li>
+<li>Properly developed, environmental markets can stimulate market efficiency and improve overall economic efficiency while supporting higher level of biodiversity conservation.</li>
+<li>To do this, economists must address externalities, the costs or benefits that are not explicitly captured in a decision or action!</li>
+</ul>
+</section>
+<section id="cost-benefit-analysis" class="slide level2">
+<h2>Cost Benefit Analysis</h2>
+<ul>
+<li>Cost Benefit Analysis (CBA) is a tool used even in conservation economics.
+<ul>
+<li>Will we gain more than we loose in economic terms?</li>
+<li>What are our options?</li>
+<li>What if we do nothing?</li>
+</ul></li>
+<li>The main issue in CBA is to clarify how to quantify costs and benefits.</li>
+<li>The Trump administration had long argued that the EPA (Environmental Protection Act), under the previous Obama administration overestimated the risk of various environmental regulation to the determent of industry <span class="citation" data-cites="VanDyke2020">(<a href="#/references" role="doc-biblioref" onclick="">Dyke &amp; Lamb, 2020</a>)</span>.</li>
+<li>For example, Trump’s EPA had initially calculated that replacing Obama’s Clean power Plan, with his proposed Affordable Clean Energy Act (CEA), would result in an additional 1400 deaths per year. His administration proposed a new set of rules to calculate CBA and this number was drastically reduced.</li>
+</ul>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<ul>
+<li><p>In Microeconomics there are two general classes of evaluation techniques for putting a price tag on ecosystem services: <strong>revealed preference</strong> and <strong>stated preference</strong>.</p></li>
+<li><p><strong>Revealed preference</strong> use observed behavior such as market purchases to make inferences on values of goods and services. Such approaches work with either actual markets or proxy market for property which reflects the various environmental attributes of the property itself.</p></li>
+<li><p><strong>Stated preference</strong> methods ask people how much they are willing to pay for a non-market good or service. Stated preference approaches create hypothetical markets for environmental benefits where there are no current market prices.</p></li>
+</ul>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../figures/Tor-Vergata_logo_cmyk.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/">Biologia della conservazione 23/24 - Giuliano Colosimo, PhD</a></p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Daly2011" class="csl-entry" role="listitem">
+Daly, H. E., &amp; Farley, J. (2011). <em>Ecological economics, second edition: Principles and applications</em>. Island Press. Retrieved from <a href="https://books.google.is/books?id=20R9\_6rC-LoC">https://books.google.is/books?id=20R9\_6rC-LoC</a>
+</div>
+<div id="ref-VanDyke2020" class="csl-entry" role="listitem">
+Dyke, F. V., &amp; Lamb, R. L. (2020). <em>Conservation biology</em>. Springer International Publishing. Retrieved from <a href="https://doi.org/10.1007%2F978-3-030-39534-6">https://doi.org/10.1007%2F978-3-030-39534-6</a>
+</div>
+<div id="ref-Frank2012" class="csl-entry" role="listitem">
+Frank, R., &amp; Bernanke, B. (2012). <em>Principles of economics</em>. McGraw-Hill Education. Retrieved from <a href="https://books.google.is/books?id=2\_SgPwAACAAJ">https://books.google.is/books?id=2\_SgPwAACAAJ</a>
+</div>
+<div id="ref-Keenan2018" class="csl-entry" role="listitem">
+Keenan, T. F., &amp; Williams, C. A. (2018). The terrestrial carbon sink. <em>Annual Review of Environment and Resources</em>, <em>43</em>(1), 219–243. Retrieved from <a href="https://doi.org/10.1146/annurev-environ-102017-030204">https://doi.org/10.1146/annurev-environ-102017-030204</a>
+</div>
+<div id="ref-Watson2005" class="csl-entry" role="listitem">
+Watson, R. T., &amp; Zakri, A. H. (2005). <em>Living beyon our means</em>. Millennium Ecosystem Assessment.
+</div>
+<div id="ref-Zhao2018" class="csl-entry" role="listitem">
+Zhao, W., Liu, Y., Daryanto, S., Fu, B., Wang, S., &amp; Liu, Y. (2018). Metacoupling supply and demand for soil conservation service. <em>Current Opinion in Environmental Sustainability</em>, <em>33</em>, 136–141. Retrieved from <a href="https://www.sciencedirect.com/science/article/pii/S1877343517301926">https://www.sciencedirect.com/science/article/pii/S1877343517301926</a>
 </div>
 </div>
 </section>
