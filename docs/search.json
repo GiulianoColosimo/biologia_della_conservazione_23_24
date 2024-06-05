@@ -1867,5 +1867,159 @@
     "title": "Biologia della Conservazione",
     "section": "",
     "text": "Introduction to conservation biology\nBiodiversity\nBiodiversity and extinctions\nPopulations\nBasics of conservation genetics\nGenetic drift\nEffective population size\nInbreeding depression\nPopulation structure\nHybridization\nApplying genetic information to conservation\n\n\n\nManaging genetic diversity in captive populations\nManaging genetic diversity in the wild\nPopulation viability analysis\nInvasive species\nCITES and trade regulations of endangered species\nConservation and climate change\nFuture climate impacts\nConservation economics\nConservation technology"
+  },
+  {
+    "objectID": "classes/23/class_23.html#population-structure",
+    "href": "classes/23/class_23.html#population-structure",
+    "title": "Biologia della Conservazione",
+    "section": "Population structure",
+    "text": "Population structure\n\nF statistics (Malécot, 1948; Nei, 1977; Wright, 1931, 1951)\nWe recognize three primary coefficients: \\(F_{IS}\\), \\(F_{IT}\\), and \\(F_{ST}\\).\n\\(F_{IS}\\) measures Hardy–Weinberg departures within local demes.\n\\(F_{ST}\\) measures divergence in allele frequencies among demes.\n\\(F_{IT}\\) measures Hardy–Weinberg departures in the metapopulation due to \\(F_{IT}\\) (nonrandom mating within local demes) and \\(F_{ST}\\) (allele frequency divergence among demes).\nThe original \\(F\\) statistics developed by wright focused on loci with only two alleles.\nNei (1977) extended these measures to multiple alleles and used a different notation to name what he called analysis of gene diversity: \\(G_{IS}\\), \\(G_{IT}\\), and \\(G_{ST}\\). Often the two groups of indexes are used interchangeably."
+  },
+  {
+    "objectID": "classes/23/class_23.html#f_is",
+    "href": "classes/23/class_23.html#f_is",
+    "title": "Biologia della Conservazione",
+    "section": "\\(F_{IS}\\)",
+    "text": "\\(F_{IS}\\)\nThis is a measure of departure from HW proportions within local demes.\n\\[\n\\label{fis}\n\\tag{23.1}\nF_{IS} = 1-\\frac{H_O}{H_S}\n\\]\nwhere \\(H_O\\) is the observed heterozygosity averaged over all demes while \\(H_S\\) is the expected heterozygosity averaged over all demes. \\(F_{IS}\\) values can range from \\(-1 \\leq 0 \\leq 1\\), with positive values indicating an excess of homozygotes and negative values indicating an excess of heterozygotes (Allendorf et al., 2022)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#f_st",
+    "href": "classes/23/class_23.html#f_st",
+    "title": "Biologia della Conservazione",
+    "section": "\\(F_{ST}\\)",
+    "text": "\\(F_{ST}\\)\nOften called fixation index, it is a measure of genetic divergence among demes.\n\\[\n\\label{fst}\n\\tag{23.2}\nF_{ST} = 1-\\frac{H_S}{H_T}\n\\]\nwith \\(H_T\\) as the expected HW heterozygosity if the metapopulation were panmictic, and \\(H_S\\) is the HW proportion of heterozygotes in each separate deme and then averaged over all demes. This measure varies from \\(0\\) (demes all have equal allele frequencies) to \\(1\\) (demes are all fixed for different alleles)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#f_it",
+    "href": "classes/23/class_23.html#f_it",
+    "title": "Biologia della Conservazione",
+    "section": "\\(F_{IT}\\)",
+    "text": "\\(F_{IT}\\)\nMeasures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes (Allendorf et al., 2022).\n\\[\n\\label{fit}\n\\tag{23.3}\nF_{IT} = 1-\\frac{H_O}{H_T}\n\\]\n\n\nThe fixation indexes described in the previous slides are related by the following expression:\n\n\\[\n\\label{findexrelation}\n\\tag{23.4}\nF_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})\n\\]"
+  },
+  {
+    "objectID": "classes/23/class_23.html#gene-flow",
+    "href": "classes/23/class_23.html#gene-flow",
+    "title": "Biologia della Conservazione",
+    "section": "Gene flow",
+    "text": "Gene flow\nThe effects of fragmentation on gene flow depend on:\n\nNumber of population fragments.\nDistribution of population sizes in the fragments.\nDistance between fragments.\nDispersal ability of the species.\nMigration rates among fragments.\nEnvironment of the matrix among fragments.\nTimes since fragmentation and extinction and recolonization rates across fragments."
+  },
+  {
+    "objectID": "classes/23/class_23.html#hybridization",
+    "href": "classes/23/class_23.html#hybridization",
+    "title": "Biologia della Conservazione",
+    "section": "Hybridization",
+    "text": "Hybridization\n\nDemographic (a) and genetic (b) swamping. After Allendorf et al. (2022)"
+  },
+  {
+    "objectID": "classes/23/class_23.html#managing-genetic-diversity-in-wild-populations",
+    "href": "classes/23/class_23.html#managing-genetic-diversity-in-wild-populations",
+    "title": "Biologia della Conservazione",
+    "section": "Managing genetic diversity in wild populations",
+    "text": "Managing genetic diversity in wild populations\n\nClarification of relatedness, taxonomy and phylogeny among populations.\nDetermination of population management units based on genetic criteria.\nEstimation of gene flow and dispersal among populations.\nDetermination of the time since past genetic bottlenecks in a population or the time since significant differentiation between populations.\nUnderstanding patterns of reproductive ecology.\nLocating original sources of wildlife products."
+  },
+  {
+    "objectID": "classes/23/class_23.html#managing-genetic-diversity-in-captive-populations",
+    "href": "classes/23/class_23.html#managing-genetic-diversity-in-captive-populations",
+    "title": "Biologia della Conservazione",
+    "section": "Managing genetic diversity in captive populations",
+    "text": "Managing genetic diversity in captive populations\n\nThe more accustomed wild animals become to their artificial environment the less likely they are to survive when reintroduced in the wild.\nLifetime reproductive success of and overall fitness of stealhead trout (Oncorhynchus mykiss) declined precipitously in just two generations of captivity (Araki, Cooper, & Blouin, 2007).\nThe data provided in Araki et al. (2007) suggest that 37.5% fitness decline per captive reared generation demonstrating that genetic adaptation (GA) to captivity is something dangerous that should not be underestimated.\nGA can be mathematically described:\n\n\\[\n\\label{ga}\n\\tag{23.6}\nGA = \\frac{Sh^2}{L}\\sum_{i=1}^{\\frac{y}{L}}[1-\\frac{1}{2N_e}]^{\\frac{y}{L}}(1-m_i)\n\\]"
+  },
+  {
+    "objectID": "classes/23/class_23.html#heritability",
+    "href": "classes/23/class_23.html#heritability",
+    "title": "Biologia della Conservazione",
+    "section": "Heritability",
+    "text": "Heritability\nWhen talking about phenotypes we have mentioned that a measurable phenotype is the consequence of the underlying genotypes inherited by the parents plus the influence of the environment. We can represent this relation in mathematical terms in the following way:\n\\[\n\\label{p}\n\\tag{23.7}\nP = G + E\n\\]\nwhere \\(P\\) = phenotye, \\(G\\) = genotype, and \\(E\\) = environment. Being able to distinguish between the genetic and the environmental component in this interaction is important to understand the evolutionary trajectory of a population or species (Frankham et al., 2010).\nDifferent phenotypes within a population, also known as phenotypic variance \\(V_P\\), represents the sum total of all the interactions between the genotypic variance, \\(V_G\\), the environmental variance, \\(V_E\\), and the interaction term between these two quantities, \\(G*E\\).\n\\[\n\\label{Vp}\n\\tag{23.8}\nV_P = V_G + V_E + 2Cov_{GE}\n\\]"
+  },
+  {
+    "objectID": "classes/23/class_23.html#pva",
+    "href": "classes/23/class_23.html#pva",
+    "title": "Biologia della Conservazione",
+    "section": "PVA",
+    "text": "PVA\n\nPVA makes a quantitative assessment of the probability of extinction of a given population or species and estimates the probability of stochastic events in a population.\n\n\n\nLike the more usual forms of risk analysis applied to issues of public health and safety, PVA attempts to estimate the likelihood of future events based on currently available data and theory, both of which contain some degree of unvertainty (Shaffer, 1981).\n\n\n\n\nA more precise definition of PVA is provided by Lacy (1993), according to which a PVA is the estimation of extinction probabilities using analyses that incorporate identifiable threats to population survival in to models of the extinction process.\nTo accomplish, measure, and communicate the goals of evaluating extinction risks and estimating population persistence, PVAs generate viability measures that quantify different characteristics of a studied population essential for its persistence (Dyke & Lamb, 2020)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#invasive-species",
+    "href": "classes/23/class_23.html#invasive-species",
+    "title": "Biologia della Conservazione",
+    "section": "Invasive species",
+    "text": "Invasive species\n\nInvasive species represent the second most commonly listed factor for species endangerment! (Do you remember which is the first one?)\nAn estimated cost of non-native species in the US alone is over $120 billion annually (Crowl, Crist, Parmenter, Belovsky, & Lugo, 2008).\nThe role of humans as one of the most nefarious agent of disruption of biological communities is well recognized in the anthropocene epoch. One of the means of such disruption is undoubtedly tied to our transport of new species thousands of kilometers away from their native habitat (Dyke & Lamb, 2020).\n\n\nMake no mistake, we are seeing one of the great historical convulsions in the world’s fauna and flora (Elton, Simberloff, & Ricciardi, 2020, Elton’s original publication is from 1958)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#climate-change",
+    "href": "classes/23/class_23.html#climate-change",
+    "title": "Biologia della Conservazione",
+    "section": "Climate change",
+    "text": "Climate change\n\nWeather refers to local, short-term changes in variables such as temperature, precipitation, wind speed, and humidity. Weather is constantly changing, but changing within a range of historical norms, cycles or fluctuations that, in the long term, are highly predictable (Dyke & Lamb, 2020).\nThese long term predictable fluctuations are what is meant by climate (Dyke & Lamb, 2020).\n\n\n\nRegular periodic variation in climate is a kind of predictable change manifested in annual seasonal cycles and in the long term regular fluctuations.\n\n\n\n\nPeriodicity of annual variation.\nMilankovitch cycles."
+  },
+  {
+    "objectID": "classes/23/class_23.html#section",
+    "href": "classes/23/class_23.html#section",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "After Lodge et al. (2006)"
+  },
+  {
+    "objectID": "classes/23/class_23.html#references",
+    "href": "classes/23/class_23.html#references",
+    "title": "Biologia della Conservazione",
+    "section": "References",
+    "text": "References\n\n\n\n\nBiologia della conservazione 23/24 - Giuliano Colosimo, PhD\n\n\n\n\nAllendorf, F. W., Funk, W. C., Aitken, S. N., Byrne, M., Luikart, G., & Antunes, A. (2022). Conservation and the Genomics of Populations. Oxford University Press. Retrieved from https://doi.org/10.1093/oso/9780198856566.001.0001\n\n\nAnderson, C. B., Vanessa Lencinas, M., Wallem, P. K., Valenzuela, A. E. J., Simanonok, M. P., & Martı́nez Pastur, G. (2014). Engineering by an invasive species alters landscape-level ecosystem function, but does not affect biodiversity in freshwater systems. Diversity and Distributions, 20(2), 214–222. Retrieved from https://onlinelibrary.wiley.com/doi/abs/10.1111/ddi.12147\n\n\nAraki, H., Cooper, B., & Blouin, M. S. (2007). Genetic effects of captive breeding cause a rapid, cumulative fitness decline in the wild. Science, 318(5847), 100–103. Retrieved from https://www.science.org/doi/abs/10.1126/science.1145621\n\n\nChallender, D. W. S., Harrop, S. R., & MacMillan, D. C. (2015). Towards informed and multi-faceted wildlife trade interventions. Global Ecology and Conservation, 3, 129–148. Retrieved from https://www.sciencedirect.com/science/article/pii/S2351989414000791\n\n\nCrowl, T. A., Crist, T. O., Parmenter, R. R., Belovsky, G., & Lugo, A. E. (2008). The spread of invasive species and infectious disease as drivers of ecosystem change. Frontiers in Ecology and the Environment, 6(5), 238–246. Retrieved from https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/070151\n\n\nDyke, F. V., & Lamb, R. L. (2020). Conservation biology. Springer International Publishing. Retrieved from https://doi.org/10.1007%2F978-3-030-39534-6\n\n\nEbert, T. A. (1998). Plant and animal populations: Methods in demography. San Diego: Academic Press.\n\n\nElton, C. S., Simberloff, D., & Ricciardi, A. (2020). The ecology of invasions by animals and plants. Springer International Publishing. Retrieved from https://books.google.co.uk/books?id=nwzWDwAAQBAJ\n\n\nFrankham, R., Ballou, J. D., & Briscoe, D. A. (2010). Introduction to conservation genetics. Cambridge University Press. Retrieved from https://doi.org/10.1017%2Fcbo9780511809002\n\n\nKeenan, T. F., & Williams, C. A. (2018). The terrestrial carbon sink. Annual Review of Environment and Resources, 43(1), 219–243. Retrieved from https://doi.org/10.1146/annurev-environ-102017-030204\n\n\nKowarik, I. (2011). Novel urban ecosystems, biodiversity, and conservation. Environmental Pollution, 159(8), 1974–1983. Retrieved from https://www.sciencedirect.com/science/article/pii/S0269749111000960\n\n\nLacy, R. C. (1993). VORTEX: A computer simulation model for population viability analysis. Wildlife Research, 20(1), 45. CSIRO Publishing. Retrieved from https://doi.org/10.1071%2Fwr9930045\n\n\nLodge, D. M., Williams, S., MacIsaac, H. J., Hayes, K. R., Leung, B., Reichard, S., Mack, R. N., et al. (2006). BIOLOGICAL INVASIONS: RECOMMENDATIONS FOR u.s. POLICY AND MANAGEMENT. Ecological Applications, 16(6), 2035–2054. Wiley. Retrieved from https://doi.org/10.1890%2F1051-0761%282006%29016%5B2035%3Abirfup%5D2.0.co%3B2\n\n\nMalécot, G. (1948). Les mathématiques de l’hérédité. Masson. Retrieved from https://books.google.fi/books?id=g7FjAQAACAAJ\n\n\nNei, M. (1977). F-statistics and analysis of gene diversity in subdivided populations. Annals of Human Genetics, 41(2), 225–233. Wiley. Retrieved from https://doi.org/10.1111%2Fj.1469-1809.1977.tb01918.x\n\n\nParmesan, C., & Yohe, G. (2003). A globally coherent fingerprint of climate change impacts across natural systems. Nature, 421(6918), 37–42. Springer Science; Business Media LLC. Retrieved from https://doi.org/10.1038%2Fnature01286\n\n\nShaffer, M. L. (1981). Minimum Population Sizes for Species Conservation. BioScience, 31(2), 131–134.\n\n\nStrickberger, M. W. (1985). Genetics. Macmillan international editions in science. Macmillan. Retrieved from https://books.google.co.uk/books?id=IWrwAAAAMAAJ\n\n\nWatson, R. T., & Zakri, A. H. (2005). Living beyon our means. Millennium Ecosystem Assessment.\n\n\nWright, S. (1931). Evolution in Mendelian populations. Bulletin of Mathematical Biology, 52(1-2), 241–295.\n\n\nWright, S. (1951). The genetical structure of populations. Annals of eugenics, 15, 323–354."
+  },
+  {
+    "objectID": "classes/23/class_23.html#conservation-economics",
+    "href": "classes/23/class_23.html#conservation-economics",
+    "title": "Biologia della Conservazione",
+    "section": "Conservation economics",
+    "text": "Conservation economics\n\nMicroeconomics, centers on incentives that influence individual behavior.\n\nIt is a branch of economics focused on markets!\nWhat factors influence the goods and services users consume.\nIt tries to consider the externalities (true costs and benefits of a product/service not considered in the market analysis).\n\nMacroeconomics, is an extension of microeconomics.\n\nIt applies to a multitude of individuals and to a larger and wider scale.\nInvolves the decision making process that determines the appropriate level of economic activity in a society.\nIt also involves all processes determining how governments ought to think about its spending and revenue streams (Dyke & Lamb, 2020)"
+  },
+  {
+    "objectID": "classes/23/class_23.html#stock-flow-and-fund-service-resources",
+    "href": "classes/23/class_23.html#stock-flow-and-fund-service-resources",
+    "title": "Biologia della Conservazione",
+    "section": "Stock-flow and Fund-service resources",
+    "text": "Stock-flow and Fund-service resources\n\nStock-flow resources are those goods produced via a transformation process, usually self-renewing, occurring within the ecosystem itself. Goods extracted can then be used at a certain rate (flow) from the resource’s stock.\nTimber from a forest is the classical example of a stock-flow resource. A standing stock of mature trees transforms water, sunlight and nutrients from the soil into new biomass and new individuals. It is important in the process of creating the resource, and becomes itself the resource.\nA fund-service is something that can gradually be reduced or worn out, and it does not become a part of the resource it produces. The fund provides a service at a fixed rate so that the service is best measured in some metric that describes the output over time.\nFor example, from 2007 to 2016 terrestrial ecosystems globally removed an estimated 3.61 Pg (petagrams) C per year from the atmosphere which amounts to 33.7% of total anthropogenic emissions from industrial activity and land-use change (Keenan & Williams, 2018)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#cites",
+    "href": "classes/23/class_23.html#cites",
+    "title": "Biologia della Conservazione",
+    "section": "CITES",
+    "text": "CITES\n\nThe most important international agreement for the protection of endangered species is CITES: The Convention on International Trade in Endangered Species of Wild Flora and Fauna\nPromulgated in 1973\nThis convention arose from the join efforts of IUCN and UNEP (United Nation Environmental Programme)\nIt specifically regulates or prohibits commercial trade in globally endangered species or their products\nMost wildlife trade occurs at local and national levels, but large volumes of international trade also take place each year, worth an estimated USD20 billion a year globally (Challender, Harrop, & MacMillan, 2015; Dyke & Lamb, 2020)"
+  },
+  {
+    "objectID": "classes/23/class_23.html#section-1",
+    "href": "classes/23/class_23.html#section-1",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Damage from an invasive species has occurred when there is a significant adverse effect on a biotic or abiotic conservation resource that has an impact on (a) the value of the conservation resource, (b) the conservation resource as an ecosystem component, (c) the sustainable use of the conservation resource (Kowarik, 2011).\nEffect of novel and introduced species should not be called detrimental or damaging if they are not associated with significant negative impacts on other species or resources with special conservation interest (Kowarik, 2011).\n\n\n\nAnderson et al. (2014) analyzed the effects of beavers in one of their non-native habitats, the islands comprising both the argentinian and chilean Tierra del Fuego, at the southern tip of South America.\nThey focused on the indirect and broader scale impact of invasive on ecosystems and landscapes (Anderson et al., 2014)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#section-2",
+    "href": "classes/23/class_23.html#section-2",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Summary of biological change events from a meta-analysis of studies from 1700 species. After Parmesan & Yohe (2003).\nThese changes in species response are not random, but consistent with the directions predicted by climate change. Further, the range of responses is scattered across a variety of species and ecosystems, indicating that the impacts and implications of climate changes are global and widespread (Dyke & Lamb, 2020)."
+  },
+  {
+    "objectID": "classes/23/class_23.html#section-3",
+    "href": "classes/23/class_23.html#section-3",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Data source: Millennium Ecosystem Assessment. After Watson & Zakri (2005)"
+  },
+  {
+    "objectID": "classes/23/class_23.html#section-4",
+    "href": "classes/23/class_23.html#section-4",
+    "title": "Biologia della Conservazione",
+    "section": "",
+    "text": "Cost Benefit Analysis (CBA) is a tool used even in conservation economics.\n\nWill we gain more than we loose in economic terms?\nWhat are our options?\nWhat if we do nothing?\n\nThe main issue in CBA is to clarify how to quantify costs and benefits.\nRevealed preference use observed behavior such as market purchases to make inferences on values of goods and services. Such approaches work with either actual markets or proxy market for property which reflects the various environmental attributes of the property itself.\nStated preference methods ask people how much they are willing to pay for a non-market good or service. Stated preference approaches create hypothetical markets for environmental benefits where there are no current market prices."
+  },
+  {
+    "objectID": "classes/23/class_23.html#a-stage-based-pva-model",
+    "href": "classes/23/class_23.html#a-stage-based-pva-model",
+    "title": "Biologia della Conservazione",
+    "section": "A stage based PVA model",
+    "text": "A stage based PVA model\n\nMany species of animals and plants have life cycles with distinct ages, life history stages or sizes that influence population growth (Dyke & Lamb, 2020).\nTherefore, to perform a PVA, we need a model in which age, size, sex and stage specific demographic parameters are known and properly related to one another.\n\n\nLife-cycle graph for a stage-structured population showing transitions between successive stages (\\(g_x\\)), transitions of retention within a stage (\\(s_x\\)), and adjusted reproduction rates (\\(f_x\\)). After Ebert (1998)."
   }
 ]

@@ -79,6 +79,8 @@ website:
             text: "Class 21 - Climate change"  
           - href: ./classes/22/class_22.html
             text: "Class 22 - Conservation economics"  
+          - href: ./classes/23/class_22.html
+            text: "Class 23 - Final recap"  
 
 
     tools:

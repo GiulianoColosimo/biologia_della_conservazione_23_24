@@ -34,7 +34,6 @@ lapply(x, require, character.only = T)
 rm(x)
 ```
 
-
 ## Topics
 
 ::: columns

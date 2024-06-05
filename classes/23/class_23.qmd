@@ -1,0 +1,372 @@
+---
+title: "Biologia della Conservazione"
+subtitle: "Class 23 - Final recap"
+date: "2024-06-03"
+footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
+logo: ../../figures/Tor-Vergata_logo_cmyk.png
+format: 
+  revealjs:
+    width: 1600
+    height: 900 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    preview-links: true
+    chalkboard: 
+      boardmarker-width: 5
+editor: visual
+from: markdown+emoji
+execute:
+  freeze: auto
+editor_options: 
+  chunk_output_type: console
+bibliography: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/comprehensive_database.bib
+csl: /Users/giulianocolosimo/Library/CloudStorage/ProtonDrive-giuliano.colosimo@protonmail.com/manuscripts/literature/bibtex/apa_5th_edition.csl
+citation_package: biblatex
+citecolor: "red"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+x <- c("DT", "tidyverse", "RColorBrewer", "learnPopGen")
+lapply(x, require, character.only = T)
+rm(x)
+```
+
+
+## Population structure
+
+-   F statistics [@Wright1931; @Wright1951; @Malecot1948; @Nei1977]
+-   We recognize three primary coefficients: $F_{IS}$, $F_{IT}$, and $F_{ST}$.
+-   $F_{IS}$ measures Hardy--Weinberg departures within local demes.
+-   $F_{ST}$ measures divergence in allele frequencies among demes.
+-   $F_{IT}$ measures Hardy--Weinberg departures in the metapopulation due to $F_{IT}$ (nonrandom mating within local demes) and $F_{ST}$ (allele frequency divergence among demes).
+-   The original $F$ statistics developed by wright focused on loci with only two alleles.
+-   @Nei1977 extended these measures to multiple alleles and used a different notation to name what he called *analysis of gene diversity*: $G_{IS}$, $G_{IT}$, and $G_{ST}$. Often the two groups of indexes are used interchangeably.
+
+------------------------------------------------------------------------
+
+## $F_{IS}$
+
+This is a measure of departure from HW proportions within local demes.
+
+$$
+\label{fis}
+\tag{23.1}
+F_{IS} = 1-\frac{H_O}{H_S}
+$$
+
+where $H_O$ is the observed heterozygosity averaged over all demes while $H_S$ is the expected heterozygosity averaged over all demes. $F_{IS}$ values can range from $-1 \leq 0 \leq 1$, with positive values indicating an excess of homozygotes and negative values indicating an excess of heterozygotes [@Allendorf2022].
+
+------------------------------------------------------------------------
+
+## $F_{ST}$
+
+Often called *fixation index*, it is a measure of genetic divergence among demes.
+
+$$
+\label{fst}
+\tag{23.2}
+F_{ST} = 1-\frac{H_S}{H_T}
+$$
+
+with $H_T$ as the expected HW heterozygosity if the metapopulation were panmictic, and $H_S$ is the HW proportion of heterozygotes in each separate deme and then averaged over all demes. This measure varies from $0$ (demes all have equal allele frequencies) to $1$ (demes are all fixed for different alleles).
+
+------------------------------------------------------------------------
+
+## $F_{IT}$
+
+Measures the departure from HW proportions due to departures from HW proportions within local demes and divergence among demes [@Allendorf2022].
+
+$$
+\label{fit}
+\tag{23.3}
+F_{IT} = 1-\frac{H_O}{H_T}
+$$
+
+. . .
+
+-   The fixation indexes described in the previous slides are related by the following expression:
+
+$$
+\label{findexrelation}
+\tag{23.4}
+F_{IT}= F_{IS}+F_{ST}-(F_{IS}*F_{ST})
+$$
+
+------------------------------------------------------------------------
+
+## Gene flow
+
+The effects of fragmentation on gene flow depend on:
+
+-   Number of population fragments.
+-   Distribution of population sizes in the fragments.
+-   Distance between fragments.
+-   Dispersal ability of the species.
+-   Migration rates among fragments.
+-   Environment of the matrix among fragments.
+-   Times since fragmentation and extinction and recolonization rates across fragments.
+
+------------------------------------------------------------------------
+
+-   A single migrant per generation is considered sufficient to prevent differentiation between demes.
+-   The migration rate $m$ is the proportion of genes in a population derived from migrants per generation.
+-   $Nm$ is the number of migrants per generation [@Frankham2010].
+
+$$
+\label{fst2}
+\tag{23.5}
+F_{ST} = \frac{1}{4N_em+1}
+$$
+
+------------------------------------------------------------------------
+
+-   Populations with same allele frequencies. One with random mating the other one with inbreeding.
+
+| Population | $A_1A_1$ | $A_1A_2$ | $A_2A_2$ | Allele Freq | F   | He  |
+|------------|----------|----------|----------|-------------|-----|-----|
+| 1          | 0.25     | 0.5      | 0.25     | $p=0.5$     | 0   | 0.5 |
+|            |          |          |          | $q=0.5$     |     |     |
+| 2          | 0.4      | 0.2      | 0.4      | $p=0.5$     | 0.6 | 0.5 |
+|            |          |          |          | $q=0.5$     |     |     |
+
+-   $H_O$ observed heterozygosity averaged over all demes.
+-   $H_S$ expected heterozygosity averaged over all demes.
+-   $H_T$ expected heterozygosity of the metapopulation.
+-   $F_{IS} = 1-\frac{H_O}{H_S}$; $F_{IT} = 1-\frac{H_O}{H_T}$; $F_{ST} = 1-\frac{H_S}{H_T}$.
+
+------------------------------------------------------------------------
+
+-   Random mating populations with different allele frequencies.
+
+| Population | $A_1A_1$ | $A_1A_2$ | $A_2A_2$ | Allele Freq | F   | He   |
+|------------|----------|----------|----------|-------------|-----|------|
+| 1          | 0.25     | 0.5      | 0.25     | $p=0.5$     | 0   | 0.5  |
+|            |          |          |          | $q=0.5$     |     |      |
+| 2          | 0.04     | 0.32     | 0.64     | $p=0.2$     | 0   | 0.32 |
+|            |          |          |          | $q=0.8$     |     |      |
+
+-   $H_O$ observed heterozygosity averaged over all demes.
+-   $H_S$ expected heterozygosity averaged over all demes.
+-   $H_T$ expected heterozygosity of the metapopulation.
+-   $F_{IS} = 1-\frac{H_O}{H_S}$; $F_{IT} = 1-\frac{H_O}{H_T}$; $F_{ST} = 1-\frac{H_S}{H_T}$.
+
+------------------------------------------------------------------------
+
+-   Populations with different allele frequencies, one random mating and one with inbreeding.
+
+| Population | $A_1A_1$ | $A_1A_2$ | $A_2A_2$ | Allele Freq | F   | He   |
+|------------|----------|----------|----------|-------------|-----|------|
+| 1          | 0.25     | 0.5      | 0.25     | $p=0.5$     | 0   | 0.5  |
+|            |          |          |          | $q=0.5$     |     |      |
+| 2          | 0.14     | 0.13     | 0.74     | $p=0.2$     | 0.6 | 0.32 |
+|            |          |          |          | $q=0.8$     |     |      |
+
+-   $H_O$ observed heterozygosity averaged over all demes.
+-   $H_S$ expected heterozygosity averaged over all demes.
+-   $H_T$ expected heterozygosity of the metapopulation.
+-   $F_{IS} = 1-\frac{H_O}{H_S}$; $F_{IT} = 1-\frac{H_O}{H_T}$; $F_{ST} = 1-\frac{H_S}{H_T}$.
+
+------------------------------------------------------------------------
+
+## Hybridization
+
+![Demographic (a) and genetic (b) swamping. After @Allendorf2022](./class_23_1.png)
+
+------------------------------------------------------------------------
+
+## Managing genetic diversity in wild populations
+
+1.  Clarification of relatedness, taxonomy and phylogeny among populations.
+
+2.  Determination of population management units based on genetic criteria.
+
+3.  Estimation of gene flow and dispersal among populations.
+
+4.  Determination of the time since past genetic bottlenecks in a population or the time since significant differentiation between populations.
+
+5.  Understanding patterns of reproductive ecology.
+
+6.  Locating original sources of wildlife products.
+
+------------------------------------------------------------------------
+
+## Managing genetic diversity in captive populations
+
+-   The more accustomed wild animals become to their artificial environment the less likely they are to survive when reintroduced in the wild.
+
+-   Lifetime reproductive success of and overall fitness of stealhead trout (*Oncorhynchus mykiss*) declined precipitously in just two generations of captivity [@Araki2007].
+
+-   The data provided in @Araki2007 suggest that 37.5% fitness decline per captive reared generation demonstrating that genetic adaptation (GA) to captivity is something dangerous that should not be underestimated.
+
+-   GA can be mathematically described:
+
+$$
+\label{ga}
+\tag{23.6}
+GA = \frac{Sh^2}{L}\sum_{i=1}^{\frac{y}{L}}[1-\frac{1}{2N_e}]^{\frac{y}{L}}(1-m_i)
+$$
+
+------------------------------------------------------------------------
+
+## Heritability
+
+When talking about phenotypes we have mentioned that a measurable phenotype is the consequence of the underlying genotypes inherited by the parents plus the influence of the environment. We can represent this relation in mathematical terms in the following way:
+
+$$
+\label{p}
+\tag{23.7}
+P = G + E
+$$
+
+where $P$ = phenotye, $G$ = genotype, and $E$ = environment. Being able to distinguish between the genetic and the environmental component in this interaction is important to understand the evolutionary trajectory of a population or species [@Frankham2010].
+
+Different phenotypes within a population, also known as phenotypic variance $V_P$, represents the sum total of all the interactions between the genotypic variance, $V_G$, the environmental variance, $V_E$, and the interaction term between these two quantities, $G*E$.
+
+$$
+\label{Vp}
+\tag{23.8}
+V_P = V_G + V_E + 2Cov_{GE}
+$$
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+![Quantitative genetic variation for corolla length in tobacco. After @Strickberger1985.](./class_23_2.jpg){width="70%"}
+:::
+
+::: {.column width="50%"}
+-   Variances for corolla length in the two homozygous parent population are 48 and 32 respectively.
+-   Variance in the $F_1$ population is 46, while variance in the $F_2$ population is 130.5.
+-   The variances in the parental and $F_1$ populations are due solely on environmental variance, $V_E$.
+-   We can average the three separate estimates of $V_E = \frac{48+32+46}{3}=42$.
+-   In $F_2$ we need to account for both genetic variation and environmental variation: $V_{F_2} = V_G+V_E = 130.5$, and we can rearrange the equation as $V_G = V_{F_2} - V_E = 130.5- 42 = 88.5$.
+:::
+:::
+
+------------------------------------------------------------------------
+
+## PVA
+
+-   PVA makes a quantitative assessment of the probability of extinction of a given population or species and estimates the probability of stochastic events in a population.
+
+. . .
+
+> Like the more usual forms of risk analysis applied to issues of public health and safety, PVA attempts to estimate the likelihood of future events based on currently available data and theory, both of which contain some degree of unvertainty [@Shaffer1981].
+
+. . .
+
+-   A more precise definition of PVA is provided by @Lacy1993, according to which a PVA is the estimation of extinction probabilities using analyses that incorporate identifiable threats to population survival in to models of the extinction process.
+
+-   To accomplish, measure, and communicate the goals of evaluating extinction risks and estimating population persistence, PVAs generate viability measures that quantify different characteristics of a studied population essential for its persistence [@VanDyke2020].
+
+## A stage based PVA model
+
+-   Many species of animals and plants have life cycles with distinct ages, life history stages or sizes that influence population growth [@VanDyke2020].
+
+-   Therefore, to perform a PVA, we need a model in which age, size, sex and stage specific demographic parameters are known and properly related to one another.
+
+![Life-cycle graph for a stage-structured population showing transitions between successive stages ($g_x$), transitions of retention within a stage ($s_x$), and adjusted reproduction rates ($f_x$). After @Ebert1998.](./class_23_01.png)
+
+## Invasive species
+
+-   Invasive species represent the second most commonly listed factor for species endangerment! (Do you remember which is the first one?)
+
+-   An estimated cost of non-native species in the US alone is over \$120 billion annually [@Crowl2008].
+
+-   The role of humans as one of the most nefarious agent of disruption of biological communities is well recognized in the anthropocene epoch. One of the means of such disruption is undoubtedly tied to our transport of new species thousands of kilometers away from their native habitat [@VanDyke2020].
+
+> Make no mistake, we are seeing one of the great historical convulsions in the world's fauna and flora [@Elton2020, Elton's original publication is from 1958].
+
+##
+
+![After @Lodge2006](./class_23_3.png)
+
+##
+
+-   Damage from an invasive species has occurred when there is a *significant adverse effect on a biotic or abiotic conservation resource that has an impact on (a) the value of the conservation resource, (b) the conservation resource as an ecosystem component, (c) the sustainable use of the conservation resource* [@Kowarik2011].
+
+-   Effect of novel and introduced species should not be called detrimental or damaging if *they are not associated with significant negative impacts on other species or resources with special conservation interest* [@Kowarik2011].
+
+. . .
+
+-   @Anderson2014 analyzed the effects of beavers in one of their non-native habitats, the islands comprising both the argentinian and chilean Tierra del Fuego, at the southern tip of South America.
+
+-   They focused on the indirect and broader scale impact of invasive on ecosystems and landscapes [@Anderson2014].
+
+## CITES
+
+-   The most important international agreement for the protection of endangered species is CITES: The **C**onvention on **I**nternational **T**rade in **E**ndangered **S**pecies of Wild Flora and Fauna
+
+-   Promulgated in 1973
+
+-   This convention arose from the join efforts of IUCN and UNEP (United Nation Environmental Programme)
+
+-   It specifically regulates or prohibits commercial trade in globally endangered species or their products
+
+-   Most wildlife trade occurs at local and national levels, but large volumes of international trade also take place each year, worth an estimated USD20 billion a year globally [@Challender2015; @VanDyke2020]
+
+## Climate change
+
+-   *Weather* refers to local, short-term changes in variables such as temperature, precipitation, wind speed, and humidity. *Weather* is constantly changing, but changing within a range of historical norms, cycles or fluctuations that, in the long term, are highly predictable [@VanDyke2020].
+
+-   These long term predictable fluctuations are what is meant by *climate* [@VanDyke2020].
+
+. . .
+
+-   Regular periodic variation in climate is a kind of predictable change manifested in annual seasonal cycles and in the long term regular fluctuations.
+
+. . .
+
+1.  Periodicity of annual variation.
+2.  Milankovitch cycles.
+
+
+##
+
+![Summary of biological change events from a meta-analysis of studies from 1700 species. After @Parmesan2003.](./class_23_4.png)
+
+-   These changes in species response are not random, but consistent with the directions predicted by climate change. Further, the range of responses is scattered across a variety of species and ecosystems, indicating that the impacts and implications of climate changes are global and widespread [@VanDyke2020].
+
+## Conservation economics
+
+-   **Microeconomics**, centers on incentives that influence individual behavior.
+    -   It is a branch of economics focused on markets!
+    -   What factors influence the goods and services users consume.
+    -   It tries to consider the externalities (true costs and benefits of a product/service not considered in the market analysis).
+
+-   **Macroeconomics**, is an extension of microeconomics.
+    -   It applies to a multitude of individuals and to a larger and wider scale.
+    -   Involves the decision making process that determines the appropriate level of economic activity in a society.
+    -   It also involves all processes determining how governments ought to think about its spending and revenue streams [@VanDyke2020]
+
+##
+
+![Data source: Millennium Ecosystem Assessment. After @Watson2005](./class_23_5.png)
+
+## Stock-flow and Fund-service resources
+
+-   Stock-flow resources are those goods produced via a transformation process, usually self-renewing, occurring within the ecosystem itself. Goods extracted can then be used at a certain rate (flow) from the resource's stock.
+
+-   Timber from a forest is the classical example of a stock-flow resource. A standing stock of mature trees transforms water, sunlight and nutrients from the soil into new biomass and new individuals. It is important in the process of creating the resource, and becomes itself the resource.
+
+-   A fund-service is something that can gradually be reduced or worn out, and it does not become a part of the resource it produces. The fund provides a service at a fixed rate so that the service is best measured in some metric that describes the output over time.
+
+-   For example, from 2007 to 2016 terrestrial ecosystems globally removed an estimated 3.61 Pg (petagrams) C per year from the atmosphere which amounts to 33.7% of total anthropogenic emissions from industrial activity and land-use change [@Keenan2018].
+
+##
+
+-   Cost Benefit Analysis (CBA) is a tool used even in conservation economics.
+    -   Will we gain more than we loose in economic terms?
+    -   What are our options?
+    -   What if we do nothing?
+-   The main issue in CBA is to clarify how to quantify costs and benefits.
+
+-   **Revealed preference** use observed behavior such as market purchases to make inferences on values of goods and services. Such approaches work with either actual markets or proxy market for property which reflects the various environmental attributes of the property itself.
+
+-   **Stated preference** methods ask people how much they are willing to pay for a non-market good or service. Stated preference approaches create hypothetical markets for environmental benefits where there are no current market prices.
+
+## References

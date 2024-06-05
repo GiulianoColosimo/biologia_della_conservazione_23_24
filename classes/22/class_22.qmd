@@ -85,25 +85,23 @@ rm(x)
 
 . . .
 
--   **Microeconomics**, centers on incentives that influence individual behavior. 
-    - It is a branch of economics focused on markets!
-    - What factors influence the goods and services users consume.
-    - It tries to consider the externalities (true costs and benefits of a product/service not considered in the market analysis).
+-   **Microeconomics**, centers on incentives that influence individual behavior.
+    -   It is a branch of economics focused on markets!
+    -   What factors influence the goods and services users consume.
+    -   It tries to consider the externalities (true costs and benefits of a product/service not considered in the market analysis).
 
-##
+## 
 
--   **Macroeconomics**, is an extension of microeconomics. 
-    - It applies to a multitude of individuals and to a larger and wider scale. 
-    - Involves the decision making process that determines the appropriate level of economic activity in a society.
-    - It also involves all processes determining how governments ought to think about its spending and revenue streams [@VanDyke2020]
+-   **Macroeconomics**, is an extension of microeconomics.
+    -   It applies to a multitude of individuals and to a larger and wider scale.
+    -   Involves the decision making process that determines the appropriate level of economic activity in a society.
+    -   It also involves all processes determining how governments ought to think about its spending and revenue streams [@VanDyke2020]
 
 . . .
 
 -   Both processes are of great interest for conservation, but it often is Microeconomics that is reflected in the day-to-day mechanics of conservation programs.
 
-- *Neoclassical economic theory* forms the basis of much of the world's economic practices and activities.
-
-
+-   *Neoclassical economic theory* forms the basis of much of the world's economic practices and activities.
 
 ## How to value nature and its services?
 
@@ -163,7 +161,7 @@ In an effort to clarify ecosystem terms for an economic assessment some authors 
 
 -   All stock-flow resources share similar attributes.
 
-##
+## 
 
 Stock-flow resources:
 
@@ -204,7 +202,7 @@ Stock-flow resources:
 -   Some ecosystem and good services are also non-rival, in that the use of the good does not infringe on the use from other.
 -   Because of these characteristics (nonexcludable and nonrival) these goods (like climate and water surfaces) are outside of the marketplace and are considered public goods.
 
-##
+## 
 
 -   The need for some form of governance for public goods arises when there is some degree of rivalry and when changes in land usage and management threatens non-excludability.
 
@@ -214,41 +212,40 @@ Stock-flow resources:
 
 ## Fundamental assumptions of supply and demand
 
-- In neoclassical economic theory, market price for any good or service stems from supply and demand.
-- Higher demand for a particular resource is generated because the price gets lower while the resource or good is supplied with higher quantities.
+-   In neoclassical economic theory, market price for any good or service stems from supply and demand.
+-   Higher demand for a particular resource is generated because the price gets lower while the resource or good is supplied with higher quantities.
 
 ![Supply and demand curves. By Paweł Zdziarski. Image downloaded [here](https://en.wikipedia.org/wiki/Supply_and_demand)](./class_22_3.svg)
 
-##
+## 
 
-![A general framework to couple human-nature systems by soil conservation service assessment. Supply is characterized by ecosystem processes and functions, and demand is quantified as the total human benefit. After @Zhao2018](./class_22_4.jpg)  
+![A general framework to couple human-nature systems by soil conservation service assessment. Supply is characterized by ecosystem processes and functions, and demand is quantified as the total human benefit. After @Zhao2018](./class_22_4.jpg)
 
-##
+## 
 
-- While most analysis focus on maintaining steady the supply portion of an ecosystem service, through conservation actions aiming at directly preserving the resource, the authors [@Zhao2018] suggest that quantification of both supply and demand would improve decisions made about both of them.
-- By quantifying the benefits of soil conservation, based on the health of ecosystem services, they could help clarify the economic value of the service to people.
-- The authors focused on both the maximum allowable erosion rate (how much we can use the resource without depleting it out) and the current erosion rate. 
-- If the current erosion rate exceeded the maximum there were negative consequences for ecosystem supply. However, if the current erosion were lower than the maximum, the implication for the ecosystem supply were positive.
-- Properly developed, environmental markets can stimulate market efficiency and improve overall economic efficiency while supporting higher level of biodiversity conservation.
-- To do this, economists must address externalities, the costs or benefits that are not explicitly captured in a decision or action!
+-   While most analysis focus on maintaining steady the supply portion of an ecosystem service, through conservation actions aiming at directly preserving the resource, the authors [@Zhao2018] suggest that quantification of both supply and demand would improve decisions made about both of them.
+-   By quantifying the benefits of soil conservation, based on the health of ecosystem services, they could help clarify the economic value of the service to people.
+-   The authors focused on both the maximum allowable erosion rate (how much we can use the resource without depleting it out) and the current erosion rate.
+-   If the current erosion rate exceeded the maximum there were negative consequences for ecosystem supply. However, if the current erosion were lower than the maximum, the implication for the ecosystem supply were positive.
+-   Properly developed, environmental markets can stimulate market efficiency and improve overall economic efficiency while supporting higher level of biodiversity conservation.
+-   To do this, economists must address externalities, the costs or benefits that are not explicitly captured in a decision or action!
 
 ## Cost Benefit Analysis
 
-- Cost Benefit Analysis (CBA) is a tool used even in conservation economics.
-    - Will we gain more than we loose in economic terms?
-    - What are our options?
-    - What if we do nothing?
-- The main issue in CBA is to clarify how to quantify costs and benefits.
-- The Trump administration had long argued that the EPA (Environmental Protection Act), under the previous Obama administration overestimated the risk of various environmental regulation to the determent of industry [@VanDyke2020].
-- For example, Trump's EPA had initially calculated that replacing Obama's Clean power Plan, with his proposed Affordable Clean Energy Act (CEA), would result in an additional 1400 deaths per year. His administration proposed a new set of rules to calculate CBA and this number was drastically reduced. 
+-   Cost Benefit Analysis (CBA) is a tool used even in conservation economics.
+    -   Will we gain more than we loose in economic terms?
+    -   What are our options?
+    -   What if we do nothing?
+-   The main issue in CBA is to clarify how to quantify costs and benefits.
+-   The Trump administration had long argued that the EPA (Environmental Protection Act), under the previous Obama administration overestimated the risk of various environmental regulation to the determent of industry [@VanDyke2020].
+-   For example, Trump's EPA had initially calculated that replacing Obama's Clean power Plan, with his proposed Affordable Clean Energy Act (CEA), would result in an additional 1400 deaths per year. His administration proposed a new set of rules to calculate CBA and this number was drastically reduced.
 
-##
+## 
 
-- In Microeconomics there are two general classes of evaluation techniques for putting a price tag on ecosystem services: **revealed preference** and **stated preference**.
+-   In Microeconomics there are two general classes of evaluation techniques for putting a price tag on ecosystem services: **revealed preference** and **stated preference**.
 
-- **Revealed preference** use observed behavior such as market purchases to make inferences on values of goods and services. Such approaches work with either actual markets or proxy market for property which reflects the various environmental attributes of the property itself.
+-   **Revealed preference** use observed behavior such as market purchases to make inferences on values of goods and services. Such approaches work with either actual markets or proxy market for property which reflects the various environmental attributes of the property itself.
 
-- **Stated preference** methods ask people how much they are willing to pay for a non-market good or service. Stated preference approaches create hypothetical markets for environmental benefits where there are no current market prices. 
-
+-   **Stated preference** methods ask people how much they are willing to pay for a non-market good or service. Stated preference approaches create hypothetical markets for environmental benefits where there are no current market prices.
 
 ## References
