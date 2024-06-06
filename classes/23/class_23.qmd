@@ -1,7 +1,7 @@
 ---
 title: "Biologia della Conservazione"
 subtitle: "Class 23 - Final recap"
-date: "2024-06-03"
+date: "2024-06-06"
 footer:  "[Biologia della conservazione 23/24 - Giuliano Colosimo, PhD](https://giulianocolosimo.github.io/biologia_della_conservazione_23_24/)"
 logo: ../../figures/Tor-Vergata_logo_cmyk.png
 format: 
